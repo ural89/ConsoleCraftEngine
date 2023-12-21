@@ -1,4 +1,4 @@
-#include "Core/Scene.h"
+#include "Scenes/PongScene.h"
 #include <thread>
 #include <Core/Input.h>
 #include "Core/Renderer.h"
@@ -12,7 +12,7 @@ public:
     }
 	void StartGame()
 	{
-        SetCurrentScene(new Scene());
+        SetCurrentScene(new PongScene());
 
         
         auto startTime = std::chrono::high_resolution_clock::now();
