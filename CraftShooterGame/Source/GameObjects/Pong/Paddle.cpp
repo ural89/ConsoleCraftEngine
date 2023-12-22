@@ -1,9 +1,6 @@
 #include "Paddle.h"
-#include "../Components/PlayerController.h"
-void Paddle::OnKeyDown(int input)
-{
-	
-}
+#include "../../Components/PlayerController.h"
+
 
 void Paddle::Init()
 {

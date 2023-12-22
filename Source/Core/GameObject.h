@@ -32,6 +32,21 @@ public:
 	{
 		components.push_back(component);
 	}
+
+	template <typename T>
+	T* GetComponent()
+	{
+		for (auto& component : components)
+		{
+			
+			if (typeid(*component) == typeid(T))
+			{
+				return dynamic_cast<T*>(component);
+			}
+		}
+		return nullptr; 
+	}
+
 	virtual void Init() {};
 	virtual void Update(float deltaTime) {};
 	virtual void OnCollided(const GameObject& other) {};
@@ -51,6 +66,8 @@ public:
 		}
 	}
 	std::string symbol = " ";
+
+
 private:
 	std::vector<Component*> components;
 };

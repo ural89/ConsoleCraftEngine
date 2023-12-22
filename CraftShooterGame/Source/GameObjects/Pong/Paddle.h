@@ -9,7 +9,7 @@ public:
 		this->playerNo = playerNo;
 		symbol = '\xDB';
 	}
-	void OnKeyDown(int input);
+
 	
 	void Init() override;
 
