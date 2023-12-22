@@ -11,7 +11,7 @@ public:
 		
 	}
 	void Init() override{ 
-		
+		color = 4;
 		sprite = { {1,1}, {1,1} }; 
 	}
 	void Update(float deltaTime) override;

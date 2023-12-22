@@ -20,6 +20,8 @@ public:
 	std::vector<std::vector<int>> sprite = { {1,1}, {1,1} };
 
 	Transform transform = Transform();
+
+	int color = 1;
 	void Destroy()
 	{
 		isDestroyedFlag = true;

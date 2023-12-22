@@ -9,6 +9,7 @@
 void PlayerShip::Init()
 {
 	UIHandler::uiText = "Score: 0";
+	color = 2;
 	AddComponent(new PlayerController(*this, 0));
 	sprite = { {1,1}, {1,1,1,1},{1,1} };
 

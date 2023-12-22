@@ -2,12 +2,13 @@
 
 void Bullet::Init()
 {
+	color = 1;
 	sprite = { {1}, {1,1,1} , {1} };
 }
 
 void Bullet::Update(float deltaTime)
 {
-	transform.MovePosition(30 * deltaTime, 0);
+	transform.MovePosition(60 * deltaTime, 0);
 }
 
 void Bullet::OnCollidedBorder()

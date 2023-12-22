@@ -35,6 +35,7 @@ private:
     void DrawObjects(GameObject& go);
     void ClearMovedObjectsTrail(GameObject& go);
     void DrawUI();
+    void SetConsoleColor(int color);
 	
 };
 

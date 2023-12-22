@@ -46,6 +46,7 @@ void Renderer::ClearDestroyedObject(GameObject& go)
 
 void Renderer::DrawObjects(GameObject& go)
 {
+    SetConsoleColor(go.color);
     for (int i = 0; i < go.sprite.size(); i++) //TODO: Find better matrix system
     {
         for (int j = 0; j < go.sprite[i].size(); j++)
@@ -57,6 +58,7 @@ void Renderer::DrawObjects(GameObject& go)
             std::cout << go.symbol;
         }
     }
+    SetConsoleColor(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
 }
 
 void Renderer::ClearMovedObjectsTrail(GameObject& go)
@@ -86,4 +88,9 @@ void Renderer::DrawUI()
     
     GoToXY(UIHandler::Position.X, UIHandler::Position.Y);
     std::cout << UIHandler::uiText;
+}
+
+void Renderer::SetConsoleColor(int color)
+{
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
 }
