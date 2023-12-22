@@ -12,7 +12,7 @@ protected:
 public:
 	Scene();
 	virtual ~Scene();
-
+	virtual void CreateGameObjects() {};
 	void InitializeGameObjects();
 	void AddGameObject(GameObject* gameObject)
 	{
@@ -31,10 +31,10 @@ public:
 		auto it = std::find(GameObjects.begin(), GameObjects.end(), gameObject);
 		if (it != GameObjects.end())
 		{
-			delete* it; // Delete the object
-			//*it = nullptr; // Set the pointer to null in the vector
-			GameObjects.erase(it); // Remove the null pointer from the vector
+			delete* it; 
+			GameObjects.erase(it); 
 		}
+		collision.RemoveGameObject(gameObject);
 	}
 	void Update(float deltaTime)
 	{
@@ -42,7 +42,16 @@ public:
 		{
 			go->Update(deltaTime);
 			go->UpdateComponents(deltaTime);
+			if (go->isDestroyedFlag && go->hasClearedFromScreen)
+			{
+				RemoveGameObject(go);
+				
+			}
+	
+			
 		}
+		
+		
 		collision.CheckForCollisions();
 	}
 	std::vector<GameObject*> GetGameObjects() const

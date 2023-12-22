@@ -157,16 +157,18 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Scenes\Shooter\ShooterScene.cpp" />
     <ClCompile Include="Source\Components\PlayerController.cpp" />
     <ClCompile Include="Source\GameObjects\Pong\Ball.cpp" />
     <ClCompile Include="Source\GameEntry.cpp" />
-    <ClCompile Include="Source\Scenes\PongScene.cpp" />
+    <ClCompile Include="Source\Scenes\Pong\PongScene.cpp" />
     <ClCompile Include="Source\GameObjects\Pong\Paddle.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Scenes\Shooter\ShooterScene.h" />
     <ClInclude Include="Source\Components\PlayerController.h" />
     <ClInclude Include="Source\GameObjects\Pong\Ball.h" />
-    <ClInclude Include="Source\Scenes\PongScene.h" />
+    <ClInclude Include="Source\Scenes\Pong\PongScene.h" />
     <ClInclude Include="Source\GameObjects\Pong\Paddle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

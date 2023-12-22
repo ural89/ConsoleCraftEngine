@@ -6,7 +6,8 @@ class GE_API Collision
 {
 public:
     void AddGameObject(GameObject* gameObject);
-    void CheckForCollisions();
+    void RemoveGameObject(GameObject* gameObject);
+    void CheckForCollisions() const;
     ~Collision();
 
 

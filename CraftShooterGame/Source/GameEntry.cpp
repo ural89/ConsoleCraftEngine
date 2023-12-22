@@ -1,4 +1,4 @@
-#include "Scenes/PongScene.h"
+#include "Scenes/Pong/PongScene.h"
 #include <thread>
 #include <Core/Input.h>
 #include "Core/Renderer.h"
@@ -39,6 +39,7 @@ public:
     }
     void InitSceneGameObjects(Scene* scene)
     {
+        scene->CreateGameObjects();
         scene->InitializeGameObjects();
     }
 private:

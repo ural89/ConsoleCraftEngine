@@ -29,6 +29,7 @@ void PlayerController::OnKeyDown(int input)
 		}
 		if (tolower(Input::GetKeyDown()) == 'a')
 		{
+			
 			owner->transform.MovePosition(-1, 0);
 		}
 		if (tolower(Input::GetKeyDown()) == 's')

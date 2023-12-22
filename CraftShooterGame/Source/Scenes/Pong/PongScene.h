@@ -13,4 +13,5 @@ public:
 		std::cout << "Destructed main scene" << '\n';
 	}
 
+	void CreateGameObjects() override;
 };

@@ -19,7 +19,10 @@ public:
 	std::vector<std::vector<int>> sprite;
 
 	Transform transform = Transform();
-	
+	void Destroy()
+	{
+		isDestroyedFlag = true;
+	}
 	int GetWidth() const 
 	{ 
 		return sprite[0].size(); 
@@ -67,6 +70,8 @@ public:
 	}
 	std::string symbol = " ";
 
+	bool isDestroyedFlag = false;
+	bool hasClearedFromScreen = false;
 
 private:
 	std::vector<Component*> components;

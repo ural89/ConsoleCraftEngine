@@ -18,6 +18,7 @@ void Ball::Update(float deltaTime)
 
 void Ball::OnCollided(const GameObject& other)
 {
+	Destroy();
 	velocity.X *= -1;
 	velocity.Y *= -1;
 }

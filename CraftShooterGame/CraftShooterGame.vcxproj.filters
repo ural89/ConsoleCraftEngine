@@ -18,7 +18,7 @@
     <ClCompile Include="Source\GameEntry.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Scenes\PongScene.cpp">
+    <ClCompile Include="Source\Scenes\Pong\PongScene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source\GameObjects\Pong\Ball.cpp">
@@ -30,9 +30,12 @@
     <ClCompile Include="Source\Components\PlayerController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Scenes\Shooter\ShooterScene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Source\Scenes\PongScene.h">
+    <ClInclude Include="Source\Scenes\Pong\PongScene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Source\GameObjects\Pong\Ball.h">
@@ -42,6 +45,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Source\Components\PlayerController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Scenes\Shooter\ShooterScene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

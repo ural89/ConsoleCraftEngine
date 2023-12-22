@@ -7,7 +7,13 @@ void Collision::AddGameObject(GameObject* gameObject)
 
 }
 
-void Collision::CheckForCollisions()
+void Collision::RemoveGameObject(GameObject* gameObject)
+{
+    auto newEnd = std::remove(gameObjects.begin(), gameObjects.end(), gameObject); //Move element to last
+    gameObjects.erase(newEnd, gameObjects.end()); //erase last one
+}
+
+void Collision::CheckForCollisions() const
 {
     for (size_t i = 0; i < gameObjects.size(); ++i)
     {
