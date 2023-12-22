@@ -14,6 +14,7 @@ public:
 	virtual ~Scene();
 	virtual void CreateGameObjects() {};
 	void InitializeGameObjects();
+
 	void AddGameObject(GameObject* gameObject)
 	{
 		GameObjects.push_back(gameObject);
@@ -51,9 +52,9 @@ public:
 			
 		}
 		
-		
 		collision.CheckForCollisions();
 	}
+	
 	std::vector<GameObject*> GetGameObjects() const
 	{
 		return GameObjects;

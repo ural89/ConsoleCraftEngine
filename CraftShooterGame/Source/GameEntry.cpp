@@ -2,7 +2,7 @@
 #include <thread>
 #include <Core/Input.h>
 #include "Core/Renderer.h"
-
+#include "Scenes/Shooter/ShooterScene.h"
 class Game
 {
 public:
@@ -12,7 +12,7 @@ public:
     }
 	void StartGame()
 	{
-        SetCurrentScene(new PongScene());
+        SetCurrentScene(new ShooterScene());
 
         
         auto startTime = std::chrono::high_resolution_clock::now();

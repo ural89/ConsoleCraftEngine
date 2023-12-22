@@ -4,7 +4,7 @@
 class Paddle : public GameObject
 {
 public:
-	Paddle(int playerNo) : GameObject("Paddle")
+	Paddle(int playerNo, class Scene& scene) : GameObject("Paddle", scene)
 	{
 		this->playerNo = playerNo;
 		symbol = '\xDB';

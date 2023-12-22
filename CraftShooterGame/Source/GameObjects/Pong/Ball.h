@@ -4,7 +4,7 @@
 class Ball : public GameObject
 {
 public:
-	Ball() : GameObject("Ball") 
+	Ball() : GameObject("Ball", scene) 
 	{
 		symbol = '#';
 	}

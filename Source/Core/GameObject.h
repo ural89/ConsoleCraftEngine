@@ -3,10 +3,11 @@
 #include "../CoreStructs/Transform.h"
 #include <vector>
 #include "Component/Component.h"
+
 class GE_API GameObject
 {
 public:
-	GameObject(std::string name) : name(name) {};
+	GameObject(std::string name, class Scene& scene) : name(name), scene(scene){};
 	virtual ~GameObject() 
 	{
 		for (auto& component : components)
@@ -72,7 +73,11 @@ public:
 
 	bool isDestroyedFlag = false;
 	bool hasClearedFromScreen = false;
-
-private:
+	Scene& GetCurrentScene()
+	{
+		return scene;
+	}
+protected:
 	std::vector<Component*> components;
+	Scene& scene;
 };

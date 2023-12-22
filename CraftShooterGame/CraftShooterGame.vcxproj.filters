@@ -33,6 +33,12 @@
     <ClCompile Include="Source\Scenes\Shooter\ShooterScene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Source\GameObjects\Shooter\PlayerShip.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\GameObjects\Shooter\Bullet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Scenes\Pong\PongScene.h">
@@ -48,6 +54,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Source\Scenes\Shooter\ShooterScene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\GameObjects\Shooter\PlayerShip.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\GameObjects\Shooter\Bullet.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
