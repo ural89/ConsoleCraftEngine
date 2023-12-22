@@ -51,7 +51,7 @@ void Renderer::Render(const Scene& scene)
         }
       
         // Draw game object with sprite data
-        for (int i = 0; i < go->sprite.size(); i++)
+        for (int i = 0; i < go->sprite.size(); i++) //TODO: Find better matrix system
         {
             for (int j = 0; j < go->sprite[i].size(); j++)
             {

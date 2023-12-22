@@ -40,7 +40,7 @@ public:
     void InitSceneGameObjects(Scene* scene)
     {
         scene->CreateGameObjects();
-        //scene->InitializeGameObjects();
+
     }
 private:
  

@@ -58,7 +58,7 @@ public:
 		collision.CheckForBorderCollisions();
 	}
 	
-	std::vector<GameObject*> GetGameObjects() const
+	const std::vector<GameObject*>& GetGameObjects() const
 	{
 		return GameObjects;
 
