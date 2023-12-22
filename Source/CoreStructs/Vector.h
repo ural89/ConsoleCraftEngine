@@ -14,4 +14,8 @@ public:
 	{
 		return (X != other.X) || (Y != other.Y);
 	}
+	Vector2 ToInt() const
+	{
+		return Vector2(static_cast<int>(X), static_cast<int>(Y));
+	}
 };

@@ -157,6 +157,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\GameObjects\Shooter\Enemy.cpp" />
     <ClCompile Include="Source\GameObjects\Shooter\Bullet.cpp" />
     <ClCompile Include="Source\GameObjects\Shooter\PlayerShip.cpp" />
     <ClCompile Include="Source\Scenes\Shooter\ShooterScene.cpp" />
@@ -167,6 +168,7 @@
     <ClCompile Include="Source\GameObjects\Pong\Paddle.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\GameObjects\Shooter\Enemy.h" />
     <ClInclude Include="Source\GameObjects\Shooter\Bullet.h" />
     <ClInclude Include="Source\GameObjects\Shooter\PlayerShip.h" />
     <ClInclude Include="Source\Scenes\Shooter\ShooterScene.h" />

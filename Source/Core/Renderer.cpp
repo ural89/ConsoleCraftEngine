@@ -30,6 +30,18 @@ void Renderer::Render(const Scene& scene)
                 system("cls"); //better safe than sorry
                 continue;
             }
+            // Draw game object with sprite data
+            for (int i = 0; i < go->sprite.size(); i++) //TODO: Find better matrix system
+            {
+                for (int j = 0; j < go->sprite[i].size(); j++)
+                {
+                    int posX = static_cast<int>(go->transform.Position.X + j);
+                    int posY = static_cast<int>(go->transform.Position.Y + i);
+
+                    GoToXY(posX, posY);
+                    std::cout << go->symbol;
+                }
+            }
             if (!go->transform.HasClearedFlag)
             {
                 // Clear previous image of sprite
@@ -50,18 +62,7 @@ void Renderer::Render(const Scene& scene)
            
         }
       
-        // Draw game object with sprite data
-        for (int i = 0; i < go->sprite.size(); i++) //TODO: Find better matrix system
-        {
-            for (int j = 0; j < go->sprite[i].size(); j++)
-            {
-                int posX = static_cast<int>(go->transform.Position.X + j);
-                int posY = static_cast<int>(go->transform.Position.Y + i);
-
-                GoToXY(posX, posY);
-                std::cout << go->symbol;
-            }
-        }
+      
     }
 }
 

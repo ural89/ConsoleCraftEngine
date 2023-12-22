@@ -19,23 +19,18 @@ public:
 	}
 	void MovePosition(float x, float y)
 	{
-		HasClearedFlag = false;
-		PreviousPosition = Position;
+		
+
+		PreviousPosition = Position.ToInt();
+		
 		if (Position.X + x >= SCREENWIDTH || Position.X + x <= 0) return;
 		if (Position.Y + y >= SCREENHEIGHT || Position.Y + y <= 0) return;
 		Position.X += x;
 		Position.Y += y;
-	
-	/*  //Warp around
-		if (Position.X >= SCREENWIDTH)
+		if (PreviousPosition != Position.ToInt())
 		{
-			PreviousPosition.X = SCREENWIDTH;
-			Position.X = 1;
+			HasClearedFlag = false;
+			
 		}
-		if (Position.X <= 0)
-		{
-			PreviousPosition.X = 0;
-			Position.X = SCREENWIDTH;
-		}*/
 	}
 };
