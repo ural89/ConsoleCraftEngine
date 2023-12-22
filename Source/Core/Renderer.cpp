@@ -8,7 +8,7 @@ Renderer::Renderer()
 
 void Renderer::Render(const Scene& scene)
 {
-    for (auto go : scene.GetGameObjects())
+    for (auto& go : scene.GetGameObjects())
     {
         if (go->transform.PreviousPosition != go->transform.Position)
         {

@@ -70,6 +70,6 @@ int main()
 	game->StartGame();
     game->Clean();
     delete game;
-    
+    system("pause");
 	return 0;
 }

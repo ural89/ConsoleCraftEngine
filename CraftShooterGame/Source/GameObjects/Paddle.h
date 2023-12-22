@@ -12,7 +12,7 @@ public:
 	void OnKeyDown(int input);
 	
 	void Init() override;
-	
+
 	friend std::ostream& operator<<(std::ostream& os, const Paddle& paddle)
 	{
 		os << "Paddle position: " << paddle.transform << "\n";

@@ -1,5 +1,5 @@
 #include "Paddle.h"
-
+#include "../Components/PlayerController.h"
 void Paddle::OnKeyDown(int input)
 {
 	if(playerNo == 0)
@@ -46,10 +46,12 @@ void Paddle::OnKeyDown(int input)
 }
 
 void Paddle::Init()
-
 {
+	AddComponent(new PlayerController(*this));
 	sprite =  { {1,1}, {1,1} };
 	auto event = std::bind(&Paddle::OnKeyDown, this, std::placeholders::_1);
 	Input::AddListener(event);
 }
+
+
 

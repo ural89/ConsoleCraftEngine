@@ -38,9 +38,10 @@ public:
 	}
 	void Update(float deltaTime)
 	{
-		for (auto go : GetGameObjects())
+		for (auto& go : GetGameObjects())
 		{
 			go->Update(deltaTime);
+			go->UpdateComponents(deltaTime);
 		}
 		collision.CheckForCollisions();
 	}
@@ -50,7 +51,7 @@ public:
 
 	}
 
-	GameObject* GetGameObject(std::string name)
+	GameObject* GetGameObject(std::string name) 
 	{
 		return NameToGameObjectMap[name];
 	}

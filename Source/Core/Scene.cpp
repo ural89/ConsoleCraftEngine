@@ -5,7 +5,7 @@ Scene::Scene()
 }
 Scene::~Scene()
 {
-	for (auto go : GetGameObjects())
+	for (auto& go : GetGameObjects())
 	{
 		delete go;
 	}
@@ -14,9 +14,10 @@ Scene::~Scene()
 
 void Scene::InitializeGameObjects()
 {
-	for (auto go : GetGameObjects())
+	for (auto& go : GetGameObjects())
 	{
 		go->Init();
+		go->InitComponents();
 		collision.AddGameObject(go);
 	}
 	
