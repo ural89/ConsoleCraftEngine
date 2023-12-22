@@ -27,7 +27,7 @@ void Renderer::Render(const Scene& scene)
                     }
                 }
                 go->hasClearedFromScreen = true;
-                //system("cls"); //better safe than sorry
+                
                 continue;
             }
             // Draw game object with sprite data

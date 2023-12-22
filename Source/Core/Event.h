@@ -2,10 +2,7 @@
 enum class EventType
 {
 	None = 0,
-	WindowClose, WindowResize, WindowFocus, WindowLostFocus, WindowMoved,
-	AppTick, AppUpdate, AppRender,
-	KeyPressed, KeyReleased,
-	MouseButtonPressed, MouseButtonReleased, MouseMoved, MouseScrolled
+	OnEnemySpawned = 1,
 };
 class Event
 {
@@ -13,6 +10,10 @@ public:
 	Event(EventType eventType)
 	{
 		this->eventType = eventType;
+	}
+	EventType GetEventType() const
+	{
+		return eventType;
 	}
 
 private:

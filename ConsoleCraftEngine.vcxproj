@@ -140,6 +140,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Core\EventDispatcher.cpp" />
     <ClCompile Include="Source\Core\Collision.cpp" />
     <ClCompile Include="Source\Core\Component\Component.cpp" />
     <ClCompile Include="Source\Core\Event.cpp" />
@@ -149,6 +150,7 @@
     <ClCompile Include="Source\Core\Scene.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Core\EventDispatcher.h" />
     <ClInclude Include="Source\Core\Component\Component.h" />
     <ClInclude Include="Source\Core.h" />
     <ClInclude Include="Source\Core\Collision.h" />

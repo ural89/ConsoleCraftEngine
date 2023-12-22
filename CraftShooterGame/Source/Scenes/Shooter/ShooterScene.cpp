@@ -5,7 +5,7 @@ void ShooterScene::CreateGameObjects()
 {
 	AddGameObject(new PlayerShip(*this), Vector2(20,15));
 	srand(static_cast<unsigned int>(time(nullptr)));
-	SpawnEnemy();
+	//SpawnEnemy();
 
 }
 

@@ -1,5 +1,7 @@
 #pragma once
 #include "Core/GameObject.h"
+#include "Core/Event.h"
+#include <functional>
 class PlayerShip : public GameObject
 {
 public:
@@ -12,5 +14,7 @@ public:
 	void Update(float deltaTime) override;
 private:
 	void Fire(int keyDown);
+	void OnEvent(Event& event);
+	 std::function<void(Event&)> OnEventFunction;
 };
 

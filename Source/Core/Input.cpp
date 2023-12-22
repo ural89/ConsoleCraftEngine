@@ -32,3 +32,9 @@ void Input::AddListener(std::function<void(int input)> func)
 {
     listeners.push_back(func);
 }
+
+void Input::RemoveListener(std::function<void(int input)> func)
+{
+    //auto newEnd = std::remove(listeners.begin(), listeners.end(), func); //Move element to last
+    //listeners.erase(newEnd, listeners.end()); //erase last one
+}

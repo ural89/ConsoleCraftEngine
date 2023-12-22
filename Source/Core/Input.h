@@ -1,7 +1,7 @@
 #pragma once
 #include "../Core.h"
 #include <functional>
-#include <vector> //TODO: add this to core maybe
+#include <vector> 
 const int SPACEBAR = 32;
 class GE_API Input
 {
@@ -10,6 +10,7 @@ public:
     static void Update();
     static int GetKeyDown();  // static
     static void AddListener(std::function<void(int input)> func);
+    static void RemoveListener(std::function<void(int input)> func);
     static void Cleanup()
     {
         // Clear the listeners vector
