@@ -10,5 +10,7 @@ public:
 	}
 	void Init() override;
 	void Update(float deltaTime) override;
+private:
+	void Fire(int keyDown);
 };
 

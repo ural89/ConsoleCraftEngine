@@ -2,6 +2,7 @@
 #include "../Core.h"
 #include <functional>
 #include <vector> //TODO: add this to core maybe
+const int SPACEBAR = 32;
 class GE_API Input
 {
 public:

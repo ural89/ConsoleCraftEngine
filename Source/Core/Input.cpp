@@ -1,5 +1,6 @@
 #include <conio.h>
 #include "Input.h"
+#include <iostream>
 
 int Input::keyDown = 0;  // Initialize the static member variable
 
@@ -10,7 +11,7 @@ void Input::Update()
     if (_kbhit())
     {
         keyDown = _getch();
-
+       
         for (auto &listener:listeners)
         {
             listener(keyDown);
