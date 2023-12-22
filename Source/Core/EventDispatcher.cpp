@@ -3,9 +3,7 @@ std::vector<std::function<void(Event&)>> listeners;
 
 void EventDispatcher::AddListener(std::function<void(Event&)> func)
 {
-    
     listeners.push_back(func);
-    
 }
 void EventDispatcher::RemoveListener(std::function<void(Event&)> func) //TODO: to be tested
 {
