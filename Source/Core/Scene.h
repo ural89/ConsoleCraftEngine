@@ -13,12 +13,13 @@ public:
 	Scene();
 	virtual ~Scene();
 	virtual void CreateGameObjects() {};
-	void InitializeGameObjects();
+
 
 	void AddGameObject(GameObject* gameObject)
 	{
 		GameObjects.push_back(gameObject);
 		NameToGameObjectMap.insert({ gameObject->name, gameObject });
+		InitializeGameObject(gameObject);
 		
 	}
 	void AddGameObject(GameObject* gameObject, Vector2 position)
@@ -26,6 +27,7 @@ public:
 		GameObjects.push_back(gameObject);
 		NameToGameObjectMap.insert({ gameObject->name, gameObject });
 		gameObject->transform.Position = position;
+		InitializeGameObject(gameObject);
 	}
 	void RemoveGameObject(GameObject* gameObject)
 	{
@@ -53,6 +55,7 @@ public:
 		}
 		
 		collision.CheckForCollisions();
+		collision.CheckForBorderCollisions();
 	}
 	
 	std::vector<GameObject*> GetGameObjects() const
@@ -67,4 +70,5 @@ public:
 	}
 private:
 	Collision collision;
+	void InitializeGameObject(GameObject* go);
 };

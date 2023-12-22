@@ -38,6 +38,17 @@ void Collision::CheckForCollisions() const
     }
 }
 
+void Collision::CheckForBorderCollisions() const
+{
+    for (auto& go : gameObjects)
+    {
+
+        if (go->transform.Position.X + 1>= SCREENWIDTH || go->transform.Position.X -1 <= 0) go->OnCollidedBorder();
+        if (go->transform.Position.Y + 1 >= SCREENHEIGHT || go->transform.Position.Y -1 <= 0) go->OnCollidedBorder();
+
+    }
+}
+
 
 Collision::~Collision()
 {

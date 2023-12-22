@@ -8,6 +8,7 @@ public:
     void AddGameObject(GameObject* gameObject);
     void RemoveGameObject(GameObject* gameObject);
     void CheckForCollisions() const;
+    void CheckForBorderCollisions() const;
     ~Collision();
 
 

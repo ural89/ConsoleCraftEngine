@@ -12,13 +12,11 @@ Scene::~Scene()
 	std::cout << "Destructed  scene" << '\n';
 }
 
-void Scene::InitializeGameObjects()
+
+
+void Scene::InitializeGameObject(GameObject* go)
 {
-	for (auto& go : GetGameObjects())
-	{
-		go->Init();
-		go->InitComponents();
-		collision.AddGameObject(go);
-	}
-	
+	go->Init();
+	go->InitComponents();
+	collision.AddGameObject(go);
 }

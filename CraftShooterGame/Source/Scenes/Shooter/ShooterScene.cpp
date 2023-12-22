@@ -3,4 +3,5 @@
 void ShooterScene::CreateGameObjects()
 {
 	AddGameObject(new PlayerShip(*this), Vector2(20,15));
+
 }

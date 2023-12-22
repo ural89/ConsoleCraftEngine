@@ -16,8 +16,8 @@ public:
 		}
 		components.clear();
 	}
-	std::string name;
-	std::vector<std::vector<int>> sprite;
+	std::string name = "Gameobject";
+	std::vector<std::vector<int>> sprite = { {1,1}, {1,1} };
 
 	Transform transform = Transform();
 	void Destroy()
@@ -54,6 +54,7 @@ public:
 	virtual void Init() {};
 	virtual void Update(float deltaTime) {};
 	virtual void OnCollided(const GameObject& other) {};
+	virtual void OnCollidedBorder() {};
 	
 	void InitComponents()
 	{
