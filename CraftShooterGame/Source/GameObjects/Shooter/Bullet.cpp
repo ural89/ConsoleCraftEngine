@@ -14,3 +14,9 @@ void Bullet::OnCollidedBorder()
 {
 	Destroy();
 }
+
+void Bullet::OnCollided(const GameObject& other)
+{
+	if (other.name != "PlayerShip")
+		Destroy();
+}

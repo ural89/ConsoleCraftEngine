@@ -17,17 +17,17 @@ void Renderer::Render(const Scene& scene)
            
                 for (int i = 0; i < go->sprite.size(); i++)
                 {
-                    for (int j = 0; j < go->sprite[i].size(); j++)
+                    for (int j = 0; j < go->sprite[i].size() + 2; j++)
                     {
-                        int posX = static_cast<int>(go->transform.Position.X + j + 1);
-                        int posY = static_cast<int>(go->transform.Position.Y + i);
+                        int posX = static_cast<int>(go->transform.Position.X + j -1);
+                        int posY = static_cast<int>(go->transform.Position.Y + i );
 
                         GoToXY(posX, posY);
                         std::cout << ' ';
                     }
                 }
                 go->hasClearedFromScreen = true;
-                system("cls"); //better safe than sorry
+                //system("cls"); //better safe than sorry
                 continue;
             }
             // Draw game object with sprite data

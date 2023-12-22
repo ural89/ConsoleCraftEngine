@@ -10,5 +10,8 @@ public:
 	}
 	void Init() override{ sprite = { {1,1}, {1,1} }; }
 	void Update(float deltaTime) override;
+
+	virtual void OnCollided(const GameObject& other) override;
+	virtual void OnCollidedBorder() override;
 };
 

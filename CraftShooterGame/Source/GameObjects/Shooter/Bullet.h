@@ -10,5 +10,6 @@ public:
 	void Init() override;
 	void Update(float deltaTime) override;
 	void OnCollidedBorder() override;
+	virtual void OnCollided(const GameObject& other) override;
 };
 

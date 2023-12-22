@@ -5,6 +5,6 @@
 #else
 #define GE_API __declspec(dllimport)
 #endif
-const int SCREENHEIGHT = 20;
-const int SCREENWIDTH = 100;
+const int SCREENHEIGHT = 25;
+const int SCREENWIDTH = 110;
 

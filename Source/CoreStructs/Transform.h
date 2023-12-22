@@ -23,8 +23,8 @@ public:
 
 		PreviousPosition = Position.ToInt();
 		
-		if (Position.X + x >= SCREENWIDTH || Position.X + x <= 0) return;
-		if (Position.Y + y >= SCREENHEIGHT || Position.Y + y <= 0) return;
+		if (Position.X + x >= SCREENWIDTH) x = -1; if(Position.X + x <= 0) x = 1;
+		if (Position.Y + y >= SCREENHEIGHT) y = -1; if (Position.Y + y <= 0) y = 1;
 		Position.X += x;
 		Position.Y += y;
 		if (PreviousPosition != Position.ToInt())

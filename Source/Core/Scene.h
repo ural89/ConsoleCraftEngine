@@ -39,21 +39,22 @@ public:
 		}
 		collision.RemoveGameObject(gameObject);
 	}
-	void Update(float deltaTime)
+	virtual void Update(float deltaTime)
 	{
 		for (auto& go : GetGameObjects())
 		{
 			go->Update(deltaTime);
 			go->UpdateComponents(deltaTime);
+			
+		}
+		for (auto& go : GetGameObjects())
+		{
 			if (go->isDestroyedFlag && go->hasClearedFromScreen)
 			{
 				RemoveGameObject(go);
-				
+
 			}
-	
-			
 		}
-		
 		collision.CheckForCollisions();
 		collision.CheckForBorderCollisions();
 	}
@@ -61,7 +62,6 @@ public:
 	const std::vector<GameObject*>& GetGameObjects() const
 	{
 		return GameObjects;
-
 	}
 
 	GameObject* GetGameObject(std::string name) 
