@@ -8,8 +8,12 @@ void Enemy::Update(float deltaTime)
 void Enemy::OnCollided(const GameObject& other)
 {
 
-	if(other.name == "Bullet")
+	if (other.name == "Bullet")
+	{
+		auto enemyKilledEvent = Event(EventType::OnEnemyKilled);
+		EventDispatcher::CallEvent(enemyKilledEvent);
 		Destroy();
+	}
 }
 
 void Enemy::OnCollidedBorder()

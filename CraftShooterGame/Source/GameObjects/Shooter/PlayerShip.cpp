@@ -4,9 +4,11 @@
 #include "Core/Input.h"
 #include "Core/Scene.h"
 #include "Core/EventDispatcher.h"
+#include "Core/UIHandler.h"
 
 void PlayerShip::Init()
 {
+	UIHandler::uiText = "Score: 0";
 	AddComponent(new PlayerController(*this, 0));
 	sprite = { {1,1}, {1,1,1,1},{1,1} };
 
@@ -33,6 +35,12 @@ void PlayerShip::Fire(int keyDown)
 
 void PlayerShip::OnEvent(Event& event)
 {
-	std::cout << "Event recieved! "  <<'\n';
-	EventDispatcher::RemoveListener(OnEventFunction);
+	switch (event.GetEventType())
+	{
+	case EventType::OnEnemyKilled:
+		score++;
+		UIHandler::uiText = "Score: " + std::to_string(score);
+		break;
+	}
+	
 }

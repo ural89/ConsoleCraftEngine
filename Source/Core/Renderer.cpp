@@ -1,5 +1,9 @@
 #include "Renderer.h"
-
+#include "UIHandler.h"
+#include "../CoreStructs/Vector.h"
+#include <iostream>
+Vector2 UIHandler::Position;
+std::string UIHandler::uiText;
 Renderer::Renderer()
 {
     FixConsoleWindow();
@@ -19,6 +23,7 @@ void Renderer::Render(const Scene& scene)
             }
             DrawObjects(*go);
             ClearMovedObjectsTrail(*go);
+            DrawUI();
         }
     }
 }
@@ -73,4 +78,12 @@ void Renderer::ClearMovedObjectsTrail(GameObject& go)
 
         go.transform.HasClearedFlag = true;
     }
+}
+
+void Renderer::DrawUI()
+{
+    UIHandler::Position = Vector2(0, 29);
+    
+    GoToXY(UIHandler::Position.X, UIHandler::Position.Y);
+    std::cout << UIHandler::uiText;
 }

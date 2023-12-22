@@ -3,6 +3,7 @@ enum class EventType
 {
 	None = 0,
 	OnEnemySpawned = 1,
+	OnEnemyKilled = 2,
 };
 class Event
 {

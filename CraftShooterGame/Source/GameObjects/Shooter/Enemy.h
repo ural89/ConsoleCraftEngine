@@ -11,8 +11,7 @@ public:
 		
 	}
 	void Init() override{ 
-		auto spawnEvent = Event(EventType::OnEnemySpawned);
-		EventDispatcher::CallEvent(spawnEvent);
+		
 		sprite = { {1,1}, {1,1} }; 
 	}
 	void Update(float deltaTime) override;

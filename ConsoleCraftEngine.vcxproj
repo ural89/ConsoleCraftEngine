@@ -148,6 +148,7 @@
     <ClCompile Include="Source\Core\Input.cpp" />
     <ClCompile Include="Source\Core\Renderer.cpp" />
     <ClCompile Include="Source\Core\Scene.cpp" />
+    <ClCompile Include="Source\Core\UIHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Core\EventDispatcher.h" />
@@ -159,6 +160,7 @@
     <ClInclude Include="Source\Core\Input.h" />
     <ClInclude Include="Source\Core\Renderer.h" />
     <ClInclude Include="Source\Core\Scene.h" />
+    <ClInclude Include="Source\Core\UIHandler.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

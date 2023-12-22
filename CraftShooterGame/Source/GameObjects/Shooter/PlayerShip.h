@@ -15,6 +15,8 @@ public:
 private:
 	void Fire(int keyDown);
 	void OnEvent(Event& event);
-	 std::function<void(Event&)> OnEventFunction;
+	std::function<void(Event&)> OnEventFunction;
+
+	int score = 0;
 };
 

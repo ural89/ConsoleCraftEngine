@@ -34,6 +34,7 @@ private:
     void ClearDestroyedObject(GameObject& go);
     void DrawObjects(GameObject& go);
     void ClearMovedObjectsTrail(GameObject& go);
+    void DrawUI();
 	
 };
 
