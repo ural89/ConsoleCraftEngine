@@ -74,5 +74,11 @@
     <ClInclude Include="Source\Core\UIHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Source\CoreStructs\Transform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CoreStructs\Vector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

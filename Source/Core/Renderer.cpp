@@ -46,7 +46,7 @@ void Renderer::ClearDestroyedObject(GameObject& go)
 
 void Renderer::DrawObjects(GameObject& go)
 {
-    for (int i = 0; i < go.sprite.size(); i++) //TODO: Find better matrix system
+    for (int i = 0; i < go.sprite.size(); i++) 
     {
         for (int j = 0; j < go.sprite[i].size(); j++)
         {
