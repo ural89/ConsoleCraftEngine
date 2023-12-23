@@ -24,7 +24,7 @@ void Bullet::Update(float deltaTime)
 	if (timePassedSinceParticleSpawn >= particleSpawnFreq)
 	{
 		timePassedSinceParticleSpawn = 0;
-		particleSource->EmitParticle(2, FIRETYPEPARTICLE);
+		particleSource->EmitParticle(4, FIRETYPEPARTICLE);
 	}
 
 

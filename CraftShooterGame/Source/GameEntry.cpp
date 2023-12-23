@@ -29,7 +29,7 @@ public:
             Update(deltaTimeInSeconds);
             Render();
             UpdateCamera(deltaTimeInSeconds);
-            Render();
+            Render(); //TODO: fix this workaround for camera shake
             prevTime = endTime;
         }
 	}

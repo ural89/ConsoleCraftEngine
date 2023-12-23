@@ -2,20 +2,51 @@
 #include <cstdlib> 
 #include <ctime>   
 #include <cmath>
+#include <iostream>
+
+void Camera::StartShake(float duration)
+{
+    shakeDuration = duration;
+    xAcceleration = xAccelerationStart;
+}
+
 void Camera::Shake(float deltaTime)
 {
- 
-    std::srand(static_cast<unsigned>(std::time(nullptr)));
-
-  
-    const float shakeIntensity = 5.0f;
-    const float shakeFrequency = 10.0f;
-
- 
-    float shakeX = (std::rand() % 200 - 100) / 100.0f * shakeIntensity;
-    float shakeY = (std::rand() % 200 - 100) / 100.0f * shakeIntensity;
-
-   
-    offsetX = shakeX * std::sin(shakeFrequency * deltaTime);
-    offsetY = shakeY * std::cos(shakeFrequency * deltaTime);
+    xAcceleration += 20.f * deltaTime;
+    if (shakeDuration > 0)
+    {
+        if (isGoingLeft)
+        {
+            offsetX += deltaTime * xAcceleration;
+            offsetY -= deltaTime * xAcceleration;
+            if (offsetX >= 0.2f)
+            {
+                isGoingLeft = false;
+            }
+            else
+            {
+                // xAcceleration += 0.5f * deltaTime;
+            }
+        }
+        else
+        {
+            offsetX -= deltaTime * xAcceleration;
+            offsetY += deltaTime * xAcceleration;
+            if (offsetX <= -0.2f)
+            {
+                isGoingLeft = true;
+            }
+            else
+            {
+                //xAcceleration += 0.5f * deltaTime; 
+            }
+        }
+        shakeDuration -= deltaTime;
+    }
+    else
+    {
+        offsetX = 0;
+        offsetY = 0;
+        
+    }
 }

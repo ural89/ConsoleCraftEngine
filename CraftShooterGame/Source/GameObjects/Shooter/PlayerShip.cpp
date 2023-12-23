@@ -40,7 +40,7 @@ void PlayerShip::Fire(int keyDown)
 	if (keyDown == SPACEBAR)
 	{
  		GetCurrentScene().AddGameObject(new Bullet(GetCurrentScene()), transform.Position);
-		particleSource->EmitParticle(6, FIRETYPEPARTICLE);
+		//particleSource->EmitParticle(6, FIRETYPEPARTICLE);
 	
 	}
 }
@@ -51,6 +51,7 @@ void PlayerShip::OnEvent(Event& event)
 	{
 	case EventType::OnEnemyKilled:
 		score++;
+		GetCurrentScene().camera->StartShake(0.25f);
 		UIHandler::uiText = "Score: " + std::to_string(score);
 		break;
 	}

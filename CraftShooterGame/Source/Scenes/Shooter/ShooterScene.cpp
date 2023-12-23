@@ -12,7 +12,7 @@ void ShooterScene::CreateGameObjects()
 void ShooterScene::Update(float deltaTime)
 {
 	Scene::Update(deltaTime);
-	if (numberOfEnemyToSpawn > 0)
+	//if (numberOfEnemyToSpawn > 0)
 		spawnDurationPassed += deltaTime;
 	
 
@@ -27,7 +27,7 @@ void ShooterScene::Update(float deltaTime)
 void ShooterScene::SpawnEnemy()
 {
 	numberOfEnemyToSpawn--;
-	int random_number = rand() % 20;
+	int random_number = rand() % 15;
 
-	AddGameObject(new Enemy(*this), Vector2(90, random_number + 2));
+	AddGameObject(new Enemy(*this), Vector2(90, random_number + 4));
 }

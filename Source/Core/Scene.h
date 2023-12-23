@@ -48,8 +48,6 @@ public:
 			go->transform.MovePosition(camera->offsetX, camera->offsetY);
 			//go->Update(deltaTime);
 			//go->UpdateComponents(deltaTime);
-
-
 		}
 
 	}
@@ -78,8 +76,10 @@ public:
 	}
 	void SpawnQueuedGameObjects()
 	{
+		
 		while (!gameObjectsToSpawn.empty())
 		{
+			
 			GameObject* go = gameObjectsToSpawn.front();
 			InitializeGameObject(go);
 			//delete go;
