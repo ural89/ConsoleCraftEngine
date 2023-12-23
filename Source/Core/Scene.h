@@ -4,6 +4,7 @@
 #include <map>
 #include "GameObject.h"
 #include "Collision.h"
+#include "Camera.h"
 #include <queue>
 class GE_API Scene
 {
@@ -16,7 +17,7 @@ public:
 	virtual ~Scene();
 	virtual void CreateGameObjects() {};
 
-
+	Camera* camera;
 	void AddGameObject(GameObject* gameObject)
 	{	
 		//TODO: create queue game objects to spawn
@@ -39,12 +40,26 @@ public:
 		}
 		collision.RemoveGameObject(gameObject);
 	}
+	void UpdateCamera(float deltaTime)
+	{
+		for (auto& go : GetGameObjects())
+		{
+			go->transform.MovePosition(5 * deltaTime, 0);
+			//go->Update(deltaTime);
+			//go->UpdateComponents(deltaTime);
+
+
+		}
+
+	}
 	virtual void Update(float deltaTime)
 	{
 		for (auto& go : GetGameObjects())
 		{
+			
 			go->Update(deltaTime);
 			go->UpdateComponents(deltaTime);
+			
 			
 		}
 		for (auto& go : GetGameObjects())
@@ -55,6 +70,8 @@ public:
 
 			}
 		}
+
+		camera->Update(deltaTime);
 		collision.CheckForCollisions();
 		collision.CheckForBorderCollisions();
 	}

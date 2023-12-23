@@ -14,7 +14,9 @@ void Renderer::Render(const Scene& scene)
 {
     for (auto& go : scene.GetGameObjects())
     {
+
         if (!go->isRenderable) continue;
+       
         if (go->transform.PreviousPosition != go->transform.Position)
         {
             if (go->isDestroyedFlag)

@@ -2,6 +2,7 @@
 #include "Vector.h"
 #include <iostream>
 #include <vector>
+#include "../Core.h"
 struct Transform
 {
 public:
@@ -27,6 +28,7 @@ public:
 	}
 	void MovePosition(float x, float y)
 	{
+		
 		PreviousPosition = Position.ToInt();
 		
 		for (auto& child : children)

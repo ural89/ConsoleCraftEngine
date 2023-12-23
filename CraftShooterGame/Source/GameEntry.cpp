@@ -25,9 +25,11 @@ public:
             double deltaTimeMilliseconds = deltaTimeInSeconds * 1000.0;
 
             
-            Render();
             UpdateInput();
-            Update(deltaTimeInSeconds);  
+            Update(deltaTimeInSeconds);
+            Render();
+            UpdateCamera(deltaTimeInSeconds);
+            Render();
             prevTime = endTime;
         }
 	}
@@ -54,6 +56,10 @@ private:
     {
         currentScene->Update(deltaTime);
         currentScene->SpawnQueuedGameObjects();
+    }
+    void UpdateCamera(float deltaTime)
+    {
+        currentScene->UpdateCamera(deltaTime);
     }
     void Render()
     {

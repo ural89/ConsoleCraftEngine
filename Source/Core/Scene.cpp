@@ -1,7 +1,7 @@
 #include "Scene.h"
 Scene::Scene()
 {
-
+	camera = new Camera();
 }
 Scene::~Scene()
 {
@@ -10,6 +10,7 @@ Scene::~Scene()
 		delete go;
 	}
 	std::cout << "Destructed  scene" << '\n';
+	delete camera;
 }
 
 

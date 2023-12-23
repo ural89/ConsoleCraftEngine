@@ -3,6 +3,7 @@
 class Bullet : public GameObject
 {
 public:
+
 	Bullet(class Scene& scene) : GameObject("Bullet", scene) 
 	{
 		symbol = '#';
