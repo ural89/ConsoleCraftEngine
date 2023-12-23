@@ -8,6 +8,7 @@ class GE_API Scene
 {
 protected:
 	std::vector<GameObject*> GameObjects;
+
 	std::map<std::string, GameObject*> NameToGameObjectMap;
 public:
 	Scene();
@@ -16,16 +17,11 @@ public:
 
 
 	void AddGameObject(GameObject* gameObject)
-	{
-		GameObjects.push_back(gameObject);
-		NameToGameObjectMap.insert({ gameObject->name, gameObject });
-		InitializeGameObject(gameObject);
-		
+	{	
+		InitializeGameObject(gameObject);	
 	}
 	void AddGameObject(GameObject* gameObject, Vector2 position)
 	{
-		GameObjects.push_back(gameObject);
-		NameToGameObjectMap.insert({ gameObject->name, gameObject });
 		gameObject->transform.Position = position;
 		InitializeGameObject(gameObject);
 	}
@@ -63,6 +59,7 @@ public:
 	{
 		return GameObjects;
 	}
+	
 
 	GameObject* GetGameObject(std::string name) 
 	{

@@ -140,7 +140,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Source\Core\Particle.cpp" />
+    <ClCompile Include="Source\Core\ParticleSystem\ParticleObject.cpp" />
+    <ClCompile Include="Source\Core\ParticleSystem\ParticleSource.cpp" />
     <ClCompile Include="Source\Core\EventDispatcher.cpp" />
     <ClCompile Include="Source\Core\Collision.cpp" />
     <ClCompile Include="Source\Core\Component\Component.cpp" />
@@ -152,7 +153,8 @@
     <ClCompile Include="Source\Core\UIHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Source\Core\Particle.h" />
+    <ClInclude Include="Source\Core\ParticleSystem\ParticleObject.h" />
+    <ClInclude Include="Source\Core\ParticleSystem\ParticleSource.h" />
     <ClInclude Include="Source\CoreStructs\Transform.h" />
     <ClInclude Include="Source\CoreStructs\Vector.h" />
     <ClInclude Include="Source\Core\EventDispatcher.h" />

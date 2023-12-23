@@ -76,6 +76,8 @@ public:
 
 	bool isDestroyedFlag = false;
 	bool hasClearedFromScreen = false;
+	bool isRenderable = true;
+	bool hasCollider = true;
 	Scene& GetCurrentScene()
 	{
 		return scene;

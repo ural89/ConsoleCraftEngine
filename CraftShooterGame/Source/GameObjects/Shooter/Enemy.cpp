@@ -1,4 +1,21 @@
 #include "Enemy.h"
+#include "Core/ParticleSystem/ParticleSource.h"
+#include "Core/Scene.h"
+void Enemy::Init()
+{
+	{
+
+		sprite = {
+			{4,4,4,4},
+			{4,4,4,4},
+			{4,0,0,4}
+		};
+
+	}
+	particleSource = new ParticleSource(GetCurrentScene());
+	GetCurrentScene().AddGameObject(particleSource, transform.Position);
+	particleSource->transform.SetParent(transform);
+}
 
 void Enemy::Update(float deltaTime)
 {
@@ -12,6 +29,7 @@ void Enemy::OnCollided(const GameObject& other)
 	{
 		auto enemyKilledEvent = Event(EventType::OnEnemyKilled);
 		EventDispatcher::CallEvent(enemyKilledEvent);
+		particleSource->EmitParticle(3, ENEMYTYPEPARTICLE);
 		Destroy();
 	}
 }

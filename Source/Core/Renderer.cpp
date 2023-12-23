@@ -14,6 +14,7 @@ void Renderer::Render(const Scene& scene)
 {
     for (auto& go : scene.GetGameObjects())
     {
+        if (!go->isRenderable) continue;
         if (go->transform.PreviousPosition != go->transform.Position)
         {
             if (go->isDestroyedFlag)
@@ -30,12 +31,12 @@ void Renderer::Render(const Scene& scene)
 
 void Renderer::ClearDestroyedObject(GameObject& go)
 {
-    for (int i = 0; i < go.sprite.size(); i++)
+    for (int i = 0; i < go.GetHeight() + 2; i++)
     {
-        for (int j = 0; j < go.sprite[i].size() + 2; j++)
+        for (int j = 0; j < go.GetWidth() + 2; j++)
         {
             int posX = static_cast<int>(go.transform.Position.X + j - 1);
-            int posY = static_cast<int>(go.transform.Position.Y + i);
+            int posY = static_cast<int>(go.transform.Position.Y + i - 1);
 
             GoToXY(posX, posY);
             std::cout << ' ';

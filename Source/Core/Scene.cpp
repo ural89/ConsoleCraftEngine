@@ -16,7 +16,10 @@ Scene::~Scene()
 
 void Scene::InitializeGameObject(GameObject* go)
 {
+	GameObjects.push_back(go);	
+	NameToGameObjectMap.insert({ go->name, go });
 	go->Init();
 	go->InitComponents();
-	collision.AddGameObject(go);
+	if (go->hasCollider)
+		collision.AddGameObject(go);
 }

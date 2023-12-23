@@ -16,7 +16,7 @@ private:
 	void Fire(int keyDown);
 	void OnEvent(Event& event);
 	std::function<void(Event&)> OnEventFunction;
-
+	class ParticleSource* particleSource;
 	int score = 0;
 };
 

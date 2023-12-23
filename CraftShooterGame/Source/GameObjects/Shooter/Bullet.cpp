@@ -1,5 +1,6 @@
 #include "Bullet.h"
 
+#include "Core/Scene.h"
 void Bullet::Init()
 {
 
@@ -7,6 +8,7 @@ void Bullet::Init()
 		{1,0,1,0}, 
 		{1,1,1,1}, 
 		{1,0,1,0} };
+	
 }
 
 void Bullet::Update(float deltaTime)
@@ -21,6 +23,7 @@ void Bullet::OnCollidedBorder()
 
 void Bullet::OnCollided(const GameObject& other)
 {
-	if (other.name != "PlayerShip")
+	
+	if (other.name == "Enemy")
 		Destroy();
 }
