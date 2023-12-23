@@ -29,7 +29,7 @@ void Enemy::OnCollided(const GameObject& other)
 	{
 		auto enemyKilledEvent = Event(EventType::OnEnemyKilled);
 		EventDispatcher::CallEvent(enemyKilledEvent);
-		particleSource->EmitParticle(3, ENEMYTYPEPARTICLE);
+		particleSource->EmitParticle(6, ENEMYTYPEPARTICLE);
 		Destroy();
 	}
 }

@@ -24,10 +24,10 @@ public:
             auto deltaTimeInSeconds = std::chrono::duration_cast<std::chrono::duration<double>>(endTime - prevTime).count();
             double deltaTimeMilliseconds = deltaTimeInSeconds * 1000.0;
 
+            
             Render();
             UpdateInput();
             Update(deltaTimeInSeconds);  
-
             prevTime = endTime;
         }
 	}
@@ -53,6 +53,7 @@ private:
     void Update(float deltaTime)
     {
         currentScene->Update(deltaTime);
+        currentScene->SpawnQueuedGameObjects();
     }
     void Render()
     {

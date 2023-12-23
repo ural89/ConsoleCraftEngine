@@ -4,11 +4,12 @@
 #include <map>
 #include "GameObject.h"
 #include "Collision.h"
+#include <queue>
 class GE_API Scene
 {
 protected:
 	std::vector<GameObject*> GameObjects;
-
+	std::queue<GameObject*> gameObjectsToSpawn;
 	std::map<std::string, GameObject*> NameToGameObjectMap;
 public:
 	Scene();
@@ -18,12 +19,15 @@ public:
 
 	void AddGameObject(GameObject* gameObject)
 	{	
-		InitializeGameObject(gameObject);	
+		//TODO: create queue game objects to spawn
+		gameObjectsToSpawn.push(gameObject);
+		//InitializeGameObject(gameObject);	
 	}
 	void AddGameObject(GameObject* gameObject, Vector2 position)
 	{
+		gameObjectsToSpawn.push(gameObject);
 		gameObject->transform.Position = position;
-		InitializeGameObject(gameObject);
+		//InitializeGameObject(gameObject);
 	}
 	void RemoveGameObject(GameObject* gameObject)
 	{
@@ -54,7 +58,17 @@ public:
 		collision.CheckForCollisions();
 		collision.CheckForBorderCollisions();
 	}
-	
+	void SpawnQueuedGameObjects()
+	{
+		while (!gameObjectsToSpawn.empty())
+		{
+			GameObject* go = gameObjectsToSpawn.front();
+			InitializeGameObject(go);
+			//delete go;
+			gameObjectsToSpawn.pop();
+
+		}
+	}
 	const std::vector<GameObject*>& GetGameObjects() const
 	{
 		return GameObjects;

@@ -16,7 +16,7 @@ private:
 	 std::array<Vector2, 5> trailPositions;
 	 int trailCount = 0;
 	 Vector2 lastPosition;
-	 std::vector<std::vector<int>> sprite01 = { {2,2}, {1,1} };
-	 std::vector<std::vector<int>> sprite02 = { {4,6}, {6,4} };
+	 std::vector<std::vector<int>> fireParticle = { {0,2}, {0,0} };
+	 std::vector<std::vector<int>> enemyParticle = { {0,6}, {4,0} };
 };
 

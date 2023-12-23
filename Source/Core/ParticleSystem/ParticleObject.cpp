@@ -7,10 +7,10 @@ ParticleObject::ParticleObject(Scene& scene, Vector2 startVelocity, int particle
 	switch (particleType)
 	{
 	case 0:
-		sprite = sprite01;
+		sprite = fireParticle;
 		break;
 	case 1:
-		sprite = sprite02;
+		sprite = enemyParticle;
 		break;
 	}
 	symbol = '#';

@@ -40,7 +40,7 @@ void PlayerShip::Fire(int keyDown)
 	if (keyDown == SPACEBAR)
 	{
  		GetCurrentScene().AddGameObject(new Bullet(GetCurrentScene()), transform.Position);
-		particleSource->EmitParticle(3, FIRETYPEPARTICLE);
+		particleSource->EmitParticle(6, FIRETYPEPARTICLE);
 	
 	}
 }

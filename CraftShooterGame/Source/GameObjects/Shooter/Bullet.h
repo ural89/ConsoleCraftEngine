@@ -11,5 +11,11 @@ public:
 	void Update(float deltaTime) override;
 	void OnCollidedBorder() override;
 	virtual void OnCollided(const GameObject& other) override;
+private:
+	float bulletSpeed = 1.f;
+	float bulletAcceleration = 100.f;
+	float particleSpawnFreq = 0.2f;
+	float timePassedSinceParticleSpawn = 0;
+	class ParticleSource* particleSource;
 };
 
