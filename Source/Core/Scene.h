@@ -42,9 +42,10 @@ public:
 	}
 	void UpdateCamera(float deltaTime)
 	{
+		camera->Shake(deltaTime);
 		for (auto& go : GetGameObjects())
 		{
-			go->transform.MovePosition(5 * deltaTime, 0);
+			go->transform.MovePosition(camera->offsetX, camera->offsetY);
 			//go->Update(deltaTime);
 			//go->UpdateComponents(deltaTime);
 
@@ -71,7 +72,7 @@ public:
 			}
 		}
 
-		camera->Update(deltaTime);
+		
 		collision.CheckForCollisions();
 		collision.CheckForBorderCollisions();
 	}
