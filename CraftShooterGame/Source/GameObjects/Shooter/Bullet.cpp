@@ -2,8 +2,11 @@
 
 void Bullet::Init()
 {
-	color = 1;
-	sprite = { {1}, {1,1,1} , {1} };
+
+	sprite = { 
+		{1,0,1,0}, 
+		{1,1,1,1}, 
+		{1,0,1,0} };
 }
 
 void Bullet::Update(float deltaTime)

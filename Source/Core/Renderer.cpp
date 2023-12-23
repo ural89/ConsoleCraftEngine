@@ -46,14 +46,14 @@ void Renderer::ClearDestroyedObject(GameObject& go)
 
 void Renderer::DrawObjects(GameObject& go)
 {
-    SetConsoleColor(go.color);
     for (int i = 0; i < go.sprite.size(); i++) //TODO: Find better matrix system
     {
         for (int j = 0; j < go.sprite[i].size(); j++)
         {
             int posX = static_cast<int>(go.transform.Position.X + j);
             int posY = static_cast<int>(go.transform.Position.Y + i);
-
+            
+            SetConsoleColor(go.sprite[i][j]);
             GoToXY(posX, posY);
             std::cout << go.symbol;
         }

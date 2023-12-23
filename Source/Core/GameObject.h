@@ -21,7 +21,7 @@ public:
 
 	Transform transform = Transform();
 
-	int color = 1;
+
 	void Destroy()
 	{
 		isDestroyedFlag = true;

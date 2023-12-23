@@ -9,9 +9,15 @@
 void PlayerShip::Init()
 {
 	UIHandler::uiText = "Score: 0";
-	color = 2;
+
 	AddComponent(new PlayerController(*this, 0));
-	sprite = { {1,1}, {1,1,1,1},{1,1} };
+	sprite = 
+	{
+		{2,2,0,2},
+		{1,1,1,1},
+		{1,1,1,1},
+		{2,2,0,2}
+	};
 
 	auto inputEvent = std::bind(&PlayerShip::Fire, this, std::placeholders::_1);
 	Input::AddListener(inputEvent);
