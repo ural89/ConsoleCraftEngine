@@ -2,8 +2,8 @@
 
 void Item::Init()
 {
-	symbol = '\x05';
-	overrideColor = 4;
+	//symbol = '\x05';
+	//overrideColor = 4;
 	/*'\x0E' (U+2605)
 '\x0F' (U+2606)
 '\x06' (U+2660)

@@ -9,6 +9,7 @@ void GridUnit::Init()
 	};
 	
 	symbol = '\xDB';
+	
 }
 
 void GridUnit::OnCreatingLine()

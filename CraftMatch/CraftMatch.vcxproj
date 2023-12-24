@@ -151,12 +151,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Source\GameObjects\ClubItem.cpp" />
+    <ClCompile Include="Source\GameObjects\DiamondItem.cpp" />
+    <ClCompile Include="Source\GameObjects\HeartItem.cpp" />
     <ClCompile Include="Source\GameObjects\Item.cpp" />
     <ClCompile Include="Source\GameObjects\GridUnit.cpp" />
     <ClCompile Include="Source\Grid.cpp" />
     <ClCompile Include="Source\Scenes\MatchScene.cpp" />
     <ClCompile Include="Source\CraftMatchGameEntry.cpp" />
     <ClCompile Include="Source\UnitSelector.cpp" />
+    <ClCompile Include="Source\GameObjects\SpadesItem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ConsoleCraftEngine.vcxproj">
@@ -164,11 +168,15 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\GameObjects\ClubItem.h" />
+    <ClInclude Include="Source\GameObjects\DiamondItem.h" />
+    <ClInclude Include="Source\GameObjects\HeartItem.h" />
     <ClInclude Include="Source\GameObjects\Item.h" />
     <ClInclude Include="Source\GameObjects\GridUnit.h" />
     <ClInclude Include="Source\Grid.h" />
     <ClInclude Include="Source\Scenes\MatchScene.h" />
     <ClInclude Include="Source\UnitSelector.h" />
+    <ClInclude Include="Source\GameObjects\SpadesItem.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
