@@ -92,6 +92,8 @@ public:
 	{
 		return NameToGameObjectMap[name];
 	}
+
+	bool hasGameOver = false;
 private:
 	Collision collision;
 	void InitializeGameObject(GameObject* go);

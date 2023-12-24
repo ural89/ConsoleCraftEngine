@@ -34,6 +34,15 @@ void PlayerShip::Update(float deltaTime)
 	
 }
 
+void PlayerShip::OnCollided(const GameObject& other)
+{
+	if (other.name == "Enemy")
+	{
+		std::cout << "GAME OVER!" << '\n';
+		GetCurrentScene().hasGameOver = true;
+	}
+}
+
 void PlayerShip::Fire(int keyDown)
 {
 	if (keyDown == SPACEBAR)

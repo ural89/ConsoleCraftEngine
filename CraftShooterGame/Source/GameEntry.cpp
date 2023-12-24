@@ -24,7 +24,7 @@ public:
             auto deltaTimeInSeconds = std::chrono::duration_cast<std::chrono::duration<double>>(endTime - prevTime).count();
             double deltaTimeMilliseconds = deltaTimeInSeconds * 1000.0;
 
-            
+            if (currentScene->hasGameOver) return;
             UpdateInput();
             Update(deltaTimeInSeconds);
             Render();
