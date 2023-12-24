@@ -35,7 +35,23 @@ void UnitSelector::OnInput(int input)
 		{
 			if (isSelecting)
 				if (GetItemType(selectedX + 1, selectedY) != firstSelectedItemType)
+				{
+					if (selectedX < WIDTH - 1&& selectedY < HEIGHT - 1 && GetItemType(selectedX + 1, selectedY - 1) == firstSelectedItemType)
+					{
+						selectedX++;
+						selectedY--;
+						SelectUnit(selectedX, selectedY);
+					}
+
+					else if (selectedX < WIDTH - 1 && selectedY < HEIGHT - 1 && GetItemType(selectedX + 1, selectedY + 1) == firstSelectedItemType)
+					{
+						selectedX++;
+						selectedY++;
+						SelectUnit(selectedX, selectedY);
+					}
 					return;
+				
+				}
 			selectedX++;
 		}
 	}
@@ -45,7 +61,22 @@ void UnitSelector::OnInput(int input)
 		{
 			if (isSelecting)
 				if (GetItemType(selectedX - 1, selectedY) != firstSelectedItemType)
+				{
+					if (selectedX > 0 && selectedY > 0 && GetItemType(selectedX - 1, selectedY - 1) == firstSelectedItemType)
+					{
+						selectedX--;
+						selectedY--;
+						SelectUnit(selectedX, selectedY);
+					}
+
+					else if (selectedX > 0 && selectedY > 0 && GetItemType(selectedX - 1, selectedY + 1) == firstSelectedItemType)
+					{
+						selectedX--;
+						selectedY++;
+						SelectUnit(selectedX, selectedY);
+					}
 					return;
+				}
 			selectedX--;
 		}
 	}
@@ -55,7 +86,22 @@ void UnitSelector::OnInput(int input)
 			{
 				if (isSelecting)
 					if (GetItemType(selectedX, selectedY + 1) != firstSelectedItemType)
+					{
+						if (selectedX > 0 && selectedY > 0 && GetItemType(selectedX - 1, selectedY + 1) == firstSelectedItemType)
+						{
+							selectedX--;
+							selectedY++;
+							SelectUnit(selectedX, selectedY);
+						}
+
+						else if (selectedX > 0 && selectedY > 0 && GetItemType(selectedX + 1, selectedY + 1) == firstSelectedItemType)
+						{
+							selectedX++;
+							selectedY++;
+							SelectUnit(selectedX, selectedY);
+						}
 						return;
+					}
 				selectedY++;
 				
 			}
@@ -66,7 +112,22 @@ void UnitSelector::OnInput(int input)
 			{
 				if (isSelecting)
 					if (GetItemType(selectedX, selectedY - 1) != firstSelectedItemType)
+					{
+						if (selectedX > 0 && selectedY > 0 && GetItemType(selectedX - 1, selectedY - 1) == firstSelectedItemType)
+						{
+							selectedX--;
+							selectedY--;
+							SelectUnit(selectedX, selectedY);
+						}
+
+						else if (selectedX > 0 && selectedY > 0 && GetItemType(selectedX + 1, selectedY + 1) == firstSelectedItemType)
+						{
+							selectedX++;
+							selectedY++;
+							SelectUnit(selectedX, selectedY);
+						}
 						return;
+					}
 				selectedY--;
 				
 			}
