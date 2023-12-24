@@ -72,7 +72,7 @@ public:
 			component->Update(deltaTime);
 		}
 	}
-	std::string symbol = " ";
+	std::string symbol = "*";
 
 	bool isDestroyedFlag = false;
 	bool hasClearedFromScreen = false;

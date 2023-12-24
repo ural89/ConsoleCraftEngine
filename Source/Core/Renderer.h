@@ -31,6 +31,7 @@ private:
         cinfo.dwSize = 1;
         SetConsoleCursorInfo(fd, &cinfo);
     }
+
     void ClearDestroyedObject(GameObject& go);
     void DrawObjects(GameObject& go);
     void ClearMovedObjectsTrail(GameObject& go);

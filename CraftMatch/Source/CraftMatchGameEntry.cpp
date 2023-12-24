@@ -2,7 +2,7 @@
 #include <Core/Input.h>
 #include "Core/Renderer.h"
 #include "Scenes/MatchScene.h"
-#include "Grid/Grid.h"
+
 class CraftMatchGame
 {
 public:
@@ -14,8 +14,8 @@ public:
     {
         SetCurrentScene(new MatchScene());
 
-        Grid grid;
-        grid.Render(10, 5);
+        
+       
         auto startTime = std::chrono::high_resolution_clock::now();
         auto prevTime = startTime;
 
@@ -28,7 +28,7 @@ public:
             if (currentScene->hasGameOver) return;
             UpdateInput();
             Update(deltaTimeInSeconds);
-            //Render();
+            Render();
             UpdateCamera(deltaTimeInSeconds);
             if (currentScene->camera->isMoving)
                 Render();
@@ -65,6 +65,7 @@ private:
     }
     void Render()
     {
+
         renderer.Render(*currentScene);
     }
     void SetCurrentScene(Scene* scene)

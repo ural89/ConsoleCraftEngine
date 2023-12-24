@@ -8,6 +8,7 @@ Renderer::Renderer()
 {
     FixConsoleWindow();
     HideCursor();
+
 }
 
 void Renderer::Render(const Scene& scene)
@@ -29,7 +30,29 @@ void Renderer::Render(const Scene& scene)
             DrawUI();
         }
     }
+            
 }
+//
+//void Renderer::RenderGrid(int width, int height, int cellWidth, int cellHeight)
+//{
+//   
+//    
+//    SetConsoleColor(1);
+//    int size = 3;
+//    for (int i = 0; i < size; ++i)
+//    {
+//        for (int j = 0; j < size * 2; ++j)
+//        {
+//            if (i == 0 || i == size - 1 || j == 0 || j == size * 2 - 1)
+//                std::cout << '*';  // Draw '*' for the border
+//            else
+//                std::cout << ' ';  // Draw a space for the empty interior
+//        }
+//        std::cout << '\n';
+//    }
+//
+//    SetConsoleColor(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
+//}
 
 void Renderer::ClearDestroyedObject(GameObject& go)
 {

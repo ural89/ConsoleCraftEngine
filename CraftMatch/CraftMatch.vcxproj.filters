@@ -21,7 +21,10 @@
     <ClCompile Include="Source\Scenes\MatchScene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Grid\Grid.h">
+    <ClCompile Include="Source\GameObjects\GridUnit.h">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\GameObjects\GridUnit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

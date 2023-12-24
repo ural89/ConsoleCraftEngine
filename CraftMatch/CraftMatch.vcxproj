@@ -151,7 +151,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Source\Grid\Grid.h" />
+    <ClCompile Include="Source\GameObjects\GridUnit.h" />
+    <ClCompile Include="Source\GameObjects\GridUnit.cpp" />
     <ClCompile Include="Source\Scenes\MatchScene.cpp" />
     <ClCompile Include="Source\CraftMatchGameEntry.cpp" />
   </ItemGroup>
