@@ -6,7 +6,7 @@
 
 UnitSelector::UnitSelector(Grid& grid) : grid(&grid)
 {
-	this->grid = &grid;
+	
 	auto inputEvent = std::bind(&UnitSelector::OnInput, this, std::placeholders::_1);
 	Input::AddListener(inputEvent);
 	
@@ -79,7 +79,7 @@ void UnitSelector::SelectUnit(int x, int y)
 			selectedUnits.push_back(gridUnit);
 		else
 		{
-			//gridUnit->OnUnselected();TODO:
+			//gridUnit->OnUnselected();//TODO:
 		}
 		
 	}
@@ -104,6 +104,8 @@ void UnitSelector::ClearSelectedUnits()
 	for (auto* unit : selectedUnits)
 	{
 		unit->OnUnselected();
+		unit->OnSelectionBlown();
+		grid->FillBlanks();
 	}
 
 	selectedUnits.clear();  // Clear the deque

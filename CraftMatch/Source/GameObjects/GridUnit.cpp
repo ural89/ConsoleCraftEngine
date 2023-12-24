@@ -26,3 +26,9 @@ void GridUnit::OnUnselected()
 {
 	overrideColor = -1;
 }
+
+void GridUnit::OnSelectionBlown()
+{
+	UnitItem->Destroy();
+	UnitItem = nullptr;
+}

@@ -21,7 +21,7 @@ void MatchScene::CreateGrid(int width, int height)
 {
 	int gridOffsetX = 15;
 	int gridOffsetY = 5;
-	grid = new Grid();
+	grid = new Grid(*this);
 	UnitSelector* unitSelector = new UnitSelector(*grid);
 	auto gridUnit = new GridUnit(*this);
 
