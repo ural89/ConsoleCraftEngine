@@ -9,7 +9,7 @@ MatchScene::~MatchScene()
 }
 void MatchScene::Init()
 {
-	CreateGrid(10, 5);
+	CreateGrid(WIDTH, HEIGHT);
 
 }
 

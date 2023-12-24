@@ -7,11 +7,21 @@ void GridUnit::Init()
 				{1,0,0,0,1},
 				{1,1,1,1,1}
 	};
-	symbol = '\xDB';
+	//symbol = '\xDB';
 	
+}
+
+void GridUnit::OnCreatingLine()
+{
+	overrideColor = 4;
 }
 
 void GridUnit::OnSelected()
 {
 	overrideColor = 3;
+}
+
+void GridUnit::OnUnselected()
+{
+	overrideColor = -1;
 }
