@@ -73,6 +73,7 @@ public:
 		}
 	}
 	std::string symbol = "*";
+	int overrideColor = -1;
 
 	bool isDestroyedFlag = false;
 	bool hasClearedFromScreen = false;

@@ -8,4 +8,5 @@ void GridUnit::Init()
 				{1,1,1,1,1}
 	};
 	symbol = '\xDB';
+	
 }

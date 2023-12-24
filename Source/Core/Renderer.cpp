@@ -32,27 +32,7 @@ void Renderer::Render(const Scene& scene)
     }
             
 }
-//
-//void Renderer::RenderGrid(int width, int height, int cellWidth, int cellHeight)
-//{
-//   
-//    
-//    SetConsoleColor(1);
-//    int size = 3;
-//    for (int i = 0; i < size; ++i)
-//    {
-//        for (int j = 0; j < size * 2; ++j)
-//        {
-//            if (i == 0 || i == size - 1 || j == 0 || j == size * 2 - 1)
-//                std::cout << '*';  // Draw '*' for the border
-//            else
-//                std::cout << ' ';  // Draw a space for the empty interior
-//        }
-//        std::cout << '\n';
-//    }
-//
-//    SetConsoleColor(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
-//}
+
 
 void Renderer::ClearDestroyedObject(GameObject& go)
 {
@@ -79,7 +59,10 @@ void Renderer::DrawObjects(GameObject& go)
             int posX = static_cast<int>(go.transform.Position.X + j);
             int posY = static_cast<int>(go.transform.Position.Y + i);
             
-            SetConsoleColor(go.sprite[i][j]);
+            if (go.overrideColor > 0 && go.sprite[i][j] != 0)
+                SetConsoleColor(go.overrideColor);
+            else
+                SetConsoleColor(go.sprite[i][j]);
             GoToXY(posX, posY);
             std::cout << go.symbol;
         }
