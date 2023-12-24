@@ -59,10 +59,17 @@ void Renderer::DrawObjects(GameObject& go)
             int posX = static_cast<int>(go.transform.Position.X + j);
             int posY = static_cast<int>(go.transform.Position.Y + i);
             
-            if (go.overrideColor > 0 && go.sprite[i][j] != 0)
+            int color = go.sprite[i][j];
+            if (go.overrideColor > 0 && color != 0)
                 SetConsoleColor(go.overrideColor);
             else
-                SetConsoleColor(go.sprite[i][j]);
+            {
+                if (color == 0)
+                {
+                    continue;
+                }
+                SetConsoleColor(color);
+            }
             GoToXY(posX, posY);
             std::cout << go.symbol;
         }

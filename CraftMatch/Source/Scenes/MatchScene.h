@@ -9,6 +9,7 @@ public:
 	
 private:
 	void CreateGrid(int width, int height);
+	void CreateItems();
 
 };
 

@@ -1,5 +1,5 @@
 #include "GridUnit.h"
-//#include <vector>
+
 void GridUnit::Init()
 {
 	sprite = {  {1,1,1,1,1},

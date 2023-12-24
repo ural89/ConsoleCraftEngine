@@ -2,6 +2,7 @@
 #include "../GameObjects/GridUnit.h"
 #include "../Grid.h"
 #include "../UnitSelector.h"
+#include "../GameObjects/Item.h"
 MatchScene::~MatchScene()
 {
 	delete grid;
@@ -10,7 +11,7 @@ MatchScene::~MatchScene()
 void MatchScene::Init()
 {
 	CreateGrid(WIDTH, HEIGHT);
-
+	CreateItems();
 }
 
 void MatchScene::CreateGrid(int width, int height)
@@ -25,6 +26,17 @@ void MatchScene::CreateGrid(int width, int height)
 			AddGameObject(gridUnit, Vector2(5 * i, 4 * j));
 			grid->SetGridObject(*gridUnit, i, j);
 		}
+}
+
+void MatchScene::CreateItems()
+{
+	for (int i = 0; i < WIDTH; i++)
+		for (int j = 0; j < HEIGHT; j++)
+		{
+			grid->GetGridUnit(i, j);
+			AddGameObject(new Item(*this), grid->GetGridUnit(i, j)->GetItemSlot());
+		}
+	
 }
 
 
