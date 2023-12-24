@@ -7,7 +7,7 @@ PongScene::PongScene()
 
 }
 
-void PongScene::CreateGameObjects()
+void PongScene::Init()
 {
 	AddGameObject(new Paddle(1, *this), Vector2(SCREENWIDTH - 2, 10));
 	AddGameObject(new Paddle(0, *this), Vector2(1, 1));

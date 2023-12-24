@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{e8763ad2-0672-4e7d-8de1-9a2c4d0828a6}</ProjectGuid>
-    <RootNamespace>CraftShooterGame</RootNamespace>
+    <ProjectGuid>{41855bfd-f686-4498-89a6-80936d9b909d}</ProjectGuid>
+    <RootNamespace>CraftMatch</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -72,27 +72,23 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <PublicIncludeDirectories>$(PublicIncludeDirectories)</PublicIncludeDirectories>
-    <IncludePath>C:\Users\Ural Kemal\Documents\GitHub\ConsoleCraftEngine\Source;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
     <OutDir>$(SolutionDir)Bin\$(Platform)\$(Configuration)\</OutDir>
+    <IncludePath>$(SolutionDir)\Source;</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <PublicIncludeDirectories>$(PublicIncludeDirectories)</PublicIncludeDirectories>
-    <IncludePath>C:\Users\Ural Kemal\Documents\GitHub\ConsoleCraftEngine\Source;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
     <OutDir>$(SolutionDir)Bin\$(Platform)\$(Configuration)\</OutDir>
+    <IncludePath>$(SolutionDir)\Source;</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <PublicIncludeDirectories>$(PublicIncludeDirectories)</PublicIncludeDirectories>
-    <IncludePath>$(SolutionDir)\Source;$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
     <OutDir>$(SolutionDir)Bin\$(Platform)\$(Configuration)\</OutDir>
+    <IncludePath>$(SolutionDir)\Source;</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <PublicIncludeDirectories>$(PublicIncludeDirectories)</PublicIncludeDirectories>
-    <IncludePath>C:\Users\Ural Kemal\Documents\GitHub\ConsoleCraftEngine\Source;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
     <OutDir>$(SolutionDir)Bin\$(Platform)\$(Configuration)\</OutDir>
+    <IncludePath>$(SolutionDir)\Source;</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -104,7 +100,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\Ural Kemal\Documents\GitHub\ConsoleCraftEngine\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)x64\Debug</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -121,7 +117,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\Ural Kemal\Documents\GitHub\ConsoleCraftEngine\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)x64\Debug</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -134,7 +130,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\Ural Kemal\Documents\GitHub\ConsoleCraftEngine\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)x64\Debug</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -151,34 +147,21 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\Ural Kemal\Documents\GitHub\ConsoleCraftEngine\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)x64\Debug</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\Grid\Grid.h" />
+    <ClCompile Include="Source\Scenes\MatchScene.cpp" />
+    <ClCompile Include="Source\CraftMatchGameEntry.cpp" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ConsoleCraftEngine.vcxproj">
       <Project>{b34b49ab-2be7-424f-b089-26ab03ae97e4}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\Components\PlayerController.cpp" />
-    <ClCompile Include="Source\GameObjects\Pong\Ball.cpp" />
-    <ClCompile Include="Source\GameObjects\Pong\Paddle.cpp" />
-    <ClCompile Include="Source\GameObjects\Shooter\Bullet.cpp" />
-    <ClCompile Include="Source\GameObjects\Shooter\Enemy.cpp" />
-    <ClCompile Include="Source\GameObjects\Shooter\PlayerShip.cpp" />
-    <ClCompile Include="Source\Scenes\Pong\PongScene.cpp" />
-    <ClCompile Include="Source\Scenes\Shooter\ShooterScene.cpp" />
-    <ClCompile Include="Source\ShooterGameEntry.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Source\Components\PlayerController.h" />
-    <ClInclude Include="Source\GameObjects\Pong\Ball.h" />
-    <ClInclude Include="Source\GameObjects\Pong\Paddle.h" />
-    <ClInclude Include="Source\GameObjects\Shooter\Bullet.h" />
-    <ClInclude Include="Source\GameObjects\Shooter\Enemy.h" />
-    <ClInclude Include="Source\GameObjects\Shooter\PlayerShip.h" />
-    <ClInclude Include="Source\Scenes\Pong\PongScene.h" />
-    <ClInclude Include="Source\Scenes\Shooter\ShooterScene.h" />
+    <ClInclude Include="Source\Scenes\MatchScene.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

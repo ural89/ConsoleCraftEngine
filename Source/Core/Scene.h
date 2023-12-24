@@ -15,7 +15,7 @@ protected:
 public:
 	Scene();
 	virtual ~Scene();
-	virtual void CreateGameObjects() {};
+	virtual void Init() {};
 
 	Camera* camera;
 	void AddGameObject(GameObject* gameObject)

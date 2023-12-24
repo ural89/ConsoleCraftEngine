@@ -7,7 +7,7 @@ public:
 	{
 		std::cout << "Destructed main scene" << '\n';
 	}
-	void CreateGameObjects() override;
+	void Init() override;
 	void Update(float deltaTime) override;
 
 private:

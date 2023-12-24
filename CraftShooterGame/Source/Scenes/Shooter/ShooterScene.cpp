@@ -1,7 +1,7 @@
 #include "ShooterScene.h"
 #include "../../GameObjects/Shooter/PlayerShip.h"
 #include "../../GameObjects/Shooter/Enemy.h"
-void ShooterScene::CreateGameObjects()
+void ShooterScene::Init()
 {
 	AddGameObject(new PlayerShip(*this), Vector2(20,15));
 	srand(static_cast<unsigned int>(time(nullptr)));

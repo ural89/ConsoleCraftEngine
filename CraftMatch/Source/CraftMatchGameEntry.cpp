@@ -1,20 +1,21 @@
-#include "Scenes/Pong/PongScene.h"
 #include <thread>
 #include <Core/Input.h>
 #include "Core/Renderer.h"
-#include "Scenes/Shooter/ShooterScene.h"
-class Game
+#include "Scenes/MatchScene.h"
+#include "Grid/Grid.h"
+class CraftMatchGame
 {
 public:
-    ~Game()
+    ~CraftMatchGame()
     {
-      
-    }
-	void StartGame()
-	{
-        SetCurrentScene(new ShooterScene());
 
-        
+    }
+    void StartGame()
+    {
+        SetCurrentScene(new MatchScene());
+
+        Grid grid;
+        grid.Render(10, 5);
         auto startTime = std::chrono::high_resolution_clock::now();
         auto prevTime = startTime;
 
@@ -23,30 +24,30 @@ public:
             auto endTime = std::chrono::high_resolution_clock::now();
             auto deltaTimeInSeconds = std::chrono::duration_cast<std::chrono::duration<double>>(endTime - prevTime).count();
             double deltaTimeMilliseconds = deltaTimeInSeconds * 1000.0;
-
+            
             if (currentScene->hasGameOver) return;
             UpdateInput();
             Update(deltaTimeInSeconds);
-            Render();
+            //Render();
             UpdateCamera(deltaTimeInSeconds);
-            if(currentScene->camera->isMoving)
-                Render(); 
+            if (currentScene->camera->isMoving)
+                Render();
             prevTime = endTime;
         }
-	}
+    }
     void Clean()
     {
         delete currentScene;
         Input::Cleanup();
-        
+
     }
-    void InitSceneGameObjects(Scene* scene)
+    void InitScene(Scene* scene)
     {
-        scene->CreateGameObjects();
+        scene->Init();
 
     }
 private:
- 
+
     Scene* currentScene;
     Renderer renderer;
     void UpdateInput()
@@ -69,16 +70,16 @@ private:
     void SetCurrentScene(Scene* scene)
     {
         currentScene = scene;
-        InitSceneGameObjects(currentScene);
+        InitScene(currentScene);
     }
 };
 
 int main()
 {
-	Game* game =new Game();
-	game->StartGame();
+    CraftMatchGame* game = new CraftMatchGame();
+    game->StartGame();
     game->Clean();
     delete game;
     system("pause");
-	return 0;
+    return 0;
 }
