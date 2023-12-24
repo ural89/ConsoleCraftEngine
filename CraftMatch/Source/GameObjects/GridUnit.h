@@ -1,9 +1,11 @@
-#include <iostream>
+#pragma once
 #include "Core/GameObject.h"
 class GridUnit : public GameObject
 {
 public:
-    GridUnit(Scene& scene) :GameObject("GridObject", scene) {}
+    GridUnit(Scene& scene) :GameObject("GridObject", scene) {
+   
+    }
     void Init() override;
 
     void OnCreatingLine();

@@ -1,9 +1,9 @@
 #include "UnitSelector.h"
-#include <functional>
+
 #include <Core/Input.h>
 #include "GameObjects/GridUnit.h"
-#include <iostream>
-#include "Core/UIHandler.h"
+
+
 UnitSelector::UnitSelector(Grid& grid) : grid(&grid)
 {
 	auto inputEvent = std::bind(&UnitSelector::OnInput, this, std::placeholders::_1);

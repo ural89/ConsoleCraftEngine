@@ -1,6 +1,7 @@
 #pragma once
 const int WIDTH = 10;
 const int HEIGHT = 5;
+
 class Grid
 {
 public:

@@ -17,6 +17,7 @@ void MatchScene::CreateGrid(int width, int height)
 {
 	grid = new Grid();
 	UnitSelector* unitSelector = new UnitSelector(*grid);
+
 	for (int i = 0; i < width; i++)
 		for (int j = 0; j < height; j++)
 		{
