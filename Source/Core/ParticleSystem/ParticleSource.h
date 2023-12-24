@@ -1,12 +1,12 @@
 #pragma once
-#include "../GameObject.h"
+#include "../Component/Component.h"
 #include "../../Core.h"
 const int FIRETYPEPARTICLE = 0;
 const int ENEMYTYPEPARTICLE = 1;
-class GE_API ParticleSource : public GameObject
+class GE_API ParticleSource : public Component
 {
 public:
-	ParticleSource(Scene& scene) : GameObject("ParticleSource", scene){}
+	ParticleSource(class GameObject& owner) : Component(owner){}
 	void Init() override;
 	void Update(float deltaTime) override;
 	void EmitParticle(int count, int particleType);

@@ -20,15 +20,13 @@ public:
 	Camera* camera;
 	void AddGameObject(GameObject* gameObject)
 	{	
-		//TODO: create queue game objects to spawn
 		gameObjectsToSpawn.push(gameObject);
-		//InitializeGameObject(gameObject);	
 	}
 	void AddGameObject(GameObject* gameObject, Vector2 position)
 	{
 		gameObjectsToSpawn.push(gameObject);
 		gameObject->transform.Position = position;
-		//InitializeGameObject(gameObject);
+
 	}
 	void RemoveGameObject(GameObject* gameObject)
 	{
@@ -46,8 +44,6 @@ public:
 		for (auto& go : GetGameObjects())
 		{
 			go->transform.MovePosition(camera->offsetX, camera->offsetY);
-			//go->Update(deltaTime);
-			//go->UpdateComponents(deltaTime);
 		}
 
 	}
@@ -82,7 +78,6 @@ public:
 			
 			GameObject* go = gameObjectsToSpawn.front();
 			InitializeGameObject(go);
-			//delete go;
 			gameObjectsToSpawn.pop();
 
 		}

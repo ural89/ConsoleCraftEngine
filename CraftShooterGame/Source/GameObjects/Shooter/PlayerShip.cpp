@@ -25,9 +25,8 @@ void PlayerShip::Init()
 	OnEventFunction = std::bind(&PlayerShip::OnEvent, this, std::placeholders::_1);
 	EventDispatcher::AddListener(OnEventFunction);
 	
-	particleSource = new ParticleSource(GetCurrentScene());
-	GetCurrentScene().AddGameObject(particleSource, transform.Position);
-	particleSource->transform.SetParent(transform);
+	particleSource = new ParticleSource(*this);
+	AddComponent(particleSource);
 }
 
 void PlayerShip::Update(float deltaTime)
@@ -40,7 +39,6 @@ void PlayerShip::Fire(int keyDown)
 	if (keyDown == SPACEBAR)
 	{
  		GetCurrentScene().AddGameObject(new Bullet(GetCurrentScene()), transform.Position);
-		//particleSource->EmitParticle(6, FIRETYPEPARTICLE);
 	
 	}
 }

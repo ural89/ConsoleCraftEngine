@@ -3,10 +3,9 @@
 #include "ParticleObject.h"
 #include "../../CoreStructs/Vector.h"
 
-void ParticleSource::Init() //TODO: make this component
+void ParticleSource::Init() 
 {
-	isRenderable = false;
-	hasCollider = false;
+	
 	
 }
 
@@ -28,6 +27,6 @@ void ParticleSource::EmitParticle(int count, int particleType)
 
 	
 		Vector2 randomVelocity(randomVelocityX, randomVelocityY);
-		GetCurrentScene().AddGameObject(new ParticleObject(GetCurrentScene(), randomVelocity, particleType), transform.Position);
+		owner->GetCurrentScene().AddGameObject(new ParticleObject(owner->GetCurrentScene(), randomVelocity, particleType), owner->transform.Position);
 	}
 }

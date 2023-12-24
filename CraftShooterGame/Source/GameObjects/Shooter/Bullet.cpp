@@ -10,10 +10,8 @@ void Bullet::Init()
 		{1,0,1,0}, 
 		{1,1,1,1}, 
 		{1,0,1,0} };
-
-	particleSource = new ParticleSource(GetCurrentScene());
-	GetCurrentScene().AddGameObject(particleSource, transform.Position);
-	particleSource->transform.SetParent(transform);
+	particleSource = new ParticleSource(*this);
+	AddComponent(particleSource);
 }
 
 void Bullet::Update(float deltaTime)

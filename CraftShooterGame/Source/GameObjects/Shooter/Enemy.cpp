@@ -12,9 +12,8 @@ void Enemy::Init()
 		};
 
 	}
-	particleSource = new ParticleSource(GetCurrentScene());
-	GetCurrentScene().AddGameObject(particleSource, transform.Position);
-	particleSource->transform.SetParent(transform);
+	particleSource = new ParticleSource(*this);
+	AddComponent(particleSource);
 }
 
 void Enemy::Update(float deltaTime)
