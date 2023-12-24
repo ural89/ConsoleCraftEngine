@@ -40,11 +40,12 @@ public:
 	}
 	void UpdateCamera(float deltaTime)
 	{
-		camera->Shake(deltaTime);
-		for (auto& go : GetGameObjects())
-		{
-			go->transform.MovePosition(camera->offsetX, camera->offsetY);
-		}
+		camera->UpdateCamera(deltaTime);
+		if (camera->isMoving)
+			for (auto& go : GetGameObjects())
+			{
+				go->transform.MovePosition(camera->offsetX, camera->offsetY);
+			}
 
 	}
 	virtual void Update(float deltaTime)

@@ -8,13 +8,15 @@ void Camera::StartShake(float duration)
 {
     shakeDuration = duration;
     xAcceleration = xAccelerationStart;
+    isMoving = true;
 }
 
-void Camera::Shake(float deltaTime)
+void Camera::UpdateCamera(float deltaTime)
 {
     xAcceleration += 20.f * deltaTime;
     if (shakeDuration > 0)
     {
+       
         if (isGoingLeft)
         {
             offsetX += deltaTime * xAcceleration;
@@ -45,6 +47,7 @@ void Camera::Shake(float deltaTime)
     }
     else
     {
+        isMoving = false;
         offsetX = 0;
         offsetY = 0;
         

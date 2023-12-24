@@ -29,7 +29,8 @@ public:
             Update(deltaTimeInSeconds);
             Render();
             UpdateCamera(deltaTimeInSeconds);
-            Render(); //TODO: fix this workaround for camera shake
+            if(currentScene->camera->isMoving)
+                Render(); 
             prevTime = endTime;
         }
 	}
