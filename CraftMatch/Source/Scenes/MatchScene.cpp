@@ -36,12 +36,27 @@ void MatchScene::CreateGrid(int width, int height)
 
 void MatchScene::CreateItems()
 {
-
 	for (int i = 0; i < WIDTH; i++)
 		for (int j = 0; j < HEIGHT; j++)
 		{
+			Item* unitItem = nullptr;
+			int gridUnitType = rand() % 4;
+			switch (gridUnitType)
+			{
+			case SPADES:
+				unitItem = new SpadesItem(*this);
+				break;
+			case HEART:
+				unitItem = new HeartItem(*this);
+				break;
+			case CLUB:
+				unitItem = new ClubItem(*this);
+				break;
+			case DIAMOND:
+				unitItem = new DiamondItem(*this);
+				break;
+			}
 			auto gridUnit = grid->GetGridUnit(i, j);
-			auto unitItem = new HeartItem(*this);
 			AddGameObject(unitItem, gridUnit->GetItemSlot());
 			gridUnit->UnitItem = unitItem;
 		}

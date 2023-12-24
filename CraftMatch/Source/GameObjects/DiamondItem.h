@@ -4,7 +4,9 @@
 class DiamondItem : public Item
 {
 public:
-	DiamondItem(Scene& scene) : Item(scene) {}
+	DiamondItem(Scene& scene) : Item(scene) {
+		itemType = DIAMOND;
+	}
 
 	void Init() override;
 };

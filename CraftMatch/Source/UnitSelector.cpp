@@ -6,6 +6,7 @@
 
 UnitSelector::UnitSelector(Grid& grid) : grid(&grid)
 {
+	this->grid = &grid;
 	auto inputEvent = std::bind(&UnitSelector::OnInput, this, std::placeholders::_1);
 	Input::AddListener(inputEvent);
 	
@@ -25,27 +26,49 @@ void UnitSelector::OnInput(int input)
 
 	if (tolower(input) == 'd')
 	{
-		if(selectedX < WIDTH -1)
+		if (selectedX < WIDTH - 1)
+		{
+			if (isSelecting)
+				if (GetItemType(selectedX + 1, selectedY) != firstSelectedItemType)
+					return;
 			selectedX++;
+		}
 	}
 	else if (tolower(input) == 'a')
 	{
 		if (selectedX > 0)
+		{
+			if (isSelecting)
+				if (GetItemType(selectedX - 1, selectedY) != firstSelectedItemType)
+					return;
 			selectedX--;
+		}
 	}
-	else if (tolower(input) == 's')
-	{
-		if (selectedY < HEIGHT - 1)
-			selectedY++;
-	}
-	else if (tolower(input) == 'w')
-	{
-		if (selectedY > 0)
-			selectedY--;
-	}
-	SelectUnit(selectedX, selectedY);
+		else if (tolower(input) == 's')
+		{
+			if (selectedY < HEIGHT - 1)
+			{
+				if (isSelecting)
+					if (GetItemType(selectedX, selectedY + 1) != firstSelectedItemType)
+						return;
+				selectedY++;
+				
+			}
+		}
+		else if (tolower(input) == 'w')
+		{
+			if (selectedY > 0)
+			{
+				if (isSelecting)
+					if (GetItemType(selectedX, selectedY - 1) != firstSelectedItemType)
+						return;
+				selectedY--;
+				
+			}
+		}
+		SelectUnit(selectedX, selectedY);
+	
 }
-
 void UnitSelector::SelectUnit(int x, int y)
 {
 	if (isSelecting)
@@ -63,6 +86,7 @@ void UnitSelector::SelectUnit(int x, int y)
 	else
 	{
 		grid->GetGridUnit(selectedX, selectedY)->OnSelected();
+		firstSelectedItemType = GetItemType(selectedX, selectedY);
 		
 	}
 }
@@ -83,4 +107,9 @@ void UnitSelector::ClearSelectedUnits()
 	}
 
 	selectedUnits.clear();  // Clear the deque
+}
+
+int UnitSelector::GetItemType(int x, int y)
+{
+	return grid->GetGridUnit(x, y)->UnitItem->itemType;
 }

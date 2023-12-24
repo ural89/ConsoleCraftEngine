@@ -5,7 +5,9 @@
 class HeartItem : public Item
 {
 public:
-	HeartItem(Scene& scene) : Item(scene) {}
+	HeartItem(Scene& scene) : Item(scene) {
+		itemType = HEART;
+	}
 
 	void Init() override;
 };
