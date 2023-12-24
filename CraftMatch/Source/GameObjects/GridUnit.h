@@ -3,10 +3,7 @@
 class GridUnit : public GameObject
 {
 public:
-    void Init() override;
     GridUnit(Scene& scene) :GameObject("GridObject", scene) {}
-
-            
-  
-    
+    void Init() override;
+    void OnSelected();
 };

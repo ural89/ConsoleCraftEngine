@@ -151,10 +151,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Grid.cpp" />
     <ClCompile Include="Source\GameObjects\GridUnit.h" />
     <ClCompile Include="Source\GameObjects\GridUnit.cpp" />
     <ClCompile Include="Source\Scenes\MatchScene.cpp" />
     <ClCompile Include="Source\CraftMatchGameEntry.cpp" />
+    <ClCompile Include="Source\UnitSelector.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ConsoleCraftEngine.vcxproj">
@@ -162,7 +164,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Grid.h" />
     <ClInclude Include="Source\Scenes\MatchScene.h" />
+    <ClInclude Include="Source\UnitSelector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

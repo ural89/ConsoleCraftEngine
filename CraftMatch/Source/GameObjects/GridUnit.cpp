@@ -10,3 +10,8 @@ void GridUnit::Init()
 	symbol = '\xDB';
 	
 }
+
+void GridUnit::OnSelected()
+{
+	overrideColor = 3;
+}

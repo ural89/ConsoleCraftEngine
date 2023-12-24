@@ -3,9 +3,12 @@
 class MatchScene : public Scene
 {
 public:
+	~MatchScene() override;
 	void Init() override;
-	class GridUnit* grid[10][5];
+	class Grid* grid;
+	
 private:
 	void CreateGrid(int width, int height);
+
 };
 
