@@ -1,5 +1,6 @@
 #pragma once
-#include "Core\GameObject.h"
+#include "Core/GameObject.h"
+
 const int HEART = 0;
 const int CLUB = 1;
 const int DIAMOND = 2;
@@ -12,8 +13,11 @@ public:
 
 	}
 	int itemType;
-
+	void SetTargetPosition(Vector2 targetPosition);
 	void Init() override;
 	void Update(float deltaTime) override;
+private:
+	Vector2 targetPosition;
+	
 };
 

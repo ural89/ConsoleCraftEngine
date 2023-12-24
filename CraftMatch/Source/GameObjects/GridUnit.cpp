@@ -1,5 +1,5 @@
 #include "GridUnit.h"
-
+#include "Core/Scene.h"
 void GridUnit::Init()
 {
 	sprite = {  {1,1,1,1,1},
@@ -7,8 +7,10 @@ void GridUnit::Init()
 				{1,0,0,0,1},
 				{1,1,1,1,1}
 	};
-	
+	overrideColor = 0;
 	symbol = '\xDB';
+	particleSource = new ParticleSource(*this);
+	AddComponent(particleSource);
 	
 }
 
@@ -24,11 +26,13 @@ void GridUnit::OnSelected()
 
 void GridUnit::OnUnselected()
 {
-	overrideColor = -1;
+	overrideColor = 0;
 }
 
 void GridUnit::OnSelectionBlown()
 {
+	particleSource->EmitParticle(4, ENEMYTYPEPARTICLE);
+	//GetCurrentScene().camera->StartShake(0.3f);
 	UnitItem->Destroy();
 	UnitItem = nullptr;
 }

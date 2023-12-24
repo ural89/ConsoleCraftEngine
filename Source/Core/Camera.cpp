@@ -6,6 +6,7 @@
 
 void Camera::StartShake(float duration)
 {
+    if (isMoving) return;
     shakeDuration = duration;
     xAcceleration = xAccelerationStart;
     isMoving = true;

@@ -2,6 +2,7 @@
 
 void DiamondItem::Init()
 {
+	Item::Init();
 	symbol = '\x04';
-	overrideColor = 6;
+	overrideColor = 5;
 }

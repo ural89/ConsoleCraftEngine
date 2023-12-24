@@ -1,7 +1,7 @@
 #pragma once
 #include "Core/GameObject.h"
 #include "Item.h"
-#include "HeartItem.h"
+#include "Core/ParticleSystem/ParticleSource.h"
 class GridUnit : public GameObject
 {
 public:
@@ -21,4 +21,6 @@ public:
     }
 
     Item* UnitItem = nullptr;
+private:
+    ParticleSource* particleSource;
 };

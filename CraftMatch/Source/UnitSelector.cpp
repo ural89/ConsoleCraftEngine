@@ -12,6 +12,11 @@ UnitSelector::UnitSelector(Grid& grid) : grid(&grid)
 	
 }
 
+void UnitSelector::Update(float deltaTime)
+{
+
+}
+
 void UnitSelector::OnInput(int input)
 {
 	UnselectUnit(selectedX, selectedY);
@@ -101,13 +106,15 @@ void UnitSelector::UnselectUnit(int x, int y)
 
 void UnitSelector::ClearSelectedUnits()
 {
+	isBlowing = true;
+
 	for (auto* unit : selectedUnits)
 	{
 		unit->OnUnselected();
 		unit->OnSelectionBlown();
 		grid->FillBlanks();
 	}
-
+	isBlowing = false;
 	selectedUnits.clear();  // Clear the deque
 }
 

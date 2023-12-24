@@ -12,8 +12,15 @@ public:
 		return grid[x][y];
 	}
 	void FillBlanks();
+	void RefreshItemRenders();
+	void CreateItemsAtStart();
+	void CreateRandomItem(int i, int j);
+
+	void Update(float deltaTime);
 private:
 	Scene* scene;
 	class GridUnit* grid[WIDTH][HEIGHT];
+	float timePassed = 0;
+	bool hasRefreshedAfterBlown = false;
 };
 

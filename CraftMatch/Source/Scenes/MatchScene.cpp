@@ -14,7 +14,14 @@ MatchScene::~MatchScene()
 void MatchScene::Init()
 {
 	CreateGrid(WIDTH, HEIGHT);
-	CreateItems();
+	grid->CreateItemsAtStart();
+}
+
+void MatchScene::Update(float deltaTime)
+{
+	Scene::Update(deltaTime);
+	grid->Update(deltaTime);
+	unitSelector->Update(deltaTime);
 }
 
 void MatchScene::CreateGrid(int width, int height)
@@ -22,7 +29,7 @@ void MatchScene::CreateGrid(int width, int height)
 	int gridOffsetX = 15;
 	int gridOffsetY = 5;
 	grid = new Grid(*this);
-	UnitSelector* unitSelector = new UnitSelector(*grid);
+	unitSelector = new UnitSelector(*grid);
 	auto gridUnit = new GridUnit(*this);
 
 	for (int i = 0; i < width; i++)
@@ -34,33 +41,6 @@ void MatchScene::CreateGrid(int width, int height)
 		}
 }
 
-void MatchScene::CreateItems()
-{
-	for (int i = 0; i < WIDTH; i++)
-		for (int j = 0; j < HEIGHT; j++)
-		{
-			Item* unitItem = nullptr;
-			int gridUnitType = rand() % 4;
-			switch (gridUnitType)
-			{
-			case SPADES:
-				unitItem = new SpadesItem(*this);
-				break;
-			case HEART:
-				unitItem = new HeartItem(*this);
-				break;
-			case CLUB:
-				unitItem = new ClubItem(*this);
-				break;
-			case DIAMOND:
-				unitItem = new DiamondItem(*this);
-				break;
-			}
-			auto gridUnit = grid->GetGridUnit(i, j);
-			AddGameObject(unitItem, gridUnit->GetItemSlot());
-			gridUnit->UnitItem = unitItem;
-		}
-	
-}
+
 
 
