@@ -11,6 +11,7 @@ public:
 private:
 	int selectedX = 0;
 	int selectedY = HEIGHT - 1;
+	int score = 0;
 
 	Grid* grid;
 	std::deque<class GridUnit*> selectedUnits;

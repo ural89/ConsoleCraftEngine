@@ -5,11 +5,9 @@
 #include "../CoreStructs/Vector.h"
 class GE_API UIHandler
 {
+private:
 public:
-	static void WriteText(Vector2 position, std::string text)
-	{
-		//TODO:
-	}
+public:
 	static std::string uiText;
 	static Vector2 Position;
 };

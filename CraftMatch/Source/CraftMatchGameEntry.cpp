@@ -14,7 +14,6 @@ public:
     {
         SetCurrentScene(new MatchScene());
 
-        
        
         auto startTime = std::chrono::high_resolution_clock::now();
         auto prevTime = startTime;

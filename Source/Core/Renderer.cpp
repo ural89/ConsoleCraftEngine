@@ -100,7 +100,7 @@ void Renderer::ClearMovedObjectsTrail(GameObject& go)
 
 void Renderer::DrawUI()
 {
-    UIHandler::Position = Vector2(0, 29);
+    
     
     GoToXY(UIHandler::Position.X, UIHandler::Position.Y);
     std::cout << UIHandler::uiText;

@@ -31,7 +31,7 @@ void GridUnit::OnUnselected()
 
 void GridUnit::OnSelectionBlown()
 {
-	particleSource->EmitParticle(4, ENEMYTYPEPARTICLE);
+	particleSource->EmitParticle(6, ENEMYTYPEPARTICLE);
 	//GetCurrentScene().camera->StartShake(0.3f);
 	UnitItem->Destroy();
 	UnitItem = nullptr;

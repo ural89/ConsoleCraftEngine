@@ -9,6 +9,7 @@
 
 void PlayerShip::Init()
 {
+	UIHandler::Position = Vector2(0, 29);
 	UIHandler::uiText = "Score: 0";
 
 	AddComponent(new PlayerController(*this, 0));
