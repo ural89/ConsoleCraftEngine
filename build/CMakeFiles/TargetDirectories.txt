@@ -1,0 +1,3 @@
+/home/ural/Belgeler/GitHub/ConsoleCraftEngine/build/CMakeFiles/my_library.dir
+/home/ural/Belgeler/GitHub/ConsoleCraftEngine/build/CMakeFiles/edit_cache.dir
+/home/ural/Belgeler/GitHub/ConsoleCraftEngine/build/CMakeFiles/rebuild_cache.dir

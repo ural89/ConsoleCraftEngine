@@ -74,7 +74,7 @@ void Renderer::DrawObjects(GameObject& go)
             std::cout << go.symbol;
         }
     }
-    SetConsoleColor(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
+    // SetConsoleColor(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
 }
 
 void Renderer::ClearMovedObjectsTrail(GameObject& go)
@@ -108,5 +108,5 @@ void Renderer::DrawUI()
 
 void Renderer::SetConsoleColor(int color)
 {
-    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
+    // SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
 }

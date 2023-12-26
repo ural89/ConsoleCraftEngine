@@ -1,10 +1,15 @@
 #pragma once
 
 #ifdef GE_BUILD_DLL
-#define GE_API __declspec(dllexport)
+    #ifdef __GNUC__
+        #define GE_API __attribute__((visibility("default")))
+    #else
+        #define GE_API
+    #endif
 #else
-#define GE_API __declspec(dllimport)
+    #define GE_API
 #endif
+
 const int SCREENHEIGHT = 25;
 const int SCREENWIDTH = 110;
 

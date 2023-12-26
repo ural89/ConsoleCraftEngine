@@ -9,8 +9,8 @@ void Collision::AddGameObject(GameObject* gameObject)
 
 void Collision::RemoveGameObject(GameObject* gameObject)
 {
-    auto newEnd = std::remove(gameObjects.begin(), gameObjects.end(), gameObject); //Move element to last
-    gameObjects.erase(newEnd, gameObjects.end()); //erase last one
+    // auto newEnd = std::remove(gameObjects.begin(), gameObjects.end(), gameObject); //Move element to last
+    // gameObjects.erase(newEnd, gameObjects.end()); //erase last one
 }
 
 void Collision::CheckForCollisions() const

@@ -1,4 +1,4 @@
-#include <conio.h>
+#include "../conio.h"
 #include "Input.h"
 #include <iostream>
 
@@ -8,9 +8,9 @@ Input::Input() {}
 std::vector<std::function<void(int)>> Input::listeners;
 void Input::Update()
 {
-    if (_kbhit())
+    if (kbhit())
     {
-        keyDown = _getch();
+        keyDown = getch();
        
         for (auto &listener:listeners)
         {

@@ -30,13 +30,13 @@ public:
 	}
 	void RemoveGameObject(GameObject* gameObject)
 	{
-		auto it = std::find(GameObjects.begin(), GameObjects.end(), gameObject);
-		if (it != GameObjects.end())
-		{
-			delete* it; 
-			GameObjects.erase(it); 
-		}
-		collision.RemoveGameObject(gameObject);
+		// auto it = std::find(GameObjects.begin(), GameObjects.end(), gameObject);
+		// if (it != GameObjects.end())
+		// {
+		// 	delete* it; 
+		// 	GameObjects.erase(it); 
+		// }
+		// collision.RemoveGameObject(gameObject);
 	}
 	void UpdateCamera(float deltaTime)
 	{
