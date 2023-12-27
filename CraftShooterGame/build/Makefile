@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame
+CMAKE_SOURCE_DIR = /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/build
+CMAKE_BINARY_DIR = /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/build/CMakeFiles /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/build/CMakeFiles /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -117,38 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named my_library
+# Target rules for targets named my_game
 
 # Build rule for target.
-my_library: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 my_library
-.PHONY : my_library
+my_game: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 my_game
+.PHONY : my_game
 
 # fast build rule for target.
-my_library/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/build
-.PHONY : my_library/fast
-
-#=============================================================================
-# Target rules for targets named CraftShooterGame
-
-# Build rule for target.
-CraftShooterGame: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CraftShooterGame
-.PHONY : CraftShooterGame
-
-# fast build rule for target.
-CraftShooterGame/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CraftShooterGame.dir/build.make CMakeFiles/CraftShooterGame.dir/build
-.PHONY : CraftShooterGame/fast
+my_game/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/build
+.PHONY : my_game/fast
 
 Source/Components/PlayerController.o: Source/Components/PlayerController.cpp.o
 .PHONY : Source/Components/PlayerController.o
 
 # target to build an object file
 Source/Components/PlayerController.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/Components/PlayerController.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CraftShooterGame.dir/build.make CMakeFiles/CraftShooterGame.dir/Source/Components/PlayerController.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/Source/Components/PlayerController.cpp.o
 .PHONY : Source/Components/PlayerController.cpp.o
 
 Source/Components/PlayerController.i: Source/Components/PlayerController.cpp.i
@@ -156,8 +142,7 @@ Source/Components/PlayerController.i: Source/Components/PlayerController.cpp.i
 
 # target to preprocess a source file
 Source/Components/PlayerController.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/Components/PlayerController.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CraftShooterGame.dir/build.make CMakeFiles/CraftShooterGame.dir/Source/Components/PlayerController.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/Source/Components/PlayerController.cpp.i
 .PHONY : Source/Components/PlayerController.cpp.i
 
 Source/Components/PlayerController.s: Source/Components/PlayerController.cpp.s
@@ -165,8 +150,7 @@ Source/Components/PlayerController.s: Source/Components/PlayerController.cpp.s
 
 # target to generate assembly for a file
 Source/Components/PlayerController.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/Components/PlayerController.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CraftShooterGame.dir/build.make CMakeFiles/CraftShooterGame.dir/Source/Components/PlayerController.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/Source/Components/PlayerController.cpp.s
 .PHONY : Source/Components/PlayerController.cpp.s
 
 Source/GameObjects/Pong/Ball.o: Source/GameObjects/Pong/Ball.cpp.o
@@ -174,8 +158,7 @@ Source/GameObjects/Pong/Ball.o: Source/GameObjects/Pong/Ball.cpp.o
 
 # target to build an object file
 Source/GameObjects/Pong/Ball.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/GameObjects/Pong/Ball.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CraftShooterGame.dir/build.make CMakeFiles/CraftShooterGame.dir/Source/GameObjects/Pong/Ball.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/Source/GameObjects/Pong/Ball.cpp.o
 .PHONY : Source/GameObjects/Pong/Ball.cpp.o
 
 Source/GameObjects/Pong/Ball.i: Source/GameObjects/Pong/Ball.cpp.i
@@ -183,8 +166,7 @@ Source/GameObjects/Pong/Ball.i: Source/GameObjects/Pong/Ball.cpp.i
 
 # target to preprocess a source file
 Source/GameObjects/Pong/Ball.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/GameObjects/Pong/Ball.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CraftShooterGame.dir/build.make CMakeFiles/CraftShooterGame.dir/Source/GameObjects/Pong/Ball.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/Source/GameObjects/Pong/Ball.cpp.i
 .PHONY : Source/GameObjects/Pong/Ball.cpp.i
 
 Source/GameObjects/Pong/Ball.s: Source/GameObjects/Pong/Ball.cpp.s
@@ -192,8 +174,7 @@ Source/GameObjects/Pong/Ball.s: Source/GameObjects/Pong/Ball.cpp.s
 
 # target to generate assembly for a file
 Source/GameObjects/Pong/Ball.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/GameObjects/Pong/Ball.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CraftShooterGame.dir/build.make CMakeFiles/CraftShooterGame.dir/Source/GameObjects/Pong/Ball.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/Source/GameObjects/Pong/Ball.cpp.s
 .PHONY : Source/GameObjects/Pong/Ball.cpp.s
 
 Source/GameObjects/Pong/Paddle.o: Source/GameObjects/Pong/Paddle.cpp.o
@@ -201,8 +182,7 @@ Source/GameObjects/Pong/Paddle.o: Source/GameObjects/Pong/Paddle.cpp.o
 
 # target to build an object file
 Source/GameObjects/Pong/Paddle.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/GameObjects/Pong/Paddle.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CraftShooterGame.dir/build.make CMakeFiles/CraftShooterGame.dir/Source/GameObjects/Pong/Paddle.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/Source/GameObjects/Pong/Paddle.cpp.o
 .PHONY : Source/GameObjects/Pong/Paddle.cpp.o
 
 Source/GameObjects/Pong/Paddle.i: Source/GameObjects/Pong/Paddle.cpp.i
@@ -210,8 +190,7 @@ Source/GameObjects/Pong/Paddle.i: Source/GameObjects/Pong/Paddle.cpp.i
 
 # target to preprocess a source file
 Source/GameObjects/Pong/Paddle.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/GameObjects/Pong/Paddle.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CraftShooterGame.dir/build.make CMakeFiles/CraftShooterGame.dir/Source/GameObjects/Pong/Paddle.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/Source/GameObjects/Pong/Paddle.cpp.i
 .PHONY : Source/GameObjects/Pong/Paddle.cpp.i
 
 Source/GameObjects/Pong/Paddle.s: Source/GameObjects/Pong/Paddle.cpp.s
@@ -219,8 +198,7 @@ Source/GameObjects/Pong/Paddle.s: Source/GameObjects/Pong/Paddle.cpp.s
 
 # target to generate assembly for a file
 Source/GameObjects/Pong/Paddle.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/GameObjects/Pong/Paddle.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CraftShooterGame.dir/build.make CMakeFiles/CraftShooterGame.dir/Source/GameObjects/Pong/Paddle.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/Source/GameObjects/Pong/Paddle.cpp.s
 .PHONY : Source/GameObjects/Pong/Paddle.cpp.s
 
 Source/GameObjects/Shooter/Bullet.o: Source/GameObjects/Shooter/Bullet.cpp.o
@@ -228,8 +206,7 @@ Source/GameObjects/Shooter/Bullet.o: Source/GameObjects/Shooter/Bullet.cpp.o
 
 # target to build an object file
 Source/GameObjects/Shooter/Bullet.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/GameObjects/Shooter/Bullet.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CraftShooterGame.dir/build.make CMakeFiles/CraftShooterGame.dir/Source/GameObjects/Shooter/Bullet.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/Source/GameObjects/Shooter/Bullet.cpp.o
 .PHONY : Source/GameObjects/Shooter/Bullet.cpp.o
 
 Source/GameObjects/Shooter/Bullet.i: Source/GameObjects/Shooter/Bullet.cpp.i
@@ -237,8 +214,7 @@ Source/GameObjects/Shooter/Bullet.i: Source/GameObjects/Shooter/Bullet.cpp.i
 
 # target to preprocess a source file
 Source/GameObjects/Shooter/Bullet.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/GameObjects/Shooter/Bullet.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CraftShooterGame.dir/build.make CMakeFiles/CraftShooterGame.dir/Source/GameObjects/Shooter/Bullet.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/Source/GameObjects/Shooter/Bullet.cpp.i
 .PHONY : Source/GameObjects/Shooter/Bullet.cpp.i
 
 Source/GameObjects/Shooter/Bullet.s: Source/GameObjects/Shooter/Bullet.cpp.s
@@ -246,8 +222,7 @@ Source/GameObjects/Shooter/Bullet.s: Source/GameObjects/Shooter/Bullet.cpp.s
 
 # target to generate assembly for a file
 Source/GameObjects/Shooter/Bullet.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/GameObjects/Shooter/Bullet.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CraftShooterGame.dir/build.make CMakeFiles/CraftShooterGame.dir/Source/GameObjects/Shooter/Bullet.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/Source/GameObjects/Shooter/Bullet.cpp.s
 .PHONY : Source/GameObjects/Shooter/Bullet.cpp.s
 
 Source/GameObjects/Shooter/Enemy.o: Source/GameObjects/Shooter/Enemy.cpp.o
@@ -255,8 +230,7 @@ Source/GameObjects/Shooter/Enemy.o: Source/GameObjects/Shooter/Enemy.cpp.o
 
 # target to build an object file
 Source/GameObjects/Shooter/Enemy.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/GameObjects/Shooter/Enemy.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CraftShooterGame.dir/build.make CMakeFiles/CraftShooterGame.dir/Source/GameObjects/Shooter/Enemy.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/Source/GameObjects/Shooter/Enemy.cpp.o
 .PHONY : Source/GameObjects/Shooter/Enemy.cpp.o
 
 Source/GameObjects/Shooter/Enemy.i: Source/GameObjects/Shooter/Enemy.cpp.i
@@ -264,8 +238,7 @@ Source/GameObjects/Shooter/Enemy.i: Source/GameObjects/Shooter/Enemy.cpp.i
 
 # target to preprocess a source file
 Source/GameObjects/Shooter/Enemy.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/GameObjects/Shooter/Enemy.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CraftShooterGame.dir/build.make CMakeFiles/CraftShooterGame.dir/Source/GameObjects/Shooter/Enemy.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/Source/GameObjects/Shooter/Enemy.cpp.i
 .PHONY : Source/GameObjects/Shooter/Enemy.cpp.i
 
 Source/GameObjects/Shooter/Enemy.s: Source/GameObjects/Shooter/Enemy.cpp.s
@@ -273,8 +246,7 @@ Source/GameObjects/Shooter/Enemy.s: Source/GameObjects/Shooter/Enemy.cpp.s
 
 # target to generate assembly for a file
 Source/GameObjects/Shooter/Enemy.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/GameObjects/Shooter/Enemy.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CraftShooterGame.dir/build.make CMakeFiles/CraftShooterGame.dir/Source/GameObjects/Shooter/Enemy.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/Source/GameObjects/Shooter/Enemy.cpp.s
 .PHONY : Source/GameObjects/Shooter/Enemy.cpp.s
 
 Source/GameObjects/Shooter/PlayerShip.o: Source/GameObjects/Shooter/PlayerShip.cpp.o
@@ -282,8 +254,7 @@ Source/GameObjects/Shooter/PlayerShip.o: Source/GameObjects/Shooter/PlayerShip.c
 
 # target to build an object file
 Source/GameObjects/Shooter/PlayerShip.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/GameObjects/Shooter/PlayerShip.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CraftShooterGame.dir/build.make CMakeFiles/CraftShooterGame.dir/Source/GameObjects/Shooter/PlayerShip.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/Source/GameObjects/Shooter/PlayerShip.cpp.o
 .PHONY : Source/GameObjects/Shooter/PlayerShip.cpp.o
 
 Source/GameObjects/Shooter/PlayerShip.i: Source/GameObjects/Shooter/PlayerShip.cpp.i
@@ -291,8 +262,7 @@ Source/GameObjects/Shooter/PlayerShip.i: Source/GameObjects/Shooter/PlayerShip.c
 
 # target to preprocess a source file
 Source/GameObjects/Shooter/PlayerShip.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/GameObjects/Shooter/PlayerShip.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CraftShooterGame.dir/build.make CMakeFiles/CraftShooterGame.dir/Source/GameObjects/Shooter/PlayerShip.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/Source/GameObjects/Shooter/PlayerShip.cpp.i
 .PHONY : Source/GameObjects/Shooter/PlayerShip.cpp.i
 
 Source/GameObjects/Shooter/PlayerShip.s: Source/GameObjects/Shooter/PlayerShip.cpp.s
@@ -300,8 +270,7 @@ Source/GameObjects/Shooter/PlayerShip.s: Source/GameObjects/Shooter/PlayerShip.c
 
 # target to generate assembly for a file
 Source/GameObjects/Shooter/PlayerShip.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/GameObjects/Shooter/PlayerShip.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CraftShooterGame.dir/build.make CMakeFiles/CraftShooterGame.dir/Source/GameObjects/Shooter/PlayerShip.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/Source/GameObjects/Shooter/PlayerShip.cpp.s
 .PHONY : Source/GameObjects/Shooter/PlayerShip.cpp.s
 
 Source/Scenes/Pong/PongScene.o: Source/Scenes/Pong/PongScene.cpp.o
@@ -309,8 +278,7 @@ Source/Scenes/Pong/PongScene.o: Source/Scenes/Pong/PongScene.cpp.o
 
 # target to build an object file
 Source/Scenes/Pong/PongScene.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/Scenes/Pong/PongScene.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CraftShooterGame.dir/build.make CMakeFiles/CraftShooterGame.dir/Source/Scenes/Pong/PongScene.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/Source/Scenes/Pong/PongScene.cpp.o
 .PHONY : Source/Scenes/Pong/PongScene.cpp.o
 
 Source/Scenes/Pong/PongScene.i: Source/Scenes/Pong/PongScene.cpp.i
@@ -318,8 +286,7 @@ Source/Scenes/Pong/PongScene.i: Source/Scenes/Pong/PongScene.cpp.i
 
 # target to preprocess a source file
 Source/Scenes/Pong/PongScene.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/Scenes/Pong/PongScene.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CraftShooterGame.dir/build.make CMakeFiles/CraftShooterGame.dir/Source/Scenes/Pong/PongScene.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/Source/Scenes/Pong/PongScene.cpp.i
 .PHONY : Source/Scenes/Pong/PongScene.cpp.i
 
 Source/Scenes/Pong/PongScene.s: Source/Scenes/Pong/PongScene.cpp.s
@@ -327,8 +294,7 @@ Source/Scenes/Pong/PongScene.s: Source/Scenes/Pong/PongScene.cpp.s
 
 # target to generate assembly for a file
 Source/Scenes/Pong/PongScene.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/Scenes/Pong/PongScene.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CraftShooterGame.dir/build.make CMakeFiles/CraftShooterGame.dir/Source/Scenes/Pong/PongScene.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/Source/Scenes/Pong/PongScene.cpp.s
 .PHONY : Source/Scenes/Pong/PongScene.cpp.s
 
 Source/Scenes/Shooter/ShooterScene.o: Source/Scenes/Shooter/ShooterScene.cpp.o
@@ -336,8 +302,7 @@ Source/Scenes/Shooter/ShooterScene.o: Source/Scenes/Shooter/ShooterScene.cpp.o
 
 # target to build an object file
 Source/Scenes/Shooter/ShooterScene.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/Scenes/Shooter/ShooterScene.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CraftShooterGame.dir/build.make CMakeFiles/CraftShooterGame.dir/Source/Scenes/Shooter/ShooterScene.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/Source/Scenes/Shooter/ShooterScene.cpp.o
 .PHONY : Source/Scenes/Shooter/ShooterScene.cpp.o
 
 Source/Scenes/Shooter/ShooterScene.i: Source/Scenes/Shooter/ShooterScene.cpp.i
@@ -345,8 +310,7 @@ Source/Scenes/Shooter/ShooterScene.i: Source/Scenes/Shooter/ShooterScene.cpp.i
 
 # target to preprocess a source file
 Source/Scenes/Shooter/ShooterScene.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/Scenes/Shooter/ShooterScene.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CraftShooterGame.dir/build.make CMakeFiles/CraftShooterGame.dir/Source/Scenes/Shooter/ShooterScene.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/Source/Scenes/Shooter/ShooterScene.cpp.i
 .PHONY : Source/Scenes/Shooter/ShooterScene.cpp.i
 
 Source/Scenes/Shooter/ShooterScene.s: Source/Scenes/Shooter/ShooterScene.cpp.s
@@ -354,8 +318,7 @@ Source/Scenes/Shooter/ShooterScene.s: Source/Scenes/Shooter/ShooterScene.cpp.s
 
 # target to generate assembly for a file
 Source/Scenes/Shooter/ShooterScene.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/Scenes/Shooter/ShooterScene.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CraftShooterGame.dir/build.make CMakeFiles/CraftShooterGame.dir/Source/Scenes/Shooter/ShooterScene.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/Source/Scenes/Shooter/ShooterScene.cpp.s
 .PHONY : Source/Scenes/Shooter/ShooterScene.cpp.s
 
 Source/ShooterGameEntry.o: Source/ShooterGameEntry.cpp.o
@@ -363,8 +326,7 @@ Source/ShooterGameEntry.o: Source/ShooterGameEntry.cpp.o
 
 # target to build an object file
 Source/ShooterGameEntry.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/ShooterGameEntry.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CraftShooterGame.dir/build.make CMakeFiles/CraftShooterGame.dir/Source/ShooterGameEntry.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/Source/ShooterGameEntry.cpp.o
 .PHONY : Source/ShooterGameEntry.cpp.o
 
 Source/ShooterGameEntry.i: Source/ShooterGameEntry.cpp.i
@@ -372,8 +334,7 @@ Source/ShooterGameEntry.i: Source/ShooterGameEntry.cpp.i
 
 # target to preprocess a source file
 Source/ShooterGameEntry.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/ShooterGameEntry.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CraftShooterGame.dir/build.make CMakeFiles/CraftShooterGame.dir/Source/ShooterGameEntry.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/Source/ShooterGameEntry.cpp.i
 .PHONY : Source/ShooterGameEntry.cpp.i
 
 Source/ShooterGameEntry.s: Source/ShooterGameEntry.cpp.s
@@ -381,8 +342,7 @@ Source/ShooterGameEntry.s: Source/ShooterGameEntry.cpp.s
 
 # target to generate assembly for a file
 Source/ShooterGameEntry.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/ShooterGameEntry.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CraftShooterGame.dir/build.make CMakeFiles/CraftShooterGame.dir/Source/ShooterGameEntry.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/Source/ShooterGameEntry.cpp.s
 .PHONY : Source/ShooterGameEntry.cpp.s
 
 # Help Target
@@ -393,8 +353,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... CraftShooterGame"
-	@echo "... my_library"
+	@echo "... my_game"
 	@echo "... Source/Components/PlayerController.o"
 	@echo "... Source/Components/PlayerController.i"
 	@echo "... Source/Components/PlayerController.s"

@@ -1,18 +1,31 @@
-cmake_minimum_required(VERSION 3.10)
+# ConsoleCraftEngine/CraftShooterGame/CMakeLists.txt
+
+cmake_minimum_required(VERSION 3.12)
 project(CraftShooterGame)
 
-# Add all .cpp and .h files in the source directory
-file(GLOB_RECURSE SOURCE_FILES "Source/*.cpp" "Source/*.h")
+# Source files
+file(GLOB_RECURSE SOURCES
+    Source/*.cpp
+)
 
-# Add the shared library
-add_library(my_library SHARED ${SOURCE_FILES})
+# Header files
+file(GLOB_RECURSE HEADERS
+    Source/*.h
+)
 
-# Add the include directories
-target_include_directories(my_library PUBLIC include)
 
-# Add your game executable
-add_executable(CraftShooterGame ${SOURCE_FILES})
 
-# Link against your shared library
-target_link_libraries(CraftShooterGame my_library)
+# Executable
+add_executable(my_game ${SOURCES} ${HEADERS})
+
+# Include directory
+target_include_directories(my_game PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}/Source
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../ConsoleCraftEngine/Source  # Adjust the path accordingly
+)
+# Link with ConsoleCraftEngine library
+target_link_libraries(my_game PUBLIC ConsoleCraftEngine ncurses)
+
+# Include directory
+target_include_directories(my_game PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/Source)
 

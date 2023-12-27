@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ural/Belgeler/GitHub/ConsoleCraftEngine
+CMAKE_SOURCE_DIR = /home/ural/Documents/GitHub/ConsoleCraftEngine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ural/Belgeler/GitHub/ConsoleCraftEngine/build
+CMAKE_BINARY_DIR = /home/ural/Documents/GitHub/ConsoleCraftEngine/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ural/Belgeler/GitHub/ConsoleCraftEngine/build/CMakeFiles /home/ural/Belgeler/GitHub/ConsoleCraftEngine/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ural/Documents/GitHub/ConsoleCraftEngine/build/CMakeFiles /home/ural/Documents/GitHub/ConsoleCraftEngine/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ural/Belgeler/GitHub/ConsoleCraftEngine/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ural/Documents/GitHub/ConsoleCraftEngine/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -117,24 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named my_library
+# Target rules for targets named ConsoleCraftEngine
 
 # Build rule for target.
-my_library: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 my_library
-.PHONY : my_library
+ConsoleCraftEngine: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ConsoleCraftEngine
+.PHONY : ConsoleCraftEngine
 
 # fast build rule for target.
-my_library/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/build
-.PHONY : my_library/fast
+ConsoleCraftEngine/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/build
+.PHONY : ConsoleCraftEngine/fast
 
 Source/Core/Camera.o: Source/Core/Camera.cpp.o
 .PHONY : Source/Core/Camera.o
 
 # target to build an object file
 Source/Core/Camera.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/Core/Camera.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/Source/Core/Camera.cpp.o
 .PHONY : Source/Core/Camera.cpp.o
 
 Source/Core/Camera.i: Source/Core/Camera.cpp.i
@@ -142,7 +142,7 @@ Source/Core/Camera.i: Source/Core/Camera.cpp.i
 
 # target to preprocess a source file
 Source/Core/Camera.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/Core/Camera.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/Source/Core/Camera.cpp.i
 .PHONY : Source/Core/Camera.cpp.i
 
 Source/Core/Camera.s: Source/Core/Camera.cpp.s
@@ -150,7 +150,7 @@ Source/Core/Camera.s: Source/Core/Camera.cpp.s
 
 # target to generate assembly for a file
 Source/Core/Camera.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/Core/Camera.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/Source/Core/Camera.cpp.s
 .PHONY : Source/Core/Camera.cpp.s
 
 Source/Core/Collision.o: Source/Core/Collision.cpp.o
@@ -158,7 +158,7 @@ Source/Core/Collision.o: Source/Core/Collision.cpp.o
 
 # target to build an object file
 Source/Core/Collision.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/Core/Collision.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/Source/Core/Collision.cpp.o
 .PHONY : Source/Core/Collision.cpp.o
 
 Source/Core/Collision.i: Source/Core/Collision.cpp.i
@@ -166,7 +166,7 @@ Source/Core/Collision.i: Source/Core/Collision.cpp.i
 
 # target to preprocess a source file
 Source/Core/Collision.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/Core/Collision.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/Source/Core/Collision.cpp.i
 .PHONY : Source/Core/Collision.cpp.i
 
 Source/Core/Collision.s: Source/Core/Collision.cpp.s
@@ -174,7 +174,7 @@ Source/Core/Collision.s: Source/Core/Collision.cpp.s
 
 # target to generate assembly for a file
 Source/Core/Collision.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/Core/Collision.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/Source/Core/Collision.cpp.s
 .PHONY : Source/Core/Collision.cpp.s
 
 Source/Core/Component/Component.o: Source/Core/Component/Component.cpp.o
@@ -182,7 +182,7 @@ Source/Core/Component/Component.o: Source/Core/Component/Component.cpp.o
 
 # target to build an object file
 Source/Core/Component/Component.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/Core/Component/Component.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/Source/Core/Component/Component.cpp.o
 .PHONY : Source/Core/Component/Component.cpp.o
 
 Source/Core/Component/Component.i: Source/Core/Component/Component.cpp.i
@@ -190,7 +190,7 @@ Source/Core/Component/Component.i: Source/Core/Component/Component.cpp.i
 
 # target to preprocess a source file
 Source/Core/Component/Component.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/Core/Component/Component.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/Source/Core/Component/Component.cpp.i
 .PHONY : Source/Core/Component/Component.cpp.i
 
 Source/Core/Component/Component.s: Source/Core/Component/Component.cpp.s
@@ -198,7 +198,7 @@ Source/Core/Component/Component.s: Source/Core/Component/Component.cpp.s
 
 # target to generate assembly for a file
 Source/Core/Component/Component.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/Core/Component/Component.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/Source/Core/Component/Component.cpp.s
 .PHONY : Source/Core/Component/Component.cpp.s
 
 Source/Core/Event.o: Source/Core/Event.cpp.o
@@ -206,7 +206,7 @@ Source/Core/Event.o: Source/Core/Event.cpp.o
 
 # target to build an object file
 Source/Core/Event.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/Core/Event.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/Source/Core/Event.cpp.o
 .PHONY : Source/Core/Event.cpp.o
 
 Source/Core/Event.i: Source/Core/Event.cpp.i
@@ -214,7 +214,7 @@ Source/Core/Event.i: Source/Core/Event.cpp.i
 
 # target to preprocess a source file
 Source/Core/Event.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/Core/Event.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/Source/Core/Event.cpp.i
 .PHONY : Source/Core/Event.cpp.i
 
 Source/Core/Event.s: Source/Core/Event.cpp.s
@@ -222,7 +222,7 @@ Source/Core/Event.s: Source/Core/Event.cpp.s
 
 # target to generate assembly for a file
 Source/Core/Event.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/Core/Event.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/Source/Core/Event.cpp.s
 .PHONY : Source/Core/Event.cpp.s
 
 Source/Core/EventDispatcher.o: Source/Core/EventDispatcher.cpp.o
@@ -230,7 +230,7 @@ Source/Core/EventDispatcher.o: Source/Core/EventDispatcher.cpp.o
 
 # target to build an object file
 Source/Core/EventDispatcher.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/Core/EventDispatcher.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/Source/Core/EventDispatcher.cpp.o
 .PHONY : Source/Core/EventDispatcher.cpp.o
 
 Source/Core/EventDispatcher.i: Source/Core/EventDispatcher.cpp.i
@@ -238,7 +238,7 @@ Source/Core/EventDispatcher.i: Source/Core/EventDispatcher.cpp.i
 
 # target to preprocess a source file
 Source/Core/EventDispatcher.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/Core/EventDispatcher.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/Source/Core/EventDispatcher.cpp.i
 .PHONY : Source/Core/EventDispatcher.cpp.i
 
 Source/Core/EventDispatcher.s: Source/Core/EventDispatcher.cpp.s
@@ -246,7 +246,7 @@ Source/Core/EventDispatcher.s: Source/Core/EventDispatcher.cpp.s
 
 # target to generate assembly for a file
 Source/Core/EventDispatcher.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/Core/EventDispatcher.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/Source/Core/EventDispatcher.cpp.s
 .PHONY : Source/Core/EventDispatcher.cpp.s
 
 Source/Core/GameObject.o: Source/Core/GameObject.cpp.o
@@ -254,7 +254,7 @@ Source/Core/GameObject.o: Source/Core/GameObject.cpp.o
 
 # target to build an object file
 Source/Core/GameObject.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/Core/GameObject.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/Source/Core/GameObject.cpp.o
 .PHONY : Source/Core/GameObject.cpp.o
 
 Source/Core/GameObject.i: Source/Core/GameObject.cpp.i
@@ -262,7 +262,7 @@ Source/Core/GameObject.i: Source/Core/GameObject.cpp.i
 
 # target to preprocess a source file
 Source/Core/GameObject.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/Core/GameObject.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/Source/Core/GameObject.cpp.i
 .PHONY : Source/Core/GameObject.cpp.i
 
 Source/Core/GameObject.s: Source/Core/GameObject.cpp.s
@@ -270,7 +270,7 @@ Source/Core/GameObject.s: Source/Core/GameObject.cpp.s
 
 # target to generate assembly for a file
 Source/Core/GameObject.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/Core/GameObject.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/Source/Core/GameObject.cpp.s
 .PHONY : Source/Core/GameObject.cpp.s
 
 Source/Core/Input.o: Source/Core/Input.cpp.o
@@ -278,7 +278,7 @@ Source/Core/Input.o: Source/Core/Input.cpp.o
 
 # target to build an object file
 Source/Core/Input.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/Core/Input.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/Source/Core/Input.cpp.o
 .PHONY : Source/Core/Input.cpp.o
 
 Source/Core/Input.i: Source/Core/Input.cpp.i
@@ -286,7 +286,7 @@ Source/Core/Input.i: Source/Core/Input.cpp.i
 
 # target to preprocess a source file
 Source/Core/Input.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/Core/Input.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/Source/Core/Input.cpp.i
 .PHONY : Source/Core/Input.cpp.i
 
 Source/Core/Input.s: Source/Core/Input.cpp.s
@@ -294,7 +294,7 @@ Source/Core/Input.s: Source/Core/Input.cpp.s
 
 # target to generate assembly for a file
 Source/Core/Input.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/Core/Input.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/Source/Core/Input.cpp.s
 .PHONY : Source/Core/Input.cpp.s
 
 Source/Core/ParticleSystem/ParticleObject.o: Source/Core/ParticleSystem/ParticleObject.cpp.o
@@ -302,7 +302,7 @@ Source/Core/ParticleSystem/ParticleObject.o: Source/Core/ParticleSystem/Particle
 
 # target to build an object file
 Source/Core/ParticleSystem/ParticleObject.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/Core/ParticleSystem/ParticleObject.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/Source/Core/ParticleSystem/ParticleObject.cpp.o
 .PHONY : Source/Core/ParticleSystem/ParticleObject.cpp.o
 
 Source/Core/ParticleSystem/ParticleObject.i: Source/Core/ParticleSystem/ParticleObject.cpp.i
@@ -310,7 +310,7 @@ Source/Core/ParticleSystem/ParticleObject.i: Source/Core/ParticleSystem/Particle
 
 # target to preprocess a source file
 Source/Core/ParticleSystem/ParticleObject.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/Core/ParticleSystem/ParticleObject.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/Source/Core/ParticleSystem/ParticleObject.cpp.i
 .PHONY : Source/Core/ParticleSystem/ParticleObject.cpp.i
 
 Source/Core/ParticleSystem/ParticleObject.s: Source/Core/ParticleSystem/ParticleObject.cpp.s
@@ -318,7 +318,7 @@ Source/Core/ParticleSystem/ParticleObject.s: Source/Core/ParticleSystem/Particle
 
 # target to generate assembly for a file
 Source/Core/ParticleSystem/ParticleObject.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/Core/ParticleSystem/ParticleObject.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/Source/Core/ParticleSystem/ParticleObject.cpp.s
 .PHONY : Source/Core/ParticleSystem/ParticleObject.cpp.s
 
 Source/Core/ParticleSystem/ParticleSource.o: Source/Core/ParticleSystem/ParticleSource.cpp.o
@@ -326,7 +326,7 @@ Source/Core/ParticleSystem/ParticleSource.o: Source/Core/ParticleSystem/Particle
 
 # target to build an object file
 Source/Core/ParticleSystem/ParticleSource.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/Core/ParticleSystem/ParticleSource.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/Source/Core/ParticleSystem/ParticleSource.cpp.o
 .PHONY : Source/Core/ParticleSystem/ParticleSource.cpp.o
 
 Source/Core/ParticleSystem/ParticleSource.i: Source/Core/ParticleSystem/ParticleSource.cpp.i
@@ -334,7 +334,7 @@ Source/Core/ParticleSystem/ParticleSource.i: Source/Core/ParticleSystem/Particle
 
 # target to preprocess a source file
 Source/Core/ParticleSystem/ParticleSource.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/Core/ParticleSystem/ParticleSource.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/Source/Core/ParticleSystem/ParticleSource.cpp.i
 .PHONY : Source/Core/ParticleSystem/ParticleSource.cpp.i
 
 Source/Core/ParticleSystem/ParticleSource.s: Source/Core/ParticleSystem/ParticleSource.cpp.s
@@ -342,7 +342,7 @@ Source/Core/ParticleSystem/ParticleSource.s: Source/Core/ParticleSystem/Particle
 
 # target to generate assembly for a file
 Source/Core/ParticleSystem/ParticleSource.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/Core/ParticleSystem/ParticleSource.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/Source/Core/ParticleSystem/ParticleSource.cpp.s
 .PHONY : Source/Core/ParticleSystem/ParticleSource.cpp.s
 
 Source/Core/Renderer.o: Source/Core/Renderer.cpp.o
@@ -350,7 +350,7 @@ Source/Core/Renderer.o: Source/Core/Renderer.cpp.o
 
 # target to build an object file
 Source/Core/Renderer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/Core/Renderer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/Source/Core/Renderer.cpp.o
 .PHONY : Source/Core/Renderer.cpp.o
 
 Source/Core/Renderer.i: Source/Core/Renderer.cpp.i
@@ -358,7 +358,7 @@ Source/Core/Renderer.i: Source/Core/Renderer.cpp.i
 
 # target to preprocess a source file
 Source/Core/Renderer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/Core/Renderer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/Source/Core/Renderer.cpp.i
 .PHONY : Source/Core/Renderer.cpp.i
 
 Source/Core/Renderer.s: Source/Core/Renderer.cpp.s
@@ -366,7 +366,7 @@ Source/Core/Renderer.s: Source/Core/Renderer.cpp.s
 
 # target to generate assembly for a file
 Source/Core/Renderer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/Core/Renderer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/Source/Core/Renderer.cpp.s
 .PHONY : Source/Core/Renderer.cpp.s
 
 Source/Core/Scene.o: Source/Core/Scene.cpp.o
@@ -374,7 +374,7 @@ Source/Core/Scene.o: Source/Core/Scene.cpp.o
 
 # target to build an object file
 Source/Core/Scene.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/Core/Scene.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/Source/Core/Scene.cpp.o
 .PHONY : Source/Core/Scene.cpp.o
 
 Source/Core/Scene.i: Source/Core/Scene.cpp.i
@@ -382,7 +382,7 @@ Source/Core/Scene.i: Source/Core/Scene.cpp.i
 
 # target to preprocess a source file
 Source/Core/Scene.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/Core/Scene.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/Source/Core/Scene.cpp.i
 .PHONY : Source/Core/Scene.cpp.i
 
 Source/Core/Scene.s: Source/Core/Scene.cpp.s
@@ -390,7 +390,7 @@ Source/Core/Scene.s: Source/Core/Scene.cpp.s
 
 # target to generate assembly for a file
 Source/Core/Scene.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/Core/Scene.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/Source/Core/Scene.cpp.s
 .PHONY : Source/Core/Scene.cpp.s
 
 Source/Core/UIHandler.o: Source/Core/UIHandler.cpp.o
@@ -398,7 +398,7 @@ Source/Core/UIHandler.o: Source/Core/UIHandler.cpp.o
 
 # target to build an object file
 Source/Core/UIHandler.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/Core/UIHandler.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/Source/Core/UIHandler.cpp.o
 .PHONY : Source/Core/UIHandler.cpp.o
 
 Source/Core/UIHandler.i: Source/Core/UIHandler.cpp.i
@@ -406,7 +406,7 @@ Source/Core/UIHandler.i: Source/Core/UIHandler.cpp.i
 
 # target to preprocess a source file
 Source/Core/UIHandler.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/Core/UIHandler.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/Source/Core/UIHandler.cpp.i
 .PHONY : Source/Core/UIHandler.cpp.i
 
 Source/Core/UIHandler.s: Source/Core/UIHandler.cpp.s
@@ -414,7 +414,7 @@ Source/Core/UIHandler.s: Source/Core/UIHandler.cpp.s
 
 # target to generate assembly for a file
 Source/Core/UIHandler.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/Source/Core/UIHandler.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/Source/Core/UIHandler.cpp.s
 .PHONY : Source/Core/UIHandler.cpp.s
 
 # Help Target
@@ -425,7 +425,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... my_library"
+	@echo "... ConsoleCraftEngine"
 	@echo "... Source/Core/Camera.o"
 	@echo "... Source/Core/Camera.i"
 	@echo "... Source/Core/Camera.s"

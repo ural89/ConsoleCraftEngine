@@ -54,17 +54,16 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame
+CMAKE_SOURCE_DIR = /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/build
+CMAKE_BINARY_DIR = /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/build
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/my_library.dir/all
-all: CMakeFiles/CraftShooterGame.dir/all
+all: CMakeFiles/my_game.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -72,61 +71,34 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/my_library.dir/clean
-clean: CMakeFiles/CraftShooterGame.dir/clean
+clean: CMakeFiles/my_game.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/my_library.dir
+# Target rules for target CMakeFiles/my_game.dir
 
 # All Build rule for target.
-CMakeFiles/my_library.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/build/CMakeFiles --progress-num=11,12,13,14,15,16,17,18,19,20 "Built target my_library"
-.PHONY : CMakeFiles/my_library.dir/all
+CMakeFiles/my_game.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10 "Built target my_game"
+.PHONY : CMakeFiles/my_game.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/my_library.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/build/CMakeFiles 10
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/my_library.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/build/CMakeFiles 0
-.PHONY : CMakeFiles/my_library.dir/rule
+CMakeFiles/my_game.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/build/CMakeFiles 10
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/my_game.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/build/CMakeFiles 0
+.PHONY : CMakeFiles/my_game.dir/rule
 
 # Convenience name for target.
-my_library: CMakeFiles/my_library.dir/rule
-.PHONY : my_library
+my_game: CMakeFiles/my_game.dir/rule
+.PHONY : my_game
 
 # clean rule for target.
-CMakeFiles/my_library.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_library.dir/build.make CMakeFiles/my_library.dir/clean
-.PHONY : CMakeFiles/my_library.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/CraftShooterGame.dir
-
-# All Build rule for target.
-CMakeFiles/CraftShooterGame.dir/all: CMakeFiles/my_library.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CraftShooterGame.dir/build.make CMakeFiles/CraftShooterGame.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CraftShooterGame.dir/build.make CMakeFiles/CraftShooterGame.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10 "Built target CraftShooterGame"
-.PHONY : CMakeFiles/CraftShooterGame.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/CraftShooterGame.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/build/CMakeFiles 20
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/CraftShooterGame.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/build/CMakeFiles 0
-.PHONY : CMakeFiles/CraftShooterGame.dir/rule
-
-# Convenience name for target.
-CraftShooterGame: CMakeFiles/CraftShooterGame.dir/rule
-.PHONY : CraftShooterGame
-
-# clean rule for target.
-CMakeFiles/CraftShooterGame.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CraftShooterGame.dir/build.make CMakeFiles/CraftShooterGame.dir/clean
-.PHONY : CMakeFiles/CraftShooterGame.dir/clean
+CMakeFiles/my_game.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/clean
+.PHONY : CMakeFiles/my_game.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
