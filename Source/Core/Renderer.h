@@ -22,6 +22,7 @@ private:
         // coord.X = x;
         // coord.Y = y;
         // SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
+          std::cout << "\033[" << y << ";" << x << "H";
     }
     void HideCursor()
     {

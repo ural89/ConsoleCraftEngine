@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame
+CMAKE_SOURCE_DIR = /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/build
+CMAKE_BINARY_DIR = /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/build/CMakeFiles /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/build/CMakeFiles /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -115,6 +115,19 @@ preinstall/fast:
 depend:
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+#=============================================================================
+# Target rules for targets named ConsoleCraftEngine
+
+# Build rule for target.
+ConsoleCraftEngine: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ConsoleCraftEngine
+.PHONY : ConsoleCraftEngine
+
+# fast build rule for target.
+ConsoleCraftEngine/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/build
+.PHONY : ConsoleCraftEngine/fast
 
 #=============================================================================
 # Target rules for targets named my_game
@@ -345,6 +358,294 @@ Source/ShooterGameEntry.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_game.dir/build.make CMakeFiles/my_game.dir/Source/ShooterGameEntry.cpp.s
 .PHONY : Source/ShooterGameEntry.cpp.s
 
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Camera.o: home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Camera.cpp.o
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Camera.o
+
+# target to build an object file
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Camera.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Camera.cpp.o
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Camera.cpp.o
+
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Camera.i: home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Camera.cpp.i
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Camera.i
+
+# target to preprocess a source file
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Camera.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Camera.cpp.i
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Camera.cpp.i
+
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Camera.s: home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Camera.cpp.s
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Camera.s
+
+# target to generate assembly for a file
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Camera.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Camera.cpp.s
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Camera.cpp.s
+
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Collision.o: home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Collision.cpp.o
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Collision.o
+
+# target to build an object file
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Collision.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Collision.cpp.o
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Collision.cpp.o
+
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Collision.i: home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Collision.cpp.i
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Collision.i
+
+# target to preprocess a source file
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Collision.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Collision.cpp.i
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Collision.cpp.i
+
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Collision.s: home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Collision.cpp.s
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Collision.s
+
+# target to generate assembly for a file
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Collision.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Collision.cpp.s
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Collision.cpp.s
+
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Component/Component.o: home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Component/Component.cpp.o
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Component/Component.o
+
+# target to build an object file
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Component/Component.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Component/Component.cpp.o
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Component/Component.cpp.o
+
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Component/Component.i: home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Component/Component.cpp.i
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Component/Component.i
+
+# target to preprocess a source file
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Component/Component.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Component/Component.cpp.i
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Component/Component.cpp.i
+
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Component/Component.s: home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Component/Component.cpp.s
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Component/Component.s
+
+# target to generate assembly for a file
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Component/Component.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Component/Component.cpp.s
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Component/Component.cpp.s
+
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Event.o: home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Event.cpp.o
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Event.o
+
+# target to build an object file
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Event.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Event.cpp.o
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Event.cpp.o
+
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Event.i: home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Event.cpp.i
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Event.i
+
+# target to preprocess a source file
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Event.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Event.cpp.i
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Event.cpp.i
+
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Event.s: home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Event.cpp.s
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Event.s
+
+# target to generate assembly for a file
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Event.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Event.cpp.s
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Event.cpp.s
+
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/EventDispatcher.o: home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/EventDispatcher.cpp.o
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/EventDispatcher.o
+
+# target to build an object file
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/EventDispatcher.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/EventDispatcher.cpp.o
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/EventDispatcher.cpp.o
+
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/EventDispatcher.i: home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/EventDispatcher.cpp.i
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/EventDispatcher.i
+
+# target to preprocess a source file
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/EventDispatcher.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/EventDispatcher.cpp.i
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/EventDispatcher.cpp.i
+
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/EventDispatcher.s: home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/EventDispatcher.cpp.s
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/EventDispatcher.s
+
+# target to generate assembly for a file
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/EventDispatcher.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/EventDispatcher.cpp.s
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/EventDispatcher.cpp.s
+
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/GameObject.o: home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/GameObject.cpp.o
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/GameObject.o
+
+# target to build an object file
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/GameObject.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/GameObject.cpp.o
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/GameObject.cpp.o
+
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/GameObject.i: home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/GameObject.cpp.i
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/GameObject.i
+
+# target to preprocess a source file
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/GameObject.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/GameObject.cpp.i
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/GameObject.cpp.i
+
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/GameObject.s: home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/GameObject.cpp.s
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/GameObject.s
+
+# target to generate assembly for a file
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/GameObject.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/GameObject.cpp.s
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/GameObject.cpp.s
+
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Input.o: home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Input.cpp.o
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Input.o
+
+# target to build an object file
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Input.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Input.cpp.o
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Input.cpp.o
+
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Input.i: home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Input.cpp.i
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Input.i
+
+# target to preprocess a source file
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Input.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Input.cpp.i
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Input.cpp.i
+
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Input.s: home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Input.cpp.s
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Input.s
+
+# target to generate assembly for a file
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Input.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Input.cpp.s
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Input.cpp.s
+
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleObject.o: home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleObject.cpp.o
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleObject.o
+
+# target to build an object file
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleObject.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleObject.cpp.o
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleObject.cpp.o
+
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleObject.i: home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleObject.cpp.i
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleObject.i
+
+# target to preprocess a source file
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleObject.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleObject.cpp.i
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleObject.cpp.i
+
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleObject.s: home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleObject.cpp.s
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleObject.s
+
+# target to generate assembly for a file
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleObject.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleObject.cpp.s
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleObject.cpp.s
+
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleSource.o: home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleSource.cpp.o
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleSource.o
+
+# target to build an object file
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleSource.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleSource.cpp.o
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleSource.cpp.o
+
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleSource.i: home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleSource.cpp.i
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleSource.i
+
+# target to preprocess a source file
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleSource.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleSource.cpp.i
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleSource.cpp.i
+
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleSource.s: home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleSource.cpp.s
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleSource.s
+
+# target to generate assembly for a file
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleSource.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleSource.cpp.s
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleSource.cpp.s
+
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Renderer.o: home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Renderer.cpp.o
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Renderer.o
+
+# target to build an object file
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Renderer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Renderer.cpp.o
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Renderer.cpp.o
+
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Renderer.i: home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Renderer.cpp.i
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Renderer.i
+
+# target to preprocess a source file
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Renderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Renderer.cpp.i
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Renderer.cpp.i
+
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Renderer.s: home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Renderer.cpp.s
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Renderer.s
+
+# target to generate assembly for a file
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Renderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Renderer.cpp.s
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Renderer.cpp.s
+
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Scene.o: home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Scene.cpp.o
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Scene.o
+
+# target to build an object file
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Scene.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Scene.cpp.o
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Scene.cpp.o
+
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Scene.i: home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Scene.cpp.i
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Scene.i
+
+# target to preprocess a source file
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Scene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Scene.cpp.i
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Scene.cpp.i
+
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Scene.s: home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Scene.cpp.s
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Scene.s
+
+# target to generate assembly for a file
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Scene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Scene.cpp.s
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Scene.cpp.s
+
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/UIHandler.o: home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/UIHandler.cpp.o
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/UIHandler.o
+
+# target to build an object file
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/UIHandler.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/UIHandler.cpp.o
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/UIHandler.cpp.o
+
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/UIHandler.i: home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/UIHandler.cpp.i
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/UIHandler.i
+
+# target to preprocess a source file
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/UIHandler.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/UIHandler.cpp.i
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/UIHandler.cpp.i
+
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/UIHandler.s: home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/UIHandler.cpp.s
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/UIHandler.s
+
+# target to generate assembly for a file
+home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/UIHandler.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/UIHandler.cpp.s
+.PHONY : home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/UIHandler.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -353,6 +654,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... ConsoleCraftEngine"
 	@echo "... my_game"
 	@echo "... Source/Components/PlayerController.o"
 	@echo "... Source/Components/PlayerController.i"
@@ -381,6 +683,42 @@ help:
 	@echo "... Source/ShooterGameEntry.o"
 	@echo "... Source/ShooterGameEntry.i"
 	@echo "... Source/ShooterGameEntry.s"
+	@echo "... home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Camera.o"
+	@echo "... home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Camera.i"
+	@echo "... home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Camera.s"
+	@echo "... home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Collision.o"
+	@echo "... home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Collision.i"
+	@echo "... home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Collision.s"
+	@echo "... home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Component/Component.o"
+	@echo "... home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Component/Component.i"
+	@echo "... home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Component/Component.s"
+	@echo "... home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Event.o"
+	@echo "... home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Event.i"
+	@echo "... home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Event.s"
+	@echo "... home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/EventDispatcher.o"
+	@echo "... home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/EventDispatcher.i"
+	@echo "... home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/EventDispatcher.s"
+	@echo "... home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/GameObject.o"
+	@echo "... home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/GameObject.i"
+	@echo "... home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/GameObject.s"
+	@echo "... home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Input.o"
+	@echo "... home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Input.i"
+	@echo "... home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Input.s"
+	@echo "... home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleObject.o"
+	@echo "... home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleObject.i"
+	@echo "... home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleObject.s"
+	@echo "... home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleSource.o"
+	@echo "... home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleSource.i"
+	@echo "... home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleSource.s"
+	@echo "... home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Renderer.o"
+	@echo "... home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Renderer.i"
+	@echo "... home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Renderer.s"
+	@echo "... home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Scene.o"
+	@echo "... home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Scene.i"
+	@echo "... home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Scene.s"
+	@echo "... home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/UIHandler.o"
+	@echo "... home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/UIHandler.i"
+	@echo "... home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/UIHandler.s"
 .PHONY : help
 
 

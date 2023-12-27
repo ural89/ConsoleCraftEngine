@@ -27,7 +27,7 @@ void Renderer::Render(const Scene& scene)
             }
             DrawObjects(*go);
             ClearMovedObjectsTrail(*go);
-            DrawUI();
+           DrawUI();
         }
     }
             
@@ -108,5 +108,5 @@ void Renderer::DrawUI()
 
 void Renderer::SetConsoleColor(int color)
 {
-    // SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
+    std::cout << "\033[38;5;" << color << "m";
 }

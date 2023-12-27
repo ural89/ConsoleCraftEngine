@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ural/Documents/GitHub/ConsoleCraftEngine
+CMAKE_SOURCE_DIR = /home/ural/Belgeler/GitHub/ConsoleCraftEngine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ural/Documents/GitHub/ConsoleCraftEngine/build
+CMAKE_BINARY_DIR = /home/ural/Belgeler/GitHub/ConsoleCraftEngine/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -81,14 +81,14 @@ clean: CMakeFiles/ConsoleCraftEngine.dir/clean
 CMakeFiles/ConsoleCraftEngine.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleCraftEngine.dir/build.make CMakeFiles/ConsoleCraftEngine.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ural/Documents/GitHub/ConsoleCraftEngine/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13 "Built target ConsoleCraftEngine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ural/Belgeler/GitHub/ConsoleCraftEngine/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13 "Built target ConsoleCraftEngine"
 .PHONY : CMakeFiles/ConsoleCraftEngine.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ConsoleCraftEngine.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ural/Documents/GitHub/ConsoleCraftEngine/build/CMakeFiles 13
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ural/Belgeler/GitHub/ConsoleCraftEngine/build/CMakeFiles 13
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ConsoleCraftEngine.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ural/Documents/GitHub/ConsoleCraftEngine/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ural/Belgeler/GitHub/ConsoleCraftEngine/build/CMakeFiles 0
 .PHONY : CMakeFiles/ConsoleCraftEngine.dir/rule
 
 # Convenience name for target.

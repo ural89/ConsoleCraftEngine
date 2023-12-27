@@ -1,12 +1,12 @@
 CMakeFiles/my_game.dir/Source/Components/PlayerController.cpp.o: \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/Source/Components/PlayerController.cpp \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/Source/Components/PlayerController.cpp \
  /usr/include/stdc-predef.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/Source/Components/PlayerController.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/Component/Component.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/GameObject.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/../Core.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/../CoreStructs/Transform.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/../CoreStructs/Vector.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/Source/Components/PlayerController.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/Component/Component.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/GameObject.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/../Core.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/../CoreStructs/Transform.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/../CoreStructs/Vector.h \
  /usr/include/c++/11/cmath \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -197,4 +197,4 @@ CMakeFiles/my_game.dir/Source/Components/PlayerController.cpp.o: \
  /usr/include/c++/11/bits/stl_heap.h \
  /usr/include/c++/11/bits/stl_tempbuf.h \
  /usr/include/c++/11/bits/uniform_int_dist.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/Input.h
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/Input.h

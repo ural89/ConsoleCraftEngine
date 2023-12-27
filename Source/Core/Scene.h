@@ -6,6 +6,7 @@
 #include "Collision.h"
 #include "Camera.h"
 #include <queue>
+#include <algorithm>
 class GE_API Scene
 {
 protected:
@@ -30,13 +31,13 @@ public:
 	}
 	void RemoveGameObject(GameObject* gameObject)
 	{
-		// auto it = std::find(GameObjects.begin(), GameObjects.end(), gameObject);
-		// if (it != GameObjects.end())
-		// {
-		// 	delete* it; 
-		// 	GameObjects.erase(it); 
-		// }
-		// collision.RemoveGameObject(gameObject);
+		auto it = std::find(GameObjects.begin(), GameObjects.end(), gameObject);
+		if (it != GameObjects.end())
+		{
+			delete* it; 
+			GameObjects.erase(it); 
+		}
+		collision.RemoveGameObject(gameObject);
 	}
 	void UpdateCamera(float deltaTime)
 	{

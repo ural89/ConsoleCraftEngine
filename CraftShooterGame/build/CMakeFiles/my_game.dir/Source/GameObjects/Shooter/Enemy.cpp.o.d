@@ -1,11 +1,11 @@
 CMakeFiles/my_game.dir/Source/GameObjects/Shooter/Enemy.cpp.o: \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/Source/GameObjects/Shooter/Enemy.cpp \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/Source/GameObjects/Shooter/Enemy.cpp \
  /usr/include/stdc-predef.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/Source/GameObjects/Shooter/Enemy.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/GameObject.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/../Core.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/../CoreStructs/Transform.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/../CoreStructs/Vector.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/Source/GameObjects/Shooter/Enemy.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/GameObject.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/../Core.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/../CoreStructs/Transform.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/../CoreStructs/Vector.h \
  /usr/include/c++/11/cmath \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -179,8 +179,8 @@ CMakeFiles/my_game.dir/Source/GameObjects/Shooter/Enemy.cpp.o: \
  /usr/include/c++/11/bits/stl_vector.h \
  /usr/include/c++/11/bits/stl_bvector.h \
  /usr/include/c++/11/bits/vector.tcc \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/Component/Component.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/EventDispatcher.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/Component/Component.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/EventDispatcher.h \
  /usr/include/c++/11/functional /usr/include/c++/11/tuple \
  /usr/include/c++/11/utility /usr/include/c++/11/bits/stl_relops.h \
  /usr/include/c++/11/array /usr/include/c++/11/bits/uses_allocator.h \
@@ -198,14 +198,16 @@ CMakeFiles/my_game.dir/Source/GameObjects/Shooter/Enemy.cpp.o: \
  /usr/include/c++/11/bits/stl_heap.h \
  /usr/include/c++/11/bits/stl_tempbuf.h \
  /usr/include/c++/11/bits/uniform_int_dist.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/Event.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleSource.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/Scene.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/Event.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleSource.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/Scene.h \
  /usr/include/c++/11/map /usr/include/c++/11/bits/stl_tree.h \
  /usr/include/c++/11/bits/stl_map.h \
  /usr/include/c++/11/bits/stl_multimap.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/Collision.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/Camera.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/Collision.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/Camera.h \
  /usr/include/c++/11/queue /usr/include/c++/11/deque \
  /usr/include/c++/11/bits/stl_deque.h /usr/include/c++/11/bits/deque.tcc \
- /usr/include/c++/11/bits/stl_queue.h
+ /usr/include/c++/11/bits/stl_queue.h /usr/include/c++/11/algorithm \
+ /usr/include/c++/11/pstl/glue_algorithm_defs.h \
+ /usr/include/c++/11/pstl/execution_defs.h

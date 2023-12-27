@@ -14,15 +14,15 @@ void Camera::StartShake(float duration)
 
 void Camera::UpdateCamera(float deltaTime)
 {
-    xAcceleration += 20.f * deltaTime;
+    //xAcceleration += 0.01f * deltaTime;
     if (shakeDuration > 0)
     {
        
         if (isGoingLeft)
         {
-            offsetX += deltaTime * xAcceleration;
-            offsetY -= deltaTime * xAcceleration;
-            if (offsetX >= 0.2f)
+            offsetX = deltaTime * xAcceleration;
+            offsetY = -deltaTime * xAcceleration;
+            if (offsetX >= 0.001f)
             {
                 isGoingLeft = false;
             }
@@ -33,9 +33,9 @@ void Camera::UpdateCamera(float deltaTime)
         }
         else
         {
-            offsetX -= deltaTime * xAcceleration;
-            offsetY += deltaTime * xAcceleration;
-            if (offsetX <= -0.2f)
+            offsetX = -deltaTime * xAcceleration;
+            offsetY = deltaTime * xAcceleration;
+            if (offsetX <= -0.001f)
             {
                 isGoingLeft = true;
             }

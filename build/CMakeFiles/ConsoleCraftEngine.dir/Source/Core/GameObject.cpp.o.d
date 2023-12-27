@@ -1,10 +1,10 @@
 CMakeFiles/ConsoleCraftEngine.dir/Source/Core/GameObject.cpp.o: \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/GameObject.cpp \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/GameObject.cpp \
  /usr/include/stdc-predef.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/GameObject.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/../Core.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/../CoreStructs/Transform.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/../CoreStructs/Vector.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/GameObject.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/../Core.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/../CoreStructs/Transform.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/../CoreStructs/Vector.h \
  /usr/include/c++/11/cmath \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -178,4 +178,4 @@ CMakeFiles/ConsoleCraftEngine.dir/Source/Core/GameObject.cpp.o: \
  /usr/include/c++/11/bits/stl_vector.h \
  /usr/include/c++/11/bits/stl_bvector.h \
  /usr/include/c++/11/bits/vector.tcc \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Component/Component.h
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Component/Component.h

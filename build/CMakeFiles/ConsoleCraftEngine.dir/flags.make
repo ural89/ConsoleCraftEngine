@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -DConsoleCraftEngine_EXPORTS
 
-CXX_INCLUDES = -I/home/ural/Documents/GitHub/ConsoleCraftEngine/Source
+CXX_INCLUDES = -I/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source
 
 CXX_FLAGS = -fPIC
 

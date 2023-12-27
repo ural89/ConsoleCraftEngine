@@ -13,7 +13,7 @@ public:
 	float offsetY = 0; 
 private:
 	float xAcceleration;
-	float xAccelerationStart = 3;
+	float xAccelerationStart = 10;
 	bool isGoingLeft = true;
 	float shakeDuration = 0.f;
 };

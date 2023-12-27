@@ -1,7 +1,7 @@
 CMakeFiles/ConsoleCraftEngine.dir/Source/Core/Input.cpp.o: \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Input.cpp \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Input.cpp \
  /usr/include/stdc-predef.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/../conio.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/../conio.h \
  /usr/include/curses.h /usr/include/ncurses_dll.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
@@ -35,8 +35,8 @@ CMakeFiles/ConsoleCraftEngine.dir/Source/Core/Input.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
  /usr/include/unctrl.h /usr/include/curses.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Input.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/../Core.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Input.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/../Core.h \
  /usr/include/c++/11/functional \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \

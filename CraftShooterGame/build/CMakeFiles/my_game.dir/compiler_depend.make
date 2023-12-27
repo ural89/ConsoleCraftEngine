@@ -4,11 +4,11 @@
 CMakeFiles/my_game.dir/Source/Components/PlayerController.cpp.o: ../Source/Components/PlayerController.cpp \
   /usr/include/stdc-predef.h \
   ../Source/Components/PlayerController.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Component/Component.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/GameObject.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/CoreStructs/Transform.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/CoreStructs/Vector.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Component/Component.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/GameObject.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/CoreStructs/Transform.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/CoreStructs/Vector.h \
   /usr/include/c++/11/cmath \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -239,15 +239,15 @@ CMakeFiles/my_game.dir/Source/Components/PlayerController.cpp.o: ../Source/Compo
   /usr/include/c++/11/bits/stl_heap.h \
   /usr/include/c++/11/bits/stl_tempbuf.h \
   /usr/include/c++/11/bits/uniform_int_dist.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Input.h
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Input.h
 
 CMakeFiles/my_game.dir/Source/GameObjects/Pong/Ball.cpp.o: ../Source/GameObjects/Pong/Ball.cpp \
   /usr/include/stdc-predef.h \
   ../Source/GameObjects/Pong/Ball.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/GameObject.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/CoreStructs/Transform.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/CoreStructs/Vector.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/GameObject.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/CoreStructs/Transform.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/CoreStructs/Vector.h \
   /usr/include/c++/11/cmath \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -456,8 +456,8 @@ CMakeFiles/my_game.dir/Source/GameObjects/Pong/Ball.cpp.o: ../Source/GameObjects
   /usr/include/c++/11/bits/stl_vector.h \
   /usr/include/c++/11/bits/stl_bvector.h \
   /usr/include/c++/11/bits/vector.tcc \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Component/Component.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Input.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Component/Component.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Input.h \
   /usr/include/c++/11/functional \
   /usr/include/c++/11/tuple \
   /usr/include/c++/11/utility \
@@ -484,8 +484,8 @@ CMakeFiles/my_game.dir/Source/GameObjects/Pong/Ball.cpp.o: ../Source/GameObjects
 CMakeFiles/my_game.dir/Source/GameObjects/Pong/Paddle.cpp.o: ../Source/GameObjects/Pong/Paddle.cpp \
   /usr/include/stdc-predef.h \
   ../Source/GameObjects/Pong/Paddle.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Input.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Input.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core.h \
   /usr/include/c++/11/functional \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -597,9 +597,9 @@ CMakeFiles/my_game.dir/Source/GameObjects/Pong/Paddle.cpp.o: ../Source/GameObjec
   /usr/include/c++/11/bits/stl_heap.h \
   /usr/include/c++/11/bits/stl_tempbuf.h \
   /usr/include/c++/11/bits/uniform_int_dist.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/GameObject.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/CoreStructs/Transform.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/CoreStructs/Vector.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/GameObject.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/CoreStructs/Transform.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/CoreStructs/Vector.h \
   /usr/include/c++/11/cmath \
   /usr/include/math.h \
   /usr/include/x86_64-linux-gnu/bits/math-vector.h \
@@ -719,16 +719,16 @@ CMakeFiles/my_game.dir/Source/GameObjects/Pong/Paddle.cpp.o: ../Source/GameObjec
   /usr/include/c++/11/bits/ostream.tcc \
   /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Component/Component.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Component/Component.h \
   ../Source/Components/PlayerController.h
 
 CMakeFiles/my_game.dir/Source/GameObjects/Shooter/Bullet.cpp.o: ../Source/GameObjects/Shooter/Bullet.cpp \
   /usr/include/stdc-predef.h \
   ../Source/GameObjects/Shooter/Bullet.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/GameObject.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/CoreStructs/Transform.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/CoreStructs/Vector.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/GameObject.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/CoreStructs/Transform.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/CoreStructs/Vector.h \
   /usr/include/c++/11/cmath \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -937,8 +937,8 @@ CMakeFiles/my_game.dir/Source/GameObjects/Shooter/Bullet.cpp.o: ../Source/GameOb
   /usr/include/c++/11/bits/stl_vector.h \
   /usr/include/c++/11/bits/stl_bvector.h \
   /usr/include/c++/11/bits/vector.tcc \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Component/Component.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Scene.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Component/Component.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Scene.h \
   /usr/include/c++/11/map \
   /usr/include/c++/11/bits/stl_tree.h \
   /usr/include/c++/11/ext/aligned_buffer.h \
@@ -952,23 +952,38 @@ CMakeFiles/my_game.dir/Source/GameObjects/Shooter/Bullet.cpp.o: ../Source/GameOb
   /usr/include/c++/11/bits/invoke.h \
   /usr/include/c++/11/bits/stl_multimap.h \
   /usr/include/c++/11/bits/erase_if.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Collision.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Camera.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Collision.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Camera.h \
   /usr/include/c++/11/queue \
   /usr/include/c++/11/deque \
   /usr/include/c++/11/bits/stl_deque.h \
   /usr/include/c++/11/bits/deque.tcc \
   /usr/include/c++/11/bits/stl_heap.h \
   /usr/include/c++/11/bits/stl_queue.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleSource.h
+  /usr/include/c++/11/algorithm \
+  /usr/include/c++/11/bits/stl_algo.h \
+  /usr/include/c++/11/bits/algorithmfwd.h \
+  /usr/include/c++/11/bits/stl_tempbuf.h \
+  /usr/include/c++/11/bits/uniform_int_dist.h \
+  /usr/include/c++/11/pstl/glue_algorithm_defs.h \
+  /usr/include/c++/11/functional \
+  /usr/include/c++/11/bits/refwrap.h \
+  /usr/include/c++/11/bits/std_function.h \
+  /usr/include/c++/11/unordered_map \
+  /usr/include/c++/11/bits/hashtable.h \
+  /usr/include/c++/11/bits/hashtable_policy.h \
+  /usr/include/c++/11/bits/enable_special_members.h \
+  /usr/include/c++/11/bits/unordered_map.h \
+  /usr/include/c++/11/pstl/execution_defs.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleSource.h
 
 CMakeFiles/my_game.dir/Source/GameObjects/Shooter/Enemy.cpp.o: ../Source/GameObjects/Shooter/Enemy.cpp \
   /usr/include/stdc-predef.h \
   ../Source/GameObjects/Shooter/Enemy.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/GameObject.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/CoreStructs/Transform.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/CoreStructs/Vector.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/GameObject.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/CoreStructs/Transform.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/CoreStructs/Vector.h \
   /usr/include/c++/11/cmath \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -1177,8 +1192,8 @@ CMakeFiles/my_game.dir/Source/GameObjects/Shooter/Enemy.cpp.o: ../Source/GameObj
   /usr/include/c++/11/bits/stl_vector.h \
   /usr/include/c++/11/bits/stl_bvector.h \
   /usr/include/c++/11/bits/vector.tcc \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Component/Component.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/EventDispatcher.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Component/Component.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/EventDispatcher.h \
   /usr/include/c++/11/functional \
   /usr/include/c++/11/tuple \
   /usr/include/c++/11/utility \
@@ -1201,28 +1216,31 @@ CMakeFiles/my_game.dir/Source/GameObjects/Shooter/Enemy.cpp.o: ../Source/GameObj
   /usr/include/c++/11/bits/stl_heap.h \
   /usr/include/c++/11/bits/stl_tempbuf.h \
   /usr/include/c++/11/bits/uniform_int_dist.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Event.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleSource.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Scene.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Event.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleSource.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Scene.h \
   /usr/include/c++/11/map \
   /usr/include/c++/11/bits/stl_tree.h \
   /usr/include/c++/11/bits/stl_map.h \
   /usr/include/c++/11/bits/stl_multimap.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Collision.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Camera.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Collision.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Camera.h \
   /usr/include/c++/11/queue \
   /usr/include/c++/11/deque \
   /usr/include/c++/11/bits/stl_deque.h \
   /usr/include/c++/11/bits/deque.tcc \
-  /usr/include/c++/11/bits/stl_queue.h
+  /usr/include/c++/11/bits/stl_queue.h \
+  /usr/include/c++/11/algorithm \
+  /usr/include/c++/11/pstl/glue_algorithm_defs.h \
+  /usr/include/c++/11/pstl/execution_defs.h
 
 CMakeFiles/my_game.dir/Source/GameObjects/Shooter/PlayerShip.cpp.o: ../Source/GameObjects/Shooter/PlayerShip.cpp \
   /usr/include/stdc-predef.h \
   ../Source/GameObjects/Shooter/PlayerShip.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/GameObject.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/CoreStructs/Transform.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/CoreStructs/Vector.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/GameObject.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/CoreStructs/Transform.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/CoreStructs/Vector.h \
   /usr/include/c++/11/cmath \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -1431,8 +1449,8 @@ CMakeFiles/my_game.dir/Source/GameObjects/Shooter/PlayerShip.cpp.o: ../Source/Ga
   /usr/include/c++/11/bits/stl_vector.h \
   /usr/include/c++/11/bits/stl_bvector.h \
   /usr/include/c++/11/bits/vector.tcc \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Component/Component.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Event.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Component/Component.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Event.h \
   /usr/include/c++/11/functional \
   /usr/include/c++/11/tuple \
   /usr/include/c++/11/utility \
@@ -1457,28 +1475,31 @@ CMakeFiles/my_game.dir/Source/GameObjects/Shooter/PlayerShip.cpp.o: ../Source/Ga
   /usr/include/c++/11/bits/uniform_int_dist.h \
   ../Source/Components/PlayerController.h \
   ../Source/GameObjects/Shooter/Bullet.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Input.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Scene.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Input.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Scene.h \
   /usr/include/c++/11/map \
   /usr/include/c++/11/bits/stl_tree.h \
   /usr/include/c++/11/bits/stl_map.h \
   /usr/include/c++/11/bits/stl_multimap.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Collision.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Camera.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Collision.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Camera.h \
   /usr/include/c++/11/queue \
   /usr/include/c++/11/deque \
   /usr/include/c++/11/bits/stl_deque.h \
   /usr/include/c++/11/bits/deque.tcc \
   /usr/include/c++/11/bits/stl_queue.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/EventDispatcher.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/UIHandler.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleSource.h
+  /usr/include/c++/11/algorithm \
+  /usr/include/c++/11/pstl/glue_algorithm_defs.h \
+  /usr/include/c++/11/pstl/execution_defs.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/EventDispatcher.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/UIHandler.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleSource.h
 
 CMakeFiles/my_game.dir/Source/Scenes/Pong/PongScene.cpp.o: ../Source/Scenes/Pong/PongScene.cpp \
   /usr/include/stdc-predef.h \
   ../Source/Scenes/Pong/PongScene.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Scene.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Scene.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core.h \
   /usr/include/c++/11/vector \
   /usr/include/c++/11/bits/stl_algobase.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
@@ -1541,9 +1562,9 @@ CMakeFiles/my_game.dir/Source/Scenes/Pong/PongScene.cpp.o: ../Source/Scenes/Pong
   /usr/include/c++/11/bits/invoke.h \
   /usr/include/c++/11/bits/stl_multimap.h \
   /usr/include/c++/11/bits/erase_if.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/GameObject.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/CoreStructs/Transform.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/CoreStructs/Vector.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/GameObject.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/CoreStructs/Transform.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/CoreStructs/Vector.h \
   /usr/include/c++/11/cmath \
   /usr/include/math.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
@@ -1703,17 +1724,21 @@ CMakeFiles/my_game.dir/Source/Scenes/Pong/PongScene.cpp.o: ../Source/Scenes/Pong
   /usr/include/c++/11/bits/ostream.tcc \
   /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Component/Component.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Collision.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Camera.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Component/Component.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Collision.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Camera.h \
   /usr/include/c++/11/queue \
   /usr/include/c++/11/deque \
   /usr/include/c++/11/bits/stl_deque.h \
   /usr/include/c++/11/bits/deque.tcc \
   /usr/include/c++/11/bits/stl_heap.h \
   /usr/include/c++/11/bits/stl_queue.h \
-  ../Source/GameObjects/Pong/Ball.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Input.h \
+  /usr/include/c++/11/algorithm \
+  /usr/include/c++/11/bits/stl_algo.h \
+  /usr/include/c++/11/bits/algorithmfwd.h \
+  /usr/include/c++/11/bits/stl_tempbuf.h \
+  /usr/include/c++/11/bits/uniform_int_dist.h \
+  /usr/include/c++/11/pstl/glue_algorithm_defs.h \
   /usr/include/c++/11/functional \
   /usr/include/c++/11/bits/refwrap.h \
   /usr/include/c++/11/bits/std_function.h \
@@ -1722,17 +1747,16 @@ CMakeFiles/my_game.dir/Source/Scenes/Pong/PongScene.cpp.o: ../Source/Scenes/Pong
   /usr/include/c++/11/bits/hashtable_policy.h \
   /usr/include/c++/11/bits/enable_special_members.h \
   /usr/include/c++/11/bits/unordered_map.h \
-  /usr/include/c++/11/bits/stl_algo.h \
-  /usr/include/c++/11/bits/algorithmfwd.h \
-  /usr/include/c++/11/bits/stl_tempbuf.h \
-  /usr/include/c++/11/bits/uniform_int_dist.h \
+  /usr/include/c++/11/pstl/execution_defs.h \
+  ../Source/GameObjects/Pong/Ball.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Input.h \
   ../Source/GameObjects/Pong/Paddle.h
 
 CMakeFiles/my_game.dir/Source/Scenes/Shooter/ShooterScene.cpp.o: ../Source/Scenes/Shooter/ShooterScene.cpp \
   /usr/include/stdc-predef.h \
   ../Source/Scenes/Shooter/ShooterScene.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Scene.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Scene.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core.h \
   /usr/include/c++/11/vector \
   /usr/include/c++/11/bits/stl_algobase.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
@@ -1795,9 +1819,9 @@ CMakeFiles/my_game.dir/Source/Scenes/Shooter/ShooterScene.cpp.o: ../Source/Scene
   /usr/include/c++/11/bits/invoke.h \
   /usr/include/c++/11/bits/stl_multimap.h \
   /usr/include/c++/11/bits/erase_if.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/GameObject.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/CoreStructs/Transform.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/CoreStructs/Vector.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/GameObject.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/CoreStructs/Transform.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/CoreStructs/Vector.h \
   /usr/include/c++/11/cmath \
   /usr/include/math.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
@@ -1957,17 +1981,21 @@ CMakeFiles/my_game.dir/Source/Scenes/Shooter/ShooterScene.cpp.o: ../Source/Scene
   /usr/include/c++/11/bits/ostream.tcc \
   /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Component/Component.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Collision.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Camera.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Component/Component.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Collision.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Camera.h \
   /usr/include/c++/11/queue \
   /usr/include/c++/11/deque \
   /usr/include/c++/11/bits/stl_deque.h \
   /usr/include/c++/11/bits/deque.tcc \
   /usr/include/c++/11/bits/stl_heap.h \
   /usr/include/c++/11/bits/stl_queue.h \
-  ../Source/GameObjects/Shooter/PlayerShip.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Event.h \
+  /usr/include/c++/11/algorithm \
+  /usr/include/c++/11/bits/stl_algo.h \
+  /usr/include/c++/11/bits/algorithmfwd.h \
+  /usr/include/c++/11/bits/stl_tempbuf.h \
+  /usr/include/c++/11/bits/uniform_int_dist.h \
+  /usr/include/c++/11/pstl/glue_algorithm_defs.h \
   /usr/include/c++/11/functional \
   /usr/include/c++/11/bits/refwrap.h \
   /usr/include/c++/11/bits/std_function.h \
@@ -1976,18 +2004,17 @@ CMakeFiles/my_game.dir/Source/Scenes/Shooter/ShooterScene.cpp.o: ../Source/Scene
   /usr/include/c++/11/bits/hashtable_policy.h \
   /usr/include/c++/11/bits/enable_special_members.h \
   /usr/include/c++/11/bits/unordered_map.h \
-  /usr/include/c++/11/bits/stl_algo.h \
-  /usr/include/c++/11/bits/algorithmfwd.h \
-  /usr/include/c++/11/bits/stl_tempbuf.h \
-  /usr/include/c++/11/bits/uniform_int_dist.h \
+  /usr/include/c++/11/pstl/execution_defs.h \
+  ../Source/GameObjects/Shooter/PlayerShip.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Event.h \
   ../Source/GameObjects/Shooter/Enemy.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/EventDispatcher.h
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/EventDispatcher.h
 
 CMakeFiles/my_game.dir/Source/ShooterGameEntry.cpp.o: ../Source/ShooterGameEntry.cpp \
   /usr/include/stdc-predef.h \
   ../Source/Scenes/Pong/PongScene.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Scene.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Scene.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core.h \
   /usr/include/c++/11/vector \
   /usr/include/c++/11/bits/stl_algobase.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
@@ -2050,9 +2077,9 @@ CMakeFiles/my_game.dir/Source/ShooterGameEntry.cpp.o: ../Source/ShooterGameEntry
   /usr/include/c++/11/bits/invoke.h \
   /usr/include/c++/11/bits/stl_multimap.h \
   /usr/include/c++/11/bits/erase_if.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/GameObject.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/CoreStructs/Transform.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/CoreStructs/Vector.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/GameObject.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/CoreStructs/Transform.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/CoreStructs/Vector.h \
   /usr/include/c++/11/cmath \
   /usr/include/math.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
@@ -2212,41 +2239,42 @@ CMakeFiles/my_game.dir/Source/ShooterGameEntry.cpp.o: ../Source/ShooterGameEntry
   /usr/include/c++/11/bits/ostream.tcc \
   /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Component/Component.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Collision.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Camera.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Component/Component.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Collision.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Camera.h \
   /usr/include/c++/11/queue \
   /usr/include/c++/11/deque \
   /usr/include/c++/11/bits/stl_deque.h \
   /usr/include/c++/11/bits/deque.tcc \
   /usr/include/c++/11/bits/stl_heap.h \
   /usr/include/c++/11/bits/stl_queue.h \
+  /usr/include/c++/11/algorithm \
+  /usr/include/c++/11/bits/stl_algo.h \
+  /usr/include/c++/11/bits/algorithmfwd.h \
+  /usr/include/c++/11/bits/stl_tempbuf.h \
+  /usr/include/c++/11/bits/uniform_int_dist.h \
+  /usr/include/c++/11/pstl/glue_algorithm_defs.h \
+  /usr/include/c++/11/functional \
+  /usr/include/c++/11/bits/refwrap.h \
+  /usr/include/c++/11/bits/std_function.h \
+  /usr/include/c++/11/unordered_map \
+  /usr/include/c++/11/bits/hashtable.h \
+  /usr/include/c++/11/bits/hashtable_policy.h \
+  /usr/include/c++/11/bits/enable_special_members.h \
+  /usr/include/c++/11/bits/unordered_map.h \
+  /usr/include/c++/11/pstl/execution_defs.h \
   /usr/include/c++/11/thread \
   /usr/include/c++/11/bits/std_thread.h \
-  /usr/include/c++/11/bits/refwrap.h \
   /usr/include/c++/11/bits/unique_ptr.h \
   /usr/include/c++/11/bits/this_thread_sleep.h \
   /usr/include/c++/11/chrono \
   /usr/include/c++/11/ratio \
   /usr/include/c++/11/ctime \
   /usr/include/c++/11/bits/parse_numbers.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Input.h \
-  /usr/include/c++/11/functional \
-  /usr/include/c++/11/bits/std_function.h \
-  /usr/include/c++/11/unordered_map \
-  /usr/include/c++/11/bits/hashtable.h \
-  /usr/include/c++/11/bits/hashtable_policy.h \
-  /usr/include/c++/11/bits/enable_special_members.h \
-  /usr/include/c++/11/bits/unordered_map.h \
-  /usr/include/c++/11/bits/stl_algo.h \
-  /usr/include/c++/11/bits/algorithmfwd.h \
-  /usr/include/c++/11/bits/stl_tempbuf.h \
-  /usr/include/c++/11/bits/uniform_int_dist.h \
-  /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Renderer.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Input.h \
+  /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Renderer.h \
   ../Source/Scenes/Shooter/ShooterScene.h
 
-
-/home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Renderer.h:
 
 /usr/include/c++/11/bits/parse_numbers.h:
 
@@ -2264,17 +2292,17 @@ CMakeFiles/my_game.dir/Source/ShooterGameEntry.cpp.o: ../Source/ShooterGameEntry
 
 ../Source/GameObjects/Shooter/PlayerShip.cpp:
 
+/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Event.h:
+
 ../Source/GameObjects/Shooter/Enemy.h:
 
 ../Source/GameObjects/Shooter/Enemy.cpp:
 
-/home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleSource.h:
+/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleSource.h:
 
 /usr/include/c++/11/bits/char_traits.h:
 
 /usr/include/asm-generic/errno-base.h:
-
-/home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Component/Component.h:
 
 /usr/include/c++/11/bits/string_view.tcc:
 
@@ -2298,17 +2326,17 @@ CMakeFiles/my_game.dir/Source/ShooterGameEntry.cpp.o: ../Source/ShooterGameEntry
 
 /usr/include/c++/11/cwchar:
 
-/usr/include/c++/11/bits/stl_algobase.h:
-
 /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h:
+
+/usr/include/c++/11/bits/stl_algobase.h:
 
 /usr/include/c++/11/tr1/special_function_util.h:
 
-/usr/include/c++/11/cstdint:
-
-/usr/include/x86_64-linux-gnu/bits/waitstatus.h:
-
 /usr/include/c++/11/bits/stringfwd.h:
+
+/usr/include/c++/11/backward/binders.h:
+
+/usr/include/c++/11/bits/deque.tcc:
 
 /usr/include/x86_64-linux-gnu/bits/types/FILE.h:
 
@@ -2348,11 +2376,17 @@ CMakeFiles/my_game.dir/Source/ShooterGameEntry.cpp.o: ../Source/ShooterGameEntry
 
 /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
 
-/home/ural/Documents/GitHub/ConsoleCraftEngine/Source/CoreStructs/Vector.h:
+/usr/include/c++/11/bits/stl_pair.h:
 
 /usr/include/c++/11/ext/atomicity.h:
 
+/usr/include/x86_64-linux-gnu/bits/select.h:
+
+/usr/include/x86_64-linux-gnu/bits/time.h:
+
 /usr/include/c++/11/bits/specfun.h:
+
+/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/EventDispatcher.h:
 
 /usr/include/alloca.h:
 
@@ -2364,17 +2398,11 @@ CMakeFiles/my_game.dir/Source/ShooterGameEntry.cpp.o: ../Source/ShooterGameEntry
 
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
 
-/home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Input.h:
-
-/usr/include/c++/11/tr1/riemann_zeta.tcc:
-
-/usr/include/x86_64-linux-gnu/bits/math-vector.h:
-
-/usr/include/c++/11/bits/stl_algo.h:
-
 /usr/include/c++/11/bits/predefined_ops.h:
 
 /usr/include/x86_64-linux-gnu/bits/typesizes.h:
+
+/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Scene.h:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/c++allocator.h:
 
@@ -2410,8 +2438,6 @@ CMakeFiles/my_game.dir/Source/ShooterGameEntry.cpp.o: ../Source/ShooterGameEntry
 
 /usr/include/x86_64-linux-gnu/bits/timesize.h:
 
-/home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Event.h:
-
 /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/byteswap.h:
@@ -2436,16 +2462,6 @@ CMakeFiles/my_game.dir/Source/ShooterGameEntry.cpp.o: ../Source/ShooterGameEntry
 
 /usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
 
-/usr/include/c++/11/chrono:
-
-/usr/include/x86_64-linux-gnu/bits/wordsize.h:
-
-/usr/include/stdlib.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
-
 /usr/include/c++/11/bits/locale_facets.h:
 
 /usr/include/c++/11/bits/exception.h:
@@ -2454,8 +2470,6 @@ CMakeFiles/my_game.dir/Source/ShooterGameEntry.cpp.o: ../Source/ShooterGameEntry
 
 ../Source/GameObjects/Pong/Paddle.h:
 
-/home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core.h:
-
 /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
 
 /usr/include/c++/11/bits/stl_iterator.h:
@@ -2463,6 +2477,10 @@ CMakeFiles/my_game.dir/Source/ShooterGameEntry.cpp.o: ../Source/ShooterGameEntry
 /usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
 
 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:
+
+/usr/include/c++/11/algorithm:
+
+/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/GameObject.h:
 
 /usr/include/c++/11/pstl/pstl_config.h:
 
@@ -2476,33 +2494,43 @@ CMakeFiles/my_game.dir/Source/ShooterGameEntry.cpp.o: ../Source/ShooterGameEntry
 
 /usr/include/c++/11/bits/allocator.h:
 
-/usr/include/c++/11/bits/stl_tempbuf.h:
+/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 
-/usr/include/c++/11/bits/std_function.h:
+/usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
 
 /usr/include/pthread.h:
 
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
 
-/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
+/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/CoreStructs/Transform.h:
 
-/usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
+/usr/include/c++/11/chrono:
 
-/home/ural/Documents/GitHub/ConsoleCraftEngine/Source/CoreStructs/Transform.h:
+/usr/include/x86_64-linux-gnu/bits/wordsize.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
+/usr/include/stdlib.h:
 
-/usr/include/x86_64-linux-gnu/bits/time.h:
+/usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
 
-/usr/include/x86_64-linux-gnu/bits/select.h:
-
-/usr/include/c++/11/backward/binders.h:
-
-/usr/include/c++/11/bits/deque.tcc:
-
-/home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/EventDispatcher.h:
+/usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
 
 /usr/include/c++/11/ostream:
+
+/usr/include/x86_64-linux-gnu/bits/waitstatus.h:
+
+/usr/include/c++/11/cstdint:
+
+/usr/include/c++/11/bits/stl_tempbuf.h:
+
+/usr/include/c++/11/bits/std_function.h:
+
+/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core.h:
+
+/usr/include/c++/11/tr1/riemann_zeta.tcc:
+
+/usr/include/x86_64-linux-gnu/bits/math-vector.h:
+
+/usr/include/c++/11/bits/stl_algo.h:
 
 /usr/include/c++/11/bits/std_thread.h:
 
@@ -2510,19 +2538,25 @@ CMakeFiles/my_game.dir/Source/ShooterGameEntry.cpp.o: ../Source/ShooterGameEntry
 
 /usr/include/c++/11/bits/stl_iterator_base_funcs.h:
 
+/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/CoreStructs/Vector.h:
+
+/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Renderer.h:
+
+/usr/include/x86_64-linux-gnu/sys/select.h:
+
 /usr/include/x86_64-linux-gnu/bits/fp-logb.h:
 
 /usr/include/c++/11/bits/ios_base.h:
+
+/usr/include/c++/11/debug/debug.h:
+
+/usr/include/features-time64.h:
 
 /usr/include/c++/11/ext/numeric_traits.h:
 
 /usr/include/features.h:
 
 /usr/include/c++/11/bits/stl_multimap.h:
-
-/usr/include/c++/11/debug/debug.h:
-
-/usr/include/features-time64.h:
 
 /usr/include/c++/11/tr1/bessel_function.tcc:
 
@@ -2533,8 +2567,6 @@ CMakeFiles/my_game.dir/Source/ShooterGameEntry.cpp.o: ../Source/ShooterGameEntry
 /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
 
 ../Source/Components/PlayerController.h:
-
-/usr/include/x86_64-linux-gnu/sys/select.h:
 
 /usr/include/x86_64-linux-gnu/bits/iscanonical.h:
 
@@ -2547,6 +2579,8 @@ CMakeFiles/my_game.dir/Source/ShooterGameEntry.cpp.o: ../Source/ShooterGameEntry
 /usr/include/c++/11/bits/locale_classes.h:
 
 ../Source/GameObjects/Shooter/Bullet.h:
+
+/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Component/Component.h:
 
 /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
 
@@ -2576,17 +2610,29 @@ CMakeFiles/my_game.dir/Source/ShooterGameEntry.cpp.o: ../Source/ShooterGameEntry
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
 
-/usr/include/x86_64-linux-gnu/bits/waitflags.h:
-
-/usr/include/c++/11/ext/aligned_buffer.h:
-
-/usr/include/x86_64-linux-gnu/sys/types.h:
-
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
 
 /usr/include/locale.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/time_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/waitflags.h:
+
+/usr/include/x86_64-linux-gnu/sys/types.h:
+
+/usr/include/c++/11/ext/aligned_buffer.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
+
+../Source/Scenes/Pong/PongScene.h:
+
+/usr/include/c++/11/bits/ptr_traits.h:
+
+/usr/include/c++/11/bits/erase_if.h:
+
+/usr/include/endian.h:
+
+/usr/include/stdint.h:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/c++locale.h:
 
@@ -2617,6 +2663,8 @@ CMakeFiles/my_game.dir/Source/ShooterGameEntry.cpp.o: ../Source/ShooterGameEntry
 /usr/include/c++/11/bits/unordered_map.h:
 
 /usr/include/x86_64-linux-gnu/bits/cpu-set.h:
+
+/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Camera.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 
@@ -2692,12 +2740,6 @@ CMakeFiles/my_game.dir/Source/ShooterGameEntry.cpp.o: ../Source/ShooterGameEntry
 
 /usr/include/errno.h:
 
-/usr/include/c++/11/ios:
-
-/usr/include/x86_64-linux-gnu/c++/11/bits/error_constants.h:
-
-/usr/include/c++/11/utility:
-
 /usr/include/x86_64-linux-gnu/bits/errno.h:
 
 /usr/include/sched.h:
@@ -2710,13 +2752,15 @@ CMakeFiles/my_game.dir/Source/ShooterGameEntry.cpp.o: ../Source/ShooterGameEntry
 
 /usr/include/c++/11/bits/basic_string.tcc:
 
-/home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/UIHandler.h:
-
 /usr/include/c++/11/system_error:
 
 /usr/include/c++/11/bits/stl_vector.h:
 
-/usr/include/c++/11/stdexcept:
+/usr/include/c++/11/ios:
+
+/usr/include/c++/11/utility:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/error_constants.h:
 
 /usr/include/c++/11/bits/uniform_int_dist.h:
 
@@ -2744,13 +2788,17 @@ CMakeFiles/my_game.dir/Source/ShooterGameEntry.cpp.o: ../Source/ShooterGameEntry
 
 ../Source/ShooterGameEntry.cpp:
 
-/home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/GameObject.h:
-
 /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
 
 /usr/include/c++/11/bits/stl_bvector.h:
+
+/usr/include/c++/11/pstl/glue_algorithm_defs.h:
+
+/usr/include/c++/11/stdexcept:
+
+/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Collision.h:
 
 /usr/include/c++/11/bits/vector.tcc:
 
@@ -2761,6 +2809,8 @@ CMakeFiles/my_game.dir/Source/ShooterGameEntry.cpp.o: ../Source/ShooterGameEntry
 /usr/include/c++/11/tr1/beta_function.tcc:
 
 /usr/include/c++/11/array:
+
+/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/UIHandler.h:
 
 /usr/include/c++/11/bits/uses_allocator.h:
 
@@ -2774,17 +2824,7 @@ CMakeFiles/my_game.dir/Source/ShooterGameEntry.cpp.o: ../Source/ShooterGameEntry
 
 /usr/include/c++/11/bits/enable_special_members.h:
 
-/home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Collision.h:
-
-../Source/Scenes/Pong/PongScene.h:
-
-/usr/include/c++/11/bits/ptr_traits.h:
-
-/usr/include/endian.h:
-
-/usr/include/stdint.h:
-
-/usr/include/c++/11/bits/erase_if.h:
+/usr/include/c++/11/pstl/execution_defs.h:
 
 /usr/include/c++/11/bits/algorithmfwd.h:
 
@@ -2792,13 +2832,9 @@ CMakeFiles/my_game.dir/Source/ShooterGameEntry.cpp.o: ../Source/ShooterGameEntry
 
 /usr/include/c++/11/bits/stl_heap.h:
 
+/home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Input.h:
+
 ../Source/GameObjects/Pong/Ball.h:
-
-/home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Scene.h:
-
-/usr/include/c++/11/bits/stl_pair.h:
-
-/home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Camera.h:
 
 /usr/include/x86_64-linux-gnu/gnu/stubs.h:
 

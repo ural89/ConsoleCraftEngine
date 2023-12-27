@@ -1,8 +1,8 @@
 CMakeFiles/ConsoleCraftEngine.dir/Source/Core/EventDispatcher.cpp.o: \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/EventDispatcher.cpp \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/EventDispatcher.cpp \
  /usr/include/stdc-predef.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/EventDispatcher.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/../Core.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/EventDispatcher.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/../Core.h \
  /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_algobase.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -99,4 +99,4 @@ CMakeFiles/ConsoleCraftEngine.dir/Source/Core/EventDispatcher.cpp.o: \
  /usr/include/c++/11/bits/stl_heap.h \
  /usr/include/c++/11/bits/stl_tempbuf.h \
  /usr/include/c++/11/bits/uniform_int_dist.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Event.h
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Event.h

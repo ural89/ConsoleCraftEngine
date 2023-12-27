@@ -1,7 +1,7 @@
 CMakeFiles/ConsoleCraftEngine.dir/Source/Core/UIHandler.cpp.o: \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/UIHandler.cpp \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/UIHandler.cpp \
  /usr/include/stdc-predef.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/UIHandler.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/UIHandler.h \
  /usr/include/c++/11/string \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -134,8 +134,8 @@ CMakeFiles/ConsoleCraftEngine.dir/Source/Core/UIHandler.cpp.o: \
  /usr/include/c++/11/bits/stl_vector.h \
  /usr/include/c++/11/bits/stl_bvector.h \
  /usr/include/c++/11/bits/vector.tcc \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/../Core.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/../CoreStructs/Vector.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/../Core.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/../CoreStructs/Vector.h \
  /usr/include/c++/11/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \

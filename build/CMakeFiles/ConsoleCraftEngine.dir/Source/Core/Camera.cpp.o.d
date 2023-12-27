@@ -1,8 +1,8 @@
 CMakeFiles/ConsoleCraftEngine.dir/Source/Core/Camera.cpp.o: \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Camera.cpp \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Camera.cpp \
  /usr/include/stdc-predef.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Camera.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/../Core.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Camera.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/../Core.h \
  /usr/include/c++/11/cstdlib \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \

@@ -1,3 +1,4 @@
-/home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/build/CMakeFiles/my_game.dir
-/home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/build/CMakeFiles/edit_cache.dir
-/home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/build/CMakeFiles/rebuild_cache.dir
+/home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/build/CMakeFiles/ConsoleCraftEngine.dir
+/home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/build/CMakeFiles/my_game.dir
+/home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/build/CMakeFiles/edit_cache.dir
+/home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/build/CMakeFiles/rebuild_cache.dir

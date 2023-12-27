@@ -1,7 +1,7 @@
 #include "../conio.h"
 #include "Input.h"
 #include <iostream>
-
+#include <algorithm>
 int Input::keyDown = 0;  // Initialize the static member variable
 
 Input::Input() {}
@@ -35,6 +35,9 @@ void Input::AddListener(std::function<void(int input)> func)
 
 void Input::RemoveListener(std::function<void(int input)> func)
 {
-    //auto newEnd = std::remove(listeners.begin(), listeners.end(), func); //Move element to last
-    //listeners.erase(newEnd, listeners.end()); //erase last one
+    listeners.erase(std::remove_if(listeners.begin(), listeners.end(),
+                                   [&func](const std::function<void(int input)>& listener) {
+                                       return listener.target<void(int input)>() == func.target<void(int input)>();
+                                   }),
+                    listeners.end());
 }

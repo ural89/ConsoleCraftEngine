@@ -1,9 +1,9 @@
 CMakeFiles/my_game.dir/Source/GameObjects/Pong/Paddle.cpp.o: \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/Source/GameObjects/Pong/Paddle.cpp \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/Source/GameObjects/Pong/Paddle.cpp \
  /usr/include/stdc-predef.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/Source/GameObjects/Pong/Paddle.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/Input.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/../Core.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/Source/GameObjects/Pong/Paddle.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/Input.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/../Core.h \
  /usr/include/c++/11/functional \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -99,9 +99,9 @@ CMakeFiles/my_game.dir/Source/GameObjects/Pong/Paddle.cpp.o: \
  /usr/include/c++/11/bits/stl_heap.h \
  /usr/include/c++/11/bits/stl_tempbuf.h \
  /usr/include/c++/11/bits/uniform_int_dist.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/GameObject.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/../CoreStructs/Transform.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/../CoreStructs/Vector.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/GameObject.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/../CoreStructs/Transform.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/../CoreStructs/Vector.h \
  /usr/include/c++/11/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
@@ -195,5 +195,5 @@ CMakeFiles/my_game.dir/Source/GameObjects/Pong/Paddle.cpp.o: \
  /usr/include/c++/11/bits/basic_ios.tcc \
  /usr/include/c++/11/bits/ostream.tcc /usr/include/c++/11/istream \
  /usr/include/c++/11/bits/istream.tcc \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/Component/Component.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/Source/GameObjects/Pong/../../Components/PlayerController.h
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/Component/Component.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/Source/GameObjects/Pong/../../Components/PlayerController.h

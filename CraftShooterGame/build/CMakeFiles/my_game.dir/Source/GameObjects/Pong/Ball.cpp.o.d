@@ -1,11 +1,11 @@
 CMakeFiles/my_game.dir/Source/GameObjects/Pong/Ball.cpp.o: \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/Source/GameObjects/Pong/Ball.cpp \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/Source/GameObjects/Pong/Ball.cpp \
  /usr/include/stdc-predef.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/Source/GameObjects/Pong/Ball.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/GameObject.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/../Core.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/../CoreStructs/Transform.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/../CoreStructs/Vector.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/Source/GameObjects/Pong/Ball.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/GameObject.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/../Core.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/../CoreStructs/Transform.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/../CoreStructs/Vector.h \
  /usr/include/c++/11/cmath \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -179,8 +179,8 @@ CMakeFiles/my_game.dir/Source/GameObjects/Pong/Ball.cpp.o: \
  /usr/include/c++/11/bits/stl_vector.h \
  /usr/include/c++/11/bits/stl_bvector.h \
  /usr/include/c++/11/bits/vector.tcc \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/Component/Component.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/Input.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/Component/Component.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/Input.h \
  /usr/include/c++/11/functional /usr/include/c++/11/tuple \
  /usr/include/c++/11/utility /usr/include/c++/11/bits/stl_relops.h \
  /usr/include/c++/11/array /usr/include/c++/11/bits/uses_allocator.h \

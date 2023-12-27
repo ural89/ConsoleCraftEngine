@@ -1,11 +1,11 @@
 CMakeFiles/ConsoleCraftEngine.dir/Source/Core/ParticleSystem/ParticleObject.cpp.o: \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleObject.cpp \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleObject.cpp \
  /usr/include/stdc-predef.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleObject.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/../../Core.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/../GameObject.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/../../CoreStructs/Transform.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/../../CoreStructs/Vector.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/ParticleObject.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/../../Core.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/../GameObject.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/../../CoreStructs/Transform.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/../../CoreStructs/Vector.h \
  /usr/include/c++/11/cmath \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -179,6 +179,6 @@ CMakeFiles/ConsoleCraftEngine.dir/Source/Core/ParticleSystem/ParticleObject.cpp.
  /usr/include/c++/11/bits/stl_vector.h \
  /usr/include/c++/11/bits/stl_bvector.h \
  /usr/include/c++/11/bits/vector.tcc \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/../Component/Component.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/ParticleSystem/../Component/Component.h \
  /usr/include/c++/11/array /usr/include/c++/11/utility \
  /usr/include/c++/11/bits/stl_relops.h

@@ -1,8 +1,8 @@
 CMakeFiles/ConsoleCraftEngine.dir/Source/Core/Scene.cpp.o: \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Scene.cpp \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Scene.cpp \
  /usr/include/stdc-predef.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Scene.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/../Core.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Scene.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/../Core.h \
  /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_algobase.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -56,9 +56,9 @@ CMakeFiles/ConsoleCraftEngine.dir/Source/Core/Scene.cpp.o: \
  /usr/include/c++/11/bits/invoke.h \
  /usr/include/c++/11/bits/stl_multimap.h \
  /usr/include/c++/11/bits/erase_if.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/GameObject.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/../CoreStructs/Transform.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/../CoreStructs/Vector.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/GameObject.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/../CoreStructs/Transform.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/../CoreStructs/Vector.h \
  /usr/include/c++/11/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/x86_64-linux-gnu/bits/types.h \
@@ -188,9 +188,9 @@ CMakeFiles/ConsoleCraftEngine.dir/Source/Core/Scene.cpp.o: \
  /usr/include/c++/11/bits/basic_ios.tcc \
  /usr/include/c++/11/bits/ostream.tcc /usr/include/c++/11/istream \
  /usr/include/c++/11/bits/istream.tcc \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Component/Component.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Collision.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/Source/Core/Camera.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Component/Component.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Collision.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/Source/Core/Camera.h \
  /usr/include/c++/11/queue /usr/include/c++/11/deque \
  /usr/include/c++/11/bits/stl_deque.h /usr/include/c++/11/bits/deque.tcc \
  /usr/include/c++/11/bits/stl_heap.h /usr/include/c++/11/bits/stl_queue.h

@@ -1,9 +1,9 @@
 CMakeFiles/my_game.dir/Source/Scenes/Pong/PongScene.cpp.o: \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/Source/Scenes/Pong/PongScene.cpp \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/Source/Scenes/Pong/PongScene.cpp \
  /usr/include/stdc-predef.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/Source/Scenes/Pong/PongScene.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/Scene.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/../Core.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/Source/Scenes/Pong/PongScene.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/Scene.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/../Core.h \
  /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_algobase.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -57,9 +57,9 @@ CMakeFiles/my_game.dir/Source/Scenes/Pong/PongScene.cpp.o: \
  /usr/include/c++/11/bits/invoke.h \
  /usr/include/c++/11/bits/stl_multimap.h \
  /usr/include/c++/11/bits/erase_if.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/GameObject.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/../CoreStructs/Transform.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/../CoreStructs/Vector.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/GameObject.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/../CoreStructs/Transform.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/../CoreStructs/Vector.h \
  /usr/include/c++/11/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/x86_64-linux-gnu/bits/types.h \
@@ -189,22 +189,24 @@ CMakeFiles/my_game.dir/Source/Scenes/Pong/PongScene.cpp.o: \
  /usr/include/c++/11/bits/basic_ios.tcc \
  /usr/include/c++/11/bits/ostream.tcc /usr/include/c++/11/istream \
  /usr/include/c++/11/bits/istream.tcc \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/Component/Component.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/Collision.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/Camera.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/Component/Component.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/Collision.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/Camera.h \
  /usr/include/c++/11/queue /usr/include/c++/11/deque \
  /usr/include/c++/11/bits/stl_deque.h /usr/include/c++/11/bits/deque.tcc \
  /usr/include/c++/11/bits/stl_heap.h /usr/include/c++/11/bits/stl_queue.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/Source/Scenes/Pong/../../GameObjects/Pong/Ball.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/Input.h \
+ /usr/include/c++/11/algorithm /usr/include/c++/11/bits/stl_algo.h \
+ /usr/include/c++/11/bits/algorithmfwd.h \
+ /usr/include/c++/11/bits/stl_tempbuf.h \
+ /usr/include/c++/11/bits/uniform_int_dist.h \
+ /usr/include/c++/11/pstl/glue_algorithm_defs.h \
  /usr/include/c++/11/functional /usr/include/c++/11/bits/refwrap.h \
  /usr/include/c++/11/bits/std_function.h \
  /usr/include/c++/11/unordered_map /usr/include/c++/11/bits/hashtable.h \
  /usr/include/c++/11/bits/hashtable_policy.h \
  /usr/include/c++/11/bits/enable_special_members.h \
  /usr/include/c++/11/bits/unordered_map.h \
- /usr/include/c++/11/bits/stl_algo.h \
- /usr/include/c++/11/bits/algorithmfwd.h \
- /usr/include/c++/11/bits/stl_tempbuf.h \
- /usr/include/c++/11/bits/uniform_int_dist.h \
- /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/Source/Scenes/Pong/../../GameObjects/Pong/Paddle.h
+ /usr/include/c++/11/pstl/execution_defs.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/Source/Scenes/Pong/../../GameObjects/Pong/Ball.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/../../ConsoleCraftEngine/Source/Core/Input.h \
+ /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/Source/Scenes/Pong/../../GameObjects/Pong/Paddle.h

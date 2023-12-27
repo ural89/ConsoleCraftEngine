@@ -1,4 +1,4 @@
-# Install script for directory: /home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame
+# Install script for directory: /home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/ural/Documents/GitHub/ConsoleCraftEngine/CraftShooterGame/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/ural/Belgeler/GitHub/ConsoleCraftEngine/CraftShooterGame/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
