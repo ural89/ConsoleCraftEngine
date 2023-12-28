@@ -3,6 +3,6 @@
 void SpadesItem::Init()
 {
 	Item::Init();
-	symbol = '\x06';
+	//symbol = '\x06';
 	overrideColor = 7;
 }

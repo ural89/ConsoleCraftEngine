@@ -4,7 +4,7 @@
 #include "GameObjects/HeartItem.h"
 #include "GameObjects/DiamondItem.h"
 #include "GameObjects/ClubItem.h"
-#include <Windows.h>
+
 void Grid::SetGridObject(GridUnit& gridUnit, int x, int y) 
 {
 

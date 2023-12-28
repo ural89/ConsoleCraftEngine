@@ -3,6 +3,6 @@
 void ClubItem::Init()
 {
 	Item::Init();
-	symbol = '\x05';
+	//symbol = '\x05';
 	overrideColor = 6;
 }
