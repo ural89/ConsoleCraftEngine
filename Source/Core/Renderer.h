@@ -18,11 +18,16 @@ private:
     }
     void GoToXY(int x, int y)
     {
-        // COORD coord;
-        // coord.X = x;
-        // coord.Y = y;
-        // SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
+        #ifdef __GNUC__
+        
           std::cout << "\033[" << y << ";" << x << "H";
+    #else
+        
+        COORD coord;
+        coord.X = x;
+        coord.Y = y;
+        SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
+    #endif
     }
     void HideCursor()
     {
