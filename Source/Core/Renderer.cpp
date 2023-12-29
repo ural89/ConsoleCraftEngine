@@ -25,9 +25,9 @@ void Renderer::Render(const Scene& scene)
                 ClearDestroyedObject(*go);
                 continue;
             }
+            DrawUI();
             DrawObjects(*go);
             ClearMovedObjectsTrail(*go);
-           DrawUI();
         }
     }
             
@@ -109,4 +109,24 @@ void Renderer::DrawUI()
 void Renderer::SetConsoleColor(int color)
 {
     std::cout << "\033[38;5;" << color << "m";
+}
+
+std::vector<std::vector<int>> Renderer::RotateSprite(const std::vector<std::vector<int>> &sprite)
+{
+    int rows = sprite.size();
+    int cols = sprite[0].size();
+
+ 
+    std::vector<std::vector<int>> rotated(cols, std::vector<int>(rows, 0));
+
+   
+    for (int i = 0; i < rows; ++i)
+    {
+        for (int j = 0; j < cols; ++j)
+        {
+            rotated[j][rows - 1 - i] = sprite[i][j];
+        }
+    }
+
+    return rotated;
 }

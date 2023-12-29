@@ -7,6 +7,8 @@ class GE_API Renderer
 public:
     Renderer();
     void Render(const Scene& scene);
+
+    static std::vector<std::vector<int>> RotateSprite(const std::vector<std::vector<int>>& sprite);
 private:
 
     void FixConsoleWindow()
@@ -43,6 +45,9 @@ private:
     void ClearMovedObjectsTrail(GameObject& go);
     void DrawUI();
     void SetConsoleColor(int color);
+
+    
+
 	
 };
 
