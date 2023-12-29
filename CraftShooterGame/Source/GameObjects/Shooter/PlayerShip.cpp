@@ -6,6 +6,8 @@
 #include "Core/EventDispatcher.h"
 #include "Core/UIHandler.h"
 #include "Core/ParticleSystem/ParticleSource.h"
+#include "Core/Renderer.h"
+
 
 void PlayerShip::Init()
 {
@@ -20,6 +22,7 @@ void PlayerShip::Init()
 		{1,1,1,1},
 		{2,2,0,2}
 	};
+	
 	auto inputEvent = std::bind(&PlayerShip::Fire, this, std::placeholders::_1);
 	Input::AddListener(inputEvent);
 	
@@ -48,6 +51,7 @@ void PlayerShip::Fire(int keyDown)
 {
 	if (keyDown == SPACEBAR)
 	{
+		//sprite = Renderer::RotateSprite(sprite);
  		GetCurrentScene().AddGameObject(new Bullet(GetCurrentScene()), transform.Position);
 	
 	}

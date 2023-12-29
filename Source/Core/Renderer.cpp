@@ -64,7 +64,7 @@ void Renderer::DrawObjects(GameObject& go)
                 SetConsoleColor(go.overrideColor);
             else
             {
-                if (color == 0)
+                if (color == 0 || (posX> SCREENWIDTH)|| (posY > SCREENHEIGHT))
                 {
                     continue;
                 }
@@ -100,8 +100,6 @@ void Renderer::ClearMovedObjectsTrail(GameObject& go)
 
 void Renderer::DrawUI()
 {
-    
-    
     GoToXY(UIHandler::Position.X, UIHandler::Position.Y);
     std::cout << UIHandler::uiText;
 }
