@@ -18,7 +18,7 @@ void Enemy::Init()
 
 void Enemy::Update(float deltaTime)
 {
-	transform.MovePosition(-10 * deltaTime, 0);
+	transform.MovePosition(-15 * deltaTime, 0);
 }
 
 void Enemy::OnCollided(const GameObject& other)
