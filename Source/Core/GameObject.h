@@ -16,23 +16,23 @@ public:
 		}
 		components.clear();
 	}
-	std::string name = "Gameobject";
-	std::vector<std::vector<int>> sprite = { {1,1}, {1,1} };
 
 	Transform transform = Transform();
 
+	std::string name = "Gameobject";
+	std::vector<std::vector<int>> sprite = { {1,1}, {1,1} };
 
-	void Destroy()
-	{
-		isDestroyedFlag = true;
-	}
 	int GetWidth() const 
 	{ 
 		return sprite[0].size(); 
 	}
 	int GetHeight() const 
 	{ 
-		return sprite[1].size(); 
+		return sprite.size(); 
+	}
+	void Destroy()
+	{
+		isDestroyedFlag = true;
 	}
 	void AddComponent(Component* component)
 	{

@@ -12,6 +12,9 @@ ParticleObject::ParticleObject(Scene& scene, Vector2 startVelocity, int particle
 	case 1:
 		sprite = enemyParticle;
 		break;
+	case 2:
+		sprite = brickParticle;
+		break;
 	}
 	symbol = '#';
 }

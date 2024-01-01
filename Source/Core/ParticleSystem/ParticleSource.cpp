@@ -1,7 +1,7 @@
 #include "ParticleSource.h"
 #include "../Scene.h"
 #include "ParticleObject.h"
-#include "../../CoreStructs/Vector.h"
+
 
 void ParticleSource::Init() 
 {
@@ -14,7 +14,7 @@ void ParticleSource::Update(float deltaTime)
 	
 }
 
-void ParticleSource::EmitParticle(int count, int particleType)
+void ParticleSource::EmitParticle(int count, int particleType, Vector2 localPosition)
 {
 	for (int i = 0; i < count; i++)
 	{
@@ -27,6 +27,6 @@ void ParticleSource::EmitParticle(int count, int particleType)
 
 	
 		Vector2 randomVelocity(randomVelocityX, randomVelocityY);
-		owner->GetCurrentScene().AddGameObject(new ParticleObject(owner->GetCurrentScene(), randomVelocity, particleType), owner->transform.Position);
+		owner->GetCurrentScene().AddGameObject(new ParticleObject(owner->GetCurrentScene(), randomVelocity, particleType), owner->transform.Position + localPosition);
 	}
 }

@@ -8,8 +8,8 @@ public:
 		/*if(owner != nullptr)
 			delete owner;*/
 	}
-	virtual void Update(float deltaTime) {};
 	virtual void Init() {};
+	virtual void Update(float deltaTime) {};
 protected:
 	GameObject* owner;
 };

@@ -13,7 +13,7 @@ public:
 	void Init() override
 	{
         symbol = '0';
-		sprite = { {1,1}, {1,1} };
+		sprite = { {5}};
 	}
 	void Update(float deltaTime) override;
 	virtual void OnCollided(const GameObject& other) override;

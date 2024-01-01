@@ -17,31 +17,37 @@ void Ball::Update(float deltaTime)
 
 void Ball::OnCollided(const GameObject& other)
 {
+    if(other.name == "Particle") return;
     if(collideTimer < 0.5f)
     {
         return;
     }
     collideTimer = 0;
-    if(other.name == "Breaker")
+    if(other.name == "Breaker") 
     {
-    
-        if(other.transform.Position.Y - transform.Position.Y > 1)
+        if(other.transform.Position.Y - transform.Position.Y > 0)
         {
-            if(other.transform.Position.X - transform.Position.X > 0) //ball is on the left
+            if(other.transform.Position.X - transform.Position.X > 0) //ball is on the left 
             {
-                velocity.X -= 1;
+       
+                velocity.X -= 2;
                 velocity.Y *= -1;
+                std::cout << velocity.X << '\n';
                 return;
             }
             else
             {
-                velocity.X += 1;
+              std::cout << "sdsadsa" << '\n';//TODO: fix always right
+                velocity.X += 2;
                 velocity.Y *= -1;
                 return;
             }
         }
     }
+    else
 	//Destroy();
-	velocity.X *= -1;
+	{
+        velocity.X *= -1;
 	velocity.Y *= -1;
+    }
 }
