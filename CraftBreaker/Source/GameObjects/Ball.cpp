@@ -27,18 +27,16 @@ void Ball::OnCollided(const GameObject& other)
     {
         if(other.transform.Position.Y - transform.Position.Y > 0)
         {
-            if(other.transform.Position.X - transform.Position.X > 0) //ball is on the left 
+            if(other.transform.Position.X + other.GetWidth() / 2 - transform.Position.X > 0) //ball is on the left 
             {
        
-                velocity.X -= 2;
+                velocity.X -= 5;
                 velocity.Y *= -1;
-                std::cout << velocity.X << '\n';
                 return;
             }
             else
             {
-              std::cout << "sdsadsa" << '\n';//TODO: fix always right
-                velocity.X += 2;
+                velocity.X += 5;
                 velocity.Y *= -1;
                 return;
             }

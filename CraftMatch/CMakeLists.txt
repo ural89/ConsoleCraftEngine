@@ -17,7 +17,7 @@ file(GLOB_RECURSE ENGINE_HEADERS
 )
 add_library(ConsoleCraftEngine SHARED ${ENGINE_SOURCES} )
 
-target_include_directories(ConsoleCraftEngine PUBLIC ${ENGINE_HEADERS}) 
+
 
 
 file(GLOB_RECURSE GAME_SOURCES Source/*.cpp)

@@ -25,6 +25,6 @@ public:
 	}
 private:
     float collideTimer = 0;
-	Vector2 velocity = Vector2(8.f, 20.f);
+	Vector2 velocity = Vector2(8.f, 15.f);
 	
 };
