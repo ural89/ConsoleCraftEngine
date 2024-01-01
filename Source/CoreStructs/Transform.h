@@ -17,7 +17,8 @@ public:
 
 	float Rotation;
 	bool HasClearedFlag = false; //If removed its previous position from rendering
-	
+	bool HasMovedThisFrame = false;
+
 	void SetChild(Transform& child)
 	{
 		children.push_back(&child);
@@ -42,7 +43,12 @@ public:
 		Position.Y += y;
 		if (PreviousPosition != Position.ToInt())
 		{
+			HasMovedThisFrame = true;
 			HasClearedFlag = false;
+		}
+		else
+		{
+			HasMovedThisFrame = false;
 		}
 	}
 

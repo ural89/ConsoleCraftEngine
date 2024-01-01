@@ -20,18 +20,19 @@ void Collision::CheckForCollisions() const
         {
             auto first = gameObjects[i];
             auto second = gameObjects[j];
-
-          
-            if (
+            if(first->transform.HasMovedThisFrame || second->transform.HasMovedThisFrame)
+            {
+                if (
                 first->transform.Position.X < second->transform.Position.X + second->GetWidth() &&
                 second->transform.Position.X < first->transform.Position.X + first->GetWidth() &&
                 first->transform.Position.Y < second->transform.Position.Y + second->GetHeight() &&
                 second->transform.Position.Y < first->transform.Position.Y + first->GetHeight()
                 )
-            {
+                {
              
                 first->OnCollided(*second);
                 second->OnCollided(*first);
+                }
             }
         }
     }
