@@ -1,4 +1,4 @@
-#include "../conio.h"
+#include <conio.h>
 #include "Input.h"
 #include <iostream>
 #include <algorithm>
@@ -8,9 +8,17 @@ Input::Input() {}
 std::vector<std::function<void(int)>> Input::listeners;
 void Input::Update()
 {
+#ifdef __GNUC__
     if (kbhit())
+#else
+    if(_kbhit())
+#endif
     {
+    #ifdef __GNUC__
         keyDown = getch();
+    #else
+        keyDown = _getch();
+    #endif
        
         for (auto &listener:listeners)
         {

@@ -1,8 +1,11 @@
 #pragma once
 #include "../Core.h"
 #include "Scene.h"
+#ifdef __GNUC__
 #include "ncurses.h"
-// #include <Windows.h>
+#else
+ #include <Windows.h>
+#endif
 class GE_API Renderer
 {
 public:
@@ -34,12 +37,15 @@ private:
     }
     void HideCursor()
     {
+#ifdef __GNUC__
         curs_set(0);
-        // HANDLE fd = GetStdHandle(STD_OUTPUT_HANDLE);
-        // CONSOLE_CURSOR_INFO cinfo;
-        // cinfo.bVisible = 0;
-        // cinfo.dwSize = 1;
-        // SetConsoleCursorInfo(fd, &cinfo);
+#else
+         HANDLE fd = GetStdHandle(STD_OUTPUT_HANDLE);
+         CONSOLE_CURSOR_INFO cinfo;
+         cinfo.bVisible = 0;
+         cinfo.dwSize = 1;
+         SetConsoleCursorInfo(fd, &cinfo);
+#endif
     }
 
     void ClearDestroyedObject(GameObject& go);
