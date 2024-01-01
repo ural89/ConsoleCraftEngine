@@ -22,7 +22,7 @@ void Camera::UpdateCamera(float deltaTime)
         {
             offsetX = deltaTime * xAcceleration;
             offsetY = -deltaTime * xAcceleration;
-            if (offsetX >= 0.001f)
+            if (offsetX >= 0.01f)
             {
                 isGoingLeft = false;
             }
@@ -35,7 +35,7 @@ void Camera::UpdateCamera(float deltaTime)
         {
             offsetX = -deltaTime * xAcceleration;
             offsetY = deltaTime * xAcceleration;
-            if (offsetX <= -0.001f)
+            if (offsetX <= -0.01f)
             {
                 isGoingLeft = true;
             }

@@ -1,6 +1,7 @@
 #pragma once
 #include "../Core.h"
 #include "Scene.h"
+#include "ncurses.h"
 // #include <Windows.h>
 class GE_API Renderer
 {
@@ -33,6 +34,7 @@ private:
     }
     void HideCursor()
     {
+        curs_set(0);
         // HANDLE fd = GetStdHandle(STD_OUTPUT_HANDLE);
         // CONSOLE_CURSOR_INFO cinfo;
         // cinfo.bVisible = 0;

@@ -74,7 +74,7 @@ void Renderer::DrawObjects(GameObject& go)
             std::cout << go.symbol;
         }
     }
-    // SetConsoleColor(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
+     SetConsoleColor(15);
 }
 
 void Renderer::ClearMovedObjectsTrail(GameObject& go)
@@ -88,6 +88,10 @@ void Renderer::ClearMovedObjectsTrail(GameObject& go)
             {
                 int clearX = static_cast<int>(go.transform.PreviousPosition.X + j);
                 int clearY = static_cast<int>(go.transform.PreviousPosition.Y + i);
+                if ((clearX> SCREENWIDTH)|| (clearY > SCREENHEIGHT))
+                {
+                    continue;
+                }
 
                 GoToXY(clearX, clearY);
                 std::cout << ' ';
