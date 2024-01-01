@@ -1,4 +1,8 @@
+#ifdef __GNUC__
+#include "../conio.h"
+#else
 #include <conio.h>
+#endif
 #include "Input.h"
 #include <iostream>
 #include <algorithm>
