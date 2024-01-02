@@ -8,13 +8,11 @@ class ShooterGame
 public:
     ~ShooterGame()
     {
-      
     }
-	void StartGame()
-	{
+    void StartGame()
+    {
         SetCurrentScene(new BreakerScene());
 
-        
         auto startTime = std::chrono::high_resolution_clock::now();
         auto prevTime = startTime;
 
@@ -24,30 +22,31 @@ public:
             auto deltaTimeInSeconds = std::chrono::duration_cast<std::chrono::duration<double>>(endTime - prevTime).count();
             double deltaTimeMilliseconds = deltaTimeInSeconds * 1000.0;
 
-            if (currentScene->hasGameOver) return;
+            if (currentScene->hasGameOver)
+                return;
             UpdateInput();
             Update(deltaTimeInSeconds);
             Render();
-            UpdateCamera(deltaTimeInSeconds);
-            if(currentScene->camera->isMoving)
-                Render(); 
+            if (currentScene->camera->isMoving)
+            {
+                UpdateCamera(deltaTimeInSeconds);
+                Render();
+            }
             prevTime = endTime;
         }
-	}
+    }
     void Clean()
     {
         delete currentScene;
         Input::Cleanup();
-        
     }
-    void InitScene(Scene* scene)
+    void InitScene(Scene *scene)
     {
         scene->Init();
-
     }
+
 private:
- 
-    Scene* currentScene;
+    Scene *currentScene;
     Renderer renderer;
     void UpdateInput()
     {
@@ -66,7 +65,7 @@ private:
     {
         renderer.Render(*currentScene);
     }
-    void SetCurrentScene(Scene* scene)
+    void SetCurrentScene(Scene *scene)
     {
         currentScene = scene;
         InitScene(currentScene);
@@ -75,10 +74,10 @@ private:
 
 int main()
 {
-	ShooterGame* game =new ShooterGame();
-	game->StartGame();
+    ShooterGame *game = new ShooterGame();
+    game->StartGame();
     game->Clean();
     delete game;
     system("pause");
-	return 0;
+    return 0;
 }
