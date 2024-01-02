@@ -33,18 +33,18 @@ void BreakerScene::MoveCamera(int input)
 {
     if (tolower(Input::GetKeyDown()) == 'k')
     {
-        camera->MoveCamera(Vector2(5, 0));
+        camera->MoveCamera(Vector2(20, 0));
     }
     if (tolower(Input::GetKeyDown()) == 'h')
     {
-        camera->MoveCamera(Vector2(-5, 0));
+        camera->MoveCamera(Vector2(-20, 0));
     }
     if (tolower(Input::GetKeyDown()) == 'j')
     {
-        camera->MoveCamera(Vector2(0, 5));
+        camera->MoveCamera(Vector2(0, 20));
     }
     if (tolower(Input::GetKeyDown()) == 'u')
     {
-        camera->MoveCamera(Vector2(0, -5));
+        camera->MoveCamera(Vector2(0, -20));
     }
 }

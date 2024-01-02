@@ -48,8 +48,8 @@ public:
 			{
 				go->transform.MovePosition(camera->offsetX * deltaTime, camera->offsetY * deltaTime, true);
 			}
-			//camera->offsetX = 0;
-			//camera->offsetY = 0;
+			camera->offsetX = 0;
+			camera->offsetY = 0;
 		}
 	}
 	virtual void Update(float deltaTime)
