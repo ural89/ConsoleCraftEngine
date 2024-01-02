@@ -16,10 +16,12 @@ void BreakerScene::Init()
     {
         AddGameObject(new Brick(*this), Vector2(offsetX + i * brickWidth, offsetY + j * brickWidth));
     }
-    
+    camera->isMoving = true;
+    camera->SetCameraSpeed(Vector2(1, 1));
 }
 
 void BreakerScene::Update(float deltaTime)
 {
     Scene::Update(deltaTime);
+   
 }
