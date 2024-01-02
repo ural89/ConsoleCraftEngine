@@ -1,12 +1,13 @@
 #include "Camera.h"
-#include <cstdlib> 
-#include <ctime>   
+#include <cstdlib>
+#include <ctime>
 #include <cmath>
 #include <iostream>
-
+#include "../CoreStructs/Vector.h"
 void Camera::StartShake(float duration)
 {
-    if (isMoving) return;
+    if (isMoving)
+        return;
     shakeDuration = duration;
     xAcceleration = xAccelerationStart;
     isMoving = true;
@@ -14,43 +15,50 @@ void Camera::StartShake(float duration)
 
 void Camera::UpdateCamera(float deltaTime)
 {
-    //xAcceleration += 0.01f * deltaTime;
     if (shakeDuration > 0)
+        ShakeCamera(deltaTime);
+}
+
+void Camera::SetCameraSpeed(Vector2 moveAmount)
+{
+    moveSpeedX = moveAmount.X;
+    moveSpeedY = moveAmount.Y;
+}
+
+void Camera::ShakeCamera(float deltaTime)
+{
+
+    if (isGoingLeft)
     {
-       
-        if (isGoingLeft)
+        moveSpeedX = deltaTime * xAcceleration;
+        moveSpeedY = -deltaTime * xAcceleration;
+        if (moveSpeedX >= 0.01f)
         {
-            offsetX = deltaTime * xAcceleration;
-            offsetY = -deltaTime * xAcceleration;
-            if (offsetX >= 0.01f)
-            {
-                isGoingLeft = false;
-            }
-            else
-            {
-                // xAcceleration += 0.5f * deltaTime;
-            }
+            isGoingLeft = false;
         }
         else
         {
-            offsetX = -deltaTime * xAcceleration;
-            offsetY = deltaTime * xAcceleration;
-            if (offsetX <= -0.01f)
-            {
-                isGoingLeft = true;
-            }
-            else
-            {
-                //xAcceleration += 0.5f * deltaTime; 
-            }
+            // xAcceleration += 0.5f * deltaTime;
         }
-        shakeDuration -= deltaTime;
     }
     else
     {
+        moveSpeedX = -deltaTime * xAcceleration;
+        moveSpeedY = deltaTime * xAcceleration;
+        if (moveSpeedX <= -0.01f)
+        {
+            isGoingLeft = true;
+        }
+        else
+        {
+            // xAcceleration += 0.5f * deltaTime;
+        }
+    }
+    shakeDuration -= deltaTime;
+    if (shakeDuration <= 0)
+    {
         isMoving = false;
-        offsetX = 0;
-        offsetY = 0;
-        
+        moveSpeedX = 0;
+        moveSpeedY = 0;
     }
 }

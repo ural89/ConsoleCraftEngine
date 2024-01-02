@@ -45,7 +45,7 @@ public:
 		if (camera->isMoving)
 			for (auto& go : GetGameObjects())
 			{
-				go->transform.MovePosition(camera->offsetX, camera->offsetY);
+				go->transform.MovePosition(camera->moveSpeedX * deltaTime, camera->moveSpeedY * deltaTime);
 			}
 
 	}
