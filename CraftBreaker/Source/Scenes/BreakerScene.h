@@ -5,5 +5,6 @@ class BreakerScene : public Scene
 public:
     void Init() override;
     void Update(float deltaTime) override;
-    
+private:
+    void MoveCamera(int input);
 };

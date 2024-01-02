@@ -19,10 +19,10 @@ void Camera::UpdateCamera(float deltaTime)
         ShakeCamera(deltaTime);
 }
 
-void Camera::SetCameraSpeed(Vector2 moveAmount)
+void Camera::MoveCamera(Vector2 moveAmount)
 {
-    moveSpeedX = moveAmount.X;
-    moveSpeedY = moveAmount.Y;
+    offsetX = moveAmount.X;
+    offsetY = moveAmount.Y;
 }
 
 void Camera::ShakeCamera(float deltaTime)
@@ -30,9 +30,9 @@ void Camera::ShakeCamera(float deltaTime)
 
     if (isGoingLeft)
     {
-        moveSpeedX = deltaTime * xAcceleration;
-        moveSpeedY = -deltaTime * xAcceleration;
-        if (moveSpeedX >= 0.01f)
+        offsetX = deltaTime * xAcceleration;
+        offsetY = -deltaTime * xAcceleration;
+        if (offsetX >= 0.01f)
         {
             isGoingLeft = false;
         }
@@ -43,9 +43,9 @@ void Camera::ShakeCamera(float deltaTime)
     }
     else
     {
-        moveSpeedX = -deltaTime * xAcceleration;
-        moveSpeedY = deltaTime * xAcceleration;
-        if (moveSpeedX <= -0.01f)
+        offsetX = -deltaTime * xAcceleration;
+        offsetY = deltaTime * xAcceleration;
+        if (offsetX <= -0.01f)
         {
             isGoingLeft = true;
         }
@@ -58,7 +58,7 @@ void Camera::ShakeCamera(float deltaTime)
     if (shakeDuration <= 0)
     {
         isMoving = false;
-        moveSpeedX = 0;
-        moveSpeedY = 0;
+        offsetX = 0;
+        offsetY = 0;
     }
 }

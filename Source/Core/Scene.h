@@ -1,5 +1,5 @@
 #pragma once
-#include "../Core.h" 
+#include "../Core.h"
 #include <vector>
 #include <map>
 #include "GameObject.h"
@@ -10,32 +10,32 @@
 class GE_API Scene
 {
 protected:
-	std::vector<GameObject*> GameObjects;
-	std::queue<GameObject*> gameObjectsToSpawn;
-	std::map<std::string, GameObject*> NameToGameObjectMap;
+	std::vector<GameObject *> GameObjects;
+	std::queue<GameObject *> gameObjectsToSpawn;
+	std::map<std::string, GameObject *> NameToGameObjectMap;
+
 public:
 	Scene();
 	virtual ~Scene();
-	virtual void Init() {};
+	virtual void Init(){};
 
-	Camera* camera;
-	void AddGameObject(GameObject* gameObject)
-	{	
+	Camera *camera;
+	void AddGameObject(GameObject *gameObject)
+	{
 		gameObjectsToSpawn.push(gameObject);
 	}
-	void AddGameObject(GameObject* gameObject, Vector2 position)
+	void AddGameObject(GameObject *gameObject, Vector2 position)
 	{
 		gameObjectsToSpawn.push(gameObject);
 		gameObject->transform.Position = position;
-
 	}
-	void RemoveGameObject(GameObject* gameObject)
+	void RemoveGameObject(GameObject *gameObject)
 	{
 		auto it = std::find(GameObjects.begin(), GameObjects.end(), gameObject);
 		if (it != GameObjects.end())
 		{
-			delete* it; 
-			GameObjects.erase(it); 
+			delete *it;
+			GameObjects.erase(it);
 		}
 		collision.RemoveGameObject(gameObject);
 	}
@@ -43,60 +43,58 @@ public:
 	{
 		camera->UpdateCamera(deltaTime);
 		if (camera->isMoving)
-			for (auto& go : GetGameObjects())
+		{
+			for (auto &go : GetGameObjects())
 			{
-				go->transform.MovePosition(camera->moveSpeedX * deltaTime, camera->moveSpeedY * deltaTime, true);
+				go->transform.MovePosition(camera->offsetX * deltaTime, camera->offsetY * deltaTime, true);
 			}
-
+			//camera->offsetX = 0;
+			//camera->offsetY = 0;
+		}
 	}
 	virtual void Update(float deltaTime)
 	{
-		for (auto& go : GetGameObjects())
+		for (auto &go : GetGameObjects())
 		{
-			
+
 			go->Update(deltaTime);
 			go->UpdateComponents(deltaTime);
-			
-			
 		}
-		for (auto& go : GetGameObjects())
+		for (auto &go : GetGameObjects())
 		{
 			if (go->isDestroyedFlag && go->hasClearedFromScreen)
 			{
 				RemoveGameObject(go);
-
 			}
 		}
 
-		
 		collision.CheckForCollisions();
 		collision.CheckForBorderCollisions();
 	}
 	void SpawnQueuedGameObjects()
 	{
-		
+
 		while (!gameObjectsToSpawn.empty())
 		{
-			
-			GameObject* go = gameObjectsToSpawn.front();
+
+			GameObject *go = gameObjectsToSpawn.front();
 			InitializeGameObject(go);
 			gameObjectsToSpawn.pop();
-
 		}
 	}
-	const std::vector<GameObject*>& GetGameObjects() const
+	const std::vector<GameObject *> &GetGameObjects() const
 	{
 		return GameObjects;
 	}
-	
 
-	GameObject* GetGameObject(std::string name) 
+	GameObject *GetGameObject(std::string name)
 	{
 		return NameToGameObjectMap[name];
 	}
 
 	bool hasGameOver = false;
+
 private:
 	Collision collision;
-	void InitializeGameObject(GameObject* go);
+	void InitializeGameObject(GameObject *go);
 };
