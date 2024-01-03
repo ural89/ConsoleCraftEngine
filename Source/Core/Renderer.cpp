@@ -2,8 +2,8 @@
 #include "UIHandler.h"
 #include "../CoreStructs/Vector.h"
 #include <iostream>
-Vector2 UIHandler::Position;
-std::string UIHandler::uiText;
+#include <vector>
+struct UIData;
 Renderer::Renderer()
 {
     FixConsoleWindow();
@@ -25,7 +25,7 @@ void Renderer::Render(const Scene& scene)
                 ClearDestroyedObject(*go);
                 continue;
             }
-            DrawUI();
+            DrawUI(scene);
             DrawObjects(*go);
             ClearMovedObjectsTrail(*go);
         }
@@ -102,10 +102,14 @@ void Renderer::ClearMovedObjectsTrail(GameObject& go)
     }
 }
 
-void Renderer::DrawUI()
+void Renderer::DrawUI(const Scene& scene)
 {
-    GoToXY(UIHandler::Position.X, UIHandler::Position.Y);
-    std::cout << UIHandler::uiText;
+    for (auto& uiData : scene.uiHandler->uiDatas)
+    {
+        GoToXY(uiData->position.X, uiData->position.Y);
+        std::cout << uiData->text;
+    }
+    
 }
 
 void Renderer::SetConsoleColor(int color)

@@ -20,6 +20,7 @@ public:
 	virtual void Init(){};
 
 	Camera *camera;
+	class UIHandler *uiHandler;
 	void AddGameObject(GameObject *gameObject)
 	{
 		gameObjectsToSpawn.push(gameObject);
@@ -50,6 +51,7 @@ public:
 			}
 			camera->offsetX = 0;
 			camera->offsetY = 0;
+			
 		}
 	}
 	virtual void Update(float deltaTime)

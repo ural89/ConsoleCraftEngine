@@ -2,7 +2,7 @@
 #include "../ParticleSystem/ParticleSource.h"
 #include "../GameObject.h"
 #include "../../CoreStructs/Vector.h"
-#include "../UIHandler.h"
+
 void DestructionEffectComponent::Init()
 {
     particleSource = new ParticleSource(*owner);

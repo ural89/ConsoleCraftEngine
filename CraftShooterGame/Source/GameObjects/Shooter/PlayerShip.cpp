@@ -11,8 +11,10 @@
 
 void PlayerShip::Init()
 {
-	UIHandler::Position = Vector2(0, 29);
-	UIHandler::uiText = "Score: 0";
+
+	scoreUIData.position = Vector2(0, 29);
+	scoreUIData.text = "Score: 0";
+	scene.uiHandler->AddString(&scoreUIData);
 
 	AddComponent(new PlayerController(*this, 0));
 	sprite = 
@@ -64,7 +66,8 @@ void PlayerShip::OnEvent(Event& event)
 	case EventType::OnEnemyKilled:
 		score++;
 		GetCurrentScene().camera->StartShake(0.25f);
-		UIHandler::uiText = "Score: " + std::to_string(score);
+		scoreUIData.text = "Score: " + std::to_string(score);
+		//UIHandler::uiText = "Score: " + std::to_string(score);
 		break;
 	}
 	

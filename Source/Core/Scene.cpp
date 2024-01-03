@@ -1,7 +1,9 @@
 #include "Scene.h"
+#include "UIHandler.h"
 Scene::Scene()
 {
 	camera = new Camera();
+	uiHandler = new UIHandler();
 }
 Scene::~Scene()
 {
@@ -11,6 +13,7 @@ Scene::~Scene()
 	}
 	std::cout << "Destructed  scene" << '\n';
 	delete camera;
+	delete uiHandler;
 }
 
 

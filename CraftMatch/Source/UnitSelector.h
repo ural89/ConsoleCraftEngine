@@ -1,6 +1,7 @@
 #pragma once
 #include "Grid.h"
 #include <deque>
+#include "Core/UIHandler.h"
 class UnitSelector
 {
 public:
@@ -28,5 +29,7 @@ private:
 
 	float blowTimer = 0.3f;
 	bool isBlowing = false;
+
+	UIData scoreUIData;
 };
 
