@@ -7,6 +7,7 @@
 #include "Core/UIHandler.h"
 #include "Core/ParticleSystem/ParticleSource.h"
 #include "Core/Renderer.h"
+#include <memory>
 
 
 void PlayerShip::Init()
@@ -14,7 +15,8 @@ void PlayerShip::Init()
 
 	scoreUIData.position = Vector2(0, 29);
 	scoreUIData.text = "Score: 0";
-	scene.uiHandler->AddString(&scoreUIData);
+	scoreUIDataPtr = std::make_shared<UIData>(scoreUIData);
+	scene.uiHandler->AddString(scoreUIDataPtr);
 
 	AddComponent(new PlayerController(*this, 0));
 	sprite = 
@@ -66,7 +68,7 @@ void PlayerShip::OnEvent(Event& event)
 	case EventType::OnEnemyKilled:
 		score++;
 		GetCurrentScene().camera->StartShake(0.25f);
-		scoreUIData.text = "Score: " + std::to_string(score);
+		scoreUIDataPtr->text = "Score: " + std::to_string(score);
 		//UIHandler::uiText = "Score: " + std::to_string(score);
 		break;
 	}

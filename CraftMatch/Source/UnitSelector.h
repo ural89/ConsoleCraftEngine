@@ -2,6 +2,7 @@
 #include "Grid.h"
 #include <deque>
 #include "Core/UIHandler.h"
+#include <memory>
 class UnitSelector
 {
 public:
@@ -31,5 +32,6 @@ private:
 	bool isBlowing = false;
 
 	UIData scoreUIData;
+	std::shared_ptr<UIData> scoreUIDataPtr;
 };
 

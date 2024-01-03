@@ -8,7 +8,8 @@ UnitSelector::UnitSelector(Grid& grid) : grid(&grid)
 {
 	scoreUIData.position = Vector2(70, 10);
 	scoreUIData.text = "Score: " + std::to_string(score);
-	grid.GetScene().uiHandler->AddString(&scoreUIData);
+	scoreUIDataPtr = std::make_shared<UIData>(scoreUIData);
+	grid.GetScene().uiHandler->AddString(scoreUIDataPtr);
 	auto inputEvent = std::bind(&UnitSelector::OnInput, this, std::placeholders::_1);
 	Input::AddListener(inputEvent);
 
@@ -179,7 +180,7 @@ void UnitSelector::ClearSelectedUnits()
 		grid->FillBlanks();
 		score += 10;
 	}
-	scoreUIData.text = "Score: " + std::to_string(score);
+	scoreUIDataPtr->text = "Score: " + std::to_string(score);
 	isBlowing = false;
 	selectedUnits.clear();  // Clear the deque
 }

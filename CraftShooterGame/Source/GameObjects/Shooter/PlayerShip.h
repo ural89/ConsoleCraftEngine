@@ -16,6 +16,7 @@ public:
 
 private:
 	UIData scoreUIData;
+	std::shared_ptr<UIData> scoreUIDataPtr;
 	void Fire(int keyDown);
 	void OnEvent(Event &event);
 	std::function<void(Event &)> OnEventFunction;
