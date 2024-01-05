@@ -27,7 +27,9 @@ void EnemyRogue::OnCollided(const GameObject &other)
 {
 	if (other.name == "Bullet")
 	{
+		health--;
 		particleSource->EmitParticle(4, ENEMYTYPEPARTICLE);
-		Destroy();
+		if(health <=0)
+			Destroy();
 	}
 }

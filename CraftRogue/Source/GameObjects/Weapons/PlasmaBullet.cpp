@@ -6,10 +6,14 @@
 void PlasmaBullet::Init()
 {
 
-	sprite = { 
-		{0,2,0}, 
-		{2,3,2}, 
-		{0,2,0} };
+	sprite = {
+		{2,2}, 
+		{2,2}, 
+		
+		// {0,2,0}, 
+		// {2,3,2}, 
+		// {0,2,0} 
+		};
 	particleSource = new ParticleSource(*this);
 	AddComponent(particleSource);
 }

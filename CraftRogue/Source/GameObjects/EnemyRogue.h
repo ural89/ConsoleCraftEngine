@@ -11,8 +11,11 @@ public:
 	void Init() override;
 	void Update(float deltaTime) override;
 	void OnCollided(const GameObject& other) override;
-private:
+
+protected:
 	float moveSpeed = 5;
+	int health = 1;
+private:
 	class ParticleSource* particleSource;
 };
 

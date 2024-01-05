@@ -14,7 +14,8 @@ void RogueScene::Update(float deltaTime)
 {
     Scene::Update(deltaTime);
     // if (numberOfEnemyToSpawn > 0)
-    spawnDurationPassed += deltaTime;
+    if (!isPaused)
+        spawnDurationPassed += deltaTime;
 
     if (spawnDurationPassed >= spawnTime)
     {
@@ -27,7 +28,6 @@ void RogueScene::SpawnEnemy()
 {
     numberOfEnemyToSpawn--;
 
-    
     int edge = rand() % 4;
 
     int xPos, yPos;

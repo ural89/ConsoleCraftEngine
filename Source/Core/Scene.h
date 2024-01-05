@@ -55,6 +55,7 @@ public:
 	}
 	virtual void Update(float deltaTime)
 	{
+		if(isPaused) return;
 		for (auto &go : GetGameObjects())
 		{
 
@@ -131,7 +132,7 @@ public:
 	}
 
 	bool hasGameOver = false;
-
+	bool isPaused = false;
 private:
 	Collision collision;
 	void InitializeGameObject(GameObject *go);

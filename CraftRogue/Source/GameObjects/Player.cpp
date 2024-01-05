@@ -3,6 +3,7 @@
 #include "Weapons/PlasmaGun.h"
 #include <memory>
 #include "Core/Scene.h"
+#include "Core/Input.h"
 void Player::Init()
 {
     debugUIData.position = Vector2(0, 29);
@@ -22,13 +23,31 @@ void Player::Init()
 
     GetCurrentScene().uiHandler->RemoveString(debugUIDataPtr);
 
-    //TODO: add weapon control here
+    auto inputEvent = std::bind(&Player::OnKeyPressed, this, std::placeholders::_1);
+    Input::AddListener(inputEvent);
 }
+void Player::OnKeyPressed(int input)
+{
+    if (input == SPACEBAR)
+    {
+        Vector2 StartPoint = transform.Position;
+        auto nearestEnemy = GetCurrentScene().FindNearestGameObject(transform, "Enemy");
+        if (nearestEnemy != nullptr)
+        {
 
+            Vector2 TargetPoint = nearestEnemy->transform.Position;
+
+            Vector2 FireDirection = TargetPoint - StartPoint;
+            FireDirection.Normalize();
+
+            weapon->Fire(FireDirection);
+        }
+    }
+}
 void Player::InitializeWeapon(Vector2 &startPosition)
 {
-    PlasmaGun *plasmaGun = new PlasmaGun(GetCurrentScene());
-    GetCurrentScene().AddGameObject(plasmaGun), startPosition;
-    plasmaGun->transform.SetParent(transform);
-    plasmaGun->transform.Position = startPosition;
+    weapon = new PlasmaGun(GetCurrentScene());
+    GetCurrentScene().AddGameObject(weapon), startPosition;
+    weapon->transform.SetParent(transform);
+    weapon->transform.Position = startPosition;
 }
