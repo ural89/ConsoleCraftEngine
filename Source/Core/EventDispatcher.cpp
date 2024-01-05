@@ -5,7 +5,7 @@ void EventDispatcher::AddListener(std::function<void(Event&)> func)
 {
     listeners.push_back(func);
 }
-void EventDispatcher::RemoveListener(std::function<void(Event&)> func) //TODO: to be tested
+void EventDispatcher::RemoveListener(std::function<void(Event&)> func) 
 {
     auto it = std::remove_if(listeners.begin(), listeners.end(),
         [&func](const std::function<void(Event&)>& listener) {

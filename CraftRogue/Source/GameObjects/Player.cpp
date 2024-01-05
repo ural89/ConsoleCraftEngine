@@ -18,9 +18,17 @@ void Player::Init()
               {1, 0, 1}};
     Vector2 startPosition(10, 10);
 
+    InitializeWeapon(startPosition);
+
+    GetCurrentScene().uiHandler->RemoveString(debugUIDataPtr);
+
+    //TODO: add weapon control here
+}
+
+void Player::InitializeWeapon(Vector2 &startPosition)
+{
     PlasmaGun *plasmaGun = new PlasmaGun(GetCurrentScene());
     GetCurrentScene().AddGameObject(plasmaGun), startPosition;
     plasmaGun->transform.SetParent(transform);
     plasmaGun->transform.Position = startPosition;
-    GetCurrentScene().uiHandler->RemoveString(debugUIDataPtr);
 }

@@ -16,7 +16,8 @@ void Bullet::Init()
 
 void Bullet::Update(float deltaTime)
 {
-	transform.MovePosition(bulletSpeed * deltaTime, 0);
+	Vector2 movePosition =  fireDirection * deltaTime * bulletSpeed;
+	transform.MovePosition(movePosition.X, movePosition.Y);
 	bulletSpeed += bulletAcceleration * deltaTime;
 	timePassedSinceParticleSpawn += deltaTime;
 	if (timePassedSinceParticleSpawn >= particleSpawnFreq)

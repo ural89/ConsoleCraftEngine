@@ -12,10 +12,16 @@ void PlasmaGun::Init()
 }
 void PlasmaGun::OnKeyPressed(int input)
 {
+    Vector2 StartPoint(10, 10); //TODO: enemy finder
+    Vector2 TargetPoint(20, 20);
+
+
+    Vector2 FireDirection = TargetPoint - StartPoint;
+    FireDirection.Normalize();
     if (input == SPACEBAR)
-        Fire(Vector2(1, 0));
+        Fire(FireDirection);
 }
 void PlasmaGun::Fire(Vector2 fireDirection)
 {
-    GetCurrentScene().AddGameObject(new Bullet(GetCurrentScene()), transform.Position);
+    GetCurrentScene().AddGameObject(new Bullet(GetCurrentScene(), fireDirection), transform.Position);
 };

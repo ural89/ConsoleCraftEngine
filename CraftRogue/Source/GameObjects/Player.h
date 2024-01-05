@@ -7,7 +7,9 @@ public:
     Player(class Scene &scene) : GameObject("Player", scene) {}
     void Init() override;
 
+
 private:
     UIData debugUIData;
     std::shared_ptr<UIData> debugUIDataPtr;
+    void InitializeWeapon(Vector2 &startPosition);
 };
