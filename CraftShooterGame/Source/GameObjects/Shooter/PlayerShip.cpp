@@ -4,7 +4,6 @@
 #include "Core/Input.h"
 #include "Core/Scene.h"
 #include "Core/EventDispatcher.h"
-#include "Core/UIHandler.h"
 #include "Core/ParticleSystem/ParticleSource.h"
 #include "Core/Renderer.h"
 #include <memory>
