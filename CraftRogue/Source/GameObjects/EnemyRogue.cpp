@@ -3,11 +3,13 @@
 #include "CoreStructs/Vector.h"
 #include "EnemyRogue.h"
 #include "Core/ParticleSystem/ParticleSource.h"
+#include "Core/Event.h"
+#include "Core/EventDispatcher.h"
 void EnemyRogue::Init()
 {
 	sprite = {
 		{4, 4, 4, 4},
-		{4, 4, 4, 4},
+		{4, 1, 1, 4},
 		{4, 0, 0, 4}};
 	particleSource = new ParticleSource(*this);
 	AddComponent(particleSource);
@@ -29,7 +31,11 @@ void EnemyRogue::OnCollided(const GameObject &other)
 	{
 		health--;
 		particleSource->EmitParticle(4, ENEMYTYPEPARTICLE);
-		if(health <=0)
+		if (health <= 0)
+		{
+			Event enemyKilledEvent = Event(EventType::OnEnemyKilled);
+			EventDispatcher::CallEvent(enemyKilledEvent);
 			Destroy();
+		}
 	}
 }

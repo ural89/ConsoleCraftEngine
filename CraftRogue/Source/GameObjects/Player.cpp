@@ -1,9 +1,14 @@
 #include "Player.h"
-#include "Core/Component/PlayerController.h"
 #include "Weapons/PlasmaGun.h"
+#include "../Components/PlayerUpgradeComponent.h"
+
 #include <memory>
+#include <functional>
+
 #include "Core/Scene.h"
 #include "Core/Input.h"
+#include "Core/Component/PlayerController.h"
+#include "Core/EventDispatcher.h"
 void Player::Init()
 {
     debugUIData.position = Vector2(0, 29);
@@ -11,8 +16,15 @@ void Player::Init()
     debugUIDataPtr = std::make_shared<UIData>(debugUIData);
     GetCurrentScene().uiHandler->AddString(debugUIDataPtr);
 
+    std::function<void(Event&)> OnRecievedEvent = std::bind(&Player::RecievedEvent, this, std::placeholders::_1);
+    EventDispatcher::AddListener(OnRecievedEvent);
+    
+    
     PlayerController* playerController = new PlayerController(*this, 0);
     AddComponent(playerController);
+    playerUpgradeComponent = new PlayerUpgradeComponent(*this);
+    AddComponent(playerUpgradeComponent);
+    
     sprite = {{0, 1, 0},
               {1, 1, 1},
               {1, 1, 1},
@@ -21,7 +33,7 @@ void Player::Init()
 
     InitializeWeapon(startPosition);
 
-    GetCurrentScene().uiHandler->RemoveString(debugUIDataPtr);
+  
 
     auto inputEvent = std::bind(&Player::OnKeyPressed, this, std::placeholders::_1);
     Input::AddListener(inputEvent);
@@ -42,6 +54,16 @@ void Player::OnKeyPressed(int input)
 
             weapon->Fire(FireDirection);
         }
+    }
+}
+void Player::RecievedEvent(Event& e)
+{
+    switch (e.GetEventType())
+    {
+    case EventType::OnEnemyKilled:
+        playerUpgradeComponent->AddExperience(1);
+
+        break;
     }
 }
 void Player::InitializeWeapon(Vector2 &startPosition)

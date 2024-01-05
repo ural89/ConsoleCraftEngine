@@ -36,6 +36,9 @@
     <ClCompile Include="Source\Scenes\RogueScene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Components\PlayerUpgradeComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\GameObjects\Weapons\PlasmaBullet.h">
@@ -54,6 +57,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Source\Scenes\RogueScene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Components\PlayerUpgradeComponent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

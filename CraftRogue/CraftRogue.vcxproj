@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Components\PlayerUpgradeComponent.cpp" />
     <ClCompile Include="Source\CraftRogueGameEntry.cpp" />
     <ClCompile Include="Source\GameObjects\EnemyRogue.cpp" />
     <ClCompile Include="Source\GameObjects\Player.cpp" />
@@ -160,6 +161,7 @@
     <ClCompile Include="Source\Scenes\RogueScene.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Components\PlayerUpgradeComponent.h" />
     <ClInclude Include="Source\GameObjects\EnemyRogue.h" />
     <ClInclude Include="Source\GameObjects\Player.h" />
     <ClInclude Include="Source\GameObjects\Weapons\PlasmaBullet.h" />

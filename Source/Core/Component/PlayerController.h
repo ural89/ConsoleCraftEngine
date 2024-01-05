@@ -4,7 +4,7 @@
 class GE_API PlayerController : public Component
 {
 public:
-	PlayerController(class GameObject& go, int playerNo) ;
+	PlayerController(class GameObject& go, int playerNo);
 	void Init() override;
 	void Update(float deltaTime) override;
 	void OnKeyDown(int input);
