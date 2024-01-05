@@ -160,7 +160,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\Components\PlayerController.cpp" />
     <ClCompile Include="Source\GameObjects\Pong\Ball.cpp" />
     <ClCompile Include="Source\GameObjects\Pong\Paddle.cpp" />
     <ClCompile Include="Source\GameObjects\Shooter\Bullet.cpp" />
@@ -171,7 +170,6 @@
     <ClCompile Include="Source\ShooterGameEntry.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Source\Components\PlayerController.h" />
     <ClInclude Include="Source\GameObjects\Pong\Ball.h" />
     <ClInclude Include="Source\GameObjects\Pong\Paddle.h" />
     <ClInclude Include="Source\GameObjects\Shooter\Bullet.h" />

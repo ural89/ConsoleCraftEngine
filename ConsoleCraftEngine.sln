@@ -9,7 +9,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CraftShooterGame", "CraftSh
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CraftMatch", "CraftMatch\CraftMatch.vcxproj", "{41855BFD-F686-4498-89A6-80936D9B909D}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CraftRogue", "..\CraftRogue\CraftRogue.vcxproj", "{1B194954-7458-4921-8D36-7BE180F23D0A}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CraftRogue", "CraftRogue\CraftRogue.vcxproj", "{1B194954-7458-4921-8D36-7BE180F23D0A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

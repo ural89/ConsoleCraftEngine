@@ -1,6 +1,7 @@
 #pragma once
 #include "Component.h"
-class PlayerController : public Component
+#include "../../Core.h"
+class GE_API PlayerController : public Component
 {
 public:
 	PlayerController(class GameObject& go, int playerNo) ;

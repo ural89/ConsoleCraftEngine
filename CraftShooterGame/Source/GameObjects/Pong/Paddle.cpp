@@ -1,5 +1,5 @@
 #include "Paddle.h"
-#include "../../Components/PlayerController.h"
+#include "Core/Component/PlayerController.h"
 
 
 void Paddle::Init()

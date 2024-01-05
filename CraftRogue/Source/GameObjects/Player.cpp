@@ -11,7 +11,7 @@ void Player::Init()
     debugUIDataPtr = std::make_shared<UIData>(debugUIData);
     GetCurrentScene().uiHandler->AddString(debugUIDataPtr);
 
-    PlayerController *playerController = new PlayerController(*this, 0);
+    PlayerController* playerController = new PlayerController(*this, 0);
     AddComponent(playerController);
     sprite = {{0, 1, 0},
               {1, 1, 1},

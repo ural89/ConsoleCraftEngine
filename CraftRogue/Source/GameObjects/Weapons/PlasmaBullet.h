@@ -7,7 +7,7 @@ public:
 
 	PlasmaBullet(class Scene& scene, Vector2 fireDirection) : GameObject("Bullet", scene) 
 	{
-		symbol = '+';
+		symbol = '#';
 		this->fireDirection = fireDirection;
 	}
 	void Init() override;

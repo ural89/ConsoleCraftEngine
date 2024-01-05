@@ -1,5 +1,5 @@
 #include "PlayerShip.h"
-#include "../../Components/PlayerController.h"
+#include "Core/Component/PlayerController.h"
 #include "Bullet.h"
 #include "Core/Input.h"
 #include "Core/Scene.h"

@@ -51,6 +51,6 @@ void RogueScene::SpawnEnemy()
         yPos = rand() % SCREENHEIGHT;
         break;
     }
-
+   
     AddGameObject(new EnemyRogue(*this), Vector2(xPos, yPos));
 }

@@ -114,7 +114,11 @@ void Renderer::DrawUI(const Scene& scene)
 
 void Renderer::SetConsoleColor(int color)
 {
+#ifdef __GNUC__
     std::cout << "\033[38;5;" << color << "m";
+#else
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
+#endif
 }
 
 std::vector<std::vector<int>> Renderer::RotateSprite(const std::vector<std::vector<int>> &sprite)

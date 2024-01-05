@@ -146,6 +146,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Source\Core\Camera.cpp" />
+    <ClCompile Include="Source\Core\Component\PlayerController.cpp" />
     <ClCompile Include="Source\Core\ParticleSystem\ParticleObject.cpp" />
     <ClCompile Include="Source\Core\ParticleSystem\ParticleSource.cpp" />
     <ClCompile Include="Source\Core\EventDispatcher.cpp" />
@@ -160,6 +161,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Core\Camera.h" />
+    <ClInclude Include="Source\Core\Component\PlayerController.h" />
     <ClInclude Include="Source\Core\ParticleSystem\ParticleObject.h" />
     <ClInclude Include="Source\Core\ParticleSystem\ParticleSource.h" />
     <ClInclude Include="Source\CoreStructs\Transform.h" />
