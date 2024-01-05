@@ -9,6 +9,8 @@ public:
 		symbol = '#';
 	}
 	void Init() override;
-
+	void Update(float deltaTime) override;
+private:
+	float moveSpeed = 5;
 };
 

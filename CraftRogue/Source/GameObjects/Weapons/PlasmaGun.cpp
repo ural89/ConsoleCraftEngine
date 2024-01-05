@@ -1,5 +1,5 @@
 #include "PlasmaGun.h"
-#include "Bullet.h"
+#include "PlasmaBullet.h"
 #include "Core/Scene.h"
 #include "Core/Input.h"
 
@@ -13,7 +13,7 @@ void PlasmaGun::Init()
 void PlasmaGun::OnKeyPressed(int input)
 {
     Vector2 StartPoint = transform.Position;
-    auto nearestEnemy = GetCurrentScene().GetNearestGameObject(transform, "Enemy");
+    auto nearestEnemy = GetCurrentScene().FindNearestGameObject(transform, "Enemy");
     if (nearestEnemy != nullptr)
     {
         Vector2 TargetPoint = nearestEnemy->transform.Position;
@@ -26,5 +26,5 @@ void PlasmaGun::OnKeyPressed(int input)
 }
 void PlasmaGun::Fire(Vector2 fireDirection)
 {
-    GetCurrentScene().AddGameObject(new Bullet(GetCurrentScene(), fireDirection), transform.Position);
+    GetCurrentScene().AddGameObject(new PlasmaBullet(GetCurrentScene(), fireDirection), transform.Position);
 };

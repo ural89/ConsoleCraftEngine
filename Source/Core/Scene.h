@@ -83,7 +83,7 @@ public:
 			gameObjectsToSpawn.pop();
 		}
 	}
-	GameObject *GetNearestGameObject(Transform transform, std::string gameObjectName)
+	GameObject *FindNearestGameObject(Transform transform, std::string gameObjectName)
 	{
 		GameObject *nearestGameObject = nullptr;
 		float nearestDistance = std::numeric_limits<float>::max();
@@ -103,6 +103,22 @@ public:
 		}
 
 		return nearestGameObject;
+	}
+	GameObject *FindGameObject(std::string gameObjectName)
+	{
+		GameObject *gameObject = nullptr;
+	
+
+		for (auto &go : GameObjects)
+		{
+			if (go->name == gameObjectName)
+			{
+			
+				gameObject = go;
+			}
+		}
+
+		return gameObject;
 	}
 	const std::vector<GameObject *> &GetGameObjects() const
 	{

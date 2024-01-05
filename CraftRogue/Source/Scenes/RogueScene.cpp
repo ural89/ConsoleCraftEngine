@@ -6,5 +6,5 @@ void RogueScene::Init()
 {
     AddGameObject(new Player(*this), Vector2(10, 10));
     AddGameObject(new EnemyRogue(*this), Vector2(25, 5));
-
+    AddGameObject(new EnemyRogue(*this), Vector2(20, 5));
 }

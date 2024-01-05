@@ -1,20 +1,20 @@
-#include "Bullet.h"
+#include "PlasmaBullet.h"
 
 #include "Core/Scene.h"
 #include "Core/ParticleSystem/ParticleSource.h"
 
-void Bullet::Init()
+void PlasmaBullet::Init()
 {
 
 	sprite = { 
-		{1,0,1,0}, 
-		{1,1,1,1}, 
-		{1,0,1,0} };
+		{0,2,0}, 
+		{2,3,2}, 
+		{0,2,0} };
 	particleSource = new ParticleSource(*this);
 	AddComponent(particleSource);
 }
 
-void Bullet::Update(float deltaTime)
+void PlasmaBullet::Update(float deltaTime)
 {
 	Vector2 movePosition =  fireDirection * deltaTime * bulletSpeed;
 	transform.MovePosition(movePosition.X, movePosition.Y);
@@ -29,12 +29,12 @@ void Bullet::Update(float deltaTime)
 
 }
 
-void Bullet::OnCollidedBorder()
+void PlasmaBullet::OnCollidedBorder()
 {
 	Destroy();
 }
 
-void Bullet::OnCollided(const GameObject& other)
+void PlasmaBullet::OnCollided(const GameObject& other)
 {
 	
 	if (other.name == "Enemy")

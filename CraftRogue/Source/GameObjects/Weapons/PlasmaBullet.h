@@ -1,11 +1,11 @@
 #pragma once
 #include "Core/GameObject.h"
 #include "CoreStructs/Vector.h"
-class Bullet : public GameObject
+class PlasmaBullet : public GameObject
 {
 public:
 
-	Bullet(class Scene& scene, Vector2 fireDirection) : GameObject("Bullet", scene) 
+	PlasmaBullet(class Scene& scene, Vector2 fireDirection) : GameObject("Bullet", scene) 
 	{
 		symbol = '#';
 		this->fireDirection = fireDirection;
