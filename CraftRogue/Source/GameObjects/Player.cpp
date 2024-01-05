@@ -22,4 +22,5 @@ void Player::Init()
     GetCurrentScene().AddGameObject(plasmaGun), startPosition;
     plasmaGun->transform.SetParent(transform);
     plasmaGun->transform.Position = startPosition;
+    GetCurrentScene().uiHandler->RemoveString(debugUIDataPtr);
 }
