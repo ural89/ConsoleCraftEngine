@@ -51,7 +51,6 @@ public:
 			}
 			camera->offsetX = 0;
 			camera->offsetY = 0;
-			
 		}
 	}
 	virtual void Update(float deltaTime)
@@ -83,6 +82,27 @@ public:
 			InitializeGameObject(go);
 			gameObjectsToSpawn.pop();
 		}
+	}
+	GameObject *GetNearestGameObject(Transform transform, std::string gameObjectName)
+	{
+		GameObject *nearestGameObject = nullptr;
+		float nearestDistance = std::numeric_limits<float>::max();
+
+		for (auto &go : GameObjects)
+		{
+			if (go->name == gameObjectName)
+			{
+				float distanceToGameObject = Vector2::Distance(transform.Position, go->transform.Position);
+
+				if (distanceToGameObject < nearestDistance)
+				{
+					nearestGameObject = go;
+					nearestDistance = distanceToGameObject;
+				}
+			}
+		}
+
+		return nearestGameObject;
 	}
 	const std::vector<GameObject *> &GetGameObjects() const
 	{
