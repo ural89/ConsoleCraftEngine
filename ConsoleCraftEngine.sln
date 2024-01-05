@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CraftShooterGame", "CraftSh
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CraftMatch", "CraftMatch\CraftMatch.vcxproj", "{41855BFD-F686-4498-89A6-80936D9B909D}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CraftRogue", "..\CraftRogue\CraftRogue.vcxproj", "{1B194954-7458-4921-8D36-7BE180F23D0A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -41,6 +43,14 @@ Global
 		{41855BFD-F686-4498-89A6-80936D9B909D}.Release|x64.Build.0 = Release|x64
 		{41855BFD-F686-4498-89A6-80936D9B909D}.Release|x86.ActiveCfg = Release|Win32
 		{41855BFD-F686-4498-89A6-80936D9B909D}.Release|x86.Build.0 = Release|Win32
+		{1B194954-7458-4921-8D36-7BE180F23D0A}.Debug|x64.ActiveCfg = Debug|x64
+		{1B194954-7458-4921-8D36-7BE180F23D0A}.Debug|x64.Build.0 = Debug|x64
+		{1B194954-7458-4921-8D36-7BE180F23D0A}.Debug|x86.ActiveCfg = Debug|Win32
+		{1B194954-7458-4921-8D36-7BE180F23D0A}.Debug|x86.Build.0 = Debug|Win32
+		{1B194954-7458-4921-8D36-7BE180F23D0A}.Release|x64.ActiveCfg = Release|x64
+		{1B194954-7458-4921-8D36-7BE180F23D0A}.Release|x64.Build.0 = Release|x64
+		{1B194954-7458-4921-8D36-7BE180F23D0A}.Release|x86.ActiveCfg = Release|Win32
+		{1B194954-7458-4921-8D36-7BE180F23D0A}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
