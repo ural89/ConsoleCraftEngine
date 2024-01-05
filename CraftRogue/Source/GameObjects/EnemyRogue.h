@@ -10,7 +10,9 @@ public:
 	}
 	void Init() override;
 	void Update(float deltaTime) override;
+	void OnCollided(const GameObject& other) override;
 private:
 	float moveSpeed = 5;
+	class ParticleSource* particleSource;
 };
 
