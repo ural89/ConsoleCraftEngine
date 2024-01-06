@@ -15,6 +15,7 @@ public:
 			delete component;
 		}
 		components.clear();
+		sprite.clear();
 	}
 
 	Transform transform = Transform();

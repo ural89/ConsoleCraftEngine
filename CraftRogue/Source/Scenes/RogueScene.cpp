@@ -20,7 +20,7 @@ void RogueScene::Update(float deltaTime)
     if (spawnDurationPassed >= spawnTime)
     {
         spawnDurationPassed = 0;
-      //  SpawnEnemy();
+        SpawnEnemy();
     }
 }
 

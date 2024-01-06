@@ -9,6 +9,7 @@ public:
 	ParticleObject(Scene& scene,  int particleType);
 	~ParticleObject()
 	{
+		
 		brickParticle.clear();
 		enemyParticle.clear();
 		fireParticle.clear();
