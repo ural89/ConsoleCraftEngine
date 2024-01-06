@@ -108,6 +108,7 @@ void Renderer::DrawUI(const Scene& scene)
     {
         GoToXY(uiData->position.X, uiData->position.Y);
         std::cout << uiData->text;
+        
     }
     
 }

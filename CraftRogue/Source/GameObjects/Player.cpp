@@ -16,15 +16,14 @@ void Player::Init()
     debugUIDataPtr = std::make_shared<UIData>(debugUIData);
     GetCurrentScene().uiHandler->AddString(debugUIDataPtr);
 
-    std::function<void(Event&)> OnRecievedEvent = std::bind(&Player::RecievedEvent, this, std::placeholders::_1);
+    std::function<void(Event &)> OnRecievedEvent = std::bind(&Player::RecievedEvent, this, std::placeholders::_1);
     EventDispatcher::AddListener(OnRecievedEvent);
-    
-    
-    PlayerController* playerController = new PlayerController(*this, 0);
+
+    PlayerController *playerController = new PlayerController(*this, 0);
     AddComponent(playerController);
     playerUpgradeComponent = new PlayerUpgradeComponent(*this);
     AddComponent(playerUpgradeComponent);
-    
+
     sprite = {{0, 1, 0},
               {1, 1, 1},
               {1, 1, 1},
@@ -33,30 +32,29 @@ void Player::Init()
 
     InitializeWeapon(startPosition);
 
-  
-
     auto inputEvent = std::bind(&Player::OnKeyPressed, this, std::placeholders::_1);
     Input::AddListener(inputEvent);
 }
 void Player::OnKeyPressed(int input)
 {
-    if (input == SPACEBAR)
-    {
-        Vector2 StartPoint = transform.Position;
-        auto nearestEnemy = GetCurrentScene().FindNearestGameObject(transform, "Enemy");
-        if (nearestEnemy != nullptr)
+    if (!GetCurrentScene().isPaused)
+        if (input == SPACEBAR)
         {
+            Vector2 StartPoint = transform.Position;
+            auto nearestEnemy = GetCurrentScene().FindNearestGameObject(transform, "Enemy");
+            if (nearestEnemy != nullptr)
+            {
 
-            Vector2 TargetPoint = nearestEnemy->transform.Position;
+                Vector2 TargetPoint = nearestEnemy->transform.Position;
 
-            Vector2 FireDirection = TargetPoint - StartPoint;
-            FireDirection.Normalize();
+                Vector2 FireDirection = TargetPoint - StartPoint;
+                FireDirection.Normalize();
 
-            weapons[0]->Fire(FireDirection);
+                weapons[0]->Fire(FireDirection);
+            }
         }
-    }
 }
-void Player::RecievedEvent(Event& e)
+void Player::RecievedEvent(Event &e)
 {
     switch (e.GetEventType())
     {
@@ -68,7 +66,7 @@ void Player::RecievedEvent(Event& e)
 }
 void Player::InitializeWeapon(Vector2 &startPosition)
 {
-    Weapon* weapon = new PlasmaGun(GetCurrentScene());
+    Weapon *weapon = new PlasmaGun(GetCurrentScene());
     GetCurrentScene().AddGameObject(weapon), startPosition;
     weapon->transform.SetParent(transform);
     weapon->transform.Position = startPosition;
