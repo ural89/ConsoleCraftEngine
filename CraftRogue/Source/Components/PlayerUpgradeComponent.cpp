@@ -35,7 +35,7 @@ void PlayerUpgradeComponent::DrawUpgradeSquare()
                 UpgradeUiDataPtr->text += "2. Blast gun";
             }
             else if (j == 2 && i == 7) {
-                UpgradeUiDataPtr->text += "1. Thunder gun";
+                UpgradeUiDataPtr->text += "3. Thunder gun";
             }
             else {
                 UpgradeUiDataPtr->text += "  ";
