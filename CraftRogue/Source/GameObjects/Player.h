@@ -6,6 +6,10 @@ class Player : public GameObject
 {
 public:
     Player(class Scene &scene) : GameObject("Player", scene) {}
+    ~Player()
+    {
+        weapons.clear();
+    }
     void Init() override;
 
     void OnKeyPressed(int input);
@@ -20,5 +24,6 @@ private:
     void RecievedEvent(Event& e);
 
     class PlayerUpgradeComponent* playerUpgradeComponent;
-    class Weapon* weapon;
+
+    std::vector<class Weapon*> weapons;
 };

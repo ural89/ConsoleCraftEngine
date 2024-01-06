@@ -52,7 +52,7 @@ void Player::OnKeyPressed(int input)
             Vector2 FireDirection = TargetPoint - StartPoint;
             FireDirection.Normalize();
 
-            weapon->Fire(FireDirection);
+            weapons[0]->Fire(FireDirection);
         }
     }
 }
@@ -68,8 +68,9 @@ void Player::RecievedEvent(Event& e)
 }
 void Player::InitializeWeapon(Vector2 &startPosition)
 {
-    weapon = new PlasmaGun(GetCurrentScene());
+    Weapon* weapon = new PlasmaGun(GetCurrentScene());
     GetCurrentScene().AddGameObject(weapon), startPosition;
     weapon->transform.SetParent(transform);
     weapon->transform.Position = startPosition;
+    weapons.push_back(weapon);
 }
