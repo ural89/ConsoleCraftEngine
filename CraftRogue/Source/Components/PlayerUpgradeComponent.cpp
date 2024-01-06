@@ -25,11 +25,11 @@ void PlayerUpgradeComponent::DrawUpgradeSquare()
 
     UpgradeUiDataPtr->text += "Level Up! \r \n";
 
-    UpgradeUiDataPtr->text += "1. Plasma gun \r \n";
+    UpgradeUiDataPtr->text += " 1. Plasma gun \r \n";
 
-    UpgradeUiDataPtr->text += "2. Blast gun \r \n";
+    UpgradeUiDataPtr->text += " 2. Blast gun \r \n";
 
-    UpgradeUiDataPtr->text += "3. Thunder gun \r";
+    UpgradeUiDataPtr->text += " 3. Thunder gun \r";
 
     UpgradeUiDataPtr->text += '\n';
 }
