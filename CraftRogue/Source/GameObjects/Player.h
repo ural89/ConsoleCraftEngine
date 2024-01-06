@@ -22,8 +22,8 @@ private:
 
     void InitializeWeapon(Vector2 &startPosition);
     void RecievedEvent(Event& e);
-
+    bool hasUsedWaveGun = false;
     class PlayerUpgradeComponent* playerUpgradeComponent;
-
+    class ParticleSource* ps;
     std::vector<class Weapon*> weapons;
 };

@@ -18,10 +18,10 @@ void Player::Init()
 
     std::function<void(Event &)> OnRecievedEvent = std::bind(&Player::RecievedEvent, this, std::placeholders::_1);
     EventDispatcher::AddListener(OnRecievedEvent);
-    ParticleSource* ps = new ParticleSource(*this);
+    ps = new ParticleSource(*this);
     
     AddComponent(ps);
-    ps->EmitWaveParticle(Vector2(30, 20), Vector2(0,0));
+    
 
     PlayerController *playerController = new PlayerController(*this, 0);
     AddComponent(playerController);
@@ -48,9 +48,11 @@ void Player::OnKeyPressed(int input)
             auto nearestEnemy = GetCurrentScene().FindNearestGameObject(transform, "Enemy");
             if (nearestEnemy != nullptr)
             {
-
                 Vector2 TargetPoint = nearestEnemy->transform.Position;
-
+              //  if(!hasUsedWaveGun)
+                    ps->EmitWaveParticle(nearestEnemy->transform, Vector2(0, 0));
+           
+				hasUsedWaveGun = true;
                 Vector2 FireDirection = TargetPoint - StartPoint;
                 FireDirection.Normalize();
 

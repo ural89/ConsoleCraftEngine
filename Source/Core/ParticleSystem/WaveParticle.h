@@ -4,7 +4,7 @@
 class WaveParticle : public ParticleObject
 {
 public:
-	WaveParticle(Scene& scene,  int particleType, Vector2 endPoint, 
+	WaveParticle(Scene& scene,  int particleType, Transform& endTransform, 
 		Transform& startTransform, 
 		int index) :
 		ParticleObject(scene,  particleType)
@@ -13,15 +13,21 @@ public:
 					{1,1} };
 		symbol = '#';
 		this->startTransform = &startTransform;
+		this->endTransform = &endTransform;
 		this->index = index;
-		this->startPoint = startPoint;
-		this->endPoint = endPoint;
+		
+		
+	}
+	~WaveParticle() override
+	{ 
+		/*delete endTransform;
+		delete startTransform;*///TODO: fix
 	}
 	void Init() override;
 	void Update(float deltaTime);
 private:
-	Vector2 endPoint;
-	Vector2 startPoint;
+	float duration = 0;
+	Transform* endTransform;
 	Transform* startTransform;
 	int index;
 };

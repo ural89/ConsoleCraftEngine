@@ -2,6 +2,7 @@
 #include "../Scene.h"
 #include "BlastParticle.h"
 #include "WaveParticle.h"
+#include "../../CoreStructs/Transform.h"
 
 void ParticleSource::Init() 
 {
@@ -31,13 +32,15 @@ void ParticleSource::EmitParticle(int count, int particleType, Vector2 localPosi
 	}
 }
 
-void ParticleSource::EmitWaveParticle(Vector2 endPosition, Vector2 localPosition)
+void ParticleSource::EmitWaveParticle(Transform& endTransform, Vector2 localPosition)
 {
-	for (int i = 0; i < 25; i++)
+	int distance = 50;// endPosition.X - owner->transform.Position.X;// ::Distance(endPosition, owner->transform.Position);
+	for (int i = 0; i < distance; i++)
 	{
+	
 		owner->GetCurrentScene().AddGameObject(new
 			WaveParticle(owner->GetCurrentScene(),
-				 ENEMYTYPEPARTICLE,  Vector2(5, 5), (owner->transform), i));
+				 ENEMYTYPEPARTICLE,  endTransform, (owner->transform), i));
 	
 	}
 }

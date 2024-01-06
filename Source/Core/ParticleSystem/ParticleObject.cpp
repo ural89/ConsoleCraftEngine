@@ -33,6 +33,6 @@ void ParticleObject::Update(float deltaTime)
 
 void ParticleObject::OnCollidedBorder()
 {
-	Destroy();
+	
 }
 

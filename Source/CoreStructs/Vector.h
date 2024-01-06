@@ -36,6 +36,10 @@ public:
 	{
 		return Vector2(X, Y).Length() < other.Length();
 	}
+	bool operator>(const Vector2& other) const
+	{
+		return Vector2(X, Y).Length() > other.Length();
+	}
 	float Length() const
 	{
 		return std::sqrt(X * X + Y * Y);

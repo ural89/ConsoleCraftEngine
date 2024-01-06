@@ -13,7 +13,7 @@ public:
 	void Init() override;
 	void Update(float deltaTime) override;
 	void EmitParticle(int count, int particleType, Vector2 localPosition =  Vector2(0,0));
-	void EmitWaveParticle(Vector2 endPosition, Vector2 localPosition);
+	void EmitWaveParticle(class Transform& endTransform, Vector2 localPosition);
 private:
 	
 };

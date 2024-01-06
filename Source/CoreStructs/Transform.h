@@ -27,6 +27,20 @@ public:
 	{
 		parent.SetChild(*this);
 	}
+	void SetPosition(float x, float y)
+	{
+		PreviousPosition = Position.ToInt();
+		Position = Vector2(x, y);
+		if (PreviousPosition != Position.ToInt())
+		{
+			HasMovedThisFrame = true;
+			HasClearedFlag = false;
+		}
+		else
+		{
+			HasMovedThisFrame = false;
+		}
+	}
 	void MovePosition(float x, float y, bool isCameraMove = false)
 	{
 

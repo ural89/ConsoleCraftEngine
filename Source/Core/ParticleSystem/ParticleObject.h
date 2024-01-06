@@ -7,6 +7,13 @@ class GE_API ParticleObject : public GameObject
 {
 public:
 	ParticleObject(Scene& scene,  int particleType);
+	~ParticleObject()
+	{
+		brickParticle.clear();
+		enemyParticle.clear();
+		fireParticle.clear();
+
+	}
 	void Init() override;
 	void Update(float deltaTime) override;
 	void OnCollidedBorder() override;

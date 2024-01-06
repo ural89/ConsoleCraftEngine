@@ -12,3 +12,8 @@ void BlastParticle::Update(float deltaTime)
 		//GetCurrentScene(todo particle trail).AddGameObject()
 	}
 }
+
+void BlastParticle::OnCollidedBorder()
+{
+	Destroy();
+}
