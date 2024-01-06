@@ -4,7 +4,7 @@
 #include "CoreStructs/Vector.h"
 void RogueScene::Init()
 {
-    AddGameObject(new Player(*this), Vector2(10, 10));
+    AddGameObject(new Player(*this), Vector2(30, 10));
 
     srand(static_cast<unsigned int>(time(nullptr)));
     SpawnEnemy();

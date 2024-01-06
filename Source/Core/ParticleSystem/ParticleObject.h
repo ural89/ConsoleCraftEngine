@@ -6,13 +6,13 @@
 class GE_API ParticleObject : public GameObject
 {
 public:
-	ParticleObject(Scene& scene, class Vector2 startVelocity, int particleType);
+	ParticleObject(Scene& scene,  int particleType);
 	void Init() override;
 	void Update(float deltaTime) override;
 	void OnCollidedBorder() override;
-private:
+protected:
 	float gravity = 50;
-     Vector2 velocity;
+
 	 std::array<Vector2, 5> trailPositions;
 	 int trailCount = 0;
 	 Vector2 lastPosition;

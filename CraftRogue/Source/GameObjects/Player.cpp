@@ -1,10 +1,10 @@
 #include "Player.h"
 #include "Weapons/PlasmaGun.h"
 #include "../Components/PlayerUpgradeComponent.h"
-
 #include <memory>
 #include <functional>
 
+#include "Core/ParticleSystem/ParticleSource.h"
 #include "Core/Scene.h"
 #include "Core/Input.h"
 #include "Core/Component/PlayerController.h"
@@ -18,6 +18,10 @@ void Player::Init()
 
     std::function<void(Event &)> OnRecievedEvent = std::bind(&Player::RecievedEvent, this, std::placeholders::_1);
     EventDispatcher::AddListener(OnRecievedEvent);
+    ParticleSource* ps = new ParticleSource(*this);
+    
+    AddComponent(ps);
+    ps->EmitWaveParticle(Vector2(30, 20), Vector2(0,0));
 
     PlayerController *playerController = new PlayerController(*this, 0);
     AddComponent(playerController);
@@ -28,7 +32,7 @@ void Player::Init()
               {1, 1, 1},
               {1, 1, 1},
               {1, 0, 1}};
-    Vector2 startPosition(10, 10);
+	Vector2 startPosition = transform.Position;
 
     InitializeWeapon(startPosition);
 

@@ -1,7 +1,7 @@
 #include "ParticleSource.h"
 #include "../Scene.h"
-#include "ParticleObject.h"
-
+#include "BlastParticle.h"
+#include "WaveParticle.h"
 
 void ParticleSource::Init() 
 {
@@ -27,6 +27,17 @@ void ParticleSource::EmitParticle(int count, int particleType, Vector2 localPosi
 
 	
 		Vector2 randomVelocity(randomVelocityX, randomVelocityY);
-		owner->GetCurrentScene().AddGameObject(new ParticleObject(owner->GetCurrentScene(), randomVelocity, particleType), owner->transform.Position + localPosition);
+		owner->GetCurrentScene().AddGameObject(new BlastParticle(owner->GetCurrentScene(), particleType, randomVelocity), owner->transform.Position + localPosition);
+	}
+}
+
+void ParticleSource::EmitWaveParticle(Vector2 endPosition, Vector2 localPosition)
+{
+	for (int i = 0; i < 25; i++)
+	{
+		owner->GetCurrentScene().AddGameObject(new
+			WaveParticle(owner->GetCurrentScene(),
+				 ENEMYTYPEPARTICLE,  Vector2(5, 5), (owner->transform), i));
+	
 	}
 }

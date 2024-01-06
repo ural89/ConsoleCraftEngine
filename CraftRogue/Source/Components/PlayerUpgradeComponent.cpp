@@ -36,7 +36,7 @@ void PlayerUpgradeComponent::DrawUpgradeSquare()
 
 void PlayerUpgradeComponent::AddExperience(int experienceToAdd)
 {
-    experience += experienceToAdd;
+    //experience += experienceToAdd;
     if (experience >= 1)
     {
         DrawUpgradeSquare();
