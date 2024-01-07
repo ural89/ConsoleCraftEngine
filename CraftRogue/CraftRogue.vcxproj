@@ -154,7 +154,8 @@
     <ClCompile Include="Source\Components\Health.cpp" />
     <ClCompile Include="Source\Components\PlayerUpgradeComponent.cpp" />
     <ClCompile Include="Source\CraftRogueGameEntry.cpp" />
-    <ClCompile Include="Source\GameObjects\EnemyRogue.cpp" />
+    <ClCompile Include="Source\GameObjects\Enemies\EnemyAmeboid.cpp" />
+    <ClCompile Include="Source\GameObjects\Enemies\EnemyRogue.cpp" />
     <ClCompile Include="Source\GameObjects\Player.cpp" />
     <ClCompile Include="Source\GameObjects\Weapons\PlasmaBullet.cpp" />
     <ClCompile Include="Source\GameObjects\Weapons\PlasmaGun.cpp" />
@@ -165,7 +166,8 @@
   <ItemGroup>
     <ClInclude Include="Source\Components\Health.h" />
     <ClInclude Include="Source\Components\PlayerUpgradeComponent.h" />
-    <ClInclude Include="Source\GameObjects\EnemyRogue.h" />
+    <ClInclude Include="Source\GameObjects\Enemies\EnemyAmeboid.h" />
+    <ClInclude Include="Source\GameObjects\Enemies\EnemyRogue.h" />
     <ClInclude Include="Source\GameObjects\Player.h" />
     <ClInclude Include="Source\GameObjects\Weapons\PlasmaBullet.h" />
     <ClInclude Include="Source\GameObjects\Weapons\PlasmaGun.h" />

@@ -3,18 +3,24 @@
 #include "Weapons/WaveGun.h"
 #include "../Components/PlayerUpgradeComponent.h"
 #include <memory>
-#include <functional>
 
 #include "Core/Scene.h"
 #include "Core/Input.h"
 #include "Core/Component/PlayerController.h"
 #include "Core/EventDispatcher.h"
+Player::~Player()
+{
+    
+	weapons.clear();
+    Input::RemoveListener(inputEvent);
+    
+}
 void Player::Init()
 {
-    debugUIData.position = Vector2(0, 29);
-    debugUIData.text = "Debug Text";
-    debugUIDataPtr = std::make_shared<UIData>(debugUIData);
-    GetCurrentScene().uiHandler->AddString(debugUIDataPtr);
+    scoreUIData.position = Vector2(0, 29);
+    scoreUIData.text = "Score: " + std::to_string(score);
+    scoreUIDataPtr = std::make_shared<UIData>(scoreUIData);
+    GetCurrentScene().uiHandler->AddString(scoreUIDataPtr);
 
     std::function<void(Event &)> OnRecievedEvent = std::bind(&Player::RecievedEvent, this, std::placeholders::_1);
     EventDispatcher::AddListener(OnRecievedEvent);
@@ -32,7 +38,7 @@ void Player::Init()
 
     InitializeWeapon(startPosition);
 
-    auto inputEvent = std::bind(&Player::OnKeyPressed, this, std::placeholders::_1);
+    inputEvent = std::bind(&Player::OnKeyPressed, this, std::placeholders::_1);
     Input::AddListener(inputEvent);
 }
 void Player::OnKeyPressed(int input)
@@ -63,7 +69,8 @@ void Player::RecievedEvent(Event &e)
     {
     case EventType::OnEnemyKilled:
         playerUpgradeComponent->AddExperience(1);
-
+        score++;
+        scoreUIDataPtr->text = "Score: " + std::to_string(score);
         break;
     }
 }
@@ -83,6 +90,8 @@ void Player::OnCollided(GameObject &other)
 {
     if(other.name == "Enemy")
     {
+        Destroy();
+        return;
         GetCurrentScene().hasGameOver = true;
     }
 }

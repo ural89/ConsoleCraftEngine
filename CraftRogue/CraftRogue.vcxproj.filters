@@ -45,6 +45,12 @@
     <ClCompile Include="Source\GameObjects\Weapons\WaveGun.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Source\GameObjects\Enemies\EnemyAmeboid.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\GameObjects\Enemies\EnemyRogue.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\GameObjects\Weapons\PlasmaBullet.h">
@@ -72,6 +78,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Source\GameObjects\Weapons\WaveGun.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\GameObjects\Enemies\EnemyAmeboid.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\GameObjects\Enemies\EnemyRogue.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

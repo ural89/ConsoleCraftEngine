@@ -9,9 +9,7 @@
 #include "../../Components/Health.h"
 EnemyRogue::~EnemyRogue()
 {
-	particleSource->EmitParticle(4, ENEMYTYPEPARTICLE);
-	Event enemyKilledEvent = Event(EventType::OnEnemyKilled);
-	EventDispatcher::CallEvent(enemyKilledEvent);
+	
 }
 void EnemyRogue::Init()
 {
@@ -25,6 +23,13 @@ void EnemyRogue::Init()
 }
 void EnemyRogue::Update(float deltaTime)
 {
+	if (GetComponent<Health>()->HasHealthDeplated)
+	{
+		particleSource->EmitParticle(4, ENEMYTYPEPARTICLE); //TODO: move this to die function
+		Event enemyKilledEvent = Event(EventType::OnEnemyKilled);
+		EventDispatcher::CallEvent(enemyKilledEvent);
+		Destroy();
+	}
 	MoveToPlayer(deltaTime);
 	elapsedTime += deltaTime;
 	if (elapsedTime >= 0.2f)

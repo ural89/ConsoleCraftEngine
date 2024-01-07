@@ -15,6 +15,6 @@ void Health::AddHealth(int healthAmount)
 
 void Health::OnHealthDeplated()
 {
+	HasHealthDeplated = true;
 	
-	owner->Destroy();
 }
