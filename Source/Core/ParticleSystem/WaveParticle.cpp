@@ -20,7 +20,7 @@ void WaveParticle::Update(float deltaTime)
     if (index < Vector2::Distance(endTransform->Position, startTransform->Position))
     {
         float yOffset = amplitude * sin(frequency * index + timeOffset);
-        transform.SetPosition(direction.X + startTransform->Position.X, direction.Y + startTransform->Position.Y + yOffset);
+        transform.SetPosition(direction.X + startTransform->Position.X + 2, direction.Y + startTransform->Position.Y + yOffset + 2);
         isRenderable = true;
     }
     else
