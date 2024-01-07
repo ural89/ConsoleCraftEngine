@@ -22,8 +22,15 @@ private:
 
     void InitializeWeapon(Vector2 &startPosition);
     void RecievedEvent(Event& e);
-    bool hasUsedWaveGun = false;
+    void Update(float deltaTime) override;
+     void OnCollided(GameObject& other) override;
     class PlayerUpgradeComponent* playerUpgradeComponent;
+
+
     int weaponIndex = 0;
     std::vector<class Weapon*> weapons;
+
+    bool canFire = true;
+    float fireDuration = 0;
+    float fireRate = 0.5f;
 };

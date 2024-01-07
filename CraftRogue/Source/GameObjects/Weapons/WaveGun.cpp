@@ -10,7 +10,7 @@ void WaveGun::Update(float deltaTime)
 {
     if (targetGameObject != nullptr)
     {
-        
+        targetGameObject->canFindable = false;
         if (targetGameObject->transform.HasOwnerDestroyed)
         {
             targetGameObject = nullptr;
@@ -30,12 +30,16 @@ void WaveGun::Update(float deltaTime)
 
 void WaveGun::Fire(GameObject &targetGameObject)
 {
-    this->targetGameObject = &targetGameObject;
-    GetComponent<ParticleSource>()->EmitWaveParticle(targetGameObject.transform, Vector2(0, 0));
+    if (!isFiring)
+    {
+        this->targetGameObject = &targetGameObject;
+        GetComponent<ParticleSource>()->EmitWaveParticle(targetGameObject.transform, Vector2(0, 0));
+        isFiring = true;
+    }
 }
 
 void WaveGun::StopWeapon()
 {
+    isFiring = false;
     GetComponent<ParticleSource>()->ClearWaveParticles();
-    
 }

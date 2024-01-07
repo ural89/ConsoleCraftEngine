@@ -19,7 +19,6 @@ void Player::Init()
     std::function<void(Event &)> OnRecievedEvent = std::bind(&Player::RecievedEvent, this, std::placeholders::_1);
     EventDispatcher::AddListener(OnRecievedEvent);
 
-
     PlayerController *playerController = new PlayerController(*this, 0);
     AddComponent(playerController);
     playerUpgradeComponent = new PlayerUpgradeComponent(*this);
@@ -29,7 +28,7 @@ void Player::Init()
               {1, 1, 1},
               {1, 1, 1},
               {1, 0, 1}};
-	Vector2 startPosition = transform.Position;
+    Vector2 startPosition = transform.Position;
 
     InitializeWeapon(startPosition);
 
@@ -39,18 +38,18 @@ void Player::Init()
 void Player::OnKeyPressed(int input)
 {
     if (!GetCurrentScene().isPaused)
-        if (input == SPACEBAR)
+        if (input == SPACEBAR && canFire)
         {
+            canFire = false;
             weaponIndex++;
             weaponIndex = weaponIndex % 2;
             Vector2 StartPoint = transform.Position;
             auto nearestEnemy = GetCurrentScene().FindNearestGameObject(transform, "Enemy");
             if (nearestEnemy != nullptr)
             {
-            
+
                 Vector2 TargetPoint = nearestEnemy->transform.Position;
-        
-				hasUsedWaveGun = true;
+
                 Vector2 FireDirection = TargetPoint - StartPoint;
                 FireDirection.Normalize();
                 weapons[weaponIndex]->Fire(*nearestEnemy);
@@ -65,8 +64,26 @@ void Player::RecievedEvent(Event &e)
     case EventType::OnEnemyKilled:
         playerUpgradeComponent->AddExperience(1);
 
-        hasUsedWaveGun = false;
         break;
+    }
+}
+void Player::Update(float deltaTime)
+{
+    if (!canFire)
+    {
+        fireDuration += deltaTime;
+        if (fireDuration >= fireRate)
+        {
+            fireDuration = 0;
+            canFire = true;
+        }
+    }
+}
+void Player::OnCollided(GameObject &other)
+{
+    if(other.name == "Enemy")
+    {
+        GetCurrentScene().hasGameOver = true;
     }
 }
 void Player::InitializeWeapon(Vector2 &startPosition)

@@ -7,7 +7,7 @@ public:
 	void GiveDamage(int healthAmount);
 	void AddHealth(int healthAmount);
 private:
-	int healthAmount = 1;
+	int healthAmount = 2;
 	virtual void OnHealthDeplated();
 
 };
