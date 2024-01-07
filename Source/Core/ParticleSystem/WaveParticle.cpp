@@ -7,10 +7,9 @@ void WaveParticle::Init()
 void WaveParticle::Update(float deltaTime)
 {
 	duration += deltaTime;
-	float frequency = 0.2f;  
-    float amplitude = 2.f;  
-    float speed = 15.0f;     
-
+    //speed += deltaTime * 10; 
+    speed += 4 * deltaTime;
+   // amplitude -= deltaTime / 2 ;
     Vector2 direction = endTransform->Position - startTransform->Position;
     direction.Normalize();
     direction = direction * index;

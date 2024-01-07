@@ -44,11 +44,12 @@ void Player::Init()
 void Player::OnKeyPressed(int input)
 {
     if (!GetCurrentScene().isPaused)
+    {
         if (input == SPACEBAR && canFire)
         {
             canFire = false;
             weaponIndex++;
-            weaponIndex = weaponIndex % 2;
+            weaponIndex = weaponIndex % weapons.size();
             Vector2 StartPoint = transform.Position;
             auto nearestEnemy = GetCurrentScene().FindNearestGameObject(transform, "Enemy");
             if (nearestEnemy != nullptr)
@@ -62,13 +63,25 @@ void Player::OnKeyPressed(int input)
                 weapons[weaponIndex]->Fire(FireDirection);
             }
         }
+	}
+	else if (GetComponent<PlayerUpgradeComponent>()->isInUpgrade)
+	{
+        if (input == 49)
+        {
+            UnlockWeapon(0);
+        }
+        else if (input == 50)
+        {
+            UnlockWeapon(1);
+        }
+	}
 }
 void Player::RecievedEvent(Event &e)
 {
     switch (e.GetEventType())
     {
     case EventType::OnEnemyKilled:
-        playerUpgradeComponent->AddExperience(2);
+        playerUpgradeComponent->AddExperience(1);
         score++;
         scoreUIDataPtr->text = "Score: " + std::to_string(score);
         break;
@@ -90,22 +103,36 @@ void Player::OnCollided(GameObject &other)
 {
     if(other.name == "Enemy")
     {
+        GetComponent<PlayerController>()->RemoveListenerForInput();
+        GetCurrentScene().hasGameOver = true;
         Destroy();
         return;
-        GetCurrentScene().hasGameOver = true;
+    }
+}
+void Player::UnlockWeapon(int index)
+{
+    switch (index)
+    {
+    case 0:
+        weaponIndex = 0;
+        break;
+    case 1:
+        weaponIndex = 1;
+        break;
     }
 }
 void Player::InitializeWeapon(Vector2 &startPosition)
 {
-    Weapon *waveGun = new WaveGun(GetCurrentScene());
-    GetCurrentScene().AddGameObject(waveGun), startPosition;
-    waveGun->transform.SetParent(transform);
-    waveGun->transform.Position = startPosition;
-    weapons.push_back(waveGun);
 
     Weapon *plasmaWeapon = new PlasmaGun(GetCurrentScene());
     GetCurrentScene().AddGameObject(plasmaWeapon), startPosition;
     plasmaWeapon->transform.SetParent(transform);
     plasmaWeapon->transform.Position = startPosition;
     weapons.push_back(plasmaWeapon);
+   
+    Weapon *waveGun = new WaveGun(GetCurrentScene());
+    GetCurrentScene().AddGameObject(waveGun), startPosition;
+    waveGun->transform.SetParent(transform);
+    waveGun->transform.Position = startPosition;
+    weapons.push_back(waveGun);
 }

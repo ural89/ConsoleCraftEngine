@@ -2,7 +2,7 @@
 #include "Core/GameObject.h"
 #include "Core/Scene.h"
 #include "Core/Input.h"
-
+#include "../GameObjects/Player.h"
 PlayerUpgradeComponent::PlayerUpgradeComponent(GameObject &gameObject) : Component(gameObject)
 {
 }
@@ -10,13 +10,15 @@ PlayerUpgradeComponent::PlayerUpgradeComponent(GameObject &gameObject) : Compone
 void PlayerUpgradeComponent::Init()
 {
     UpgradeUiData.position = Vector2(2, 6);
-
     UpgradeUiDataPtr = std::make_shared<UIData>(UpgradeUiData);
 
-    
-
+    experienceUiData.position = Vector2(10, SCREENHEIGHT - 1);
+    experienceUiData.text = "exp: #";
+    experienceUiDataPtr = std::make_shared<UIData>(experienceUiData);
+    owner->GetCurrentScene().uiHandler->AddString(experienceUiDataPtr);
+    DrawUpgradeSquare();
     inputEvent = std::bind(&PlayerUpgradeComponent::OnKeyPress, this, std::placeholders::_1);
-    Input::AddListener(inputEvent);
+   
 }
 
 void PlayerUpgradeComponent::DrawUpgradeSquare()
@@ -26,32 +28,37 @@ void PlayerUpgradeComponent::DrawUpgradeSquare()
 
     UpgradeUiDataPtr->text += " 1. Plasma gun \r \n";
 
-    UpgradeUiDataPtr->text += " 2. Blast gun \r \n";
+    UpgradeUiDataPtr->text += " 2. Wave gun \r \n";
 
-    UpgradeUiDataPtr->text += " 3. Thunder gun \r";
+    UpgradeUiDataPtr->text += " 3. Blast gun \r";
 
     UpgradeUiDataPtr->text += '\n';
 }
 
 void PlayerUpgradeComponent::OnKeyPress(int input)
 {
-    if (input == 49)
+	if (input == 49 || input == 50 || input == 51)
     {
+        
         owner->GetCurrentScene().isPaused = false;
         Input::RemoveListener(inputEvent);
-        UpgradeUiDataPtr->text = "";
         owner->GetCurrentScene().uiHandler->RemoveString(UpgradeUiDataPtr);
+        isInUpgrade = false;
     }
 }
 
 void PlayerUpgradeComponent::AddExperience(int experienceToAdd)
 {
-   // experience += experienceToAdd;
-    if (experience >= 1)
+    //experience += experienceToAdd;
+   // experienceUiDataPtr->text += "#";
+    if (experience >= 3)
     {
+        Input::AddListener(inputEvent);
+        isInUpgrade = true;
+        experienceUiDataPtr->text = "exp: #";
         owner->GetCurrentScene().uiHandler->AddString(UpgradeUiDataPtr);
         experience = 0;
-        DrawUpgradeSquare();
+        //DrawUpgradeSquare();
         owner->GetCurrentScene().isPaused = true;
     }
 }

@@ -26,6 +26,11 @@ public:
 	void Update(float deltaTime);
 private:
 	float duration = 0;
+
+	float frequency = 0.2f;
+	float amplitude = 2.f;
+	float speed = 15.0f;
+
 	Transform* endTransform;
 	Transform* startTransform;
 	int index;

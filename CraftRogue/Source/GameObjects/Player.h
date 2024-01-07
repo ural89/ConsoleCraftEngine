@@ -23,6 +23,7 @@ private:
     void RecievedEvent(Event& e);
     void Update(float deltaTime) override;
     void OnCollided(GameObject& other) override;
+    void UnlockWeapon(int index);
     class PlayerUpgradeComponent* playerUpgradeComponent;
 
 	std::function<void(int)> inputEvent;
