@@ -2,7 +2,7 @@
 #include "Core/GameObject.h"
 #include <functional>
 #include "Core/Input.h"
-
+#include "Core/Scene.h"
 PlayerController::PlayerController(GameObject &go, int playerNo) : Component(go)
 {
 	this->playerNo = playerNo;

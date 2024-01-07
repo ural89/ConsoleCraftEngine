@@ -9,7 +9,7 @@ public:
 
     }
     void Init() override;
-    void OnCollided(const GameObject& other);
+    void OnCollided(GameObject& other);
 private:
     class DestructionEffectComponent* destructionEffectComponent;
 };

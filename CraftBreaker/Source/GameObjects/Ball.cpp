@@ -15,7 +15,7 @@ void Ball::Update(float deltaTime)
 
 }
 
-void Ball::OnCollided(const GameObject& other)
+void Ball::OnCollided(GameObject& other)
 {
     if(other.name == "Particle") return;
     if(collideTimer < 0.5f)

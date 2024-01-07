@@ -25,7 +25,7 @@ void EnemyRogue::Update(float deltaTime)
 		transform.MovePosition(moveDirection.X, moveDirection.Y);
 	}
 };
-void EnemyRogue::OnCollided(const GameObject &other)
+void EnemyRogue::OnCollided(GameObject &other)
 {
 	if (other.name == "Bullet")
 	{

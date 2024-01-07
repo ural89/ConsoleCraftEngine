@@ -21,7 +21,7 @@ void Enemy::Update(float deltaTime)
 	transform.MovePosition(-15 * deltaTime, 0);
 }
 
-void Enemy::OnCollided(const GameObject& other)
+void Enemy::OnCollided(GameObject& other)
 {
 
 	if (other.name == "Bullet")

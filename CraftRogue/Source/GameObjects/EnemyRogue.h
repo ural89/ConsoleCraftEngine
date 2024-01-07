@@ -10,7 +10,7 @@ public:
 	}
 	void Init() override;
 	void Update(float deltaTime) override;
-	void OnCollided(const GameObject& other) override;
+	void OnCollided(GameObject& other) override;
 	void OnTakeDamage(int damage);
 
 protected:

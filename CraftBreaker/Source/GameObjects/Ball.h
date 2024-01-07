@@ -16,7 +16,7 @@ public:
 		sprite = { {5}};
 	}
 	void Update(float deltaTime) override;
-	virtual void OnCollided(const GameObject& other) override;
+	virtual void OnCollided(GameObject& other) override;
 	
 	friend std::ostream& operator<<(std::ostream& os, const Ball& ball)
 	{

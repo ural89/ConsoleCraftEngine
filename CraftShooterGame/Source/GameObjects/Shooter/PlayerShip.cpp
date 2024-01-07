@@ -41,7 +41,7 @@ void PlayerShip::Update(float deltaTime)
 	
 }
 
-void PlayerShip::OnCollided(const GameObject& other)
+void PlayerShip::OnCollided(GameObject& other)
 {
 	if (other.name == "Enemy")
 	{

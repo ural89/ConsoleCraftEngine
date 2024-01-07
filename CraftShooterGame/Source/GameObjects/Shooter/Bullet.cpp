@@ -33,7 +33,7 @@ void Bullet::OnCollidedBorder()
 	Destroy();
 }
 
-void Bullet::OnCollided(const GameObject& other)
+void Bullet::OnCollided(GameObject& other)
 {
 	
 	if (other.name == "Enemy")

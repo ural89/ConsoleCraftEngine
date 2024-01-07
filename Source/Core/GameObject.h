@@ -56,7 +56,7 @@ public:
 
 	virtual void Init() {};
 	virtual void Update(float deltaTime) {};
-	virtual void OnCollided(const GameObject& other) {};
+	virtual void OnCollided(GameObject& other) {};
 	virtual void OnCollidedBorder() {};
 	
 	void InitComponents()
