@@ -3,10 +3,11 @@
 class Health : public Component
 {
 public:
-	void TakeHealth(int healthAmount);
+	Health(GameObject& owner) : Component(owner){}
+	void GiveDamage(int healthAmount);
 	void AddHealth(int healthAmount);
 private:
-	int healthAmount;
+	int healthAmount = 1;
 	virtual void OnHealthDeplated();
 
 };

@@ -1,10 +1,18 @@
 #include "EnemyRogue.h"
+
 #include "Core/Scene.h"
 #include "CoreStructs/Vector.h"
-#include "EnemyRogue.h"
 #include "Core/ParticleSystem/ParticleSource.h"
 #include "Core/Event.h"
 #include "Core/EventDispatcher.h"
+
+#include "../Components/Health.h"
+EnemyRogue::~EnemyRogue()
+{
+	particleSource->EmitParticle(4, ENEMYTYPEPARTICLE);
+	Event enemyKilledEvent = Event(EventType::OnEnemyKilled);
+	EventDispatcher::CallEvent(enemyKilledEvent);
+}
 void EnemyRogue::Init()
 {
 	sprite = {
@@ -13,6 +21,7 @@ void EnemyRogue::Init()
 		{4, 0, 0, 4}};
 	particleSource = new ParticleSource(*this);
 	AddComponent(particleSource);
+	AddComponent(new Health(*this));
 }
 void EnemyRogue::Update(float deltaTime)
 {
@@ -25,22 +34,5 @@ void EnemyRogue::Update(float deltaTime)
 		transform.MovePosition(moveDirection.X, moveDirection.Y);
 	}
 };
-void EnemyRogue::OnCollided(GameObject &other)
-{
-	if (other.name == "Bullet")
-	{
-		
-	}
-}
 
-void EnemyRogue::OnTakeDamage(int damage)
-{
-	health -= damage;
-	particleSource->EmitParticle(4, ENEMYTYPEPARTICLE);
-	if (health <= 0)
-	{
-		Event enemyKilledEvent = Event(EventType::OnEnemyKilled);
-		EventDispatcher::CallEvent(enemyKilledEvent);
-		Destroy();
-	}
-}
+

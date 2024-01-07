@@ -8,10 +8,9 @@ public:
 	{
 		symbol = '#';
 	}
+	~EnemyRogue();
 	void Init() override;
 	void Update(float deltaTime) override;
-	void OnCollided(GameObject& other) override;
-	void OnTakeDamage(int damage);
 
 protected:
 	float moveSpeed = 5;
