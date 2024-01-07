@@ -1,13 +1,17 @@
 #include "RogueScene.h"
 #include "../GameObjects/Player.h"
-#include "../GameObjects/EnemyRogue.h"
+#include "../GameObjects/Enemies/EnemyRogue.h"
+#include "../GameObjects/Enemies/EnemyAmeboid.h"
 #include "CoreStructs/Vector.h"
+
+const int STANDARDENEMYTYPE = 0;
+const int AMEBOIDENEMYTYPE = 1;
 void RogueScene::Init()
 {
     AddGameObject(new Player(*this), Vector2(30, 10));
-    
+
     srand(static_cast<unsigned int>(time(nullptr)));
-    SpawnEnemy();
+    SpawnEnemy(rand() % 2);
 }
 
 void RogueScene::Update(float deltaTime)
@@ -20,11 +24,11 @@ void RogueScene::Update(float deltaTime)
     if (spawnDurationPassed >= spawnTime)
     {
         spawnDurationPassed = 0;
-        SpawnEnemy();
+        SpawnEnemy(rand() % 2);
     }
 }
 
-void RogueScene::SpawnEnemy()
+void RogueScene::SpawnEnemy(int enemyType)
 {
     numberOfEnemyToSpawn--;
 
@@ -51,6 +55,17 @@ void RogueScene::SpawnEnemy()
         yPos = rand() % SCREENHEIGHT;
         break;
     }
-   
-    AddGameObject(new EnemyRogue(*this), Vector2(xPos, yPos));
+    switch (enemyType)
+    {
+    case 0:
+        AddGameObject(new EnemyRogue(*this), Vector2(xPos, yPos));
+        break;
+    case 1:
+        AddGameObject(new EnemyAmeboid(*this), Vector2(xPos, yPos));
+
+        break;
+
+    default:
+        break;
+    }
 }

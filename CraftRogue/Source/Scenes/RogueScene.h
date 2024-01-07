@@ -7,7 +7,7 @@ public:
 	void Update(float deltaTime) override;
 
 private:
-	void SpawnEnemy();
+	void SpawnEnemy(int enemyType);
 
 	int numberOfEnemyToSpawn = 5;
 	float spawnTime = 1.5f;

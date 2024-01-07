@@ -6,7 +6,7 @@
 #include "Core/Event.h"
 #include "Core/EventDispatcher.h"
 
-#include "../Components/Health.h"
+#include "../../Components/Health.h"
 EnemyRogue::~EnemyRogue()
 {
 	particleSource->EmitParticle(4, ENEMYTYPEPARTICLE);
@@ -25,6 +25,16 @@ void EnemyRogue::Init()
 }
 void EnemyRogue::Update(float deltaTime)
 {
+	MoveToPlayer(deltaTime);
+	elapsedTime += deltaTime;
+	if (elapsedTime >= 0.2f)
+	{
+		OnMove();
+		elapsedTime = 0;
+	}
+}
+void EnemyRogue::MoveToPlayer(float deltaTime)
+{
 	auto player = GetCurrentScene().FindGameObject("Player");
 	if (player != nullptr)
 	{
@@ -33,6 +43,8 @@ void EnemyRogue::Update(float deltaTime)
 		moveDirection = moveDirection * moveSpeed * deltaTime;
 		transform.MovePosition(moveDirection.X, moveDirection.Y);
 	}
+}
+void EnemyRogue::OnMove()
+{
+	
 };
-
-

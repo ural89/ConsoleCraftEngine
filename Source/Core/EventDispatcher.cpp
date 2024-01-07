@@ -1,7 +1,7 @@
 #include "EventDispatcher.h"
 std::vector<std::function<void(Event&)>> listeners;
 
-void EventDispatcher::AddListener(std::function<void(Event&)> func)
+void EventDispatcher::AddListener(std::function<void(Event&)>& func)
 {
     listeners.push_back(func);
 }

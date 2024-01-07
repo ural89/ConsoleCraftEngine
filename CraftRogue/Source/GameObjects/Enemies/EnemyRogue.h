@@ -3,8 +3,7 @@
 class EnemyRogue : public GameObject
 {
 public:
-
-	EnemyRogue(class Scene& scene) : GameObject("Enemy", scene) 
+	EnemyRogue(class Scene &scene) : GameObject("Enemy", scene)
 	{
 		symbol = '#';
 	}
@@ -12,10 +11,16 @@ public:
 	void Init() override;
 	void Update(float deltaTime) override;
 
+	void MoveToPlayer(float deltaTime);
+
+
 protected:
 	float moveSpeed = 5;
 	int health = 2;
-private:
-	class ParticleSource* particleSource;
-};
+	
+	virtual void OnMove();
 
+private:
+	float elapsedTime = 0;
+	class ParticleSource *particleSource;
+};

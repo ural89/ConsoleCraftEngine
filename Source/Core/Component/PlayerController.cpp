@@ -12,6 +12,7 @@ void PlayerController::Init()
 {
 	auto event = std::bind(&PlayerController::OnKeyDown, this, std::placeholders::_1);
 	Input::AddListener(event);
+
 }
 
 void PlayerController::Update(float deltaTime)
