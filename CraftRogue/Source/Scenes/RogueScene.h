@@ -10,6 +10,6 @@ private:
 	void SpawnEnemy();
 
 	int numberOfEnemyToSpawn = 5;
-	float spawnTime = 2.f;
+	float spawnTime = 1.f;
 	float spawnDurationPassed = 0;
 };

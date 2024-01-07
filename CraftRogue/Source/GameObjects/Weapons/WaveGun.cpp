@@ -10,7 +10,7 @@ void WaveGun::Update(float deltaTime)
 {
     if (targetGameObject != nullptr)
     {
-        fireDuration += deltaTime;
+        
         if (targetGameObject->transform.HasOwnerDestroyed)
         {
             targetGameObject = nullptr;
@@ -18,6 +18,7 @@ void WaveGun::Update(float deltaTime)
         }
         else
         {
+            fireDuration += deltaTime;
             if (fireDuration >= 1)
             {
                 targetGameObject->GetComponent<Health>()->GiveDamage(1);

@@ -55,7 +55,8 @@ public:
 	}
 	virtual void Update(float deltaTime)
 	{
-		if(isPaused) return;
+		if (isPaused)
+			return;
 		for (auto &go : GetGameObjects())
 		{
 
@@ -91,7 +92,7 @@ public:
 
 		for (auto &go : GameObjects)
 		{
-			if (go->name == gameObjectName)
+			if (go->name == gameObjectName && go->canFindable)
 			{
 				float distanceToGameObject = Vector2::Distance(transform.Position, go->transform.Position);
 
@@ -105,16 +106,46 @@ public:
 
 		return nearestGameObject;
 	}
-	GameObject *FindGameObject(std::string gameObjectName)
+	GameObject *FindSecondNearestGameObject(Transform transform, std::string gameObjectName)
 	{
-		GameObject *gameObject = nullptr;
-	
+		GameObject *nearestGameObject = nullptr;
+		float nearestDistance = std::numeric_limits<float>::max();
+		GameObject *secondNearestGameObject = nullptr;
+		float secondNearestDistance = std::numeric_limits<float>::max();
 
 		for (auto &go : GameObjects)
 		{
 			if (go->name == gameObjectName)
 			{
-			
+				float distanceToGameObject = Vector2::Distance(transform.Position, go->transform.Position);
+
+				if (distanceToGameObject < nearestDistance)
+				{
+					secondNearestGameObject = nearestGameObject;
+					secondNearestDistance = nearestDistance;
+
+					nearestGameObject = go;
+					nearestDistance = distanceToGameObject;
+				}
+				else if (distanceToGameObject < secondNearestDistance)
+				{
+					secondNearestGameObject = go;
+					secondNearestDistance = distanceToGameObject;
+				}
+			}
+		}
+
+		return secondNearestGameObject;
+	}
+	GameObject *FindGameObject(std::string gameObjectName)
+	{
+		GameObject *gameObject = nullptr;
+
+		for (auto &go : GameObjects)
+		{
+			if (go->name == gameObjectName)
+			{
+
 				gameObject = go;
 			}
 		}
@@ -133,6 +164,7 @@ public:
 
 	bool hasGameOver = false;
 	bool isPaused = false;
+
 private:
 	Collision collision;
 	void InitializeGameObject(GameObject *go);

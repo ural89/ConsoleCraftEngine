@@ -41,17 +41,20 @@ void Player::OnKeyPressed(int input)
     if (!GetCurrentScene().isPaused)
         if (input == SPACEBAR)
         {
+            weaponIndex++;
+            weaponIndex = weaponIndex % 2;
             Vector2 StartPoint = transform.Position;
             auto nearestEnemy = GetCurrentScene().FindNearestGameObject(transform, "Enemy");
             if (nearestEnemy != nullptr)
             {
+            
                 Vector2 TargetPoint = nearestEnemy->transform.Position;
         
 				hasUsedWaveGun = true;
                 Vector2 FireDirection = TargetPoint - StartPoint;
                 FireDirection.Normalize();
-                weapons[0]->Fire(*nearestEnemy);
-                weapons[0]->Fire(FireDirection);
+                weapons[weaponIndex]->Fire(*nearestEnemy);
+                weapons[weaponIndex]->Fire(FireDirection);
             }
         }
 }
@@ -68,9 +71,15 @@ void Player::RecievedEvent(Event &e)
 }
 void Player::InitializeWeapon(Vector2 &startPosition)
 {
-    Weapon *weapon = new WaveGun(GetCurrentScene());//new PlasmaGun(GetCurrentScene());
-    GetCurrentScene().AddGameObject(weapon), startPosition;
-    weapon->transform.SetParent(transform);
-    weapon->transform.Position = startPosition;
-    weapons.push_back(weapon);
+    Weapon *waveGun = new WaveGun(GetCurrentScene());
+    GetCurrentScene().AddGameObject(waveGun), startPosition;
+    waveGun->transform.SetParent(transform);
+    waveGun->transform.Position = startPosition;
+    weapons.push_back(waveGun);
+
+    Weapon *plasmaWeapon = new PlasmaGun(GetCurrentScene());
+    GetCurrentScene().AddGameObject(plasmaWeapon), startPosition;
+    plasmaWeapon->transform.SetParent(transform);
+    plasmaWeapon->transform.Position = startPosition;
+    weapons.push_back(plasmaWeapon);
 }

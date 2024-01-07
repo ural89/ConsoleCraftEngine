@@ -81,6 +81,7 @@ public:
 	bool hasClearedFromScreen = false;
 	bool isRenderable = true;
 	bool hasCollider = true;
+	bool canFindable = true;
 	Scene& GetCurrentScene()
 	{
 		return scene;

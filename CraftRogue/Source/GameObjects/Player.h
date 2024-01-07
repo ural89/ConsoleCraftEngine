@@ -24,6 +24,6 @@ private:
     void RecievedEvent(Event& e);
     bool hasUsedWaveGun = false;
     class PlayerUpgradeComponent* playerUpgradeComponent;
-
+    int weaponIndex = 0;
     std::vector<class Weapon*> weapons;
 };
