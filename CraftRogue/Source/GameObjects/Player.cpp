@@ -49,7 +49,7 @@ void Player::OnKeyPressed(int input)
             if (nearestEnemy != nullptr)
             {
                 Vector2 TargetPoint = nearestEnemy->transform.Position;
-              //  if(!hasUsedWaveGun)
+                if(!hasUsedWaveGun)
                     ps->EmitWaveParticle(nearestEnemy->transform, Vector2(0, 0));
            
 				hasUsedWaveGun = true;
@@ -66,7 +66,8 @@ void Player::RecievedEvent(Event &e)
     {
     case EventType::OnEnemyKilled:
         playerUpgradeComponent->AddExperience(1);
-
+        ps->ClearWaveParticles();
+        hasUsedWaveGun = false;
         break;
     }
 }
