@@ -24,8 +24,8 @@ private:
     void Update(float deltaTime) override;
     void OnCollided(GameObject& other) override;
     class PlayerUpgradeComponent* playerUpgradeComponent;
-	std::function<void(int)> inputEvent;
 
+	std::function<void(int)> inputEvent;
 
     int weaponIndex = 0;
     std::vector<class Weapon*> weapons;

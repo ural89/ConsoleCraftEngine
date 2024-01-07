@@ -11,13 +11,17 @@ public:
 	void Init() override;
 	void Update(float deltaTime) override;
 
+
 	void MoveToPlayer(float deltaTime);
 
 
 protected:
 	float moveSpeed = 5;
 	int health = 2;
+
+	bool isDead = false;
 	
+	virtual void OnDie();
 	virtual void OnMove();
 
 private:

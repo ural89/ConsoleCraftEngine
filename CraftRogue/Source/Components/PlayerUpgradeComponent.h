@@ -1,6 +1,7 @@
 #pragma once
 #include "Core/Component/Component.h"
 #include "Core/UIHandler.h"
+#include <functional>
 class PlayerUpgradeComponent : public Component
 {
 public:
@@ -14,7 +15,8 @@ private:
 
 	class UIData UpgradeUiData;
 	std::shared_ptr<UIData> UpgradeUiDataPtr;
-
+	std::function<void(int)> inputEvent;
 	void DrawUpgradeSquare();
+	void OnKeyPress(int input);
 };
 

@@ -1,7 +1,7 @@
 #include "PlayerUpgradeComponent.h"
 #include "Core/GameObject.h"
 #include "Core/Scene.h"
-#include "Core/UIHandler.h"
+#include "Core/Input.h"
 
 PlayerUpgradeComponent::PlayerUpgradeComponent(GameObject &gameObject) : Component(gameObject)
 {
@@ -13,15 +13,14 @@ void PlayerUpgradeComponent::Init()
 
     UpgradeUiDataPtr = std::make_shared<UIData>(UpgradeUiData);
 
-    owner->GetCurrentScene().uiHandler->AddString(UpgradeUiDataPtr);
+    
 
+    inputEvent = std::bind(&PlayerUpgradeComponent::OnKeyPress, this, std::placeholders::_1);
+    Input::AddListener(inputEvent);
 }
 
 void PlayerUpgradeComponent::DrawUpgradeSquare()
 {
-   
-
-    const int size = 11;
 
     UpgradeUiDataPtr->text += "Level Up! \r \n";
 
@@ -34,11 +33,24 @@ void PlayerUpgradeComponent::DrawUpgradeSquare()
     UpgradeUiDataPtr->text += '\n';
 }
 
+void PlayerUpgradeComponent::OnKeyPress(int input)
+{
+    if (input == 49)
+    {
+        owner->GetCurrentScene().isPaused = false;
+        Input::RemoveListener(inputEvent);
+        UpgradeUiDataPtr->text = "";
+        owner->GetCurrentScene().uiHandler->RemoveString(UpgradeUiDataPtr);
+    }
+}
+
 void PlayerUpgradeComponent::AddExperience(int experienceToAdd)
 {
-    //experience += experienceToAdd;
+    experience += experienceToAdd;
     if (experience >= 1)
     {
+        owner->GetCurrentScene().uiHandler->AddString(UpgradeUiDataPtr);
+        experience = 0;
         DrawUpgradeSquare();
         owner->GetCurrentScene().isPaused = true;
     }

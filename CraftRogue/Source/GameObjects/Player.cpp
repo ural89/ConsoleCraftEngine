@@ -17,7 +17,7 @@ Player::~Player()
 }
 void Player::Init()
 {
-    scoreUIData.position = Vector2(0, 29);
+    scoreUIData.position = Vector2(0, SCREENHEIGHT - 1);
     scoreUIData.text = "Score: " + std::to_string(score);
     scoreUIDataPtr = std::make_shared<UIData>(scoreUIData);
     GetCurrentScene().uiHandler->AddString(scoreUIDataPtr);
@@ -68,7 +68,7 @@ void Player::RecievedEvent(Event &e)
     switch (e.GetEventType())
     {
     case EventType::OnEnemyKilled:
-        playerUpgradeComponent->AddExperience(1);
+        playerUpgradeComponent->AddExperience(2);
         score++;
         scoreUIDataPtr->text = "Score: " + std::to_string(score);
         break;

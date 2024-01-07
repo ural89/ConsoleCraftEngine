@@ -8,7 +8,7 @@ public:
 	void AddHealth(int healthAmount);
 	bool HasHealthDeplated = false;
 private:
-	int healthAmount = 2;
+	int healthAmount = 1;
 	virtual void OnHealthDeplated();
 
 };

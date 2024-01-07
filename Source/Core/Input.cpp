@@ -47,9 +47,11 @@ void Input::AddListener(std::function<void(int input)> func)
 
 void Input::RemoveListener(std::function<void(int input)> func)
 {
-    listeners.erase(std::remove_if(listeners.begin(), listeners.end(),
-                                   [&func](const std::function<void(int input)>& listener) {
-                                       return listener.target<void(int input)>() == func.target<void(int input)>();
-                                   }),
-                    listeners.end());
+    auto it = std::remove_if(listeners.begin(), listeners.end(),
+        [func](const auto& listener) {
+            return listener.target_type() == func.target_type();
+        });
+    listeners.erase(it, listeners.end());
 }
+
+

@@ -31,10 +31,17 @@ public:
 	}
 	void RemoveString(std::shared_ptr<UIData> uiData)
 	{
+		//uiData->text = ""; TODO: make this and flag
 		auto it = std::find(uiDatas.begin(), uiDatas.end(), uiData);
 		if (it != uiDatas.end())
 		{
 			uiDatas.erase(it);
 		}
+		
+#ifdef __GNUC__
+		system("clear");
+#else
+		system("cls");
+#endif
 	}
 };

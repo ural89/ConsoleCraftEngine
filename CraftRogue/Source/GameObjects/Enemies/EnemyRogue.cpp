@@ -23,12 +23,10 @@ void EnemyRogue::Init()
 }
 void EnemyRogue::Update(float deltaTime)
 {
-	if (GetComponent<Health>()->HasHealthDeplated)
+	if (GetComponent<Health>()->HasHealthDeplated && !isDead)
 	{
-		particleSource->EmitParticle(4, ENEMYTYPEPARTICLE); //TODO: move this to die function
-		Event enemyKilledEvent = Event(EventType::OnEnemyKilled);
-		EventDispatcher::CallEvent(enemyKilledEvent);
-		Destroy();
+		OnDie();
+		return;
 	}
 	MoveToPlayer(deltaTime);
 	elapsedTime += deltaTime;
@@ -37,6 +35,14 @@ void EnemyRogue::Update(float deltaTime)
 		OnMove();
 		elapsedTime = 0;
 	}
+}
+void EnemyRogue::OnDie()
+{
+	isDead = true;
+	particleSource->EmitParticle(4, ENEMYTYPEPARTICLE);
+	Event enemyKilledEvent = Event(EventType::OnEnemyKilled);
+	EventDispatcher::CallEvent(enemyKilledEvent);
+	Destroy();
 }
 void EnemyRogue::MoveToPlayer(float deltaTime)
 {

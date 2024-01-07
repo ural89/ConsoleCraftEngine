@@ -104,6 +104,7 @@ void Renderer::ClearMovedObjectsTrail(GameObject& go)
 
 void Renderer::DrawUI(const Scene& scene)
 {
+    //TODO: clear UI after erase
     for (auto& uiData : scene.uiHandler->uiDatas)
     {
         GoToXY(uiData->position.X, uiData->position.Y);
