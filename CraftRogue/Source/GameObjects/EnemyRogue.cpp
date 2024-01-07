@@ -29,13 +29,18 @@ void EnemyRogue::OnCollided(const GameObject &other)
 {
 	if (other.name == "Bullet")
 	{
-		health--;
-		particleSource->EmitParticle(4, ENEMYTYPEPARTICLE);
-		if (health <= 0)
-		{
-			Event enemyKilledEvent = Event(EventType::OnEnemyKilled);
-			EventDispatcher::CallEvent(enemyKilledEvent);
-			Destroy();
-		}
+		
+	}
+}
+
+void EnemyRogue::OnTakeDamage(int damage)
+{
+	health -= damage;
+	particleSource->EmitParticle(4, ENEMYTYPEPARTICLE);
+	if (health <= 0)
+	{
+		Event enemyKilledEvent = Event(EventType::OnEnemyKilled);
+		EventDispatcher::CallEvent(enemyKilledEvent);
+		Destroy();
 	}
 }

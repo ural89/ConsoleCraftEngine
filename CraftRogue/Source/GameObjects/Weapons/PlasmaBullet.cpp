@@ -2,6 +2,7 @@
 
 #include "Core/Scene.h"
 #include "Core/ParticleSystem/ParticleSource.h"
+#include "Core/GameObject.h"
 
 void PlasmaBullet::Init()
 {
@@ -38,9 +39,9 @@ void PlasmaBullet::OnCollidedBorder()
 	Destroy();
 }
 
-void PlasmaBullet::OnCollided(const GameObject& other)
+void PlasmaBullet::OnCollided(GameObject & other)
 {
 	
 	if (other.name == "Enemy")
-		Destroy();
+		other.GetComponent<ParticleSource>();
 }
