@@ -30,10 +30,10 @@ void Player::Init()
     playerUpgradeComponent = new PlayerUpgradeComponent(*this);
     AddComponent(playerUpgradeComponent);
 
-    sprite = {{0, 1, 0},
+    sprite = {{4, 4, 4},
               {1, 1, 1},
-              {1, 1, 1},
-              {1, 0, 1}};
+              {1, 2, 1},
+               };
     Vector2 startPosition = transform.Position;
 
     InitializeWeapon(startPosition);

@@ -34,7 +34,7 @@ void ParticleSource::EmitParticle(int count, int particleType, Vector2 localPosi
 
 void ParticleSource::EmitWaveParticle(Transform& endTransform, Vector2 localPosition)
 {
-	int distance = 50;
+	int distance = 70;
 	for (int i = 0; i < distance; i++)
 	{
 		auto waveParticle = new

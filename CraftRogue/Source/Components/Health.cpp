@@ -10,7 +10,7 @@ void Health::GiveDamage(int healthAmount)
 
 void Health::AddHealth(int healthAmount)
 {
-	this->healthAmount -= healthAmount;
+	this->healthAmount += healthAmount;
 }
 
 void Health::OnHealthDeplated()

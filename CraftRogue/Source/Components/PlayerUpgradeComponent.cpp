@@ -46,7 +46,7 @@ void PlayerUpgradeComponent::OnKeyPress(int input)
 
 void PlayerUpgradeComponent::AddExperience(int experienceToAdd)
 {
-    experience += experienceToAdd;
+   // experience += experienceToAdd;
     if (experience >= 1)
     {
         owner->GetCurrentScene().uiHandler->AddString(UpgradeUiDataPtr);

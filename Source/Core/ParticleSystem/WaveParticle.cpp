@@ -7,8 +7,8 @@ void WaveParticle::Init()
 void WaveParticle::Update(float deltaTime)
 {
 	duration += deltaTime;
-	float frequency = 1.0f;  
-    float amplitude = 1.5f;  
+	float frequency = 0.2f;  
+    float amplitude = 2.f;  
     float speed = 15.0f;     
 
     Vector2 direction = endTransform->Position - startTransform->Position;
