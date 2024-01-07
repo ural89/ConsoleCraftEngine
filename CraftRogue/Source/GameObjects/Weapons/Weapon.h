@@ -9,7 +9,8 @@ public:
 
     }
   
-
-    virtual void Fire(Vector2 fireDirection){};
+    virtual void StopWeapon(){}
+    virtual void Fire(Vector2 fireDirection){}
+    virtual void Fire(GameObject& targetGameObject){}
     
 };

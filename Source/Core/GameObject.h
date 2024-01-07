@@ -34,6 +34,7 @@ public:
 	void Destroy()
 	{
 		isDestroyedFlag = true;
+		transform.HasOwnerDestroyed = true;
 	}
 	void AddComponent(Component* component)
 	{

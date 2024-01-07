@@ -2,6 +2,7 @@
 #include "../Component/Component.h"
 #include "../../Core.h"
 #include "../../CoreStructs/Vector.h"
+#include <vector>
 const int FIRETYPEPARTICLE = 0;
 const int ENEMYTYPEPARTICLE = 1;
 const int BRICKPARTICLE = 2;
@@ -14,7 +15,9 @@ public:
 	void Update(float deltaTime) override;
 	void EmitParticle(int count, int particleType, Vector2 localPosition =  Vector2(0,0));
 	void EmitWaveParticle(class Transform& endTransform, Vector2 localPosition);
+	void ClearWaveParticles();
 private:
+	std::vector<class WaveParticle*> waveParticles;
 	
 };
 

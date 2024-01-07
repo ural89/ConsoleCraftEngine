@@ -1,10 +1,10 @@
 #include "Player.h"
 #include "Weapons/PlasmaGun.h"
+#include "Weapons/WaveGun.h"
 #include "../Components/PlayerUpgradeComponent.h"
 #include <memory>
 #include <functional>
 
-#include "Core/ParticleSystem/ParticleSource.h"
 #include "Core/Scene.h"
 #include "Core/Input.h"
 #include "Core/Component/PlayerController.h"
@@ -18,10 +18,7 @@ void Player::Init()
 
     std::function<void(Event &)> OnRecievedEvent = std::bind(&Player::RecievedEvent, this, std::placeholders::_1);
     EventDispatcher::AddListener(OnRecievedEvent);
-    ps = new ParticleSource(*this);
-    
-    AddComponent(ps);
-    
+
 
     PlayerController *playerController = new PlayerController(*this, 0);
     AddComponent(playerController);
@@ -49,13 +46,11 @@ void Player::OnKeyPressed(int input)
             if (nearestEnemy != nullptr)
             {
                 Vector2 TargetPoint = nearestEnemy->transform.Position;
-                if(!hasUsedWaveGun)
-                    ps->EmitWaveParticle(nearestEnemy->transform, Vector2(0, 0));
-           
+        
 				hasUsedWaveGun = true;
                 Vector2 FireDirection = TargetPoint - StartPoint;
                 FireDirection.Normalize();
-
+                weapons[0]->Fire(*nearestEnemy);
                 weapons[0]->Fire(FireDirection);
             }
         }
@@ -66,14 +61,14 @@ void Player::RecievedEvent(Event &e)
     {
     case EventType::OnEnemyKilled:
         playerUpgradeComponent->AddExperience(1);
-        ps->ClearWaveParticles();
+
         hasUsedWaveGun = false;
         break;
     }
 }
 void Player::InitializeWeapon(Vector2 &startPosition)
 {
-    Weapon *weapon = new PlasmaGun(GetCurrentScene());
+    Weapon *weapon = new WaveGun(GetCurrentScene());//new PlasmaGun(GetCurrentScene());
     GetCurrentScene().AddGameObject(weapon), startPosition;
     weapon->transform.SetParent(transform);
     weapon->transform.Position = startPosition;

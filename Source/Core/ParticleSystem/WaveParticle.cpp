@@ -7,13 +7,7 @@ void WaveParticle::Init()
 
 void WaveParticle::Update(float deltaTime)
 {
-	duration += deltaTime;
-	if (duration > 1)
-	{
-//		GetCurrentScene().isPaused = true;
-		Destroy();
-		return;
-	}
+
 	Vector2 direction =  endTransform->Position - startTransform->Position;
 	direction.Normalize();
 	direction = direction * index;

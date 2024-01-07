@@ -34,13 +34,23 @@ void ParticleSource::EmitParticle(int count, int particleType, Vector2 localPosi
 
 void ParticleSource::EmitWaveParticle(Transform& endTransform, Vector2 localPosition)
 {
-	int distance = 50;// endPosition.X - owner->transform.Position.X;// ::Distance(endPosition, owner->transform.Position);
+	int distance = 50;
 	for (int i = 0; i < distance; i++)
 	{
-	
-		owner->GetCurrentScene().AddGameObject(new
+		auto waveParticle = new
 			WaveParticle(owner->GetCurrentScene(),
-				 ENEMYTYPEPARTICLE,  endTransform, (owner->transform), i));
+				 ENEMYTYPEPARTICLE,  endTransform, owner->transform, i);
+		waveParticles.push_back(waveParticle);
+		owner->GetCurrentScene().AddGameObject(waveParticle);
 	
 	}
+}
+
+void ParticleSource::ClearWaveParticles()
+{
+	for (auto& waveParticle : waveParticles)
+	{
+		waveParticle->Destroy();
+	}
+	waveParticles.clear();
 }

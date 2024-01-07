@@ -16,9 +16,11 @@ public:
 	Vector2 PreviousPosition;
 
 	float Rotation;
+	
 	bool HasClearedFlag = false; // If removed its previous position from rendering
 	bool HasMovedThisFrame = false;
-
+	bool HasOwnerDestroyed = false;
+	
 	void SetChild(Transform &child)
 	{
 		children.push_back(&child);
