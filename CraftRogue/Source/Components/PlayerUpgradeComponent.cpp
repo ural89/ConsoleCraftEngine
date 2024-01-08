@@ -62,14 +62,15 @@ void PlayerUpgradeComponent::AddExperience(int experienceToAdd)
 {
     experience += experienceToAdd;
     experienceUiDataPtr->text += "#";
-    if (experience >= 2)
+    if (experience >= experienceCap)
     {
+
         Input::AddListener(inputEvent);
         isInUpgrade = true;
         experienceUiDataPtr->text = "exp: #";
         owner->GetCurrentScene().uiHandler->AddString(UpgradeUiDataPtr);
         experience = 0;
-        // DrawUpgradeSquare();
+        experienceCap++;
         owner->GetCurrentScene().isPaused = true;
     }
 }

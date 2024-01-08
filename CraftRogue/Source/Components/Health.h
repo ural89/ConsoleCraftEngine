@@ -4,11 +4,11 @@ class Health : public Component
 {
 public:
 	Health(GameObject& owner) : Component(owner){}
-	void GiveDamage(int healthAmount);
-	void AddHealth(int healthAmount);
+	void GiveDamage(float healthAmount);
+	void AddHealth(float healthAmount);
 	bool HasHealthDeplated = false;
 private:
-	int healthAmount = 1;
+	float healthAmount = 1;
 	virtual void OnHealthDeplated();
 
 };

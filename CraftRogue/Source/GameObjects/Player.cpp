@@ -1,6 +1,9 @@
 #include "Player.h"
+
 #include "Weapons/PlasmaGun.h"
 #include "Weapons/WaveGun.h"
+#include "Weapons/BlastGun.h"
+
 #include "../Components/PlayerUpgradeComponent.h"
 #include <memory>
 
@@ -113,14 +116,20 @@ void Player::InitializeWeapon(Vector2 &startPosition)
 {
 
     Weapon *plasmaWeapon = new PlasmaGun(GetCurrentScene());
-    GetCurrentScene().AddGameObject(plasmaWeapon), startPosition;
+    GetCurrentScene().AddGameObject(plasmaWeapon, startPosition);
     plasmaWeapon->transform.SetParent(transform);
-    plasmaWeapon->transform.Position = startPosition;
     weapons.push_back(plasmaWeapon);
+  
 
     Weapon *waveGun = new WaveGun(GetCurrentScene());
-    GetCurrentScene().AddGameObject(waveGun), startPosition;
+    GetCurrentScene().AddGameObject(waveGun, startPosition);
     waveGun->transform.SetParent(transform);
-    waveGun->transform.Position = startPosition;
     weapons.push_back(waveGun);
+    
+
+    Weapon *blastGun = new BlastGun(GetCurrentScene());
+    GetCurrentScene().AddGameObject(blastGun, startPosition);
+    blastGun->transform.SetParent(transform);
+    weapons.push_back(blastGun);
+
 }

@@ -1,6 +1,6 @@
 #include "Health.h"
 #include "Core/GameObject.h"
-void Health::GiveDamage(int healthAmount)
+void Health::GiveDamage(float healthAmount)
 {
 	this->healthAmount -= healthAmount;
 	
@@ -8,7 +8,7 @@ void Health::GiveDamage(int healthAmount)
 		OnHealthDeplated();
 }
 
-void Health::AddHealth(int healthAmount)
+void Health::AddHealth(float healthAmount)
 {
 	this->healthAmount += healthAmount;
 }

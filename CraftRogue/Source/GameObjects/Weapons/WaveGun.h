@@ -23,7 +23,7 @@ public:
 
 private:
     bool isFiring = false;
-    int damage = 1;
+    float damage = 1;
     float damageTime = 1;
     float fireDuration = 0;
     GameObject *targetGameObject;

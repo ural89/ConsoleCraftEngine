@@ -7,12 +7,7 @@
 void PlasmaBullet::Init()
 {
 
-	sprite = {
-		{3, 3},
-		{3, 3},
-
-
-	};
+	
 	particleSource = new ParticleSource(*this);
 	AddComponent(particleSource);
 }

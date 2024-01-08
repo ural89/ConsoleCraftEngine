@@ -12,7 +12,7 @@ public:
 	bool isInUpgrade = false;
 private:
 	int experience = 0;
-
+	int experienceCap = 5;
 	class UIData UpgradeUiData;
 	std::shared_ptr<UIData> UpgradeUiDataPtr;
 

@@ -12,6 +12,6 @@ public:
     virtual void StopWeapon(){}
     virtual void Fire(GameObject& targetGameObject){}
 protected:
-    int damage = 1;
+    float damage = 1;
     
 };
