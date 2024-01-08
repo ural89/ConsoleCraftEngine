@@ -65,7 +65,7 @@ public:
 		}
 		for (auto &go : GetGameObjects())
 		{
-			if (go->isDestroyedFlag)// && (go->hasClearedFromScreen || !go->isRenderable))
+			if (go->isDestroyedFlag && (go->hasClearedFromScreen || !go->isRenderable))
 			{
 				RemoveGameObject(go);
 			}
