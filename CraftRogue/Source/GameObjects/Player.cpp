@@ -104,12 +104,12 @@ void Player::UnlockWeapon(int index)
     if (std::find(usableWeaponsIndex.begin(), usableWeaponsIndex.end(), index) == usableWeaponsIndex.end())
     {
         usableWeaponsIndex.push_back(index);
-        scoreUIDataPtr->text = "Unlocked new weapon" + std::to_string(index);
+       
     }
     else
     {
         weapons[usableWeaponsIndex[index]]->Upgrade();
-        scoreUIDataPtr->text = "Upgraded weapon " + std::to_string(index);
+       
     }
 }
 void Player::InitializeWeapon(Vector2 &startPosition)

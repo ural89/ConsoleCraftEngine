@@ -157,6 +157,7 @@
     <ClCompile Include="Source\GameObjects\Enemies\EnemyAmeboid.cpp" />
     <ClCompile Include="Source\GameObjects\Enemies\EnemyRogue.cpp" />
     <ClCompile Include="Source\GameObjects\Player.cpp" />
+    <ClCompile Include="Source\GameObjects\Weapons\BlastGun.cpp" />
     <ClCompile Include="Source\GameObjects\Weapons\PlasmaBullet.cpp" />
     <ClCompile Include="Source\GameObjects\Weapons\PlasmaGun.cpp" />
     <ClCompile Include="Source\GameObjects\Weapons\WaveGun.cpp" />
@@ -169,6 +170,7 @@
     <ClInclude Include="Source\GameObjects\Enemies\EnemyAmeboid.h" />
     <ClInclude Include="Source\GameObjects\Enemies\EnemyRogue.h" />
     <ClInclude Include="Source\GameObjects\Player.h" />
+    <ClInclude Include="Source\GameObjects\Weapons\BlastGun.h" />
     <ClInclude Include="Source\GameObjects\Weapons\PlasmaBullet.h" />
     <ClInclude Include="Source\GameObjects\Weapons\PlasmaGun.h" />
     <ClInclude Include="Source\GameObjects\Weapons\WaveGun.h" />
