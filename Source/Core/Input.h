@@ -3,6 +3,9 @@
 #include <functional>
 #include <vector> 
 const int SPACEBAR = 32;
+const int KEY1 = 49;
+const int KEY2 = 50;
+const int KEY3 = 51;
 class GE_API Input
 {
 public:

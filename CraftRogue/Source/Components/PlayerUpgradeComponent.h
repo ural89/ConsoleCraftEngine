@@ -20,7 +20,7 @@ private:
 	std::shared_ptr<UIData> experienceUiDataPtr;
 
 	std::function<void(int)> inputEvent;
-	void DrawUpgradeSquare();
+	void CreateUpgradeSquare();
 	void OnKeyPress(int input);
 };
 

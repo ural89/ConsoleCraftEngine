@@ -5,10 +5,11 @@ class PlasmaBullet : public GameObject
 {
 public:
 
-	PlasmaBullet(class Scene& scene, Vector2 fireDirection) : GameObject("Bullet", scene) 
+	PlasmaBullet(class Scene& scene, Vector2 fireDirection, int damage) : GameObject("Bullet", scene) 
 	{
 		symbol = '#';
 		this->fireDirection = fireDirection;
+		this->damage = damage;
 	}
 	void Init() override;
 	void Update(float deltaTime) override;
@@ -21,5 +22,6 @@ private:
 	float timePassedSinceParticleSpawn = 0;
 	Vector2 fireDirection = Vector2(0,0);
 	class ParticleSource* particleSource;
+	int damage;
 };
 

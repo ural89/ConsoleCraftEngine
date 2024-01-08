@@ -16,12 +16,12 @@ void PlayerUpgradeComponent::Init()
     experienceUiData.text = "exp: #";
     experienceUiDataPtr = std::make_shared<UIData>(experienceUiData);
     owner->GetCurrentScene().uiHandler->AddString(experienceUiDataPtr);
-    DrawUpgradeSquare();
+
+    CreateUpgradeSquare();
     inputEvent = std::bind(&PlayerUpgradeComponent::OnKeyPress, this, std::placeholders::_1);
-   
 }
 
-void PlayerUpgradeComponent::DrawUpgradeSquare()
+void PlayerUpgradeComponent::CreateUpgradeSquare()
 {
 
     UpgradeUiDataPtr->text += "Level Up! \r \n";
@@ -37,28 +37,39 @@ void PlayerUpgradeComponent::DrawUpgradeSquare()
 
 void PlayerUpgradeComponent::OnKeyPress(int input)
 {
-	if (input == 49 || input == 50 || input == 51)
+
+    if (input == KEY1 || input == KEY2 || input == KEY3)
     {
-        
+
         owner->GetCurrentScene().isPaused = false;
         Input::RemoveListener(inputEvent);
         owner->GetCurrentScene().uiHandler->RemoveString(UpgradeUiDataPtr);
+        Player *player = dynamic_cast<Player *>(owner);
+        if (player != nullptr)
+        {
+            if (input == KEY1)
+                player->UnlockWeapon(0);
+            else if(input == KEY2)
+                player->UnlockWeapon(1);
+            else if(input == KEY3)
+                player->UnlockWeapon(2);
+        }
         isInUpgrade = false;
     }
 }
 
 void PlayerUpgradeComponent::AddExperience(int experienceToAdd)
 {
-    //experience += experienceToAdd;
-   // experienceUiDataPtr->text += "#";
-    if (experience >= 3)
+    experience += experienceToAdd;
+    experienceUiDataPtr->text += "#";
+    if (experience >= 2)
     {
         Input::AddListener(inputEvent);
         isInUpgrade = true;
         experienceUiDataPtr->text = "exp: #";
         owner->GetCurrentScene().uiHandler->AddString(UpgradeUiDataPtr);
         experience = 0;
-        //DrawUpgradeSquare();
+        // DrawUpgradeSquare();
         owner->GetCurrentScene().isPaused = true;
     }
 }

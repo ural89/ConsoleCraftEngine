@@ -12,6 +12,7 @@ public:
     void Init() override;
 
     void OnKeyPressed(int input);
+    void UnlockWeapon(int index);
 
 
 private:
@@ -23,12 +24,13 @@ private:
     void RecievedEvent(Event& e);
     void Update(float deltaTime) override;
     void OnCollided(GameObject& other) override;
-    void UnlockWeapon(int index);
     class PlayerUpgradeComponent* playerUpgradeComponent;
 
 	std::function<void(int)> inputEvent;
 
     int weaponIndex = 0;
+
+    std::vector<int> usableWeaponsIndex;
     std::vector<class Weapon*> weapons;
 
     bool canFire = true;

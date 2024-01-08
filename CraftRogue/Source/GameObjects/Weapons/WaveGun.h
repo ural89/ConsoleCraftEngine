@@ -14,10 +14,17 @@ public:
     void Init() override;
     void Update(float deltaTime) override;
     void Fire(GameObject &targetGameObject) override;
+    void Upgrade() override
+    {
+        damageTime -= 0.1f;
+        damageTime = damageTime < 0.5f ? 0.5 : damageTime;
+    }
     void StopWeapon() override;
 
 private:
     bool isFiring = false;
+    int damage = 1;
+    float damageTime = 1;
     float fireDuration = 0;
     GameObject *targetGameObject;
 };

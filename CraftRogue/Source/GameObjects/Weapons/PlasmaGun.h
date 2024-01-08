@@ -7,9 +7,13 @@ class PlasmaGun : public Weapon
 public:
     PlasmaGun(class Scene &scene) : Weapon(scene) {}
     ~PlasmaGun() {}
+    void Upgrade() override
+    {
+        damage++;
+    }
     void Init() override;
     
-    void Fire(Vector2 fireDirection) override;
+    void Fire(GameObject& targetGameObject) override;
 
 private:
 

@@ -10,10 +10,9 @@
 #include "Core/EventDispatcher.h"
 Player::~Player()
 {
-    
-	weapons.clear();
+
+    weapons.clear();
     Input::RemoveListener(inputEvent);
-    
 }
 void Player::Init()
 {
@@ -21,6 +20,8 @@ void Player::Init()
     scoreUIData.text = "Score: " + std::to_string(score);
     scoreUIDataPtr = std::make_shared<UIData>(scoreUIData);
     GetCurrentScene().uiHandler->AddString(scoreUIDataPtr);
+
+    usableWeaponsIndex.push_back(0);
 
     std::function<void(Event &)> OnRecievedEvent = std::bind(&Player::RecievedEvent, this, std::placeholders::_1);
     EventDispatcher::AddListener(OnRecievedEvent);
@@ -30,10 +31,11 @@ void Player::Init()
     playerUpgradeComponent = new PlayerUpgradeComponent(*this);
     AddComponent(playerUpgradeComponent);
 
-    sprite = {{4, 4, 4},
-              {1, 1, 1},
-              {1, 2, 1},
-               };
+    sprite = {
+        {4, 4, 4},
+        {1, 1, 1},
+        {1, 2, 1},
+    };
     Vector2 startPosition = transform.Position;
 
     InitializeWeapon(startPosition);
@@ -49,32 +51,16 @@ void Player::OnKeyPressed(int input)
         {
             canFire = false;
             weaponIndex++;
-            weaponIndex = weaponIndex % weapons.size();
+
             Vector2 StartPoint = transform.Position;
             auto nearestEnemy = GetCurrentScene().FindNearestGameObject(transform, "Enemy");
             if (nearestEnemy != nullptr)
             {
 
-                Vector2 TargetPoint = nearestEnemy->transform.Position;
-
-                Vector2 FireDirection = TargetPoint - StartPoint;
-                FireDirection.Normalize();
-                weapons[weaponIndex]->Fire(*nearestEnemy);
-                weapons[weaponIndex]->Fire(FireDirection);
+                weapons[usableWeaponsIndex[weaponIndex % usableWeaponsIndex.size()]]->Fire(*nearestEnemy);
             }
         }
-	}
-	else if (GetComponent<PlayerUpgradeComponent>()->isInUpgrade)
-	{
-        if (input == 49)
-        {
-            UnlockWeapon(0);
-        }
-        else if (input == 50)
-        {
-            UnlockWeapon(1);
-        }
-	}
+    }
 }
 void Player::RecievedEvent(Event &e)
 {
@@ -101,7 +87,7 @@ void Player::Update(float deltaTime)
 }
 void Player::OnCollided(GameObject &other)
 {
-    if(other.name == "Enemy")
+    if (other.name == "Enemy")
     {
         GetComponent<PlayerController>()->RemoveListenerForInput();
         GetCurrentScene().hasGameOver = true;
@@ -111,14 +97,16 @@ void Player::OnCollided(GameObject &other)
 }
 void Player::UnlockWeapon(int index)
 {
-    switch (index)
+
+    if (std::find(usableWeaponsIndex.begin(), usableWeaponsIndex.end(), index) == usableWeaponsIndex.end())
     {
-    case 0:
-        weaponIndex = 0;
-        break;
-    case 1:
-        weaponIndex = 1;
-        break;
+        usableWeaponsIndex.push_back(index);
+        scoreUIDataPtr->text = "Unlocked new weapon" + std::to_string(index);
+    }
+    else
+    {
+        weapons[usableWeaponsIndex[index]]->Upgrade();
+        scoreUIDataPtr->text = "Upgraded weapon " + std::to_string(index);
     }
 }
 void Player::InitializeWeapon(Vector2 &startPosition)
@@ -129,7 +117,7 @@ void Player::InitializeWeapon(Vector2 &startPosition)
     plasmaWeapon->transform.SetParent(transform);
     plasmaWeapon->transform.Position = startPosition;
     weapons.push_back(plasmaWeapon);
-   
+
     Weapon *waveGun = new WaveGun(GetCurrentScene());
     GetCurrentScene().AddGameObject(waveGun), startPosition;
     waveGun->transform.SetParent(transform);

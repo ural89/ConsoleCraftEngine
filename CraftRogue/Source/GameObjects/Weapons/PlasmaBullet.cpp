@@ -11,9 +11,7 @@ void PlasmaBullet::Init()
 		{3, 3},
 		{3, 3},
 
-		// {0,2,0},
-		// {2,3,2},
-		// {0,2,0}
+
 	};
 	particleSource = new ParticleSource(*this);
 	AddComponent(particleSource);
@@ -42,7 +40,7 @@ void PlasmaBullet::OnCollided(GameObject &other)
 
 	if (other.name == "Enemy")
 	{
-		other.GetComponent<Health>()->GiveDamage(1);
+		other.GetComponent<Health>()->GiveDamage(damage);
 		Destroy();
 	}
 }
