@@ -16,5 +16,5 @@
 
 
 const int SCREENHEIGHT = 25;
-const int SCREENWIDTH = 110;
+const int SCREENWIDTH = 90;
 

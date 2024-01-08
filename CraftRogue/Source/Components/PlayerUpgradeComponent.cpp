@@ -12,7 +12,7 @@ void PlayerUpgradeComponent::Init()
     UpgradeUiData.position = Vector2(2, 6);
     UpgradeUiDataPtr = std::make_shared<UIData>(UpgradeUiData);
 
-    experienceUiData.position = Vector2(10, SCREENHEIGHT - 1);
+    experienceUiData.position = Vector2(15, SCREENHEIGHT - 1);
     experienceUiData.text = "exp: #";
     experienceUiDataPtr = std::make_shared<UIData>(experienceUiData);
     owner->GetCurrentScene().uiHandler->AddString(experienceUiDataPtr);
