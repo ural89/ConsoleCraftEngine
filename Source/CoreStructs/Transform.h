@@ -14,7 +14,7 @@ public:
 
 	Vector2 Position;
 	Vector2 PreviousPosition;
-
+	Vector2 RopePreviousPosition;
 	float Rotation;
 	
 	bool HasClearedFlag = false; // If removed its previous position from rendering

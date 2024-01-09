@@ -3,28 +3,33 @@
 #include "../GameObjects/Enemies/EnemyRogue.h"
 #include "../GameObjects/Enemies/EnemyAmeboid.h"
 #include "CoreStructs/Vector.h"
+#include "Core/Physics/Rope.h"
 
 const int STANDARDENEMYTYPE = 0;
 const int AMEBOIDENEMYTYPE = 1;
 void RogueScene::Init()
 {
-    AddGameObject(new Player(*this), Vector2(30, 10));
-
+    player = new Player(*this);
+    AddGameObject(player, Vector2(30, 10));
     srand(static_cast<unsigned int>(time(nullptr)));
-    SpawnEnemy(rand() % 2);
+    rope = new Rope(30, 10, 30, 30, 20, *this);
+
+    // SpawnEnemy(rand() % 2);
 }
 
 void RogueScene::Update(float deltaTime)
 {
     Scene::Update(deltaTime);
- 
+    rope->step(deltaTime); // todo: slowly move to player
+    rope->MoveFirstParticle(deltaTime, player->transform.Position);
     if (!isPaused)
         spawnDurationPassed += deltaTime;
 
     if (spawnDurationPassed >= spawnTime)
     {
         spawnDurationPassed = 0;
-        SpawnEnemy(rand() % 3);
+
+        // SpawnEnemy(rand() % 3);
     }
 }
 
