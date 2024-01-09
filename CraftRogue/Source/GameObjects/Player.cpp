@@ -33,7 +33,7 @@ void Player::Init()
     AddComponent(playerController);
     playerUpgradeComponent = new PlayerUpgradeComponent(*this);
     AddComponent(playerUpgradeComponent);
-
+    symbol = 'O';
     sprite = {
         {4, 4, 4},
         {1, 1, 1},

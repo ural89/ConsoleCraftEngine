@@ -9,7 +9,7 @@ public:
 		int index) :
 		ParticleObject(scene,  particleType)
 	{
-		sprite = { {3} };
+		sprite = { {10} };
 		symbol = '=';
 		this->startTransform = &startTransform;
 		this->endTransform = &endTransform;

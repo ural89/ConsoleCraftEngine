@@ -24,7 +24,7 @@ void RogueScene::Update(float deltaTime)
     if (spawnDurationPassed >= spawnTime)
     {
         spawnDurationPassed = 0;
-        SpawnEnemy(rand() % 2);
+        SpawnEnemy(rand() % 3);
     }
 }
 
@@ -61,10 +61,12 @@ void RogueScene::SpawnEnemy(int enemyType)
         AddGameObject(new EnemyRogue(*this), Vector2(xPos, yPos));
         break;
     case 1:
-        AddGameObject(new EnemyAmeboid(*this), Vector2(xPos, yPos));
+        AddGameObject(new EnemyRogue(*this), Vector2(xPos, yPos));
 
         break;
-
+    case 2:
+        AddGameObject(new EnemyAmeboid(*this), Vector2(xPos, yPos));
+        break;
     default:
         break;
     }

@@ -3,6 +3,7 @@
 #include "Core/ParticleSystem/ParticleSource.h"
 void WaveGun::Init()
 {
+    isRenderable = false;
     AddComponent(new ParticleSource(*this));
 }
 
