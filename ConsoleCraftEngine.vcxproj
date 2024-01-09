@@ -177,6 +177,8 @@
     <ClInclude Include="Source\Core\GameObject.h" />
     <ClInclude Include="Source\Core\Input.h" />
     <ClInclude Include="Source\Core\ParticleSystem\WaveParticle.h" />
+    <ClInclude Include="Source\Core\Physics\Rope.h" />
+    <ClInclude Include="Source\Core\Physics\RopeParticle.h" />
     <ClInclude Include="Source\Core\Renderer.h" />
     <ClInclude Include="Source\Core\Scene.h" />
     <ClInclude Include="Source\Core\UIHandler.h" />
