@@ -29,5 +29,5 @@ void ShooterScene::SpawnEnemy()
 	numberOfEnemyToSpawn--;
 	int random_number = rand() % 15;
 
-	AddGameObject(new Enemy(*this), Vector2(90, random_number + 4));
+	AddGameObject(new Enemy(*this), Vector2(70, random_number + 4));
 }
