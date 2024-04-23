@@ -9,7 +9,7 @@
 int Input::keyDown = 0;  // Initialize the static member variable
 
 Input::Input() {}
-std::vector<std::function<void(int)>> Input::listeners;
+
 void Input::Update()
 {
 #ifdef __GNUC__

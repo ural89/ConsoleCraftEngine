@@ -1,21 +1,138 @@
-# CMakeLists.txt
+# Bump to version 3.8
+cmake_minimum_required(VERSION 3.8)
 
-cmake_minimum_required(VERSION 3.12)
 project(ConsoleCraftEngine)
 
-# Source files
-file(GLOB_RECURSE SOURCES
-    Source/*.cpp
+################################################################
+
+# Option: CMake install prefix
+set(CMAKE_INSTALL_PREFIX "${CMAKE_SOURCE_DIR}/Build" CACHE PATH "Default install prefix" FORCE)
+
+# Option: Configuration types
+set(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "Configurations" FORCE)
+
+# Set the directory for the binaries
+set(BIN_DIR ${PROJECT_SOURCE_DIR}/Bin/${CMAKE_BUILD_TYPE})
+
+################################################################
+
+# Define available projects
+set(PROJECT_LIST "Match" "Rogue" "Shooter")
+
+# Enable/disable options for each project
+foreach(PROJECT ${PROJECT_LIST})
+  option(BUILD_${PROJECT} "Build ${PROJECT}" ON)
+endforeach()
+
+# Option: Startup project
+set(STARTUP_PROJECT "Tests" CACHE STRING "Select the startup project")
+set_property(CACHE STARTUP_PROJECT PROPERTY STRINGS ${PROJECT_LIST})
+
+################################################################
+
+# Define options for library type
+set(ENGINE_LIBRARY_TYPE "STATIC" CACHE STRING "Type of Engine library: STATIC or SHARED")
+set_property(CACHE ENGINE_LIBRARY_TYPE PROPERTY STRINGS STATIC SHARED)
+
+################################################################
+
+set(RUNTIME_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Source")
+
+# Source
+file(GLOB_RECURSE RUNTIME_HEADERS ${RUNTIME_DIR}/*.h)
+file(GLOB_RECURSE RUNTIME_SOURCES ${RUNTIME_DIR}/*.cpp)
+
+# Project
+add_library(Engine ${ENGINE_LIBRARY_TYPE} ${RUNTIME_HEADERS} ${RUNTIME_SOURCES})
+
+# Set the output directory
+set_target_properties(Engine PROPERTIES
+  ARCHIVE_OUTPUT_DIRECTORY ${BIN_DIR}
+  LIBRARY_OUTPUT_DIRECTORY ${BIN_DIR}
+  RUNTIME_OUTPUT_DIRECTORY ${BIN_DIR}
 )
 
-# Header files
-file(GLOB_RECURSE HEADERS
-    Source/*.h
-)
-
-# Library
-add_library(ConsoleCraftEngine SHARED ${SOURCES} ${HEADERS})
+# C++ version
+target_compile_features(Engine PRIVATE cxx_std_20)
 
 # Include directory
-target_include_directories(ConsoleCraftEngine PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/Source)
+target_include_directories(Engine PUBLIC ${RUNTIME_DIR})
 
+if(${ENGINE_LIBRARY_TYPE} STREQUAL SHARED)
+    target_compile_definitions(Engine PRIVATE GE_SHARED)
+    target_compile_definitions(Engine PRIVATE GE_BUILD_DLL)
+    # Build STD module
+    target_compile_definitions(Engine PRIVATE _BUILD_STD_MODULE)    
+endif()
+
+# Group source and header files in IDE
+source_group(
+  TREE "${RUNTIME_DIR}"
+  PREFIX "Header Files"
+  FILES ${RUNTIME_HEADERS}
+)
+
+source_group(
+  TREE "${RUNTIME_DIR}"
+  PREFIX "Source Files"
+  FILES ${RUNTIME_SOURCES}
+)
+
+################################################################
+
+foreach(PROJECT ${PROJECT_LIST})
+  if(BUILD_${PROJECT})
+    set(PROJECT_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Games/${PROJECT}/Source/")
+
+    if(${ENGINE_LIBRARY_TYPE} STREQUAL SHARED)
+        target_compile_definitions(Engine PRIVATE GE_SHARED)
+    endif()
+
+    # Source
+    file(GLOB_RECURSE HEADERS ${PROJECT_DIR}/*.h)
+    file(GLOB_RECURSE SOURCES ${PROJECT_DIR}/*.cpp)
+
+    # Project
+    add_executable(${PROJECT} ${SOURCES} ${HEADERS})
+
+    # Set the output directory
+    set_target_properties(${PROJECT} PROPERTIES
+      ARCHIVE_OUTPUT_DIRECTORY ${BIN_DIR}
+      LIBRARY_OUTPUT_DIRECTORY ${BIN_DIR}
+      RUNTIME_OUTPUT_DIRECTORY ${BIN_DIR}
+    )
+
+    # C++ version
+    target_compile_features(${PROJECT} PRIVATE cxx_std_20)
+
+    # Include directory for Engine headers
+    target_include_directories(${PROJECT} PUBLIC ${RUNTIME_DIR})
+    target_include_directories(${PROJECT} PUBLIC ${PROJECT_DIR})
+
+    # Link with Engine library
+    target_link_libraries(${PROJECT} PRIVATE Engine)
+
+    # Group source and header files in IDE
+    source_group(
+      TREE "${PROJECT_DIR}"
+      PREFIX "Header Files"
+      FILES ${HEADERS}
+    )
+
+    source_group(
+      TREE "${PROJECT_DIR}"
+      PREFIX "Source Files"
+      FILES ${SOURCES}
+    )
+
+    # Set the startup project
+    if(${PROJECT} STREQUAL ${STARTUP_PROJECT})
+      set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT ${PROJECT})
+    endif()
+
+    # Automatically close console window after debugging stops (for Visual Studio builds)
+    if(CMAKE_GENERATOR STREQUAL "Visual Studio")
+      #set_target_properties(${PROJECT} PROPERTIES VS_DEBUGGER_COMMAND_ARGUMENTS "/EXIT")
+    endif()
+  endif()
+endforeach()
