@@ -16,6 +16,21 @@ set(BIN_DIR ${PROJECT_SOURCE_DIR}/Bin/${CMAKE_BUILD_TYPE})
 
 ################################################################
 
+# Define available platforms
+set(PLATFORM_LIST "Windows" "Linux" "MacOS")
+
+# Target platform
+set(PLATFORM "Windows" CACHE STRING "Select the plaform")
+set_property(CACHE PLATFORM PROPERTY STRINGS ${PLATFORM_LIST})
+
+################################################################
+
+# Define options for library type
+set(ENGINE_LIBRARY_TYPE "STATIC" CACHE STRING "Type of Engine library: STATIC or SHARED")
+set_property(CACHE ENGINE_LIBRARY_TYPE PROPERTY STRINGS STATIC SHARED)
+
+################################################################
+
 # Define available projects
 set(PROJECT_LIST "Match" "Rogue" "Shooter")
 
@@ -25,14 +40,8 @@ foreach(PROJECT ${PROJECT_LIST})
 endforeach()
 
 # Option: Startup project
-set(STARTUP_PROJECT "Tests" CACHE STRING "Select the startup project")
+set(STARTUP_PROJECT "Match" CACHE STRING "Select the startup project")
 set_property(CACHE STARTUP_PROJECT PROPERTY STRINGS ${PROJECT_LIST})
-
-################################################################
-
-# Define options for library type
-set(ENGINE_LIBRARY_TYPE "STATIC" CACHE STRING "Type of Engine library: STATIC or SHARED")
-set_property(CACHE ENGINE_LIBRARY_TYPE PROPERTY STRINGS STATIC SHARED)
 
 ################################################################
 
@@ -44,6 +53,26 @@ file(GLOB_RECURSE RUNTIME_SOURCES ${RUNTIME_DIR}/*.cpp)
 
 # Project
 add_library(Engine ${ENGINE_LIBRARY_TYPE} ${RUNTIME_HEADERS} ${RUNTIME_SOURCES})
+
+################################################################
+
+if(${PLATFORM} STREQUAL "Windows")
+  ##
+elseif(${PLATFORM} STREQUAL "Linux")
+  target_link_libraries(Engine PRIVATE Engine ncurses)
+elseif(${PLATFORM} STREQUAL "MacOS")
+  target_link_libraries(Engine PRIVATE Engine ncurses)
+endif()
+
+
+################################################################
+
+# Check that our start up project is enabled
+if(NOT BUILD_${STARTUP_PROJECT})
+  message(FATAL_ERROR "Startup project ${STARTUP_PROJECT} is not enabled")
+endif()
+
+################################################################
 
 # Set the output directory
 set_target_properties(Engine PROPERTIES
@@ -61,8 +90,6 @@ target_include_directories(Engine PUBLIC ${RUNTIME_DIR})
 if(${ENGINE_LIBRARY_TYPE} STREQUAL SHARED)
     target_compile_definitions(Engine PRIVATE GE_SHARED)
     target_compile_definitions(Engine PRIVATE GE_BUILD_DLL)
-    # Build STD module
-    target_compile_definitions(Engine PRIVATE _BUILD_STD_MODULE)    
 endif()
 
 # Group source and header files in IDE
@@ -130,9 +157,5 @@ foreach(PROJECT ${PROJECT_LIST})
       set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT ${PROJECT})
     endif()
 
-    # Automatically close console window after debugging stops (for Visual Studio builds)
-    if(CMAKE_GENERATOR STREQUAL "Visual Studio")
-      #set_target_properties(${PROJECT} PROPERTIES VS_DEBUGGER_COMMAND_ARGUMENTS "/EXIT")
-    endif()
   endif()
 endforeach()
