@@ -1,5 +1,5 @@
 #ifdef __GNUC__
-#include "../conio.h"
+#include "../l_conio.h"
 #else
 #include <conio.h>
 #endif
