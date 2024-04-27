@@ -1,6 +1,6 @@
 #pragma once
-#include "Weapon.h"
-#include "CoreStructs/Vector.h"
+
+#include "GameObjects/Weapons/Weapon.h"
 
 class PlasmaGun : public Weapon
 {

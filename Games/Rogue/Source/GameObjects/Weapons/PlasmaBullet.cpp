@@ -1,9 +1,10 @@
 #include "PlasmaBullet.h"
 
-#include "Core/Scene.h"
-#include "Core/ParticleSystem/ParticleSource.h"
+#include "Graphics/Scene.h"
+#include "Graphics/ParticleSystem/ParticleSource.h"
 #include "Core/GameObject.h"
-#include "../../Components/Health.h"
+#include "Components/Health.h"
+
 void PlasmaBullet::Init()
 {
 

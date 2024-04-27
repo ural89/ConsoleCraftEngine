@@ -1,6 +1,6 @@
 #pragma once
-#include "Core/Scene.h"
 
+#include "Graphics/Scene.h"
 
 class PongScene : public Scene
 {

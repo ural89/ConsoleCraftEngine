@@ -1,7 +1,7 @@
 #include "Scenes/Pong/PongScene.h"
 
 #include "Scenes/Shooter/ShooterScene.h"
-#include "Core/EntryPoint.h"
+#include "Main/Engine.h"
 #include <vector>
 class ShooterGame
 {

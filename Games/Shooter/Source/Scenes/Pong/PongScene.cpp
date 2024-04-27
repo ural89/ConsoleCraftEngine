@@ -1,6 +1,8 @@
 #include "PongScene.h"
-#include "../../GameObjects/Pong/Ball.h"
-#include "../../GameObjects/Pong/Paddle.h"
+
+#include "GameObjects/Pong/Ball.h"
+#include "GameObjects/Pong/Paddle.h"
+
 PongScene::PongScene()
 {
 

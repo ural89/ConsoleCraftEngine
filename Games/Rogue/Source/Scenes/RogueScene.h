@@ -1,5 +1,7 @@
 #pragma once
-#include "Core/Scene.h"
+
+#include "Graphics/Scene.h"
+
 class RogueScene : public Scene
 {
 public:

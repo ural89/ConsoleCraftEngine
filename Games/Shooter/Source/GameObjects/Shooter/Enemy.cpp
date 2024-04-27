@@ -1,6 +1,8 @@
 #include "Enemy.h"
-#include "Core/ParticleSystem/ParticleSource.h"
-#include "Core/Scene.h"
+
+#include "Graphics/ParticleSystem/ParticleSource.h"
+#include "Graphics/Scene.h"
+
 void Enemy::Init()
 {
 	{

@@ -1,11 +1,13 @@
 #include "MatchScene.h"
-#include "../GameObjects/GridUnit.h"
-#include "../Grid.h"
-#include "../UnitSelector.h"
-#include "../GameObjects/SpadesItem.h"
-#include "../GameObjects/HeartItem.h"
-#include "../GameObjects/DiamondItem.h"
-#include "../GameObjects/ClubItem.h"
+
+#include "GameObjects/GridUnit.h"
+#include "Grid.h"
+#include "UnitSelector.h"
+#include "GameObjects/SpadesItem.h"
+#include "GameObjects/HeartItem.h"
+#include "GameObjects/DiamondItem.h"
+#include "GameObjects/ClubItem.h"
+
 MatchScene::~MatchScene()
 {
 	delete grid;

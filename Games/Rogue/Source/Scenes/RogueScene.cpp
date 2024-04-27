@@ -1,11 +1,13 @@
 #include "RogueScene.h"
-#include "../GameObjects/Player.h"
-#include "../GameObjects/Enemies/EnemyRogue.h"
-#include "../GameObjects/Enemies/EnemyAmeboid.h"
-#include "CoreStructs/Vector.h"
+
+#include "Math/Vector2.h"
+#include "GameObjects/Player.h"
+#include "GameObjects/Enemies/EnemyRogue.h"
+#include "GameObjects/Enemies/EnemyAmeboid.h"
 
 const int STANDARDENEMYTYPE = 0;
 const int AMEBOIDENEMYTYPE = 1;
+
 void RogueScene::Init()
 {
     AddGameObject(new Player(*this), Vector2(30, 10));

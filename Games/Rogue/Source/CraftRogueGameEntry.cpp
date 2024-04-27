@@ -1,6 +1,6 @@
 #include "Scenes/RogueScene.h"
-#include "Core/EntryPoint.h"
-#include <vector>
+#include "Main/Engine.h"
+
 class CraftRogue
 {
 public:

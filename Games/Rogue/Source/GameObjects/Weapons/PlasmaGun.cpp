@@ -1,6 +1,6 @@
 #include "PlasmaGun.h"
 #include "PlasmaBullet.h"
-#include "Core/Scene.h"
+#include "Graphics/Scene.h"
 
 void PlasmaGun::Init()
 {

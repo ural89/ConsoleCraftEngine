@@ -1,6 +1,7 @@
 #pragma once
+
 #include "Core/GameObject.h"
-#include "CoreStructs/Vector.h"
+
 class PlasmaBullet : public GameObject
 {
 public:

@@ -1,6 +1,8 @@
 #pragma once
+
 #include "Core/GameObject.h"
-#include <Core/Input.h>
+#include "Input/Input.h"
+
 class Ball : public GameObject
 {
 public:

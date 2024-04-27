@@ -1,5 +1,7 @@
 #pragma once
-#include "Weapon.h"
+
+#include "GameObjects/Weapons/Weapon.h"
+
 class BlastGun : public Weapon
 {
 public:

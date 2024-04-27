@@ -1,6 +1,8 @@
 #include "WaveGun.h"
-#include "../../Components/Health.h"
-#include "Core/ParticleSystem/ParticleSource.h"
+
+#include "Graphics/ParticleSystem/ParticleSource.h"
+#include "Components/Health.h"
+
 void WaveGun::Init()
 {
     isRenderable = false;

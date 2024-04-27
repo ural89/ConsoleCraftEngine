@@ -1,6 +1,7 @@
 #include "BlastGun.h"
 #include "PlasmaBullet.h"
-#include "Core/Scene.h"
+#include "Graphics/Scene.h"
+
 void BlastGun::Init()
 {
     isRenderable = false;
@@ -12,11 +13,11 @@ void BlastGun::Fire(GameObject &targetGameObject)
 
     for (int i = 0; i < numberOfBullets; i++)
     {
-        double randomAngle = static_cast<double>(rand()) / RAND_MAX * 2 * 3.14f;
+        float randomAngle = static_cast<float>(rand()) / (float)RAND_MAX * 2.0f * 3.14f;
 
-        double speed = 25.0;
-        double randomDirectionX = speed * std::cos(randomAngle);
-        double randomDirectionY = speed * std::sin(randomAngle);
+        float speed = 25.0;
+        float randomDirectionX = speed * std::cos(randomAngle);
+        float randomDirectionY = speed * std::sin(randomAngle);
 
         Vector2 randomDirection(randomDirectionX, randomDirectionY);
         randomDirection.Normalize();

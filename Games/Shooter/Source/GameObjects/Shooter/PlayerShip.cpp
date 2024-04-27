@@ -1,13 +1,12 @@
 #include "PlayerShip.h"
-#include "Core/Component/PlayerController.h"
-#include "Bullet.h"
-#include "Core/Input.h"
-#include "Core/Scene.h"
-#include "Core/EventDispatcher.h"
-#include "Core/ParticleSystem/ParticleSource.h"
-#include "Core/Renderer.h"
-#include <memory>
 
+#include "Input/PlayerController.h"
+#include "Input/Input.h"
+#include "Graphics/Scene.h"
+#include "Event/EventDispatcher.h"
+#include "Graphics/ParticleSystem/ParticleSource.h"
+#include "Graphics/Renderer.h"
+#include "Bullet.h"
 
 void PlayerShip::Init()
 {

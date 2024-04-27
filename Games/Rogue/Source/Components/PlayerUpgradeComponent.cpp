@@ -1,8 +1,9 @@
 #include "PlayerUpgradeComponent.h"
 #include "Core/GameObject.h"
-#include "Core/Scene.h"
-#include "Core/Input.h"
-#include "../GameObjects/Player.h"
+#include "Graphics/Scene.h"
+#include "Input/Input.h"
+#include "GameObjects/Player.h"
+
 PlayerUpgradeComponent::PlayerUpgradeComponent(GameObject &gameObject) : Component(gameObject)
 {
 }

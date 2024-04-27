@@ -1,5 +1,7 @@
 #pragma once
-#include "Core/Component/Component.h"
+
+#include "Core/Component.h"
+
 class PlayerController : public Component
 {
 public:

@@ -1,4 +1,5 @@
 #pragma once
+
 #include "Item.h"
 
 class DiamondItem : public Item

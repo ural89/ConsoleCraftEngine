@@ -1,8 +1,7 @@
 #pragma once
-#include "../Core.h"
-#include "../CoreStructs/Transform.h"
-#include <vector>
-#include "Component/Component.h"
+
+#include "Core/Component.h"
+#include "Math/Transform.h"
 
 class GE_API GameObject
 {
@@ -18,19 +17,15 @@ public:
 		sprite.clear();
 	}
 
-	Transform transform = Transform();
-
-	std::string name = "Gameobject";
-	std::vector<std::vector<int>> sprite = { {1,1}, {1,1} };
-
 	int GetWidth() const 
 	{ 
-		return sprite[0].size(); 
+		return static_cast<int>(sprite[0].size()); 
 	}
 	int GetHeight() const 
 	{ 
-		return sprite.size(); 
+		return static_cast<int>(sprite.size());
 	}
+
 	void Destroy()
 	{
 		isDestroyedFlag = true;
@@ -74,6 +69,17 @@ public:
 			component->Update(deltaTime);
 		}
 	}
+	Scene& GetCurrentScene()
+	{
+		return scene;
+	}
+
+public:
+	Transform transform = Transform();
+
+	std::string name = "Gameobject";
+	std::vector<std::vector<int>> sprite = { {1,1}, {1,1} };
+
 	std::string symbol = "*";
 	int overrideColor = -1;
 
@@ -82,10 +88,7 @@ public:
 	bool isRenderable = true;
 	bool hasCollider = true;
 	bool canFindable = true;
-	Scene& GetCurrentScene()
-	{
-		return scene;
-	}
+
 protected:
 	std::vector<Component*> components;
 	Scene& scene;

@@ -1,6 +1,8 @@
 #pragma once
-#include <Core/Input.h>
+
+#include "Input/Input.h"
 #include "Core/GameObject.h"
+
 class Paddle : public GameObject
 {
 public:

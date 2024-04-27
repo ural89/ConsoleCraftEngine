@@ -1,7 +1,10 @@
 #pragma once
-#include "Core/Scene.h"
+
+#include "Graphics/Scene.h"
+
 const int WIDTH = 10;
 const int HEIGHT = 5;
+
 class Grid
 {
 public:

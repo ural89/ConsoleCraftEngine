@@ -1,7 +1,9 @@
 #pragma once
+
 #include "Core/GameObject.h"
 #include "Item.h"
-#include "Core/ParticleSystem/ParticleSource.h"
+#include "Graphics/ParticleSystem/ParticleSource.h"
+
 class GridUnit : public GameObject
 {
 public:

@@ -1,6 +1,6 @@
 #include "UnitSelector.h"
-#include "Core/UIHandler.h"
-#include <Core/Input.h>
+#include "Graphics/UIHandler.h"
+#include "Input/Input.h"
 #include "GameObjects/GridUnit.h"
 
 

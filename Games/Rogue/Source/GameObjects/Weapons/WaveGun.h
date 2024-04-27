@@ -1,5 +1,6 @@
 #pragma once
-#include "Weapon.h"
+
+#include "GameObjects/Weapons/Weapon.h"
 
 class WaveGun : public Weapon
 {
@@ -17,7 +18,7 @@ public:
     void Upgrade() override
     {
         damageTime -= 0.1f;
-        damageTime = damageTime < 0.5f ? 0.5 : damageTime;
+        damageTime = damageTime < 0.5f ? 0.5f : damageTime;
     }
     void StopWeapon() override;
 

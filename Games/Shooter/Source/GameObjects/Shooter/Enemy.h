@@ -1,7 +1,9 @@
 #pragma once
+
 #include "Core/GameObject.h"
-#include "Core/EventDispatcher.h"
-#include "Core/Event.h"
+#include "Event/EventDispatcher.h"
+#include "Event/Event.h"
+
 class Enemy : public GameObject
 {
 public:

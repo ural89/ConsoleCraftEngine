@@ -1,7 +1,7 @@
 #include "Bullet.h"
 
-#include "Core/Scene.h"
-#include "Core/ParticleSystem/ParticleSource.h"
+#include "Graphics/Scene.h"
+#include "Graphics/ParticleSystem/ParticleSource.h"
 
 void Bullet::Init()
 {

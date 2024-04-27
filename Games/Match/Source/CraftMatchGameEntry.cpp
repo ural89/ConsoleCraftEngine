@@ -1,6 +1,7 @@
 #include "Scenes/MatchScene.h"
-#include "Core/EntryPoint.h"
-#include <vector>
+
+#include "Main/Engine.h"
+
 class CraftMatchGame
 {
 public:

@@ -1,5 +1,6 @@
 #include "Health.h"
 #include "Core/GameObject.h"
+
 void Health::GiveDamage(float healthAmount)
 {
 	this->healthAmount -= healthAmount;

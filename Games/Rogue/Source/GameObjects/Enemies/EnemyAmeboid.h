@@ -1,4 +1,5 @@
 #pragma once
+
 #include "EnemyRogue.h"
 
 class EnemyAmeboid : public EnemyRogue

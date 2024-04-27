@@ -1,6 +1,5 @@
 #include "Paddle.h"
-#include "Core/Component/PlayerController.h"
-
+#include "Input/PlayerController.h"
 
 void Paddle::Init()
 {
@@ -8,6 +7,3 @@ void Paddle::Init()
 	sprite =  { {1,1}, {1,1} };
 	
 }
-
-
-

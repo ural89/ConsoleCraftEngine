@@ -1,5 +1,6 @@
 #include "EnemyAmeboid.h"
-#include "../../Components/Health.h"
+#include "Components/Health.h"
+
 void EnemyAmeboid::Init()
 {
     EnemyRogue::Init();

@@ -4,13 +4,13 @@
 #include "Weapons/WaveGun.h"
 #include "Weapons/BlastGun.h"
 
-#include "../Components/PlayerUpgradeComponent.h"
-#include <memory>
+#include "Components/PlayerUpgradeComponent.h"
 
-#include "Core/Scene.h"
-#include "Core/Input.h"
-#include "Core/Component/PlayerController.h"
-#include "Core/EventDispatcher.h"
+#include "Graphics/Scene.h"
+#include "Input/Input.h"
+#include "Input/PlayerController.h"
+#include "Event/EventDispatcher.h"
+
 Player::~Player()
 {
 

@@ -1,12 +1,13 @@
 #include "EnemyRogue.h"
 
-#include "Core/Scene.h"
-#include "CoreStructs/Vector.h"
-#include "Core/ParticleSystem/ParticleSource.h"
-#include "Core/Event.h"
-#include "Core/EventDispatcher.h"
+#include "Graphics/Scene.h"
+#include "Math/Vector2.h"
+#include "Graphics/ParticleSystem/ParticleSource.h"
+#include "Event/Event.h"
+#include "Event/EventDispatcher.h"
 
-#include "../../Components/Health.h"
+#include "Components/Health.h"
+
 EnemyRogue::~EnemyRogue()
 {
 	

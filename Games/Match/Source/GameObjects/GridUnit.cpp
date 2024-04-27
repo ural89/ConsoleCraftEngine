@@ -1,5 +1,6 @@
 #include "GridUnit.h"
-#include "Core/Scene.h"
+#include "Graphics/Scene.h"
+
 void GridUnit::Init()
 {
 	sprite = {  {1,1,1,1,1},

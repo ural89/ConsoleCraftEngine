@@ -1,4 +1,5 @@
 #pragma once
+
 #include "Core/GameObject.h"
 
 const int HEART = 0;

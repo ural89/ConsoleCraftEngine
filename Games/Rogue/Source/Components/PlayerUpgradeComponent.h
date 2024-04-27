@@ -1,7 +1,11 @@
 #pragma once
-#include "Core/Component/Component.h"
-#include "Core/UIHandler.h"
-#include <functional>
+
+#include "Core/Component.h"
+#include "Graphics/UIHandler.h"
+
+// @TODO: Look into this - do we need to forward declare here!!!!
+
+
 class PlayerUpgradeComponent : public Component
 {
 public:
@@ -13,10 +17,10 @@ public:
 private:
 	int experience = 0;
 	int experienceCap = 4;
-	class UIData UpgradeUiData;
+	UIData UpgradeUiData;
 	std::shared_ptr<UIData> UpgradeUiDataPtr;
 
-	class UIData experienceUiData;
+	UIData experienceUiData;
 	std::shared_ptr<UIData> experienceUiDataPtr;
 
 	std::function<void(int)> inputEvent;

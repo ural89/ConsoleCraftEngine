@@ -1,8 +1,9 @@
 #pragma once
+
 #include "Core/GameObject.h"
-#include "Core/Event.h"
-#include <functional>
-#include "Core/UIHandler.h"
+#include "Event/Event.h"
+#include "Graphics/UIHandler.h"
+
 class PlayerShip : public GameObject
 {
 public:
