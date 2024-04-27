@@ -5,10 +5,10 @@ project(ConsoleCraftEngine)
 ################################################################
 
 # Option: CMake install prefix
-set(CMAKE_INSTALL_PREFIX "${CMAKE_SOURCE_DIR}/Build" CACHE PATH "Default install prefix" FORCE)
+set(CMAKE_INSTALL_PREFIX "${CMAKE_SOURCE_DIR}/Build" CACHE INTERNAL "Default install prefix" FORCE)
 
 # Option: Configuration types
-set(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "Configurations" FORCE)
+set(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE INTERNAL "Configurations" FORCE)
 
 # Set the directory for the binaries
 set(BIN_DIR ${PROJECT_SOURCE_DIR}/Bin/${CMAKE_BUILD_TYPE})
