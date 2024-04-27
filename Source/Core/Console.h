@@ -48,20 +48,11 @@
 
 // ------------------------------- define ---------------------
 
-
-// @TODO: This functionallity should ideally 
-
-
-
-
-
-
-
-
-
+// @TODO: This functionallity should ideally be split into platform
+//        specific files and be encapsulated into a class
 #include "Core/Typedefs.h"
 
-#ifdef WIN32
+#ifdef OS_WINDOWS
 
 #define MAX_OKIEN 256
 
@@ -229,7 +220,7 @@ void gotoxy(int x, int y) {
 	SetConsoleCursorPosition(hConsole, coord);
 }
 
-#elif defined(unix)  defined(APPLE)
+#else // OS_WINDOWS
 
 #define _kbhit kbhit
 #define _getch getch
@@ -578,4 +569,4 @@ void window(int xup, int yup, int xdown, int ydown) {
 	return;
 }
 
-#endif // (unix__)  defined(_APPLE)
+#endif // OS_WINDOWS
