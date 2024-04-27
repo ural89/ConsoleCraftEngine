@@ -1,0 +1,17 @@
+#pragma once
+
+#include "Graphics/Scene.h"
+
+class RogueScene : public Scene
+{
+public:
+	void Init() override;
+	void Update(float deltaTime) override;
+
+private:
+	void SpawnEnemy(int enemyType);
+
+	int numberOfEnemyToSpawn = 5;
+	float spawnTime = 1;
+	float spawnDurationPassed = 0;
+};

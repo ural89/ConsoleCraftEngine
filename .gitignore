@@ -399,3 +399,9 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# bin directory
+bin/
+
+# compiler directory
+compiler/
