@@ -4,6 +4,9 @@ project(ConsoleCraftEngine)
 
 ################################################################
 
+# Needed to so VS exports a lib file with a DLL
+set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+
 # Option: CMake install prefix
 set(CMAKE_INSTALL_PREFIX "${CMAKE_SOURCE_DIR}/Build" CACHE INTERNAL "Default install prefix" FORCE)
 
