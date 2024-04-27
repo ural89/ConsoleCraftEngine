@@ -1,4 +1,3 @@
-# Bump to version 3.8
 cmake_minimum_required(VERSION 3.8)
 
 project(ConsoleCraftEngine)
@@ -13,6 +12,8 @@ set(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "Configurations" FORC
 
 # Set the directory for the binaries
 set(BIN_DIR ${PROJECT_SOURCE_DIR}/Bin/${CMAKE_BUILD_TYPE})
+
+set(RUNTIME_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Source")
 
 ################################################################
 
@@ -43,9 +44,44 @@ endforeach()
 set(STARTUP_PROJECT "Match" CACHE STRING "Select the startup project")
 set_property(CACHE STARTUP_PROJECT PROPERTY STRINGS ${PROJECT_LIST})
 
+# Check that our start up project is enabled
+if(NOT BUILD_${STARTUP_PROJECT})
+  message(FATAL_ERROR "Startup project ${STARTUP_PROJECT} is not enabled")
+endif()
+
 ################################################################
 
-set(RUNTIME_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Source")
+set(COMMON_COMPILE_OPTIONS "/Zc:__cplusplus")
+
+# Set common functionality
+function(apply_common_settings TARGET)
+  #
+  set_target_properties(${TARGET} PROPERTIES
+    ARCHIVE_OUTPUT_DIRECTORY ${BIN_DIR}
+    LIBRARY_OUTPUT_DIRECTORY ${BIN_DIR}
+    RUNTIME_OUTPUT_DIRECTORY ${BIN_DIR}
+  )
+
+  # Set OS-specific definitions and libraries
+  if(${PLATFORM} STREQUAL "Windows")
+    target_compile_definitions(${TARGET} PRIVATE OS_WINDOWS)
+  elseif(${PLATFORM} STREQUAL "Linux")
+    target_compile_definitions(${TARGET} PRIVATE OS_LINUX)
+    target_link_libraries(${TARGET} PRIVATE ncurses)
+  elseif(${PLATFORM} STREQUAL "MacOS")
+    target_compile_definitions(${TARGET} PRIVATE OS_MACOS)
+    target_link_libraries(${TARGET} PRIVATE ncurses)
+  endif()
+
+  # Add debug flag for debug builds
+  #target_compile_definitions(${TARGET} PRIVATE "<CONFIG:Debug:DEBUG_ENABLED>")
+  
+  target_compile_features(${TARGET} PRIVATE cxx_std_20)  
+  target_compile_options(${TARGET} PRIVATE ${COMMON_COMPILE_OPTIONS})
+
+endfunction()
+
+################################################################
 
 # Source
 file(GLOB_RECURSE RUNTIME_HEADERS ${RUNTIME_DIR}/*.h)
@@ -54,32 +90,7 @@ file(GLOB_RECURSE RUNTIME_SOURCES ${RUNTIME_DIR}/*.cpp)
 # Project
 add_library(Engine ${ENGINE_LIBRARY_TYPE} ${RUNTIME_HEADERS} ${RUNTIME_SOURCES})
 
-################################################################
-
-if(${PLATFORM} STREQUAL "Windows")
-  ##
-elseif(${PLATFORM} STREQUAL "Linux")
-  target_link_libraries(Engine PRIVATE Engine ncurses)
-elseif(${PLATFORM} STREQUAL "MacOS")
-  target_link_libraries(Engine PRIVATE Engine ncurses)
-endif()
-
-
-################################################################
-
-# Check that our start up project is enabled
-if(NOT BUILD_${STARTUP_PROJECT})
-  message(FATAL_ERROR "Startup project ${STARTUP_PROJECT} is not enabled")
-endif()
-
-################################################################
-
-# Set the output directory
-set_target_properties(Engine PROPERTIES
-  ARCHIVE_OUTPUT_DIRECTORY ${BIN_DIR}
-  LIBRARY_OUTPUT_DIRECTORY ${BIN_DIR}
-  RUNTIME_OUTPUT_DIRECTORY ${BIN_DIR}
-)
+apply_common_settings(Engine)
 
 # C++ version
 target_compile_features(Engine PRIVATE cxx_std_20)
@@ -122,15 +133,7 @@ foreach(PROJECT ${PROJECT_LIST})
     # Project
     add_executable(${PROJECT} ${SOURCES} ${HEADERS})
 
-    # Set the output directory
-    set_target_properties(${PROJECT} PROPERTIES
-      ARCHIVE_OUTPUT_DIRECTORY ${BIN_DIR}
-      LIBRARY_OUTPUT_DIRECTORY ${BIN_DIR}
-      RUNTIME_OUTPUT_DIRECTORY ${BIN_DIR}
-    )
-
-    # C++ version
-    target_compile_features(${PROJECT} PRIVATE cxx_std_20)
+    apply_common_settings(${PROJECT})
 
     # Include directory for Engine headers
     target_include_directories(${PROJECT} PUBLIC ${RUNTIME_DIR})
@@ -138,7 +141,7 @@ foreach(PROJECT ${PROJECT_LIST})
 
     # Link with Engine library
     target_link_libraries(${PROJECT} PRIVATE Engine)
-
+    
     # Group source and header files in IDE
     source_group(
       TREE "${PROJECT_DIR}"
