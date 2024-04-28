@@ -29,19 +29,19 @@ void PlayerController::OnKeyDown(int input)
 			{
 				if (tolower(Input::GetKeyDown()) == 'd')
 				{
-					owner->transform.MovePosition(1, 0);
+					owner->transform.MovePosition(moveSpeed, 0);
 				}
 				if (tolower(Input::GetKeyDown()) == 'a')
 				{
-					owner->transform.MovePosition(-1, 0);
+					owner->transform.MovePosition(-moveSpeed, 0);
 				}
 				if (tolower(Input::GetKeyDown()) == 's')
 				{
-					owner->transform.MovePosition(0, 1);
+					owner->transform.MovePosition(0, moveSpeed);
 				}
 				if (tolower(Input::GetKeyDown()) == 'w')
 				{
-					owner->transform.MovePosition(0, -1);
+					owner->transform.MovePosition(0, -moveSpeed);
 				}
 			}
 			if (playerNo == 1)

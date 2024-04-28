@@ -1,7 +1,7 @@
 #pragma once
-
+#include "../../Core.h"
 #include "Component.h"
-class DestructionEffectComponent : public Component
+class GE_API DestructionEffectComponent : public Component
 {
 public:
     DestructionEffectComponent(GameObject& owner) : Component(owner)

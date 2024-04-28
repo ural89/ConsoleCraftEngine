@@ -3,34 +3,46 @@
 #include <iostream>
 #include <vector>
 #include "../Core.h"
+
+const int LEFTBORDER = 0;
+const int TOPBORDER = 1;
+const int RIGHTBORDER = 2;
+const int BOTTOMBORDER = 3;
+
 struct Transform
 {
 public:
 	Transform()
 	{
-		Position = Vector2();
+		Position = Vector2(0, 0);
 		Rotation = 0;
+		PreviousPosition = Vector2(0, 0);
 	};
-
+	Transform(Vector2 position, Vector2 size, float rotation) : Position(position), Size(size), Rotation(rotation){}
 	Vector2 Position;
 	Vector2 PreviousPosition;
-
+	Vector2 RopePreviousPosition;
+	Vector2 Size;
+	Transform* Parent = nullptr;
+	
 	float Rotation;
-	
+	bool IsStatic = false;
 	bool HasClearedFlag = false; // If removed its previous position from rendering
-	bool HasMovedThisFrame = false;
+	bool HasMovedThisFrame = true;
 	bool HasOwnerDestroyed = false;
-	
+
 	void SetChild(Transform &child)
 	{
 		children.push_back(&child);
 	}
 	void SetParent(Transform &parent)
 	{
+		Parent = &parent;
 		parent.SetChild(*this);
 	}
 	void SetPosition(float x, float y)
 	{
+		if(IsStatic) return;
 		PreviousPosition = Position.ToInt();
 		Position = Vector2(x, y);
 		if (PreviousPosition != Position.ToInt())
@@ -45,7 +57,7 @@ public:
 	}
 	void MovePosition(float x, float y, bool isCameraMove = false)
 	{
-
+		
 		PreviousPosition = Position.ToInt();
 
 		for (auto &child : children)
@@ -54,15 +66,16 @@ public:
 		}
 		if (!isCameraMove)
 		{
-			if (Position.X + x >= SCREENWIDTH)
-				x = -1;
-			if (Position.X + x <= 0)
-				x = 1;
-			if (Position.Y + y >= SCREENHEIGHT)
-				y = -1;
-			if (Position.Y + y <= 0)
-				y = 1;
+			// if (Position.X + x >= SCREENWIDTH)
+			// 	x = -1;
+			// if (Position.X + x <= 0)
+			// 	x = 1;
+			// if (Position.Y + y >= SCREENHEIGHT)
+			// 	y = -1;
+			// if (Position.Y + y <= 0)
+			// 	y = 1;
 		}
+		if(IsStatic) return;
 		Position.X += x;
 		Position.Y += y;
 		if (PreviousPosition != Position.ToInt())

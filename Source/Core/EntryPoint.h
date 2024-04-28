@@ -6,8 +6,8 @@
 class Engine
 {
 public:
-    std::vector<Scene*> scenes;
-    
+    std::vector<Scene *> scenes;
+
     void StartGame()
     {
         SetCurrentScene(scenes[0]);
@@ -19,16 +19,13 @@ public:
         {
             auto endTime = std::chrono::high_resolution_clock::now();
             auto deltaTimeInSeconds = std::chrono::duration_cast<std::chrono::duration<double>>(endTime - prevTime).count();
-            double deltaTimeMilliseconds = deltaTimeInSeconds * 1000.0;
+            //  double deltaTimeMilliseconds = deltaTimeInSeconds * 1000.0;
 
             if (currentScene->hasGameOver)
                 return;
             UpdateInput();
             Update(deltaTimeInSeconds);
             Render();
-            UpdateCamera(deltaTimeInSeconds);
-            if (currentScene->camera->isMoving)
-                Render();
             prevTime = endTime;
         }
     }
@@ -40,9 +37,11 @@ public:
     void InitScene(Scene *scene)
     {
         scene->Init();
+        scene->Start();
     }
 
 private:
+
     Scene *currentScene;
     Renderer renderer;
     void UpdateInput()
@@ -64,6 +63,11 @@ private:
     }
     void SetCurrentScene(Scene *scene)
     {
+#ifdef __GNUC__
+        system("clear");
+#else
+        system("cls");
+#endif
         currentScene = scene;
         InitScene(currentScene);
     }

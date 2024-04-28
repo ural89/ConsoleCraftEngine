@@ -14,7 +14,7 @@ public:
 	void Update(float deltaTime) override;
 
 	virtual void OnCollided(GameObject& other) override;
-	virtual void OnCollidedBorder() override;
+	virtual void OnCollidedBorder(int border) override;
 private:
 	class ParticleSource* particleSource;
 };

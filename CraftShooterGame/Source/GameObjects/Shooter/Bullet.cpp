@@ -28,7 +28,7 @@ void Bullet::Update(float deltaTime)
 
 }
 
-void Bullet::OnCollidedBorder()
+void Bullet::OnCollidedBorder(int border)
 {
 	Destroy();
 }

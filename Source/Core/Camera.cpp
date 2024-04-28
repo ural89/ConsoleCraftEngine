@@ -1,7 +1,4 @@
 #include "Camera.h"
-#include <cstdlib>
-#include <ctime>
-#include <cmath>
 #include <iostream>
 #include "../CoreStructs/Vector.h"
 void Camera::StartShake(float duration)
@@ -21,8 +18,15 @@ void Camera::UpdateCamera(float deltaTime)
 
 void Camera::MoveCamera(Vector2 moveAmount)
 {
-    offsetX = moveAmount.X;
-    offsetY = moveAmount.Y;
+    PreviousOffset = Vector2(offsetX + moveAmount.X, offsetY + moveAmount.Y).ToInt();
+    offsetX += moveAmount.X;
+    offsetY += moveAmount.Y;
+    int moveXDirection = (int)offsetX - (int)(offsetX + moveAmount.X);
+    int moveYDirection = (int)offsetY - (int)(offsetY + moveAmount.Y);
+    if(moveXDirection > 0) HasMovedDirection = RIGHTDIRECTION * moveAmount.Length();
+    else if(moveXDirection < 0) HasMovedDirection = LEFTDIRECTION * moveAmount.Length();
+    else if(moveYDirection > 0) HasMovedDirection = UPDIRECTION * moveAmount.Length();
+    else if(moveYDirection < 0) HasMovedDirection = DOWNDIRECTION * moveAmount.Length();
 }
 
 void Camera::ShakeCamera(float deltaTime)

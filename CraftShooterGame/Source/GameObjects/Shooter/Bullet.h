@@ -10,7 +10,7 @@ public:
 	}
 	void Init() override;
 	void Update(float deltaTime) override;
-	void OnCollidedBorder() override;
+	void OnCollidedBorder(int border) override;
 	virtual void OnCollided(GameObject& other) override;
 private:
 	float bulletSpeed = 1.f;

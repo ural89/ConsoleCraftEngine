@@ -10,8 +10,13 @@ public:
 	void Update(float deltaTime) override;
 	void OnKeyDown(int input);
 	void RemoveListenerForInput();
+	void SetMoveSpeed(int newSpeed)
+	{
+		moveSpeed = newSpeed;
+	}
 private:
 	int playerNo = 0;
+	int moveSpeed = 1;
 	std::function<void(int)> inputEvent;
 };
 

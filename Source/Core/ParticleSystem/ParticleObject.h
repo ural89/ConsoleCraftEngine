@@ -17,7 +17,7 @@ public:
 	}
 	void Init() override;
 	void Update(float deltaTime) override;
-	void OnCollidedBorder() override;
+	void OnCollidedBorder(int border) override;
 protected:
 	float gravity = 50;
 

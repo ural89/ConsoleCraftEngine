@@ -25,7 +25,7 @@ void PlasmaBullet::Update(float deltaTime)
 	}
 }
 
-void PlasmaBullet::OnCollidedBorder()
+void PlasmaBullet::OnCollidedBorder(int border)
 {
 	Destroy();
 }

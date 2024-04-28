@@ -6,6 +6,7 @@
 const int FIRETYPEPARTICLE = 0;
 const int ENEMYTYPEPARTICLE = 1;
 const int BRICKPARTICLE = 2;
+const int STATICBLASTPARTICLE = 3;
 struct Vector2;
 class GE_API ParticleSource : public Component
 {

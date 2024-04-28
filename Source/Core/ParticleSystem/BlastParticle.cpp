@@ -13,7 +13,7 @@ void BlastParticle::Update(float deltaTime)
 	}
 }
 
-void BlastParticle::OnCollidedBorder()
+void BlastParticle::OnCollidedBorder(int border)
 {
 	Destroy();
 }

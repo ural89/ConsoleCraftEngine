@@ -8,10 +8,9 @@ void EventDispatcher::AddListener(std::function<void(Event&)>& func)
 void EventDispatcher::RemoveListener(std::function<void(Event&)> func) 
 {
     auto it = std::remove_if(listeners.begin(), listeners.end(),
-        [&func](const std::function<void(Event&)>& listener) {
-            return listener.target<void(Event&)>() == func.target<void(Event&)>();
+        [func](const auto& listener) {
+            return listener.target_type() == func.target_type();
         });
-
     listeners.erase(it, listeners.end());
 }
 

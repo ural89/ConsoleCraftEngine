@@ -33,7 +33,7 @@ void Enemy::OnCollided(GameObject& other)
 	}
 }
 
-void Enemy::OnCollidedBorder()
+void Enemy::OnCollidedBorder(int border)
 {
 	Destroy();
 }

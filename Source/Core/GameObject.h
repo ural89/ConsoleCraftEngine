@@ -6,11 +6,13 @@
 
 class GE_API GameObject
 {
+
 public:
-	GameObject(std::string name, class Scene& scene) : name(name), scene(scene){};
-	virtual ~GameObject() 
+
+	GameObject(std::string&& name, class Scene &scene) : name(name), scene(scene){};
+	virtual ~GameObject()
 	{
-		for (auto& component : components)
+		for (auto &component : components)
 		{
 			delete component;
 		}
@@ -21,55 +23,56 @@ public:
 	Transform transform = Transform();
 
 	std::string name = "Gameobject";
-	std::vector<std::vector<int>> sprite = { {1,1}, {1,1} };
+	std::vector<std::vector<int>> sprite = {{1, 1}, {1, 1}};
 
-	int GetWidth() const 
-	{ 
-		return sprite[0].size(); 
+	virtual int GetWidth() const
+	{
+		return sprite[0].size();
 	}
-	int GetHeight() const 
-	{ 
-		return sprite.size(); 
+	virtual int GetHeight() const
+	{
+		return sprite.size();
 	}
 	void Destroy()
 	{
 		isDestroyedFlag = true;
 		transform.HasOwnerDestroyed = true;
 	}
-	void AddComponent(Component* component)
+	void AddComponent(Component *component)
 	{
 		components.push_back(component);
+		component->Init();
 	}
 
 	template <typename T>
-	T* GetComponent()
+	T *GetComponent()
 	{
-		for (auto& component : components)
+		for (auto &component : components)
 		{
-			
+
 			if (typeid(*component) == typeid(T))
 			{
-				return dynamic_cast<T*>(component);
+				return dynamic_cast<T *>(component);
 			}
 		}
-		return nullptr; 
+		return nullptr;
 	}
 
-	virtual void Init() {};
-	virtual void Update(float deltaTime) {};
-	virtual void OnCollided(GameObject& other) {};
-	virtual void OnCollidedBorder() {};
-	
+	virtual void Init(){};
+	virtual void Update(float deltaTime){};
+	virtual void OnCollided(GameObject &other){};
+	virtual void OnCollisionExit(GameObject &other){};
+	virtual void OnCollidedBorder(int border){};
 	void InitComponents()
 	{
-		for (auto& component : components)
+		for (auto &component : components)
 		{
 			component->Init();
 		}
 	}
 	void UpdateComponents(float deltaTime)
 	{
-		for (auto& component:components)
+		for (auto &component : components)
 		{
 			component->Update(deltaTime);
 		}
@@ -82,11 +85,24 @@ public:
 	bool isRenderable = true;
 	bool hasCollider = true;
 	bool canFindable = true;
-	Scene& GetCurrentScene()
+	Scene &GetCurrentScene()
 	{
 		return scene;
 	}
-protected:
-	std::vector<Component*> components;
-	Scene& scene;
-};
+	bool operator!=(const GameObject &other) const
+	{
+		return this != &other; 
+	}
+	protected:
+		std::vector<Component *> components;
+		Scene & scene;
+#ifdef __GNUC__
+		int GREEN = 2;
+		int RED = 1;
+		int YELLOW = 3;
+#else
+		int GREEN = 2;
+		int RED = 4;
+		int YELLOW = 1;
+#endif
+	};

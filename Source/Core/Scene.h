@@ -3,6 +3,11 @@
 #include <vector>
 #include <map>
 #include "GameObject.h"
+#include "Physics/Polygon/Polygon.h"
+#include "Physics/CollisionResolver.h"
+#include "Physics/Polygon/PolygonCollision.h"
+#include "../box2d/include/box2d/box2d.h"
+#include "Physics/Raycaster.h"
 #include "Collision.h"
 #include "Camera.h"
 #include <queue>
@@ -13,11 +18,15 @@ protected:
 	std::vector<GameObject *> GameObjects;
 	std::queue<GameObject *> gameObjectsToSpawn;
 	std::map<std::string, GameObject *> NameToGameObjectMap;
+	std::vector<Polygon *> polygons;
+	std::queue<Polygon *> polygonsToSpawn;
 
 public:
 	Scene();
+
 	virtual ~Scene();
 	virtual void Init(){};
+	virtual void Start(){};
 
 	Camera *camera;
 	class UIHandler *uiHandler;
@@ -32,6 +41,7 @@ public:
 	}
 	void RemoveGameObject(GameObject *gameObject)
 	{
+
 		auto it = std::find(GameObjects.begin(), GameObjects.end(), gameObject);
 		if (it != GameObjects.end())
 		{
@@ -40,30 +50,41 @@ public:
 		}
 		collision.RemoveGameObject(gameObject);
 	}
+	void AddPolygon(Polygon *polygon)
+	{
+		polygon->Init();
+		polygonsToSpawn.push(polygon);
+	}
+	void RemovePolygon(Polygon *polygon)
+	{
+		auto it = std::find(polygons.begin(), polygons.end(), polygon);
+		if (it != polygons.end())
+		{
+			delete *it;
+			polygons.erase(it);
+		}
+		polygonCollision.RemovePolygon(polygon);
+	}
 	void UpdateCamera(float deltaTime)
 	{
 		camera->UpdateCamera(deltaTime);
-		if (camera->isMoving)
-		{
-			for (auto &go : GetGameObjects())
-			{
-				go->transform.MovePosition(camera->offsetX * deltaTime, camera->offsetY * deltaTime, true);
-			}
-			camera->offsetX = 0;
-			camera->offsetY = 0;
-		}
 	}
-	virtual void Update(float deltaTime)
+	virtual void Update(float deltaTime) //!!ALWAYS UPDATE BASE HERE
 	{
 		if (isPaused)
 			return;
+		World->Step(deltaTime, velocityIterations, positionIterations); // TODO: carry this to scene.h
 		for (auto &go : GetGameObjects())
 		{
-
-			go->Update(deltaTime);
-			go->UpdateComponents(deltaTime);
+			float substep = 1;
+			for (int i = 0; i < substep; i++) // substep
+			{
+				go->Update(deltaTime / substep);
+				go->UpdateComponents(deltaTime / substep);
+			}
 		}
-		for (auto &go : GetGameObjects())
+
+		for (auto &go : GetGameObjects()) // destroy flagged gameobjects
 		{
 			if (go->isDestroyedFlag && (go->hasClearedFromScreen || !go->isRenderable))
 			{
@@ -71,11 +92,26 @@ public:
 			}
 		}
 
+		for (auto &p : polygons)
+		{
+			p->UpdateLines(deltaTime);
+		}
+
 		collision.CheckForCollisions();
 		collision.CheckForBorderCollisions();
+		polygonCollision.UpdateResolve(deltaTime);
+
+		// collisionResolver->UpdateResolve(deltaTime);
+		collisionResolver->UpdateBorderResolve(deltaTime);
 	}
 	void SpawnQueuedGameObjects()
 	{
+		while (!polygonsToSpawn.empty())
+		{
+			Polygon *p = polygonsToSpawn.front();
+			InitializePolygon(p);
+			polygonsToSpawn.pop();
+		}
 
 		while (!gameObjectsToSpawn.empty())
 		{
@@ -165,7 +201,19 @@ public:
 	bool hasGameOver = false;
 	bool isPaused = false;
 
-private:
+	CollisionResolver *collisionResolver; // Reached from rigidbodies to be added
+
 	Collision collision;
+	b2World *World = new b2World(b2Vec2(0, 20));
+	Raycaster *raycaster = new Raycaster(*this);
+
+private:
+	void CreateBoxBorder();
+	PolygonCollision polygonCollision;
+	std::shared_ptr<UIData> debugUIPtr;
 	void InitializeGameObject(GameObject *go);
+	void InitializePolygon(Polygon *p);
+
+	int32 velocityIterations = 6;
+	int32 positionIterations = 2;
 };

@@ -1,7 +1,7 @@
 #include "ParticleObject.h"
 #include "../../CoreStructs/Vector.h"
 
-ParticleObject::ParticleObject(Scene& scene, int particleType) : GameObject("Particle", scene)
+ParticleObject::ParticleObject(Scene &scene, int particleType) : GameObject("Particle", scene)
 {
 
 	switch (particleType)
@@ -15,6 +15,9 @@ ParticleObject::ParticleObject(Scene& scene, int particleType) : GameObject("Par
 	case 2:
 		sprite = brickParticle;
 		break;
+	case 3:
+		sprite = fireParticle;
+		break;
 	}
 	symbol = '#';
 }
@@ -22,17 +25,12 @@ ParticleObject::ParticleObject(Scene& scene, int particleType) : GameObject("Par
 void ParticleObject::Init()
 {
 	lastPosition = transform.Position.ToInt();
-	
-
 }
 
 void ParticleObject::Update(float deltaTime)
 {
-	
 }
 
-void ParticleObject::OnCollidedBorder()
+void ParticleObject::OnCollidedBorder(int border)
 {
-	
 }
-

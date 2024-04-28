@@ -9,7 +9,7 @@ public:
 		this->velocity = startVelocity;
 	};
 	void Update(float deltaTime) override;
-	void OnCollidedBorder() override;
+	void OnCollidedBorder(int border) override;
 private:
 	Vector2 velocity;
 };

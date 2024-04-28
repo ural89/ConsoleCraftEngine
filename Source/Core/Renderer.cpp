@@ -4,44 +4,44 @@
 #include <iostream>
 #include <vector>
 struct UIData;
+
 Renderer::Renderer()
 {
     FixConsoleWindow();
     HideCursor();
-
 }
 
-void Renderer::Render(const Scene& scene)
+void Renderer::Render(Scene &scene)
 {
-    for (auto& go : scene.GetGameObjects())
+    for (auto &go : scene.GetGameObjects())
     {
 
-        if (!go->isRenderable) continue;
-       
-        if (go->transform.PreviousPosition != go->transform.Position)
+      //  if (go->transform.HasMovedThisFrame)
         {
+            if (go->isRenderable)
+                DrawObjects(*go, scene);
+
+            ClearMovedObjectsTrail(*go, scene);
+            ClearObjectTrailAfterCameraMove(*go, scene);
             if (go->isDestroyedFlag)
             {
-                ClearDestroyedObject(*go);
+                ClearDestroyedObject(*go, scene);
                 continue;
             }
-            DrawUI(scene);
-            DrawObjects(*go);
-            ClearMovedObjectsTrail(*go);
         }
     }
-            
+    DrawUI(scene);
+    scene.camera->HasMovedDirection = 0;
 }
 
-
-void Renderer::ClearDestroyedObject(GameObject& go)
+void Renderer::ClearDestroyedObject(GameObject &go, Scene &scene)
 {
     for (int i = 0; i < go.GetHeight() + 2; i++)
     {
         for (int j = 0; j < go.GetWidth() + 2; j++)
         {
-            int posX = static_cast<int>(go.transform.Position.X + j - 1);
-            int posY = static_cast<int>(go.transform.Position.Y + i - 1);
+            int posX = static_cast<int>(go.transform.Position.X + j - 1) + scene.camera->offsetX;
+            int posY = static_cast<int>(go.transform.Position.Y + i - 1) + scene.camera->offsetY;
 
             GoToXY(posX, posY);
             std::cout << ' ';
@@ -50,21 +50,21 @@ void Renderer::ClearDestroyedObject(GameObject& go)
     go.hasClearedFromScreen = true;
 }
 
-void Renderer::DrawObjects(GameObject& go)
+void Renderer::DrawObjects(GameObject &go, Scene &scene)
 {
-    for (int i = 0; i < go.sprite.size(); i++) 
+    for (int i = 0; i < go.sprite.size(); i++)
     {
         for (int j = 0; j < go.sprite[i].size(); j++)
         {
-            int posX = static_cast<int>(go.transform.Position.X + j);
-            int posY = static_cast<int>(go.transform.Position.Y + i);
-            
+            int posX = static_cast<int>(go.transform.Position.X + j) + scene.camera->offsetX;
+            int posY = static_cast<int>(go.transform.Position.Y + i) + scene.camera->offsetY;
+
             int color = go.sprite[i][j];
             if (go.overrideColor >= 0 && color != 0)
                 SetConsoleColor(go.overrideColor);
             else
             {
-                if (color == 0 || (posX> SCREENWIDTH)|| (posY > SCREENHEIGHT))
+                if (color == 0 || (posX > SCREENWIDTH) || (posY > SCREENHEIGHT) || (posY < 0) || (posX < 0))
                 {
                     continue;
                 }
@@ -74,10 +74,10 @@ void Renderer::DrawObjects(GameObject& go)
             std::cout << go.symbol;
         }
     }
-     SetConsoleColor(15);
+    SetConsoleColor(15);
 }
 
-void Renderer::ClearMovedObjectsTrail(GameObject& go)
+void Renderer::ClearMovedObjectsTrail(GameObject &go, Scene &scene)
 {
     if (!go.transform.HasClearedFlag)
     {
@@ -86,9 +86,9 @@ void Renderer::ClearMovedObjectsTrail(GameObject& go)
         {
             for (int j = 0; j < go.sprite[i].size(); j++)
             {
-                int clearX = static_cast<int>(go.transform.PreviousPosition.X + j);
-                int clearY = static_cast<int>(go.transform.PreviousPosition.Y + i);
-                if ((clearX> SCREENWIDTH)|| (clearY > SCREENHEIGHT))
+                int clearX = static_cast<int>(go.transform.PreviousPosition.X + j) + scene.camera->offsetX;
+                int clearY = static_cast<int>(go.transform.PreviousPosition.Y + i) + scene.camera->offsetY;
+                if ((clearX > SCREENWIDTH) || (clearY > SCREENHEIGHT) || ((clearX < 0) || (clearY < 0)))
                 {
                     continue;
                 }
@@ -102,16 +102,90 @@ void Renderer::ClearMovedObjectsTrail(GameObject& go)
     }
 }
 
-void Renderer::DrawUI(const Scene& scene)
+void Renderer::ClearObjectTrailAfterCameraMove(GameObject &go, Scene &scene)
 {
-    //TODO: clear UI after erase
-    for (auto& uiData : scene.uiHandler->uiDatas)
+    if (scene.camera->HasMovedDirection > 0)
+    {
+        int clearXOffset = 0;
+        int clearYOffset = 0;
+        switch (scene.camera->HasMovedDirection)
+        {
+        case UPDIRECTION:
+            clearYOffset = 1;
+            clearXOffset = 0;
+            break;
+        case RIGHTDIRECTION:
+            clearYOffset = 0;
+            clearXOffset = 1;
+            break;
+        case DOWNDIRECTION:
+            clearYOffset = -1;
+            clearXOffset = 0;
+            break;
+        case LEFTDIRECTION:
+            clearYOffset = 0;
+            clearXOffset = -1;
+            break;
+        }
+        for (int i = 0; i < go.sprite.size(); i++)
+        {
+            for (int j = 0; j < go.sprite[i].size(); j++)
+            {
+                int clearX = static_cast<int>(go.transform.Position.X + j) + scene.camera->offsetX + clearXOffset;
+                int clearY = static_cast<int>(go.transform.Position.Y + i) + scene.camera->offsetY + clearYOffset;
+                if ((clearX > SCREENWIDTH) || (clearY > SCREENHEIGHT) || ((clearX < 0) || (clearY < 0)))
+                {
+                    continue;
+                }
+
+                GoToXY(clearX, clearY);
+                std::cout << ' ';
+            }
+        }
+    }
+}
+
+void Renderer::DrawUI(const Scene &scene)
+{
+    for (const auto &uiData : scene.uiHandler->uiDatas) // erase
     {
         GoToXY(uiData->position.X, uiData->position.Y);
-        std::cout << uiData->text;
-        
+        std::string s(uiData->text.size() + 1, ' ');
+        std::cout << s;
     }
-    
+    for (auto &panel : scene.uiHandler->uiPanels)
+    {
+        if (panel->isActive)
+        {
+            for (auto &uiData : panel->uiDatas)
+            {
+                if (uiData->isActive)
+                {
+                    GoToXY(uiData->position.X, uiData->position.Y);
+                    std::cout << uiData->text;
+                }
+            }
+        }
+        if (!panel->hasClearedFlag)
+        {
+            panel->hasClearedFlag = true;
+            for (auto &uiData : panel->uiDatas)
+            {
+
+                GoToXY(uiData->position.X, uiData->position.Y);
+                std::string s(uiData->text.size() + 40, ' ');
+                std::cout << s;
+            }
+        }
+    }
+    for (auto &uiData : scene.uiHandler->uiDatas)
+    {
+        if (uiData->isActive)
+        {
+            GoToXY(uiData->position.X, uiData->position.Y);
+            std::cout << uiData->text;
+        }
+    }
 }
 
 void Renderer::SetConsoleColor(int color)
@@ -128,10 +202,8 @@ std::vector<std::vector<int>> Renderer::RotateSprite(const std::vector<std::vect
     int rows = sprite.size();
     int cols = sprite[0].size();
 
- 
     std::vector<std::vector<int>> rotated(cols, std::vector<int>(rows, 0));
 
-   
     for (int i = 0; i < rows; ++i)
     {
         for (int j = 0; j < cols; ++j)

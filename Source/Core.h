@@ -15,6 +15,6 @@
 #endif
 
 
-const int SCREENHEIGHT = 25;
+const int SCREENHEIGHT = 23;
 const int SCREENWIDTH = 80;
 
