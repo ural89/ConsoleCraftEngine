@@ -1,6 +1,8 @@
 
 #include "Input.h"
-
+#ifdef OS_LINUX
+#include "conio.h"
+#endif 
 int Input::keyDown = 0;  // Initialize the static member variable
 
 Input::Input() {}

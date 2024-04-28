@@ -26,7 +26,7 @@
 
 #include <thread>
 
-#include <conio.h>
+
 
 #ifdef OS_WINDOWS
 #include <Windows.h>

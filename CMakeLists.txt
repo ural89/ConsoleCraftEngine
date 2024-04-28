@@ -24,7 +24,7 @@ set(RUNTIME_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Source")
 set(PLATFORM_LIST "Windows" "Linux" "MacOS")
 
 # Target platform
-set(PLATFORM "Windows" CACHE STRING "Select the plaform")
+set(PLATFORM "Linux" CACHE STRING "Select the plaform")
 set_property(CACHE PLATFORM PROPERTY STRINGS ${PLATFORM_LIST})
 
 ################################################################
@@ -54,7 +54,9 @@ endif()
 
 ################################################################
 
-set(COMMON_COMPILE_OPTIONS "/Zc:__cplusplus")
+if(${PLATFORM} STREQUAL "Windows")
+    set(COMMON_COMPILE_OPTIONS "/Zc:__cplusplus")
+endif()
 
 # Set common functionality
 function(apply_common_settings TARGET)

@@ -23,8 +23,8 @@ void ParticleSource::EmitParticle(int count, int particleType, Vector2 localPosi
 
 		
 		float speed = 25.0;
-		float randomVelocityX = speed * std::cosf(randomAngle);
-		float randomVelocityY = speed * std::sinf(randomAngle);
+		float randomVelocityX = speed * std::cosh(randomAngle);
+		float randomVelocityY = speed * std::sinh(randomAngle);
 
 	
 		Vector2 randomVelocity(randomVelocityX, randomVelocityY);
