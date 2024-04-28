@@ -3,9 +3,9 @@
 #include <vector>
 #include <map>
 #include "GameObject.h"
-#include "Physics/Polygon/Polygon.h"
+
 #include "Physics/CollisionResolver.h"
-#include "Physics/Polygon/PolygonCollision.h"
+
 #include "../box2d/include/box2d/box2d.h"
 #include "Physics/Raycaster.h"
 #include "Collision.h"
@@ -18,8 +18,7 @@ protected:
 	std::vector<GameObject *> GameObjects;
 	std::queue<GameObject *> gameObjectsToSpawn;
 	std::map<std::string, GameObject *> NameToGameObjectMap;
-	std::vector<Polygon *> polygons;
-	std::queue<Polygon *> polygonsToSpawn;
+
 
 public:
 	Scene();
@@ -50,21 +49,7 @@ public:
 		}
 		collision.RemoveGameObject(gameObject);
 	}
-	void AddPolygon(Polygon *polygon)
-	{
-		polygon->Init();
-		polygonsToSpawn.push(polygon);
-	}
-	void RemovePolygon(Polygon *polygon)
-	{
-		auto it = std::find(polygons.begin(), polygons.end(), polygon);
-		if (it != polygons.end())
-		{
-			delete *it;
-			polygons.erase(it);
-		}
-		polygonCollision.RemovePolygon(polygon);
-	}
+
 	void UpdateCamera(float deltaTime)
 	{
 		camera->UpdateCamera(deltaTime);
@@ -92,26 +77,18 @@ public:
 			}
 		}
 
-		for (auto &p : polygons)
-		{
-			p->UpdateLines(deltaTime);
-		}
+
 
 		collision.CheckForCollisions();
 		collision.CheckForBorderCollisions();
-		polygonCollision.UpdateResolve(deltaTime);
+
 
 		// collisionResolver->UpdateResolve(deltaTime);
 		collisionResolver->UpdateBorderResolve(deltaTime);
 	}
 	void SpawnQueuedGameObjects()
 	{
-		while (!polygonsToSpawn.empty())
-		{
-			Polygon *p = polygonsToSpawn.front();
-			InitializePolygon(p);
-			polygonsToSpawn.pop();
-		}
+	
 
 		while (!gameObjectsToSpawn.empty())
 		{
@@ -209,10 +186,9 @@ public:
 
 private:
 	void CreateBoxBorder();
-	PolygonCollision polygonCollision;
+
 	std::shared_ptr<UIData> debugUIPtr;
 	void InitializeGameObject(GameObject *go);
-	void InitializePolygon(Polygon *p);
 
 	int32 velocityIterations = 6;
 	int32 positionIterations = 2;
