@@ -1,0 +1,29 @@
+id: org.flatpak.Rogue
+runtime: org.freedesktop.Platform
+runtime-version: '23.08'
+sdk: org.freedesktop.Sdk
+command: CraftRogue
+modules:
+  - name: hello
+    buildsystem: cmake
+    sources:
+      - type: file
+        path: CMakeLists.txt
+      - type: dir
+        path: Source
+        dest: Source
+  - name: CraftRogue
+    buildsystem: cmake
+    sources:
+      - type: file
+        path: CraftRogue/Source/CraftRogueGameEntry.cpp
+      - type: dir
+        path: CraftRogue/Source
+        dest: CraftRogue/Source
+        recursive: true
+runtime-dependencies:
+  - name: ncurses
+    version: '6.3' 
+
+
+
