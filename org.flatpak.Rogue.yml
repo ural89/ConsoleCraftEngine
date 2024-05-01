@@ -4,7 +4,7 @@ runtime-version: '23.08'
 sdk: org.freedesktop.Sdk
 command: CraftRogue
 modules:
-  - name: hello
+  - name: Engine
     buildsystem: cmake
     sources:
       - type: file
@@ -12,6 +12,7 @@ modules:
       - type: dir
         path: Source
         dest: Source
+
   - name: CraftRogue
     buildsystem: cmake
     sources:
@@ -19,11 +20,12 @@ modules:
         path: CraftRogue/Source/CraftRogueGameEntry.cpp
       - type: dir
         path: CraftRogue/Source
-        dest: CraftRogue/Source
-        recursive: true
-runtime-dependencies:
-  - name: ncurses
-    version: '6.3' 
+        dest: CraftRogue/Source      
+    
+    build-runtime-deps:
+        - libncurses5-dev
+
+        
 
 
 
