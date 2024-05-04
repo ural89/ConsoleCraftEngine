@@ -14,7 +14,7 @@ file(GLOB_RECURSE ENGINE_SOURCES
 file(GLOB_RECURSE ENGINE_HEADERS
     ../Source/*.h
 )
-add_library(ConsoleCraftEnginePrivate SHARED ${ENGINE_SOURCES} )
+add_library(ConsoleCraftEngine SHARED ${ENGINE_SOURCES} )
 
 
 file(GLOB_RECURSE GAME_SOURCES Source/*.cpp)
@@ -29,7 +29,7 @@ target_include_directories(CraftCity PUBLIC
     ../Source )
 
 # Link with ConsoleCraftEngine library
-target_link_libraries(CraftCity PUBLIC ConsoleCraftEnginePrivate ncurses)
+target_link_libraries(CraftCity PUBLIC ConsoleCraftEngine ncurses)
 
 # Include directory
 #target_include_directories(CraftCity PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/Source)

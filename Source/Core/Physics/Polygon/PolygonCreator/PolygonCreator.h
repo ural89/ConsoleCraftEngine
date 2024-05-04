@@ -9,8 +9,7 @@ public:
     PolygonCreator(class Scene& scene);
     ~PolygonCreator()
     {
-        delete cursor; 
-        cursor = nullptr;
+    
     }
     class Polygon* ApplyAndGetPolygon();
 

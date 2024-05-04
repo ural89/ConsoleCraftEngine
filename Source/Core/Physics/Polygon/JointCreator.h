@@ -12,8 +12,7 @@ public:
     JointCreator(Scene &scene);
     ~JointCreator()
     {
-        delete cursor;
-        cursor = nullptr;
+      
     }
     void SetBody(b2Body *body);
 

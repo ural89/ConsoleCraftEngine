@@ -175,7 +175,7 @@
     <ProjectReference Include="..\ConsoleCraftEngine.vcxproj">
       <Project>{b34b49ab-2be7-424f-b089-26ab03ae97e4}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\ConsoleCraftEnginePrivate\ConsoleCraftEngine.vcxproj">
+    <ProjectReference Include="..\ConsoleCraftEngine\ConsoleCraftEngine.vcxproj">
       <Project>{b34b49ab-2be7-424f-b089-26ab03ae97e4}</Project>
     </ProjectReference>
   </ItemGroup>
