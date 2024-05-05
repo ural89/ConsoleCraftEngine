@@ -2,36 +2,41 @@
 #include <Core/Input.h>
 #include "Core/Renderer.h"
 #include "Core/Scene.h"
+#include "Core/SceneManager.h"
 #include <vector>
 class Engine
 {
 public:
+   // SceneManager sceneManager;
     std::vector<Scene *> scenes;
 
     void StartGame()
     {
-        SetCurrentScene(scenes[0]);
-
+        SceneManager::ChangeScene(scenes[0]);
+       // SetCurrentScene(SceneManager::CurrentScene);
         auto startTime = std::chrono::high_resolution_clock::now();
         auto prevTime = startTime;
 
         while (Input::GetKeyDown() != 27)
         {
-            auto endTime = std::chrono::high_resolution_clock::now();
-            auto deltaTimeInSeconds = std::chrono::duration_cast<std::chrono::duration<double>>(endTime - prevTime).count();
-            //  double deltaTimeMilliseconds = deltaTimeInSeconds * 1000.0;
+            if (SceneManager::CurrentScene != nullptr)
+            {
+                auto endTime = std::chrono::high_resolution_clock::now();
+                auto deltaTimeInSeconds = std::chrono::duration_cast<std::chrono::duration<double>>(endTime - prevTime).count();
+                //  double deltaTimeMilliseconds = deltaTimeInSeconds * 1000.0;
 
-            if (currentScene->hasGameOver)
-                return;
-            UpdateInput();
-            Update(deltaTimeInSeconds);
-            Render();
-            prevTime = endTime;
+                if (SceneManager::CurrentScene->hasGameOver)
+                    return;
+                UpdateInput();
+                Update(deltaTimeInSeconds);
+                Render();
+                prevTime = endTime;
+            }
         }
     }
     void Clean()
     {
-        delete currentScene;
+        delete SceneManager::CurrentScene;
         Input::Cleanup();
     }
     void InitScene(Scene *scene)
@@ -41,8 +46,6 @@ public:
     }
 
 private:
-
-    Scene *currentScene;
     Renderer renderer;
     void UpdateInput()
     {
@@ -50,16 +53,16 @@ private:
     }
     void Update(float deltaTime)
     {
-        currentScene->Update(deltaTime);
-        currentScene->SpawnQueuedGameObjects();
+        SceneManager::CurrentScene->Update(deltaTime);
+        SceneManager::CurrentScene->SpawnQueuedGameObjects();
     }
     void UpdateCamera(float deltaTime)
     {
-        currentScene->UpdateCamera(deltaTime);
+        SceneManager::CurrentScene->UpdateCamera(deltaTime);
     }
     void Render()
     {
-        renderer.Render(*currentScene);
+        renderer.Render(*SceneManager::CurrentScene);
     }
     void SetCurrentScene(Scene *scene)
     {
@@ -68,7 +71,7 @@ private:
 #else
         system("cls");
 #endif
-        currentScene = scene;
-        InitScene(currentScene);
+       // currentScene = scene;
+        InitScene(SceneManager::CurrentScene);
     }
 };

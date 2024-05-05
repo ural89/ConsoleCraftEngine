@@ -3,6 +3,7 @@
 #include "../GameObjects/Enemies/EnemyRogue.h"
 #include "../GameObjects/Enemies/EnemyAmeboid.h"
 #include "CoreStructs/Vector.h"
+#include "Core/SceneManager.h"
 
 const int STANDARDENEMYTYPE = 0;
 const int AMEBOIDENEMYTYPE = 1;
@@ -24,7 +25,8 @@ void RogueScene::Update(float deltaTime)
     if (spawnDurationPassed >= spawnTime)
     {
         spawnDurationPassed = 0;
-        SpawnEnemy(rand() % 3);
+        SceneManager::ChangeScene(new RogueScene());
+        // SpawnEnemy(rand() % 3);
     }
 }
 

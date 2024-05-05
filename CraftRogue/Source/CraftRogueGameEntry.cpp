@@ -10,6 +10,7 @@ public:
     Engine engine;
     void StartGame()
     {
+        // engine.SceneManager_.ChangeScene(new RogueScene());
         engine.scenes.push_back(new RogueScene());
         engine.StartGame();
     }
