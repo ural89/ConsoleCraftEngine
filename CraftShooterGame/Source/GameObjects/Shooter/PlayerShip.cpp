@@ -8,6 +8,10 @@
 #include "Core/Renderer.h"
 #include <memory>
 
+PlayerShip::~PlayerShip()
+{
+	EventDispatcher::RemoveListener(OnEventFunction);
+}
 
 void PlayerShip::Init()
 {

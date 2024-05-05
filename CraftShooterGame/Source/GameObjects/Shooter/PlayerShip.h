@@ -10,6 +10,7 @@ public:
 	{
 		symbol = '\xDB';
 	}
+	~PlayerShip();
 	void Init() override;
 	void Update(float deltaTime) override;
 	void OnCollided(GameObject &other) override;

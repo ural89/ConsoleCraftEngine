@@ -16,6 +16,11 @@ Player::~Player()
 
     weapons.clear();
     Input::RemoveListener(inputEvent);
+    usableWeaponsIndex.clear();
+    weapons.clear();
+    weaponIndex = 0;
+    score = 0;
+    EventDispatcher::RemoveListener(OnRecievedEvent);
 }
 void Player::Init()
 {
@@ -26,7 +31,7 @@ void Player::Init()
 
     usableWeaponsIndex.push_back(0);
 
-    std::function<void(Event &)> OnRecievedEvent = std::bind(&Player::RecievedEvent, this, std::placeholders::_1);
+    OnRecievedEvent = std::bind(&Player::RecievedEvent, this, std::placeholders::_1);
     EventDispatcher::AddListener(OnRecievedEvent);
 
     PlayerController *playerController = new PlayerController(*this, 0);
@@ -104,12 +109,10 @@ void Player::UnlockWeapon(int index)
     if (std::find(usableWeaponsIndex.begin(), usableWeaponsIndex.end(), index) == usableWeaponsIndex.end())
     {
         usableWeaponsIndex.push_back(index);
-       
     }
     else
     {
         weapons[usableWeaponsIndex[index]]->Upgrade();
-       
     }
 }
 void Player::InitializeWeapon(Vector2 &startPosition)
@@ -119,17 +122,14 @@ void Player::InitializeWeapon(Vector2 &startPosition)
     GetCurrentScene().AddGameObject(plasmaWeapon, startPosition);
     plasmaWeapon->transform.SetParent(transform);
     weapons.push_back(plasmaWeapon);
-  
 
     Weapon *waveGun = new WaveGun(GetCurrentScene());
     GetCurrentScene().AddGameObject(waveGun, startPosition);
     waveGun->transform.SetParent(transform);
     weapons.push_back(waveGun);
-    
 
     Weapon *blastGun = new BlastGun(GetCurrentScene());
     GetCurrentScene().AddGameObject(blastGun, startPosition);
     blastGun->transform.SetParent(transform);
     weapons.push_back(blastGun);
-
 }

@@ -8,30 +8,28 @@ class Player : public GameObject
 public:
     Player(class Scene &scene) : GameObject("Player", scene) {}
     ~Player();
-    
+
     void Init() override;
 
     void OnKeyPressed(int input);
     void UnlockWeapon(int index);
 
-
 private:
-
     UIData scoreUIData;
     std::shared_ptr<UIData> scoreUIDataPtr;
-
+    std::function<void(Event &)> OnRecievedEvent;
     void InitializeWeapon(Vector2 &startPosition);
-    void RecievedEvent(Event& e);
+    void RecievedEvent(Event &e);
     void Update(float deltaTime) override;
-    void OnCollided(GameObject& other) override;
-    class PlayerUpgradeComponent* playerUpgradeComponent;
+    void OnCollided(GameObject &other) override;
+    class PlayerUpgradeComponent *playerUpgradeComponent;
 
-	std::function<void(int)> inputEvent;
+    std::function<void(int)> inputEvent;
 
     int weaponIndex = 0;
 
     std::vector<int> usableWeaponsIndex;
-    std::vector<class Weapon*> weapons;
+    std::vector<class Weapon *> weapons;
 
     bool canFire = true;
     float fireDuration = 0;
