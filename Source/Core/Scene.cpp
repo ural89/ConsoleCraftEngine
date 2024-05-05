@@ -1,5 +1,6 @@
 #include "Scene.h"
 #include "UIHandler.h"
+#include "Input.h"
 Scene::Scene()
 {
 	camera = new Camera();
@@ -43,6 +44,7 @@ void Scene::CreateBoxBorder()
 }
 Scene::~Scene()
 {
+	Input::Cleanup();
 	for (auto &go : GetGameObjects())
 	{
 		if (go != nullptr)

@@ -7,7 +7,11 @@ SceneManager::SceneManager()
 
 void SceneManager::ChangeScene(Scene *scene)
 {
-    //TODO: scene cleanup
+    if(CurrentScene)
+    {
+        delete CurrentScene;
+        CurrentScene = nullptr;
+    }
     CurrentScene = scene;
     CurrentScene->Init();
     CurrentScene->Start();

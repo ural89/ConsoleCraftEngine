@@ -49,6 +49,7 @@ void Input::RemoveListener(std::function<void(int input)> func)
 {
     auto it = std::remove_if(listeners.begin(), listeners.end(),
         [func](const auto& listener) {
+            std::cout << " Input cleared \n";
             return listener.target_type() == func.target_type();
         });
     listeners.erase(it, listeners.end());

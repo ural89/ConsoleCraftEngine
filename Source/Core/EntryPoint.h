@@ -7,13 +7,11 @@
 class Engine
 {
 public:
-   // SceneManager sceneManager;
     std::vector<Scene *> scenes;
 
     void StartGame()
     {
         SceneManager::ChangeScene(scenes[0]);
-       // SetCurrentScene(SceneManager::CurrentScene);
         auto startTime = std::chrono::high_resolution_clock::now();
         auto prevTime = startTime;
 
