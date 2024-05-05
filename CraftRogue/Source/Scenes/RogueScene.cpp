@@ -25,8 +25,8 @@ void RogueScene::Update(float deltaTime)
     if (spawnDurationPassed >= spawnTime)
     {
         spawnDurationPassed = 0;
-        SceneManager::ChangeScene(new RogueScene());
-        // SpawnEnemy(rand() % 3);
+        // SceneManager::ChangeScene(new RogueScene());
+        SpawnEnemy(rand() % 3);
     }
 }
 
