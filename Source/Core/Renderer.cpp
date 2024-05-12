@@ -145,7 +145,7 @@ void Renderer::ClearObjectTrailAfterCameraMove(GameObject &go, Scene &scene)
                 }
 
                 GoToXY(clearX, clearY);
-                print("");
+                print(" ");
             }
         }
     }
