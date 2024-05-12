@@ -34,6 +34,12 @@ void Renderer::Render(Scene &scene)
     scene.camera->HasMovedDirection = 0;
 }
 
+void Renderer::print(std::string_view str)
+{
+    // fwrite: fastest way to print to the console
+    fwrite(str.data(), str.size(), 1, stdout);
+}
+
 void Renderer::ClearDestroyedObject(GameObject &go, Scene &scene)
 {
     for (int i = 0; i < go.GetHeight() + 2; i++)
@@ -44,7 +50,7 @@ void Renderer::ClearDestroyedObject(GameObject &go, Scene &scene)
             int posY = static_cast<int>(go.transform.Position.Y + i - 1) + scene.camera->offsetY;
 
             GoToXY(posX, posY);
-            std::cout << ' ';
+            print(" ");
         }
     }
     go.hasClearedFromScreen = true;
@@ -71,7 +77,7 @@ void Renderer::DrawObjects(GameObject &go, Scene &scene)
                 SetConsoleColor(color);
             }
             GoToXY(posX, posY);
-            std::cout << go.symbol;
+            print(go.symbol);
         }
     }
     SetConsoleColor(15);
@@ -94,7 +100,7 @@ void Renderer::ClearMovedObjectsTrail(GameObject &go, Scene &scene)
                 }
 
                 GoToXY(clearX, clearY);
-                std::cout << ' ';
+                print(" ");
             }
         }
 
@@ -139,7 +145,7 @@ void Renderer::ClearObjectTrailAfterCameraMove(GameObject &go, Scene &scene)
                 }
 
                 GoToXY(clearX, clearY);
-                std::cout << ' ';
+                print("");
             }
         }
     }
@@ -151,7 +157,7 @@ void Renderer::DrawUI(const Scene &scene)
     {
         GoToXY(uiData->position.X, uiData->position.Y);
         std::string s(uiData->text.size() + 1, ' ');
-        std::cout << s;
+        print(s);
     }
     for (auto &panel : scene.uiHandler->uiPanels)
     {
@@ -162,7 +168,7 @@ void Renderer::DrawUI(const Scene &scene)
                 if (uiData->isActive)
                 {
                     GoToXY(uiData->position.X, uiData->position.Y);
-                    std::cout << uiData->text;
+                    print(uiData->text);
                 }
             }
         }
@@ -174,7 +180,7 @@ void Renderer::DrawUI(const Scene &scene)
 
                 GoToXY(uiData->position.X, uiData->position.Y);
                 std::string s(uiData->text.size() + 40, ' ');
-                std::cout << s;
+                print(s);
             }
         }
     }
@@ -183,7 +189,7 @@ void Renderer::DrawUI(const Scene &scene)
         if (uiData->isActive)
         {
             GoToXY(uiData->position.X, uiData->position.Y);
-            std::cout << uiData->text;
+            print(uiData->text);
         }
     }
 }
