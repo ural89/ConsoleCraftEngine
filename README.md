@@ -1,8 +1,8 @@
 # Console Craft Engine
 #### Written in C++
 #### Will work in Linux and Windows
-#### Now with physics engine implemented
-
+#### Box2D physics engine implemented
+#### Now editor available: https://github.com/ural89/ConsoleCraftEditor
 ## Build:
 #### cd ../../CraftShooterGame
 #### mkdir build
