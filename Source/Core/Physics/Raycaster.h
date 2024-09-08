@@ -14,7 +14,7 @@ public:
 
     }
 
-    bool RayCast(Vector2 startPosition, Vector2 direction, RayHit& rayHit, int distance);
+    bool RayCast(Vector2 startPosition, Vector2 direction, RayHit& rayHit, int distance, const std::string& targetName);
 private:
     Scene& scene;
 };
