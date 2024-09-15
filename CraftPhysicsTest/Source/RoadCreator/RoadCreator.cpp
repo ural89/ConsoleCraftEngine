@@ -40,7 +40,7 @@ void RoadCreator::CreateRoad(int amount, Vector2 startPosition, Vector2 endPosit
             jointDef.stiffness = 2325;
             jointDef.length = 2;
 
-            b2Joint *joint = scene.World->CreateJoint(&jointDef);
+            b2Joint *joint = scene.world->CreateJoint(&jointDef);
         }
 
         previousBody = currentBody;

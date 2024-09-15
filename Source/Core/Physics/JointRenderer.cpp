@@ -15,7 +15,7 @@ JointRenderer::~JointRenderer()
 void JointRenderer::Update(float deltaTime)
 {
     lineDrawer->ResetDrawingParticleIndex();
-    for (b2Joint *joint = scene.World->GetJointList(); joint; joint = joint->GetNext())
+    for (b2Joint *joint = scene.world->GetJointList(); joint; joint = joint->GetNext())
     {
         b2Vec2 anchorA = joint->GetAnchorA();
         b2Vec2 anchorB = joint->GetAnchorB();

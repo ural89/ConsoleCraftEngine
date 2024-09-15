@@ -26,7 +26,7 @@ void Polygon::Init()
     polygonBodyDef.type = b2_dynamicBody;
     polygonBodyDef.allowSleep = false;
     polygonBodyDef.position = initialPosition;
-    polygonBody = scene.World->CreateBody(&polygonBodyDef);
+    polygonBody = scene.world->CreateBody(&polygonBodyDef);
     polygonBox.Set(vertices, numParticles);
 
     b2FixtureDef fixtureDef;

@@ -33,7 +33,7 @@ void Car::Init(Vector2 position)
     leftRevololuteJointDef.maxMotorTorque = 1000;
     leftRevololuteJointDef.motorSpeed = 3.14 * 4;
 
-    scene.World->CreateJoint(&leftRevololuteJointDef);
+    scene.world->CreateJoint(&leftRevololuteJointDef);
 
 
     //Create right tyre
@@ -50,7 +50,7 @@ void Car::Init(Vector2 position)
     rightRevololuteJointDef.motorSpeed = 3.14 * 4;
 
 
-    scene.World->CreateJoint(&rightRevololuteJointDef);
+    scene.world->CreateJoint(&rightRevololuteJointDef);
     
 }
 

@@ -32,7 +32,7 @@ void JointCreator::OnInput(int input)
         b2Vec2 worldCursorPos(cursorPosition.X, cursorPosition.Y);
         int i = 0;
 
-        for (b2Body *body = scene.World->GetBodyList(); body; body = body->GetNext())
+        for (b2Body *body = scene.world->GetBodyList(); body; body = body->GetNext())
         {
             if (body->GetFixtureList() && body->GetFixtureList()->TestPoint(worldCursorPos))
             {
@@ -82,7 +82,7 @@ void JointCreator::CreateDistanceJoint()
 
     jd.collideConnected = true;
 
-    b2Joint *joint = scene.World->CreateJoint(&jd);
+    b2Joint *joint = scene.world->CreateJoint(&jd);
     std::cout << "Created joint!!\n";
     // firstBody->ApplyLinearImpulseToCenter(b2Vec2(500, 0), true);
     firstBody = nullptr;

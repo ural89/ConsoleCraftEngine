@@ -9,7 +9,7 @@ void Rigidbody::Init()
   bodyDef.type = b2_dynamicBody;
   bodyDef.position.Set(owner->transform.Position.X, owner->transform.Position.Y);
 
-  body = owner->GetCurrentScene().World->CreateBody(&bodyDef);
+  body = owner->GetCurrentScene().world->CreateBody(&bodyDef);
   b2PolygonShape dynamicBox;
   dynamicBox.SetAsBox(owner->GetWidth() , owner->GetHeight());
 
