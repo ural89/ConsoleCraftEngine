@@ -13,7 +13,7 @@ public:
     {
         lines.clear();
     }
-    void ResetDrawingParticleIndex()
+    void ResetDrawingParticleIndex() //call this every frame (after drawing multiple line)
     {
         drawingParticleIndex = 0;
     }

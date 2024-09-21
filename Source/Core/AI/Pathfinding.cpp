@@ -1,11 +1,14 @@
 #include "Pathfinding.h"
 #include "../Scene.h"
-Pathfinding::Pathfinding(Scene &scene)
+Pathfinding::Pathfinding(Scene &scene) : m_Scene(scene)
 {
-    auto& gameObjects = scene.GetGameObjects();
-    for (auto&  gameObject : gameObjects)
+}
+
+void Pathfinding::ShowGameObjects()
+{
+    auto &gameObjects = m_Scene.GetGameObjects();
+    for (auto &gameObject : gameObjects)
     {
         std::cout << gameObject->name << '\n';
     }
-    
 }
