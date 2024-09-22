@@ -1,6 +1,7 @@
 #include "EntryScene.h"
 #include "../GameObjects/PlayerShip.h"
 #include "Core/LineDrawer.h"
+#include "Core/AI/Pathfinder.h"
 
 EntryScene::
     ~EntryScene()
@@ -15,18 +16,35 @@ void EntryScene::Init()
 void EntryScene::Start()
 {
     Scene::Start();
-    PathNode startNode;
-    PathNode targetNode;
-    startNode.Position = Vector2(0, 0);
-    targetNode.Position = Vector2(2, 2);
-    auto path = m_Pathfinding->GetPath(startNode, targetNode);
-    std::cout << path.size() << '\n';
+    Pathfinder pathfinder;
+    // Define a simple grid (0 = walkable, 1 = obstacle)
+    std::vector<std::vector<int>> graph = {
+        {0, 1, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 1, 0, 1, 1, 1},
+        {0, 0, 0, 1, 0, 1, 1, 1},
+        {1, 1, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 1, 0, 1, 1, 1},
+        {0, 0, 0, 1, 0, 0, 1, 1},
+        {0, 0, 0, 1, 0, 0, 0, 1},
+        {0, 0, 0, 1, 0, 1, 0, 0},
+
+    };
+
+    PathNode start(0, 0);
+    PathNode goal(7, 7);
+
+    std::vector<PathNode> path = pathfinder.FindPath(graph, start, goal);
+
     LineDrawer lineDrawer(*this);
-    lineDrawer.CreateLineParticles(30, 1);
     lineDrawer.ResetDrawingParticleIndex();
+    lineDrawer.CreateLineParticles(30, 1);
+    if (!path.empty())
     for (int i = 0; i < path.size() - 1; i++)
     {
-        lineDrawer.DrawLine(path[i].Position, path[i + 1].Position);
+        Vector2 posStart = Vector2(path[i].x, path[i].y);
+        Vector2 posEnd = Vector2(path[i + 1].x, path[i + 1].y);
+
+        lineDrawer.DrawLine(posStart, posEnd);
     }
 }
 

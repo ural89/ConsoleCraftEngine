@@ -1,6 +1,7 @@
 #pragma once
 #include "Core/Scene.h"
-#include "Core/AI/Pathfinding.h"
+// #include "Core/AI/Pathfinder.h"
+
 #include <vector>
 #include "Core/LineDrawer.h"
 class EntryScene : public Scene
@@ -14,7 +15,7 @@ public:
 
 
 private:
-    std::unique_ptr<Pathfinding> m_Pathfinding = std::make_unique<Pathfinding>(*this);
+    // std::unique_ptr<Pathfinder> m_Pathfinding = std::make_unique<Pathfinder>(*this);
 
 };
 

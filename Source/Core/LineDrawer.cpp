@@ -21,7 +21,7 @@ void LineDrawer::DrawLine(Vector2 startPosition, Vector2 endPosition)
             }
         }
         // debugUIPtr->text = "particle count: " + std::to_string(drawingParticleIndex);
-        for (size_t i = drawingParticleIndex - 1; i < lines.size(); i++)
+        for (size_t i = drawingParticleIndex; i < lines.size(); i++)
         {
             lines[i]->isRenderable = false;
         }

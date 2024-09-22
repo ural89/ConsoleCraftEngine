@@ -65,7 +65,9 @@ public:
 	}
 	bool operator<(const Vector2 &other) const
 	{
-		return Vector2(X, Y).Length() < other.Length();
+		if (X == other.X)
+			return Y < other.Y; // Compare y if x is the same
+		return X < other.X;		// Compare x firstr
 	}
 	bool operator>(const Vector2 &other) const
 	{
@@ -116,7 +118,7 @@ public:
 	}
 	Vector2 Normal() const
 	{
-		
+
 		return Vector2(-Y, X);
 	}
 
