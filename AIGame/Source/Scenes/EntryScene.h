@@ -1,6 +1,8 @@
 #pragma once
 #include "Core/Scene.h"
 #include "Core/AI/Pathfinding.h"
+#include <vector>
+#include "Core/LineDrawer.h"
 class EntryScene : public Scene
 {
 public:

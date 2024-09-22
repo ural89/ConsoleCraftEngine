@@ -23,7 +23,7 @@ public:
 	}
 	bool operator==(const Vector2 &other) const
 	{
-		return (X == other.X) || (Y == other.Y);
+		return (X == other.X) && (Y == other.Y);
 	}
 	Vector2 operator+(const Vector2 &other) const
 	{

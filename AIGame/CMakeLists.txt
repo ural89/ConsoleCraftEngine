@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 project(AIGame)
+set(CMAKE_BUILD_TYPE Debug)
 
 file(GLOB_RECURSE ENGINE_SOURCES ../Source/*.cpp)
 file(GLOB_RECURSE ENGINE_HEADERS ../Source/*.h)
