@@ -85,6 +85,7 @@ public:
 	bool isRenderable = true;
 	bool hasCollider = true;
 	bool canFindable = true;
+	bool isNavIgnore = false;
 	Scene &GetCurrentScene()
 	{
 		return scene;

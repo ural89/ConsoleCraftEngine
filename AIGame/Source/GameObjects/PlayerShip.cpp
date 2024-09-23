@@ -28,6 +28,7 @@ void PlayerShip::Init()
 		{1,1,1,1},
 		{2,2,0,2}
 	};
+	isNavIgnore = true;
 	
 	auto inputEvent = std::bind(&PlayerShip::Fire, this, std::placeholders::_1);
 	Input::AddListener(inputEvent);

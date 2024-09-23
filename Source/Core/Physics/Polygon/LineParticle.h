@@ -7,6 +7,7 @@ public:
     LineParticle(class Scene &scene) : GameObject("LineParticle", scene)
     {
         hasCollider = false;
+        isNavIgnore = true;
     }
     void Init() override
     {

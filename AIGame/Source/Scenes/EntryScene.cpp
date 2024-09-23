@@ -30,6 +30,7 @@ void EntryScene::Update(float deltaTime)
     Scene::Update(deltaTime);
     m_Linedrawer->ResetDrawingParticleIndex();
     // TODO: AI movement
+    //Take path[0]
     PathNode start(0, 0);
     PathNode goal(playerShip->transform.Position.X - 1, playerShip->transform.Position.Y - 1);
     std::vector<PathNode> path = m_Pathfinder->FindPath(start, goal);

@@ -29,16 +29,39 @@ Pathfinder::Pathfinder(const Scene &scene) : m_Scene(scene),
 
 std::vector<PathNode> Pathfinder::FindPath(const PathNode &start, const PathNode &goal)
 {
-    // auto gameObjects = m_Scene.GetGameObjects();
-    // for (auto &gameObject : gameObjects)
-    // {
-    //     const Vector2 pos = gameObject->transform.Position;
+    for (auto &row : m_Map) // reset map 
+    {
+        std::fill(row.begin(), row.end(), 0);
+    }
 
-    //     if (pos.X >= 0 && pos.X < map.size() && pos.Y >= 0 && pos.Y < map[0].size())
-    //     {
-    //         map[pos.X][pos.Y] = 1;
-    //     }
-    // }
+    auto gameObjects = m_Scene.GetGameObjects();
+    for (auto &gameObject : gameObjects)
+    {
+        if (gameObject->isNavIgnore)
+        {
+            continue;
+        }
+        const Vector2 pos = gameObject->transform.Position;
+        int height = gameObject->GetHeight();
+        int width = gameObject->GetWidth();
+        for (int i = 0; i < height; ++i)
+        {
+            for (int j = 0; j < width; ++j)
+            {
+                int mapX = pos.X + i;
+                int mapY = pos.Y + j;
+
+                if (mapX >= 0 && mapX < m_Map.size() && mapY >= 0 && mapY < m_Map[0].size())
+                {
+                    m_Map[mapX][mapY] = 1; 
+                }
+            }
+        }
+    }
+    if(m_Map[goal.x][goal.y])
+    {
+        return std::vector<PathNode>();
+    }
 
     const int directionX[] = {-1, 0, 1, 0};
     const int directionY[] = {0, 1, 0, -1};
