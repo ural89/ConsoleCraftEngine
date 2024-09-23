@@ -5,6 +5,7 @@
 #include "GameObject.h"
 #include "Physics/Polygon/Polygon.h"
 #include "Physics/CollisionResolver.h"
+#include "AI/Pathfinder.h"
 #include "Physics/Polygon/PolygonCollision.h"
 #include "../box2d/include/box2d/box2d.h"
 #include "Physics/Raycaster.h"
@@ -60,6 +61,8 @@ public:
 	Collision collision;
 	b2World *world = new b2World(b2Vec2(0, 20));
 	Raycaster *raycaster = new Raycaster(*this);
+	Pathfinder *pathfinder = new Pathfinder(*this);
+
 
 private:
 	void CreateBoxBorder();

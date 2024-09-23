@@ -60,6 +60,10 @@ Scene::~Scene()
 	delete collisionResolver;
 	delete raycaster;
 	delete world;
+	delete pathfinder;
+	pathfinder = nullptr;
+	camera = nullptr;
+	uiHandler = nullptr;
 	world = nullptr;
 }
 
