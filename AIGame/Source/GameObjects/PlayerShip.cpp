@@ -48,8 +48,8 @@ void PlayerShip::OnCollided(GameObject& other)
 {
 	if (other.name == "Enemy")
 	{
-		std::cout << "GAME OVER!" << '\n';
-		GetCurrentScene().hasGameOver = true;
+		// std::cout << "GAME OVER!" << '\n';
+		// GetCurrentScene().hasGameOver = true;
 	}
 }
 
