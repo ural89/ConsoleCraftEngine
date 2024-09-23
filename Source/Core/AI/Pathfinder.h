@@ -17,5 +17,10 @@ struct PathNode
 class Pathfinder
 {
 public:
-    std::vector<PathNode> FindPath(const std::vector<std::vector<int>> &graph, const PathNode &start, const PathNode &goal);
+    Pathfinder(const class Scene& scene);
+    std::vector<PathNode> FindPath(const PathNode &start, const PathNode &goal);
+
+private:
+    const Scene& m_Scene;
+
 };

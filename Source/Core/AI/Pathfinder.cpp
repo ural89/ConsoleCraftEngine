@@ -1,5 +1,6 @@
 #include "Pathfinder.h"
-
+#include "../Scene.h"
+#include "../GameObject.h"
 #include <algorithm>
 #include <iostream>
 #include <unordered_map>
@@ -19,15 +20,41 @@ bool PathNode::operator==(const PathNode &other) const
     return x == other.x && y == other.y;
 }
 
-std::vector<PathNode> Pathfinder::FindPath(const std::vector<std::vector<int>> &graph, const PathNode &start, const PathNode &goal)
+Pathfinder::Pathfinder(const Scene &scene) : m_Scene(scene)
 {
+    int size = scene.GetGameObjects().size();
+    std::cout << size << '\n';
+}
+
+std::vector<PathNode> Pathfinder::FindPath(const PathNode &start, const PathNode &goal)
+{
+    std::vector<std::vector<int>> map = {
+        {0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0}};
+    // auto gameObjects = m_Scene.GetGameObjects();
+    // for (auto &gameObject : gameObjects)
+    // {
+    //     const Vector2 pos = gameObject->transform.Position;
+
+    //     if (pos.X >= 0 && pos.X < map.size() && pos.Y >= 0 && pos.Y < map[0].size())
+    //     {
+    //         map[pos.X][pos.Y] = 1;
+    //     }
+    // }
+
     const int directionX[] = {-1, 0, 1, 0};
     const int directionY[] = {0, 1, 0, -1};
 
     std::priority_queue<PathNode, std::vector<PathNode>, std::greater<PathNode>> openList;
-    std::vector<std::vector<bool>> closedList(graph.size(), std::vector<bool>(graph[0].size(), false));
+    std::vector<std::vector<bool>> closedList(map.size(), std::vector<bool>(map[0].size(), false));
 
-    std::vector<std::vector<PathNode>> parent(graph.size(), std::vector<PathNode>(graph[0].size(), PathNode(-1, -1)));
+    std::vector<std::vector<PathNode>> parent(map.size(), std::vector<PathNode>(map[0].size(), PathNode(-1, -1)));
 
     PathNode startNode = start;
     startNode.g = 0;
@@ -61,9 +88,9 @@ std::vector<PathNode> Pathfinder::FindPath(const std::vector<std::vector<int>> &
             int newX = current.x + directionX[i];
             int newY = current.y + directionY[i];
 
-            if (newX >= 0 && newX < graph.size() && newY >= 0 && newY < graph[0].size())
+            if (newX >= 0 && newX < map.size() && newY >= 0 && newY < map[0].size())
             {
-                if (graph[newX][newY] == 0 && !closedList[newX][newY])
+                if (map[newX][newY] == 0 && !closedList[newX][newY])
                 {
                     PathNode neighbor(newX, newY);
                     int newG = current.g + 1;

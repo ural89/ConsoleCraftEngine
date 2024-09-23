@@ -1,9 +1,9 @@
 #pragma once
 #include "Core/Scene.h"
-// #include "Core/AI/Pathfinder.h"
 
 #include <vector>
 #include "Core/LineDrawer.h"
+
 class EntryScene : public Scene
 {
 public:
@@ -15,7 +15,9 @@ public:
 
 
 private:
-    // std::unique_ptr<Pathfinder> m_Pathfinding = std::make_unique<Pathfinder>(*this);
+	class Pathfinder* m_Pathfinder;
+	LineDrawer* m_Linedrawer;
+	GameObject* playerShip;
 
 };
 
