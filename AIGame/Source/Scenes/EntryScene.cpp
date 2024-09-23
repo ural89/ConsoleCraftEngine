@@ -1,7 +1,6 @@
 #include "EntryScene.h"
 #include "../GameObjects/PlayerShip.h"
 #include "../GameObjects/Enemy.h"
-#include "Core/AI/Pathfinder.h"
 
 EntryScene::
     ~EntryScene()
@@ -19,7 +18,7 @@ void EntryScene::Start()
     enemy = new Enemy(*this);
     AddGameObject(playerShip, Vector2(7, 5));
     AddGameObject(enemy, Vector2(15, 5));
-    m_Pathfinder = new Pathfinder(*this);
+    m_Pathfinder = std::make_shared<Pathfinder>(*this);
     m_Linedrawer = new LineDrawer(*this);
 
     m_Linedrawer->CreateLineParticles(100, 1);
@@ -29,8 +28,6 @@ void EntryScene::Update(float deltaTime)
 {
     Scene::Update(deltaTime);
     m_Linedrawer->ResetDrawingParticleIndex();
-    // TODO: AI movement
-    //Take path[0]
     PathNode start(0, 0);
     PathNode goal(playerShip->transform.Position.X - 1, playerShip->transform.Position.Y - 1);
     std::vector<PathNode> path = m_Pathfinder->FindPath(start, goal);

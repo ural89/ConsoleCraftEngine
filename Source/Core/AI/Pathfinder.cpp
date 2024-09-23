@@ -48,8 +48,8 @@ std::vector<PathNode> Pathfinder::FindPath(const PathNode &start, const PathNode
         {
             for (int j = 0; j < width; ++j)
             {
-                int mapX = pos.X + i;
-                int mapY = pos.Y + j;
+                int mapX = pos.X + j;
+                int mapY = pos.Y + i;
 
                 if (mapX >= 0 && mapX < m_Map.size() && mapY >= 0 && mapY < m_Map[0].size())
                 {
