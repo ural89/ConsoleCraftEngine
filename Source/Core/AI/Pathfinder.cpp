@@ -20,8 +20,8 @@ bool PathNode::operator==(const PathNode &other) const
     return x == other.x && y == other.y;
 }
 
-Pathfinder::Pathfinder(const Scene &scene) : m_Scene(scene), 
-    m_Map(50, std::vector<int>(50, 0))
+Pathfinder::Pathfinder(const Scene &scene) : m_Scene(scene),
+                                             m_Map(50, std::vector<int>(50, 0))
 {
     int size = scene.GetGameObjects().size();
     std::cout << size << '\n';
@@ -76,29 +76,30 @@ std::vector<PathNode> Pathfinder::FindPath(const PathNode &start, const PathNode
         closedList[current.x][current.y] = true;
 
         for (int i = 0; i < 4; ++i)
-        {
-            int newX = current.x + directionX[i];
-            int newY = current.y + directionY[i];
-
-            if (newX >= 0 && newX < m_Map.size() && newY >= 0 && newY < m_Map[0].size())
+            for (int j = 0; j < 4; ++j)
             {
-                if (m_Map[newX][newY] == 0 && !closedList[newX][newY])
+                int newX = current.x + directionX[i];
+                int newY = current.y + directionY[j];
+
+                if (newX >= 0 && newX < m_Map.size() && newY >= 0 && newY < m_Map[0].size())
                 {
-                    PathNode neighbor(newX, newY);
-                    int newG = current.g + 1;
-
-                    if (newG < neighbor.g || !closedList[newX][newY])
+                    if (m_Map[newX][newY] == 0 && !closedList[newX][newY])
                     {
-                        neighbor.g = newG;
-                        neighbor.h = abs(newX - goal.x) + abs(newY - goal.y);
-                        neighbor.f = neighbor.g + neighbor.h;
-                        parent[newX][newY] = current;
+                        PathNode neighbor(newX, newY);
+                        int newG = current.g + 1;
 
-                        openList.push(neighbor);
+                        if (newG < neighbor.g || !closedList[newX][newY])
+                        {
+                            neighbor.g = newG;
+                            neighbor.h = abs(newX - goal.x) + abs(newY - goal.y);
+                            neighbor.f = neighbor.g + neighbor.h;
+                            parent[newX][newY] = current;
+
+                            openList.push(neighbor);
+                        }
                     }
                 }
             }
-        }
     }
 
     return std::vector<PathNode>();
