@@ -17,7 +17,6 @@ public:
 
 
 private:
-	std::shared_ptr<Pathfinder> m_Pathfinder;
 	LineDrawer* m_Linedrawer;
 	GameObject* playerShip;
 	GameObject* enemy;
