@@ -20,7 +20,8 @@ bool PathNode::operator==(const PathNode &other) const
     return x == other.x && y == other.y;
 }
 
-Pathfinder::Pathfinder(const Scene &scene) : m_Scene(scene)
+Pathfinder::Pathfinder(const Scene &scene) : m_Scene(scene), 
+    m_Map(50, std::vector<int>(50, 0))
 {
     int size = scene.GetGameObjects().size();
     std::cout << size << '\n';
@@ -28,15 +29,6 @@ Pathfinder::Pathfinder(const Scene &scene) : m_Scene(scene)
 
 std::vector<PathNode> Pathfinder::FindPath(const PathNode &start, const PathNode &goal)
 {
-    std::vector<std::vector<int>> map = {
-        {0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0}};
     // auto gameObjects = m_Scene.GetGameObjects();
     // for (auto &gameObject : gameObjects)
     // {
@@ -52,9 +44,9 @@ std::vector<PathNode> Pathfinder::FindPath(const PathNode &start, const PathNode
     const int directionY[] = {0, 1, 0, -1};
 
     std::priority_queue<PathNode, std::vector<PathNode>, std::greater<PathNode>> openList;
-    std::vector<std::vector<bool>> closedList(map.size(), std::vector<bool>(map[0].size(), false));
+    std::vector<std::vector<bool>> closedList(m_Map.size(), std::vector<bool>(m_Map[0].size(), false));
 
-    std::vector<std::vector<PathNode>> parent(map.size(), std::vector<PathNode>(map[0].size(), PathNode(-1, -1)));
+    std::vector<std::vector<PathNode>> parent(m_Map.size(), std::vector<PathNode>(m_Map[0].size(), PathNode(-1, -1)));
 
     PathNode startNode = start;
     startNode.g = 0;
@@ -88,9 +80,9 @@ std::vector<PathNode> Pathfinder::FindPath(const PathNode &start, const PathNode
             int newX = current.x + directionX[i];
             int newY = current.y + directionY[i];
 
-            if (newX >= 0 && newX < map.size() && newY >= 0 && newY < map[0].size())
+            if (newX >= 0 && newX < m_Map.size() && newY >= 0 && newY < m_Map[0].size())
             {
-                if (map[newX][newY] == 0 && !closedList[newX][newY])
+                if (m_Map[newX][newY] == 0 && !closedList[newX][newY])
                 {
                     PathNode neighbor(newX, newY);
                     int newG = current.g + 1;

@@ -17,10 +17,10 @@ struct PathNode
 class Pathfinder
 {
 public:
-    Pathfinder(const class Scene& scene);
+    Pathfinder(const class Scene &scene);
     std::vector<PathNode> FindPath(const PathNode &start, const PathNode &goal);
 
 private:
-    const Scene& m_Scene;
-
+    const Scene &m_Scene;
+    std::vector<std::vector<int>> m_Map;
 };

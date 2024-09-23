@@ -19,7 +19,7 @@ void EntryScene::Start()
     m_Pathfinder = new Pathfinder(*this);
     m_Linedrawer = new LineDrawer(*this);
 
-    m_Linedrawer->ResetDrawingParticleIndex();
+    m_Linedrawer->CreateLineParticles(100, 1);
 
 }
 
@@ -28,7 +28,7 @@ void EntryScene::Update(float deltaTime)
     Scene::Update(deltaTime);
     PathNode start(0, 0);
     // PathNode goal(5, 5);
-    m_Linedrawer->CreateLineParticles(30, 1);
+    m_Linedrawer->ResetDrawingParticleIndex();
     PathNode goal(playerShip->transform.Position.X - 1, playerShip->transform.Position.Y - 1);
     std::vector<PathNode> path = m_Pathfinder->FindPath(start, goal);
     if (!path.empty())
