@@ -3,7 +3,9 @@ void Brick::Init()
 {
     sprite = {{2,2,2,2},
                 {2,2,2,2},
+                {2,2,2,2},
+                {2,2,2,2},
                 {2,2,2,2}};
     symbol = "#";
-    transform.Size = Vector2(4, 4);
+    transform.Size = Vector2(4, 6);
 }

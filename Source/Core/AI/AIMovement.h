@@ -21,8 +21,10 @@ public:
 private:
     float m_MoveSpeed = 3;
     float m_TimeElapsedSincePathUpdate = 0;
-    float m_UpdatePathDuration = 1;
+    float m_UpdatePathDuration = 0.5f;
     int m_CurrentPathCorner = 0;
+
+    Vector2 m_TargetLastPosition;
 
 private:
     const Transform *m_TargetTransform;

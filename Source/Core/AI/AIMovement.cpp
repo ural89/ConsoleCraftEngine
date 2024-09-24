@@ -12,22 +12,26 @@ void AIMovement::Update(float deltaTime)
         if (m_Path.size() > m_CurrentPathCorner + 2)
         {
             Vector2 moveDirection = (Vector2(m_Path[m_CurrentPathCorner + 1].x, m_Path[m_CurrentPathCorner + 1].y) - owner->transform.Position);
-            if (moveDirection == Vector2(0, 0) || moveDirection.Length() < 0.1f)
+            if (moveDirection == Vector2(0, 0) || moveDirection.Length() < 1.f)
             {
                 m_CurrentPathCorner++;
             }
             moveDirection.Normalize();
-            owner->transform.MovePosition(moveDirection.X * deltaTime * 5, moveDirection.Y * deltaTime * 5);
-            
+            owner->transform.MovePosition(moveDirection.X * deltaTime * m_MoveSpeed, moveDirection.Y * deltaTime * m_MoveSpeed);
         }
         m_TimeElapsedSincePathUpdate += deltaTime;
         if (m_TimeElapsedSincePathUpdate > m_UpdatePathDuration)
         {
-            UpdatePath();
-            m_CurrentPathCorner = 0;
-            m_TimeElapsedSincePathUpdate = 0;
+            if (m_TargetLastPosition != m_TargetTransform->Position)
+            {
+                UpdatePath();
+                m_CurrentPathCorner = 0;
+                m_TimeElapsedSincePathUpdate = 0;
+            }
+            m_TargetLastPosition = m_TargetTransform->Position;
         }
     }
+    
 }
 
 void AIMovement::UpdatePath()
