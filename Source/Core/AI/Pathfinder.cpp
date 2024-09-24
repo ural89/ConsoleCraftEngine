@@ -58,7 +58,7 @@ std::vector<PathNode> Pathfinder::FindPath(const PathNode &start, const PathNode
             }
         }
     }
-    if(m_Map[goal.x][goal.y] || (goal.x < 0 || goal.y < 0)) //if goal is inside obstacle
+    if(goal.x >= m_Map.size() || goal.y >= m_Map[goal.x].size() || m_Map[goal.x][goal.y] || (goal.x < 0 || goal.y < 0)) //if goal is inside obstacle or outside screen
     {
         return std::vector<PathNode>();
     }
