@@ -11,8 +11,8 @@ public:
 	bool isMoving = false;
 	int HasMovedDirection = 0;
 	Vector2 PreviousOffset;
-	float offsetX = 0;
-	float offsetY = 0;
+	int offsetX = 0;
+	int offsetY = 0;
 
 private:
 	void ShakeCamera(float deltaTime);

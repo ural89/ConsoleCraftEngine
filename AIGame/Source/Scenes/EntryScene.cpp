@@ -3,6 +3,7 @@
 #include "../GameObjects/Enemy.h"
 #include "../GameObjects/Brick.h"
 
+#include "Core/Input.h"
 EntryScene::
     ~EntryScene()
 {
@@ -10,8 +11,17 @@ EntryScene::
 void EntryScene::Init()
 {
     Scene::Init();
-}
 
+    auto keyEvent = BIND_EVENT_FN(EntryScene::OnInput);
+    Input::AddListener(keyEvent);
+}
+void EntryScene::OnInput(int input)
+{
+    if (std::tolower(input) == 'd')
+    {
+        // camera->MoveCamera(Vector2(1, 0));
+    }
+}
 void EntryScene::Start()
 {
     Scene::Start();
@@ -24,7 +34,7 @@ void EntryScene::Start()
     AddGameObject(new Brick(*this), Vector2(11, 10));
     AddGameObject(new Brick(*this), Vector2(23, 15));
     AddGameObject(new Brick(*this), Vector2(5, 15));
-    
+
     m_Linedrawer = new LineDrawer(*this);
 
     m_Linedrawer->CreateLineParticles(100, 1);
@@ -34,8 +44,14 @@ void EntryScene::Update(float deltaTime)
 {
     Scene::Update(deltaTime);
     m_Linedrawer->ResetDrawingParticleIndex();
+    m_LastTimeSinceCameraMove += deltaTime;
+    if (m_LastTimeSinceCameraMove > 0.5f)
+    {
+        camera->MoveCamera(Vector2(1, 0));
+        m_LastTimeSinceCameraMove = 0;
+    }
     PathNode start(enemy->transform.GetCenterPosition().X, enemy->transform.GetCenterPosition().Y);
-    PathNode goal(playerShip->transform.GetCenterPosition().X , playerShip->transform.GetCenterPosition().Y);
+    PathNode goal(playerShip->transform.GetCenterPosition().X, playerShip->transform.GetCenterPosition().Y);
     std::vector<PathNode> path = pathfinder->FindPath(start, goal);
     if (!path.empty())
     {

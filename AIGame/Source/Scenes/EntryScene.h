@@ -17,6 +17,8 @@ public:
 
 
 private:
+	void OnInput(int input);
+	float m_LastTimeSinceCameraMove = 0;
 	LineDrawer* m_Linedrawer;
 	GameObject* playerShip;
 	GameObject* enemy;
