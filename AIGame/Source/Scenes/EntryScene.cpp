@@ -34,10 +34,9 @@ void EntryScene::Update(float deltaTime)
 {
     Scene::Update(deltaTime);
     m_Linedrawer->ResetDrawingParticleIndex();
-    PathNode start(enemy->transform.Position.X, enemy->transform.Position.Y);
-    PathNode goal(playerShip->transform.Position.X - 1, playerShip->transform.Position.Y - 1);
+    PathNode start(enemy->transform.GetCenterPosition().X, enemy->transform.GetCenterPosition().Y);
+    PathNode goal(playerShip->transform.GetCenterPosition().X , playerShip->transform.GetCenterPosition().Y);
     std::vector<PathNode> path = pathfinder->FindPath(start, goal);
-    Vector2 enemyMoveDirection = enemy->transform.Position - playerShip->transform.Position;
     if (!path.empty())
     {
 
@@ -49,4 +48,5 @@ void EntryScene::Update(float deltaTime)
             m_Linedrawer->DrawLine(posStart, posEnd);
         }
     }
+    std::cout<< playerShip->transform.GetCenterPosition();
 }

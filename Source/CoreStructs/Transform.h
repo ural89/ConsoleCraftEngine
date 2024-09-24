@@ -55,6 +55,10 @@ public:
 			HasMovedThisFrame = false;
 		}
 	}
+	Vector2 GetCenterPosition() const
+	{
+		return Position + Size / 2;
+	}
 	void MovePosition(float x, float y, bool isCameraMove = false)
 	{
 		
@@ -64,17 +68,7 @@ public:
 		{
 			child->MovePosition(x, y);
 		}
-		if (!isCameraMove)
-		{
-			// if (Position.X + x >= SCREENWIDTH)
-			// 	x = -1;
-			// if (Position.X + x <= 0)
-			// 	x = 1;
-			// if (Position.Y + y >= SCREENHEIGHT)
-			// 	y = -1;
-			// if (Position.Y + y <= 0)
-			// 	y = 1;
-		}
+	
 		if(IsStatic) return;
 		Position.X += x;
 		Position.Y += y;

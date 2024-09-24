@@ -17,6 +17,7 @@ void Enemy::Init()
 	AddComponent(aiMovement);
 	aiMovement->SetTargetTransform(&GetCurrentScene().FindGameObject("PlayerShip")->transform);
 	isNavIgnore = true;
+	transform.Size = Vector2(4, 4);
 }
 
 void Enemy::Update(float deltaTime)

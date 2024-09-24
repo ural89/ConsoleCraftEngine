@@ -33,6 +33,6 @@ void AIMovement::Update(float deltaTime)
 void AIMovement::UpdatePath()
 {
     PathNode ownerNode(owner->transform.Position.X, owner->transform.Position.Y);
-    PathNode targetNode(m_TargetTransform->Position.X, m_TargetTransform->Position.Y);
+    PathNode targetNode(m_TargetTransform->GetCenterPosition().X, m_TargetTransform->GetCenterPosition().Y);
     m_Path = owner->GetCurrentScene().pathfinder->FindPath(ownerNode, targetNode);
 }

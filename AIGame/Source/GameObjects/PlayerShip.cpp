@@ -29,6 +29,7 @@ void PlayerShip::Init()
 		{2,2,0,2}
 	};
 	isNavIgnore = true;
+	transform.Size = Vector2(4, 4);
 	
 	auto inputEvent = std::bind(&PlayerShip::Fire, this, std::placeholders::_1);
 	Input::AddListener(inputEvent);
