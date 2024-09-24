@@ -58,7 +58,7 @@ std::vector<PathNode> Pathfinder::FindPath(const PathNode &start, const PathNode
             }
         }
     }
-    if(m_Map[goal.x][goal.y])
+    if(m_Map[goal.x][goal.y] || (goal.x < 0 || goal.y < 0)) //if goal is inside obstacle
     {
         return std::vector<PathNode>();
     }

@@ -1,6 +1,10 @@
 #include "AIMovement.h"
 #include "../../Core/GameObject.h"
 #include "../../Core/Scene.h"
+void AIMovement::Init()
+{
+    UpdatePath();
+}
 void AIMovement::Update(float deltaTime)
 {
     if (m_TargetTransform != nullptr)
@@ -8,12 +12,14 @@ void AIMovement::Update(float deltaTime)
         if (m_Path.size() > m_CurrentPathCorner + 2)
         {
             Vector2 moveDirection = (Vector2(m_Path[m_CurrentPathCorner + 1].x, m_Path[m_CurrentPathCorner + 1].y) - owner->transform.Position);
-            if (moveDirection == Vector2(0, 0))
+            if (moveDirection == Vector2(0, 0) || moveDirection.Length() < 1)
             {
                 m_CurrentPathCorner++;
             }
             moveDirection.Normalize();
             owner->transform.MovePosition(moveDirection.X * deltaTime * 5, moveDirection.Y * deltaTime * 5);
+            // owner->transform.MovePosition(5 * deltaTime, 5 * deltaTime);
+            
         }
         m_TimeElapsedSincePathUpdate += deltaTime;
         if (m_TimeElapsedSincePathUpdate > m_UpdatePathDuration)

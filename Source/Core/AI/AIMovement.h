@@ -14,7 +14,7 @@ public:
     {
         m_TargetTransform = transform;
     }
-    
+    void Init() override;
     void Update(float deltaTime) override;
 
 
