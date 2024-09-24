@@ -48,5 +48,4 @@ void EntryScene::Update(float deltaTime)
             m_Linedrawer->DrawLine(posStart, posEnd);
         }
     }
-    std::cout<< playerShip->transform.GetCenterPosition();
 }

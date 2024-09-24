@@ -5,4 +5,5 @@ void Brick::Init()
                 {2,2,2,2},
                 {2,2,2,2}};
     symbol = "#";
+    transform.Size = Vector2(4, 4);
 }

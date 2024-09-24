@@ -42,8 +42,8 @@ std::vector<PathNode> Pathfinder::FindPath(const PathNode &start, const PathNode
             continue;
         }
         const Vector2 pos = gameObject->transform.Position;
-        int height = gameObject->GetHeight() + m_FinderGameObjectHeight;
-        int width = gameObject->GetWidth() + m_FinderGameObjectWidth;
+        int height = gameObject->GetHeight();// + m_FinderGameObjectHeight;
+        int width = gameObject->GetWidth();// + m_FinderGameObjectWidth;
         for (int i = 0; i < height; ++i)
         {
             for (int j = 0; j < width; ++j)
