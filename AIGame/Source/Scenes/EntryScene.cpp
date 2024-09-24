@@ -28,12 +28,12 @@ void EntryScene::Start()
     playerShip = new PlayerShip(*this);
     enemy = new Enemy(*this);
     AddGameObject(playerShip, Vector2(15, 5));
-    AddGameObject(enemy, Vector2(7, 8));
-    AddGameObject(new Brick(*this), Vector2(11, 5));
-    AddGameObject(new Brick(*this), Vector2(23, 5));
-    AddGameObject(new Brick(*this), Vector2(11, 10));
-    AddGameObject(new Brick(*this), Vector2(23, 15));
-    AddGameObject(new Brick(*this), Vector2(5, 15));
+    AddGameObject(enemy, Vector2(5, 12));
+    AddGameObject(new Brick(*this), Vector2(5, 5));
+    AddGameObject(new Brick(*this), Vector2(12, 12));
+    AddGameObject(new Brick(*this), Vector2(17, 5));
+    AddGameObject(new Brick(*this), Vector2(23, 12));
+    AddGameObject(new Brick(*this), Vector2(28, 5));
 
     m_Linedrawer = new LineDrawer(*this);
 
