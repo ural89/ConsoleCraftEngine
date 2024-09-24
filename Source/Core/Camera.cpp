@@ -16,6 +16,26 @@ void Camera::UpdateCamera(float deltaTime)
         ShakeCamera(deltaTime);
 }
 
+void Camera::MoveCameraRight()
+{
+    MoveCamera(Vector2(1, 0));
+}
+
+void Camera::MoveCameraLeft()
+{
+    MoveCamera(Vector2(-1, 0));
+}
+
+void Camera::MoveCameraUp()
+{
+    MoveCamera(Vector2(0, -1));
+}
+
+void Camera::MoveCameraDown()
+{
+    MoveCamera(Vector2(0, 1));
+}
+
 void Camera::MoveCamera(Vector2 moveAmount)
 {
     PreviousOffset = Vector2(offsetX + moveAmount.X, offsetY + moveAmount.Y).ToInt();

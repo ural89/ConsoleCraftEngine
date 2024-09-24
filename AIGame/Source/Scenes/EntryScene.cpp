@@ -47,7 +47,7 @@ void EntryScene::Update(float deltaTime)
     m_LastTimeSinceCameraMove += deltaTime;
     if (m_LastTimeSinceCameraMove > 0.5f)
     {
-        camera->MoveCamera(Vector2(1, 0));
+        camera->MoveCameraDown();
         m_LastTimeSinceCameraMove = 0;
     }
     PathNode start(enemy->transform.GetCenterPosition().X, enemy->transform.GetCenterPosition().Y);

@@ -55,26 +55,22 @@ void CraftCityScene::OnInput(int input)
 	if (std::tolower(input) == 'd')
 	{
 		selectCursor->transform.MovePosition(cameraMoveSpeed, 0);
-		cameraOffset = Vector2(-cameraMoveSpeed, 0);
-		camera->MoveCamera(cameraOffset);
+		camera->MoveCameraLeft();
 	}
 	if (std::tolower(input) == 'a')
 	{
 		selectCursor->transform.MovePosition(-cameraMoveSpeed, 0);
-		cameraOffset = Vector2(cameraMoveSpeed, 0);
-		camera->MoveCamera(cameraOffset);
+		camera->MoveCameraRight();
 	}
 	if (std::tolower(input) == 'w')
 	{
 		selectCursor->transform.MovePosition(0, -cameraMoveSpeed);
-		cameraOffset = Vector2(0, cameraMoveSpeed);
-		camera->MoveCamera(cameraOffset);
+		camera->MoveCameraUp();
 	}
 	if (std::tolower(input) == 's')
 	{
 		selectCursor->transform.MovePosition(0, cameraMoveSpeed);
-		cameraOffset = Vector2(0, -cameraMoveSpeed);
-		camera->MoveCamera(cameraOffset);
+		camera->MoveCameraDown();
 	}
 	if (std::tolower(input) == 'e' && selectCursor->CanBuild)
 	{
