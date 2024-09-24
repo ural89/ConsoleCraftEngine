@@ -43,6 +43,14 @@ public:
 		components.push_back(component);
 		component->Init();
 	}
+	void SetRenderable(bool isRenderable)
+	{
+		this->isRenderable = isRenderable;
+		if(!isRenderable)
+		{
+			forceClearFromScreen = true;
+		}
+	}
 
 	template <typename T>
 	T *GetComponent()
@@ -82,6 +90,7 @@ public:
 
 	bool isDestroyedFlag = false;
 	bool hasClearedFromScreen = false;
+	bool forceClearFromScreen = false;
 	bool isRenderable = true;
 	bool hasCollider = true;
 	bool canFindable = true;

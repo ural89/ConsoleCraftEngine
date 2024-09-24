@@ -12,13 +12,12 @@ void AIMovement::Update(float deltaTime)
         if (m_Path.size() > m_CurrentPathCorner + 2)
         {
             Vector2 moveDirection = (Vector2(m_Path[m_CurrentPathCorner + 1].x, m_Path[m_CurrentPathCorner + 1].y) - owner->transform.Position);
-            if (moveDirection == Vector2(0, 0) || moveDirection.Length() < 1)
+            if (moveDirection == Vector2(0, 0) || moveDirection.Length() < 0.1f)
             {
                 m_CurrentPathCorner++;
             }
             moveDirection.Normalize();
             owner->transform.MovePosition(moveDirection.X * deltaTime * 5, moveDirection.Y * deltaTime * 5);
-            // owner->transform.MovePosition(5 * deltaTime, 5 * deltaTime);
             
         }
         m_TimeElapsedSincePathUpdate += deltaTime;

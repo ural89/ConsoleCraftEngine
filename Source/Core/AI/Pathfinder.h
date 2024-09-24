@@ -23,4 +23,7 @@ public:
 private:
     const Scene &m_Scene;
     std::vector<std::vector<int>> m_Map;
+    int m_FinderGameObjectWidth = 4;
+    int m_FinderGameObjectHeight = 4;
+
 };

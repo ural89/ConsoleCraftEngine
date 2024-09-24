@@ -23,9 +23,10 @@ void Renderer::Render(Scene &scene)
 
             ClearMovedObjectsTrail(*go, scene);
             ClearObjectTrailAfterCameraMove(*go, scene);
-            if (go->isDestroyedFlag)
+            if (go->isDestroyedFlag || go->forceClearFromScreen)
             {
                 ClearDestroyedObject(*go, scene);
+                go->forceClearFromScreen = false;
                 continue;
             }
         }

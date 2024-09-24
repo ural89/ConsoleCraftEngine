@@ -5,6 +5,7 @@ void LineDrawer::DrawLine(Vector2 startPosition, Vector2 endPosition)
 {
     Vector2 direction = endPosition - startPosition;
     int length = direction.LengthInt();
+    if(length == 0) return;
     direction.Normalize();
     if (length < lines.size())
     {
@@ -12,18 +13,12 @@ void LineDrawer::DrawLine(Vector2 startPosition, Vector2 endPosition)
         {
 
             Vector2 newPosition = direction * i + startPosition;
-            lastDrawnLinePosition = newPosition;
             if (drawingParticleIndex < lines.size())
             {
                 lines[drawingParticleIndex]->transform.SetPosition(newPosition.X, newPosition.Y);
                 lines[drawingParticleIndex]->isRenderable = true;
                 drawingParticleIndex++;
             }
-        }
-        // debugUIPtr->text = "particle count: " + std::to_string(drawingParticleIndex);
-        for (size_t i = drawingParticleIndex; i < lines.size(); i++)
-        {
-            lines[i]->isRenderable = false;
         }
     }
 }
@@ -36,6 +31,6 @@ void LineDrawer::CreateLineParticles(int amount, int color)
         lines.push_back(polygonLineParticle);
         scene.AddGameObject(polygonLineParticle);
         polygonLineParticle->overrideColor = color;
-        polygonLineParticle->isRenderable = false;
+        polygonLineParticle->isRenderable = true;
     }
 }
