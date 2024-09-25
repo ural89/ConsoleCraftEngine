@@ -51,6 +51,13 @@
         "ratio": "cpp",
         "semaphore": "cpp",
         "stop_token": "cpp",
-        "thread": "cpp"
-    }
+        "thread": "cpp",
+        "condition_variable": "cpp",
+        "cstring": "cpp",
+        "set": "cpp",
+        "future": "cpp",
+        "mutex": "cpp",
+        "cinttypes": "cpp"
+    },
+    "C_Cpp.default.compilerPath": "/usr/bin/g++"
 }

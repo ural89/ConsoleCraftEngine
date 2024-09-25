@@ -1,4 +1,4 @@
-// Copyright (C) 2005  by Piotr He³ka (piotr.helka@nd.e-wro.pl)
+// Copyright (C) 2005  by Piotr Heï¿½ka (piotr.helka@nd.e-wro.pl)
 // Linux C++ (not full) implementation of Borland's conio.h 
 // v 1.01
 // It uses Ncurses lib, so accept also its terms.
@@ -21,7 +21,7 @@
 
 // ----------------------------- krotki opis ------------------
 
-// Biblioteka obs³uguje mniej lub bardziej zgodnie:
+// Biblioteka obsï¿½uguje mniej lub bardziej zgodnie:
 //
 // cgets()
 // cputs()
@@ -40,7 +40,7 @@
 // wherey()
 // window()
 //
-// kompatbyilno¶æ w kierunku Linux CONIO.H -> DOS CONIO.H
+// kompatbyilnoï¿½ï¿½ w kierunku Linux CONIO.H -> DOS CONIO.H
 // bedzie zachowana
 
 // Aby skompilowac
@@ -120,34 +120,33 @@ WINDOW*	aktywneOkno = NULL;	//wsk na aktywne okno
 
 void inicjuj()
 {
-	initscr();
-	start_color(); //wlaczmy kolorki
-	cbreak(); //wylaczmy buforowanie wejscia
-	noecho(); //bez wyswietlania na ekran
-	//raw(); //nadpisywane i tak przez noecho
-	keypad(stdscr, TRUE);
-	scrollok(stdscr, TRUE);
-	
-	//domyslne okno
-	aktywneOkno = stdscr;
-	zainicjowane = TRUE;
-	
-	//utworzmy macierz 8x8 kolorow tla i tekstu
-	short kolor = 1;
-	for(short i=0; i<8; i++)
-	{
-		for(short j=0; j<8; j++, kolor++)
-		{
-			init_pair(kolor,i,j);
-			if(i == COLOR_WHITE && j == COLOR_BLACK)	
-			//ustawmy czarne tlo i bialey tekst jako standard
-			{
-				biezacaPara = kolor;
-			}  
-		}
-	}
-	
-	wrefresh(aktywneOkno);
+    initscr();
+    start_color(); // Enable color
+    use_default_colors();  // Use terminal's default colors
+
+    cbreak(); // Disable line buffering
+    noecho(); // Disable echoing input
+    keypad(stdscr, TRUE); // Enable special keys
+    scrollok(stdscr, TRUE);
+
+    aktywneOkno = stdscr;  // Set the main window
+    zainicjowane = TRUE;
+
+    // Initialize color pairs without forcing background colors
+    short kolor = 1;
+    for(short i = 0; i < 8; i++)
+    {
+        for(short j = 0; j < 8; j++, kolor++)
+        {
+            init_pair(kolor, i, j == 0 ? -1 : j); // Use default background (-1)
+            if(i == COLOR_WHITE && j == COLOR_BLACK)
+            {
+                biezacaPara = kolor;  // Default color pair (white text on black background)
+            }
+        }
+    }
+
+    wrefresh(aktywneOkno);
 }
 
 int simple_strlen(char* str)
@@ -197,10 +196,11 @@ void clreol()
 
 void clrscr()
 {
-	if(!zainicjowane) inicjuj();
-	wbkgd(aktywneOkno, COLOR_PAIR(biezacaPara));
-	//trzeba przesunac kursor? chyba nie...
-	wclear(aktywneOkno);
+	 if (!zainicjowane) inicjuj();
+    // Remove or comment out the following line:
+    // wbkgd(aktywneOkno, COLOR_PAIR(biezacaPara));
+    wclear(aktywneOkno);
+    wrefresh(aktywneOkno);
 }
 
 int cprintf(char *fmt, ...)
@@ -211,7 +211,7 @@ int cprintf(char *fmt, ...)
 	va_list ap; 
 	va_start(ap, fmt);
 	
-        int i = vwprintw(aktywneOkno,fmt, ap);	//jakie proste ;-)
+        int i = vw_printw(aktywneOkno,fmt, ap);	//jakie proste ;-)
 	
 	va_end(ap);
 	
@@ -229,7 +229,7 @@ int cscanf(char *fmt, ...)
 	va_list ap;
 	va_start(ap, fmt);
 	
-	int i = vwscanw(aktywneOkno, fmt, ap);
+	int i = vw_scanw(aktywneOkno, fmt, ap);
 	
 	va_end(ap);
 	
@@ -295,6 +295,7 @@ int kbhit()
 int putch(int znak)
 {
 	wechochar(aktywneOkno,znak);
+	return 0;
 }
 
 void textbackground(short kolor)
@@ -309,7 +310,7 @@ void textbackground(short kolor)
 			if(kolorTekstu == i && kolorTla == j)
 			{
 				biezacaPara = k;
-				wbkgd(aktywneOkno, COLOR_PAIR(k));
+				// wbkgd(aktywneOkno, COLOR_PAIR(k));
 			}
 		}
 	}
@@ -403,7 +404,7 @@ void window(int xup, int yup, int xdown, int ydown)
 		okienka[n].ydown = ydown;
 		
 		wcolor_set(aktywneOkno,biezacaPara, NULL);
-		wbkgd(aktywneOkno, COLOR_PAIR(biezacaPara));
+		// wbkgd(aktywneOkno, COLOR_PAIR(biezacaPara));
 		
 		//przywrocenie ustawien klawiszy
 		cbreak(); //wylaczmy buforowanie wejscia
