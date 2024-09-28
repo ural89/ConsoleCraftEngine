@@ -1,6 +1,6 @@
 #include "Pathfinder.h"
-#include "../Scene.h"
-#include "../GameObject.h"
+#include "../../Scene.h"
+// #include "../../GameObject.h"
 #include <algorithm>
 #include <iostream>
 #include <unordered_map>

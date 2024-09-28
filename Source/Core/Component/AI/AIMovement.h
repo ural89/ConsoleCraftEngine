@@ -1,7 +1,7 @@
 #pragma once
-#include "../../CoreStructs/Transform.h"
+#include "../../../CoreStructs/Transform.h"
 #include "Pathfinder.h"
-#include "../../Core/Component/Component.h"
+#include "../../../Core/Component/Component.h"
 class AIMovement : public Component
 {
 public:

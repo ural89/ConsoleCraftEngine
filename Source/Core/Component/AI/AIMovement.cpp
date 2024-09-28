@@ -1,6 +1,6 @@
 #include "AIMovement.h"
-#include "../../Core/GameObject.h"
-#include "../../Core/Scene.h"
+#include "../../../Core/GameObject.h"
+#include "../../../Core/Scene.h"
 void AIMovement::Init()
 {
     UpdatePath();

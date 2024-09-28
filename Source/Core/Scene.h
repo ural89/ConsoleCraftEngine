@@ -5,7 +5,7 @@
 #include "GameObject.h"
 #include "Physics/Polygon/Polygon.h"
 #include "Physics/CollisionResolver.h"
-#include "AI/Pathfinder.h"
+#include "Component/AI/Pathfinder.h"
 #include "Physics/Polygon/PolygonCollision.h"
 #include "../box2d/include/box2d/box2d.h"
 #include "Physics/Raycaster.h"
