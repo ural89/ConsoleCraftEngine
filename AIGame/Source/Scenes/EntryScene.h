@@ -4,7 +4,7 @@
 #include <vector>
 #include "Core/LineDrawer.h"
 #include <memory>
-#include "Core/AI/Pathfinder.h"
+#include "Core/Component/AI/Pathfinder.h"
 
 class EntryScene : public Scene
 {
