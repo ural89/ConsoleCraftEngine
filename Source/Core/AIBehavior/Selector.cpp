@@ -4,12 +4,16 @@ using namespace AIBehavior;
 
 void Selector::Exit()
 {
+    NodeBase::Exit();
 }
 void Selector::Enter()
 {
+    NodeBase::Enter();
 }
 NodeResult Selector::Update(float deltaTime)
 {
+    NodeBase::Update(deltaTime);
+
     for (auto &node : m_ChildNodes)
     {
         auto childNodeResult = node.get()->Update(deltaTime);

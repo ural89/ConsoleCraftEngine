@@ -8,8 +8,10 @@ NodeResult SuccessNode::Update(float deltaTime)
 
 void SuccessNode::Exit()
 {
+    NodeBase::Exit();
 }
 
 void SuccessNode::Enter()
 {
+    NodeBase::Enter();
 }
