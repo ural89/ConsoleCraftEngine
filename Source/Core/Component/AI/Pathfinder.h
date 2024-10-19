@@ -17,6 +17,10 @@ struct PathNode
 class Pathfinder
 {
 public:
+    ~Pathfinder()
+    {
+        m_Map.clear();
+    }
     Pathfinder(const class Scene &scene);
     std::vector<PathNode> FindPath(const PathNode &start, const PathNode &goal);
 

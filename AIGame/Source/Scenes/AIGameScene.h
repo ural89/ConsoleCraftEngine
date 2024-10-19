@@ -1,8 +1,6 @@
 #pragma once
 #include "Core/Scene.h"
-
 #include "Core/LineDrawer.h"
-#include "Core/AIBehavior/Selector.h"
 
 #include <vector>
 #include <memory>
@@ -22,6 +20,5 @@ private:
 	LineDrawer* m_Linedrawer;
 	GameObject* playerShip;
 	GameObject* enemy;
-    AIBehavior::Selector selector;
 };
 

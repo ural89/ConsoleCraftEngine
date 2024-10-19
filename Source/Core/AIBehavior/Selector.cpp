@@ -12,7 +12,6 @@ void Selector::Enter()
 }
 NodeResult Selector::Update(float deltaTime)
 {
-    NodeBase::Update(deltaTime);
 
     for (auto &node : m_ChildNodes)
     {

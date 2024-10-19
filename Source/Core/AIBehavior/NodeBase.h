@@ -13,7 +13,7 @@ namespace AIBehavior
     class NodeBase
     {
     public:
-        int test = 10;
+        ~NodeBase();
         virtual void Enter()
         {
             for (auto &childNode : m_ChildNodes)
@@ -32,12 +32,21 @@ namespace AIBehavior
 
         void AddNodeChildNode(std::unique_ptr<NodeBase> childNode)
         {
+            childNode->SetParentNode(this);
             m_ChildNodes.push_back(std::move(childNode));
+        }
+
+        void SetParentNode(NodeBase* parentNode)
+        {
+            m_ParentNode = parentNode;
         }
 
     protected:
         std::vector<std::unique_ptr<NodeBase>> m_ChildNodes;
-    
+
+    private:
+        NodeBase* m_ParentNode;
+        
     //TODO: some kind of data should be enter here (like blackboard or u_int)
     };
     

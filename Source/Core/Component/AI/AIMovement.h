@@ -9,6 +9,10 @@ public:
     {
 
     }
+    ~AIMovement()
+    {
+        m_Path.clear(); 
+    }
 
     void SetTargetTransform(const Transform* transform)
     {

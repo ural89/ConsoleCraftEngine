@@ -2,12 +2,10 @@
 #include "../GameObjects/PlayerShip.h"
 #include "../GameObjects/Enemy.h"
 #include "../GameObjects/Brick.h"
-#include "Core/Component/AI/Pathfinder.h"
-#include "Core/AIBehavior/SuccessNode.h"
 
+#include "Core/Component/AI/Pathfinder.h"
 #include "Core/Input.h"
 
-using namespace AIBehavior;
 
 AIGameScene::
     ~AIGameScene()
@@ -19,10 +17,6 @@ void AIGameScene::Init()
 
     auto keyEvent = BIND_EVENT_FN(AIGameScene::OnInput);
     Input::AddListener(keyEvent);
-
-    
-    selector.AddNodeChildNode(std::make_unique<SuccessNode>());
-
 }
 void AIGameScene::OnInput(int input)
 {
@@ -52,7 +46,6 @@ void AIGameScene::Start()
 void AIGameScene::Update(float deltaTime)
 {
     Scene::Update(deltaTime);
-    selector.Update(deltaTime);
     m_Linedrawer->ResetDrawingParticleIndex();
     m_LastTimeSinceCameraMove += deltaTime;
     if (m_LastTimeSinceCameraMove > 0.5f)
