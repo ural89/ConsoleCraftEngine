@@ -1,28 +1,37 @@
-#include "EntryScene.h"
+#include "AIGameScene.h"
 #include "../GameObjects/PlayerShip.h"
 #include "../GameObjects/Enemy.h"
 #include "../GameObjects/Brick.h"
+#include "Core/Component/AI/Pathfinder.h"
+#include "Core/AIBehavior/SuccessNode.h"
 
 #include "Core/Input.h"
-EntryScene::
-    ~EntryScene()
+
+using namespace AIBehavior;
+
+AIGameScene::
+    ~AIGameScene()
 {
 }
-void EntryScene::Init()
+void AIGameScene::Init()
 {
     Scene::Init();
 
-    auto keyEvent = BIND_EVENT_FN(EntryScene::OnInput);
+    auto keyEvent = BIND_EVENT_FN(AIGameScene::OnInput);
     Input::AddListener(keyEvent);
+
+    
+    selector.AddNodeChildNode(std::make_unique<SuccessNode>());
+
 }
-void EntryScene::OnInput(int input)
+void AIGameScene::OnInput(int input)
 {
     if (std::tolower(input) == 'd')
     {
         // camera->MoveCamera(Vector2(1, 0));
     }
 }
-void EntryScene::Start()
+void AIGameScene::Start()
 {
     Scene::Start();
     playerShip = new PlayerShip(*this);
@@ -40,9 +49,10 @@ void EntryScene::Start()
     m_Linedrawer->CreateLineParticles(100, 1);
 }
 
-void EntryScene::Update(float deltaTime)
+void AIGameScene::Update(float deltaTime)
 {
     Scene::Update(deltaTime);
+    selector.Update(deltaTime);
     m_Linedrawer->ResetDrawingParticleIndex();
     m_LastTimeSinceCameraMove += deltaTime;
     if (m_LastTimeSinceCameraMove > 0.5f)

@@ -1,4 +1,4 @@
-#include "Scenes/EntryScene.h"
+#include "Scenes/AIGameScene.h"
 #include "Core/EntryPoint.h"
 #include <vector>
 class AIGame
@@ -10,7 +10,7 @@ public:
     Engine engine;
     void StartGame()
     {
-        engine.scenes.push_back(new EntryScene());
+        engine.scenes.push_back(new AIGameScene());
         engine.StartGame();
     }
     void Clean()

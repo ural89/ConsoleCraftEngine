@@ -1,15 +1,15 @@
 #pragma once
 #include "Core/Scene.h"
 
-#include <vector>
 #include "Core/LineDrawer.h"
-#include <memory>
-#include "Core/Component/AI/Pathfinder.h"
+#include "Core/AIBehavior/Selector.h"
 
-class EntryScene : public Scene
+#include <vector>
+#include <memory>
+class AIGameScene : public Scene
 {
 public:
-	~EntryScene();
+	~AIGameScene();
 	
 	void Init() override;
     void Start() override;
@@ -22,5 +22,6 @@ private:
 	LineDrawer* m_Linedrawer;
 	GameObject* playerShip;
 	GameObject* enemy;
+    AIBehavior::Selector selector;
 };
 
