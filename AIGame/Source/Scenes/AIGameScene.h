@@ -4,6 +4,9 @@
 
 #include <vector>
 #include <memory>
+
+#include "Core/AIBehavior/BehaviorTree.h"
+
 class AIGameScene : public Scene
 {
 public:
@@ -15,6 +18,7 @@ public:
 
 
 private:
+	AIBehavior::BehaviorTree m_BehaviorTree;
 	void OnInput(int input);
 	float m_LastTimeSinceCameraMove = 0;
 	LineDrawer* m_Linedrawer;

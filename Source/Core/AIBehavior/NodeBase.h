@@ -13,7 +13,10 @@ namespace AIBehavior
     class NodeBase
     {
     public:
-        ~NodeBase();
+        ~NodeBase()
+        {
+            m_ChildNodes.clear();
+        }
         virtual void Enter()
         {
             for (auto &childNode : m_ChildNodes)

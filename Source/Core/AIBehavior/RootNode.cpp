@@ -5,11 +5,9 @@ using namespace AIBehavior;
 
 void RootNode::Enter()
 {
-    NodeBase::Enter();
 }
 void RootNode::Exit()
 {
-    NodeBase::Exit();
 }
 NodeResult RootNode::Update(float deltaTime)
 {

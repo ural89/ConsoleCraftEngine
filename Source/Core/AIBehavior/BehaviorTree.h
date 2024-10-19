@@ -5,6 +5,8 @@
 #include "SuccessNode.h"
 #include "RootNode.h"
 
+#include <memory>
+
 namespace AIBehavior
 {
     class BehaviorTree
@@ -15,7 +17,7 @@ namespace AIBehavior
             void Update(float deltaTime);
         private:
             RootNode m_RootNode;
-            Selector m_Selector;
-            SuccessNode m_SuccessNode;
+            std::unique_ptr<Selector> m_Selector;
+            std::unique_ptr<SuccessNode> m_SuccessNode;
     };
 };

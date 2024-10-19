@@ -46,6 +46,7 @@ void AIGameScene::Start()
 void AIGameScene::Update(float deltaTime)
 {
     Scene::Update(deltaTime);
+    m_BehaviorTree.Update(deltaTime);
     m_Linedrawer->ResetDrawingParticleIndex();
     m_LastTimeSinceCameraMove += deltaTime;
     if (m_LastTimeSinceCameraMove > 0.5f)
