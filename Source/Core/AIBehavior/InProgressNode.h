@@ -3,10 +3,10 @@
 #include "NodeBase.h"
 namespace AIBehavior
 {
-    class SuccessNode : public NodeBase
+    class InProgressNode : public NodeBase
     {
     public:
-        SuccessNode() : NodeBase("Success Node"){}
+        InProgressNode() : NodeBase("In Progress Node"){}
         NodeResult Update(float deltaTime);
         void Enter() override;
         void Exit() override;

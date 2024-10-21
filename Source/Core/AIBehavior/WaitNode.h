@@ -3,12 +3,14 @@
 #include "NodeBase.h"
 namespace AIBehavior
 {
-    class SuccessNode : public NodeBase
+    class WaitNode : public NodeBase
     {
     public:
-        SuccessNode() : NodeBase("Success Node"){}
+        WaitNode(int waitTime) : NodeBase("Wait Node"), m_WaitTime(waitTime) {}
         NodeResult Update(float deltaTime);
         void Enter() override;
         void Exit() override;
+    private:
+        int m_WaitTime;
     };
 };

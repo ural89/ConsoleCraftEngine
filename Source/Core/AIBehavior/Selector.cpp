@@ -1,31 +1,46 @@
 #include "Selector.h"
 #include <iostream>
+
 using namespace AIBehavior;
 
-void Selector::Exit()
+void SelectorNode::Enter()
 {
-    NodeBase::Exit();
-}
-void Selector::Enter()
-{
-    NodeBase::Enter();
-}
-NodeResult Selector::Update(float deltaTime)
-{
+    m_CurrentChildIndex = 0;
 
-    for (auto &node : m_ChildNodes)
+    if (!m_ChildNodes.empty())
     {
-        auto childNodeResult = node.get()->Update(deltaTime);
+        m_ChildNodes[m_CurrentChildIndex]->Enter();
+    }
+}
+
+void SelectorNode::Exit()
+{
+    if (!m_ChildNodes.empty())
+    {
+        m_ChildNodes[m_CurrentChildIndex]->Exit();
+    }
+}
+
+NodeResult SelectorNode::Update(float deltaTime)
+{
+    while (m_CurrentChildIndex < m_ChildNodes.size())
+    {
+        NodeResult childNodeResult = m_ChildNodes[m_CurrentChildIndex]->Update(deltaTime);
+
         if (childNodeResult == NodeResult::InProgress)
         {
-            std::cout << "Node In Progress \n";
+            std::cout << nodeName << " In Progress: " << m_ChildNodes[m_CurrentChildIndex]->nodeName << '\n';
             return NodeResult::InProgress;
         }
         else if (childNodeResult == NodeResult::Success)
         {
-            std::cout << "Node Succeeded\n";
+            std::cout << nodeName << " Succeeded: " << m_ChildNodes[m_CurrentChildIndex]->nodeName << '\n';
             return NodeResult::Success;
         }
+
+        m_CurrentChildIndex++;
     }
+
+    std::cout << nodeName << " Failed\n";
     return NodeResult::Failed;
 }

@@ -3,11 +3,11 @@
 #include "NodeBase.h"
 namespace AIBehavior
 {
-    class SuccessNode : public NodeBase
+    class FailedNode : public NodeBase
     {
     public:
-        SuccessNode() : NodeBase("Success Node"){}
-        NodeResult Update(float deltaTime);
+        FailedNode() : NodeBase("Fail Node") {}
+        NodeResult Update(float deltaTime) override;
         void Enter() override;
         void Exit() override;
     };

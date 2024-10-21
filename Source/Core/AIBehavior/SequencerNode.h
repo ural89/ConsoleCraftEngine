@@ -5,17 +5,15 @@
 
 namespace AIBehavior
 {
-    class SelectorNode : public NodeBase
+    class SequencerNode : public NodeBase
     {
     public:
-        SelectorNode(std::string &&nodeName) : NodeBase(nodeName){}
-        SelectorNode() : NodeBase("Selector Node"), m_CurrentChildIndex(0) {}
-
+        SequencerNode() : NodeBase("Sequencer Node"), m_CurrentChildIndex(0) {}
         void Enter() override;
         void Exit() override;
         NodeResult Update(float deltaTime) override;
 
     private:
-        size_t m_CurrentChildIndex;
+        int m_CurrentChildIndex; 
     };
 }
