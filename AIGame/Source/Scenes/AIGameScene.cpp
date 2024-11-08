@@ -40,14 +40,14 @@ void AIGameScene::Start()
     // AddGameObject(new Brick(*this), Vector2(17, 5));
     // AddGameObject(new Brick(*this), Vector2(23, 12));
     // AddGameObject(new Brick(*this), Vector2(28, 5));
-    auto root = std::make_shared<SelectorNode>();
+    auto root = std::make_shared<SelectorNode>("Selector 1");
 
-    auto sequence1 = std::make_shared<SequenceNode>();
+    auto sequence1 = std::make_shared<SequenceNode>("Sequence 1");
     sequence1->addChild(std::make_shared<ConditionNode>("Condition A"));
     sequence1->addChild(std::make_shared<ActionNode>("Action A"));
     sequence1->addChild(std::make_shared<FailNode>("Failure node"));
 
-    auto sequence2 = std::make_shared<SequenceNode>();
+    auto sequence2 = std::make_shared<SequenceNode>("Sequence 2");
     sequence2->addChild(std::make_shared<ConditionNode>("Condition C"));
     sequence2->addChild(std::make_shared<ActionNode>("Action D"));
 

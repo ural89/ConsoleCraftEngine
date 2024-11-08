@@ -3,7 +3,8 @@
 #include <memory>
 #include <string>
 
-enum class NodeStatus {
+enum class NodeStatus
+{
 
     Inactive,
     Running,
@@ -11,19 +12,22 @@ enum class NodeStatus {
     Failure
 };
 
-class BehaviorTreeNode {
+class BehaviorTreeNode
+{
+public:
+    BehaviorTreeNode(const std::string &&name) : name(name) {}
+    BehaviorTreeNode(const std::string &name) : name(name) {}
+
 protected:
     NodeStatus status;
+    std::string name;
 
 public:
     virtual ~BehaviorTreeNode() = default;
 
-    // Method to Update the node (run it)
     virtual NodeStatus Update() = 0;
 
-    // Get the node status
     NodeStatus getStatus() const { return status; }
-    
-    // This can be useful for UI later
-    virtual std::string getName() const = 0;
+
+    virtual std::string getName() const { return name; }
 };
