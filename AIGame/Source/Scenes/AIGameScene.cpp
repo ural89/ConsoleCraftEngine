@@ -5,6 +5,8 @@
 
 #include "Core/Component/AI/Pathfinder.h"
 #include "Core/Input.h"
+#include "Core/AIBehavior/ActionNode.h"
+#include <iostream>
 
 
 AIGameScene::
@@ -30,14 +32,33 @@ void AIGameScene::Start()
     Scene::Start();
     playerShip = new PlayerShip(*this);
     enemy = new Enemy(*this);
-    AddGameObject(playerShip, Vector2(15, 5));
-    AddGameObject(enemy, Vector2(5, 12));
-    AddGameObject(new Brick(*this), Vector2(5, 5));
-    AddGameObject(new Brick(*this), Vector2(12, 12));
-    AddGameObject(new Brick(*this), Vector2(17, 5));
-    AddGameObject(new Brick(*this), Vector2(23, 12));
-    AddGameObject(new Brick(*this), Vector2(28, 5));
+    // AddGameObject(playerShip, Vector2(15, 5));
+    // AddGameObject(enemy, Vector2(5, 12));
 
+    // AddGameObject(new Brick(*this), Vector2(5, 5));
+    // AddGameObject(new Brick(*this), Vector2(12, 12));
+    // AddGameObject(new Brick(*this), Vector2(17, 5));
+    // AddGameObject(new Brick(*this), Vector2(23, 12));
+    // AddGameObject(new Brick(*this), Vector2(28, 5));
+    auto root = std::make_shared<SelectorNode>();
+
+    auto sequence1 = std::make_shared<SequenceNode>();
+    sequence1->addChild(std::make_shared<ConditionNode>("Condition A"));
+    sequence1->addChild(std::make_shared<ActionNode>("Action A"));
+    sequence1->addChild(std::make_shared<FailNode>("Failure node"));
+
+    auto sequence2 = std::make_shared<SequenceNode>();
+    sequence2->addChild(std::make_shared<ConditionNode>("Condition C"));
+    sequence2->addChild(std::make_shared<ActionNode>("Action D"));
+
+    root->addChild(sequence1);
+    root->addChild(sequence2);
+
+    BehaviorTree tree(root);
+    tree.Update();
+    std::cin.get();
+    tree.Update();
+    
     m_Linedrawer = new LineDrawer(*this);
 
     m_Linedrawer->CreateLineParticles(100, 1);
@@ -46,7 +67,6 @@ void AIGameScene::Start()
 void AIGameScene::Update(float deltaTime)
 {
     Scene::Update(deltaTime);
-    m_BehaviorTree.Update(deltaTime);
     m_Linedrawer->ResetDrawingParticleIndex();
     m_LastTimeSinceCameraMove += deltaTime;
     if (m_LastTimeSinceCameraMove > 0.5f)

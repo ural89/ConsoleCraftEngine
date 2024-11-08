@@ -57,7 +57,8 @@
         "set": "cpp",
         "future": "cpp",
         "mutex": "cpp",
-        "cinttypes": "cpp"
+        "cinttypes": "cpp",
+        "optional": "cpp"
     },
     "C_Cpp.default.compilerPath": "/usr/bin/g++"
 }

@@ -1,28 +1,39 @@
 #pragma once
 
-#include "NodeBase.h"
-#include "Selector.h"
-#include "SuccessNode.h"
-#include "FailedNode.h"
-#include "InProgressNode.h"
-#include "RootNode.h"
+#include "CompositeNode.h"
+#include <iostream>
+class BehaviorTree {
+    std::shared_ptr<BehaviorTreeNode> root;
 
-#include <memory>
+public:
+    BehaviorTree(std::shared_ptr<BehaviorTreeNode> root);
 
-namespace AIBehavior
-{
-    class BehaviorTree
-    {
-    public:
-        BehaviorTree();
-        ~BehaviorTree();
-        void Update(float deltaTime);
+    void Update() {
+        root->Update();
+        printTreeStatus(root);
+    }
 
-    private:
-        RootNode m_RootNode;
-        std::unique_ptr<SelectorNode> m_Selector;
-        std::unique_ptr<SuccessNode> m_SuccessNode;
-        std::unique_ptr<FailedNode> m_FailedNode;
-        std::unique_ptr<InProgressNode> m_InProgressNode;
-    };
+    void printTreeStatus(std::shared_ptr<BehaviorTreeNode> node, int depth = 0) const {
+        std::string indent(depth * 2, ' ');
+
+        std::cout << indent << node->getName() << ": " << toString(node->getStatus()) << "\n";
+
+        auto composite = std::dynamic_pointer_cast<CompositeNode>(node);
+        if (composite) {
+            for (const auto& child : composite->children) {
+                printTreeStatus(child, depth + 1);
+            }
+        }
+    }
+
+private:
+    std::string toString(NodeStatus status) const {
+        switch (status) {
+            case NodeStatus::Inactive: return "Inactive";
+            case NodeStatus::Running: return "Running";
+            case NodeStatus::Success: return "Success";
+            case NodeStatus::Failure: return "Failure";
+        }
+        return "Unknown";
+    }
 };

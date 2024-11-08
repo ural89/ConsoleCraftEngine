@@ -18,7 +18,6 @@ public:
 
 
 private:
-	AIBehavior::BehaviorTree m_BehaviorTree;
 	void OnInput(int input);
 	float m_LastTimeSinceCameraMove = 0;
 	LineDrawer* m_Linedrawer;
