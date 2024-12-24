@@ -1,4 +1,5 @@
 #include "EventDispatcher.h"
+#include <algorithm> 
 std::vector<std::function<void(Event&)>> listeners;
 
 void EventDispatcher::AddListener(std::function<void(Event&)>& func)
