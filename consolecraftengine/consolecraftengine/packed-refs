@@ -1,0 +1,12 @@
+# pack-refs with: peeled fully-peeled sorted 
+f2521de8250b85018690e1978652ba1f68cc29d5 refs/heads/AI
+9813ddaf252aee4ba21707d8b91e281fbf40ad65 refs/heads/AUR
+2cc2c1e9bbcf2796a923a857ca40606009b97011 refs/heads/DebianPackage
+63f3938d2941300ef57d306bb24988e67bf92fbc refs/heads/Flatpak
+5cf83cd7752118f2ebbebcd6386fbb19cbac04f7 refs/heads/Linux
+ec52852f7448d742775ee5cb5be3e9af350246d6 refs/heads/SceneChange
+676b200d8fb66515c22d88baed38be3593efac89 refs/heads/main
+22a7aa6747ae9ccd8e3c70669051b7969dadffb3 refs/pull/1/head
+7a5896573bac500e985be15b4ca0bdc7446165bb refs/pull/1/merge
+1c2ff47fdef59b25318fcafa1197fd48700ee8b8 refs/pull/3/head
+44bda6814f817ac6c6713aed4de57fc1e6daabf0 refs/pull/3/merge
