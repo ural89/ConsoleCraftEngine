@@ -25,8 +25,10 @@ add_executable(CraftRogue ${GAME_SOURCES} ${GAME_HEADERS})
 
 # Include directory
 target_include_directories(CraftRogue PUBLIC
-    ${CMAKE_CURRENT_SOURCE_DIR}/Source #TODO this is not necessary
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../ConsoleCraftEngine/Source )
+    ${CMAKE_CURRENT_SOURCE_DIR}/Source 
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../ConsoleCraftEngine/Source
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../ConsoleCraftEngine/Source/Core
+)
 
 # Link with ConsoleCraftEngine library
 target_link_libraries(CraftRogue PUBLIC ConsoleCraftEngine ncurses)
