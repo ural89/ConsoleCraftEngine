@@ -22,12 +22,12 @@ file(GLOB_RECURSE GAME_SOURCES Source/*.cpp
 file(GLOB_RECURSE GAME_HEADERS Source/*.h  ../Source/*.h)
 # Executable
 link_directories(${CMAKE_CURRENT_SOURCE_DIR})
-add_executable(CraftRogue ${GAME_SOURCES} ${GAME_HEADERS})
+add_executable(CraftRogue ${GAME_SOURCES} ${ENGINE_SOURCES} ${GAME_HEADERS})
 
 # Include directory
 target_include_directories(CraftRogue PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/Source #TODO this is not necessary
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../ConsoleCraftEngine/Source )
+    ../Source )
 
 # Link with library
 target_link_libraries(CraftRogue PUBLIC ncurses)
