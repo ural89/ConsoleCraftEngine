@@ -1,8 +1,8 @@
-# Maintainer: Your Name <your.email@example.com>
+# Maintainer: Ural Kavraal <uralkemal@gmail.com>
 pkgname=consolecraftengine
 pkgver=latest
 pkgrel=1
-pkgdesc="A console-based game engine for crafting and roguelike games."
+pkgdesc="A terminal-based game  where you kill monsters."
 arch=('x86_64')
 url="https://github.com/ural89/ConsoleCraftEngine"
 license=('MIT')
