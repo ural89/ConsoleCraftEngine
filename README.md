@@ -3,6 +3,8 @@
 #### Will work in Linux and Windows
 #### Box2D physics engine implemented
 #### Now editor available: https://github.com/ural89/ConsoleCraftEditor
+## Install
+#### yay -S craftrogue
 ## Build:
 #### cd ../../CraftShooterGame
 #### mkdir build
