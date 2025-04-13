@@ -4,6 +4,7 @@ cmake_minimum_required(VERSION 3.12)
 project(CraftRTS)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
+set(CMAKE_BUILD_TYPE Debug)
 
 # Source files
 file(GLOB_RECURSE ENGINE_SOURCES

@@ -7,5 +7,6 @@ public:
 	void Update(float deltaTime) override;
 
 private:
+    void OnInput(int input);
 
 };

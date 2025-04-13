@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Component/AI/AIMovement.h"
 #include "GameObject.h"
 class Unit : public GameObject {
 public:
@@ -11,5 +12,7 @@ public:
             {1, 5, 5, 1},
             {1, 5, 5, 1}
         };
+    auto aiMovementComponent = new AIMovement(*this);
+    AddComponent(aiMovementComponent);
   }
 };
