@@ -1,5 +1,6 @@
 #include "RTSScene.h"
 #include "GameObjects/Unit.h"
+#include "Component/AI/AIMovement.h"
 #include "Input.h"
 
 void RTSScene::Init()
@@ -8,11 +9,14 @@ void RTSScene::Init()
     AddGameObject(unit, Vector2(5,5));
 
     auto unitTarget = new Unit(*this);
-    AddGameObject(unitTarget, Vector2(15,5));
+    AddGameObject(unitTarget, Vector2(35,4));
+    unitTarget->isNavIgnore = true;
 
     auto inputEvent = BIND_EVENT_FN(RTSScene::OnInput);
     Input::AddListener(inputEvent);
-    // aiMovementComponent->SetTargetTransform(&unitTarget->transform);
+    auto aiMovementComponent = new AIMovement(*unit);
+    aiMovementComponent->SetTargetTransform(&unitTarget->transform);
+    unit->AddComponent(aiMovementComponent);
 }
 
 void RTSScene::OnInput(int input)

@@ -3,7 +3,7 @@
 #include "../../../Core/Scene.h"
 void AIMovement::Init()
 {
-    UpdatePath();
+    // UpdatePath();
 }
 void AIMovement::Update(float deltaTime)
 {
@@ -25,6 +25,7 @@ void AIMovement::Update(float deltaTime)
             if (m_TargetLastPosition != m_TargetTransform->Position)
             {
                 UpdatePath();
+                std::cout << "Target position x: " << m_TargetTransform->GetCenterPosition().X;
                 m_CurrentPathCorner = 0;
                 m_TimeElapsedSincePathUpdate = 0;
             }
