@@ -7,9 +7,8 @@ public:
   void Init() override {
     symbol = '8';
     sprite = {
-            {1, 5, 5, 1},
-            {1, 5, 5, 1},
-            {1, 5, 5, 1}
-        };
+        {1, 1},
+        {1, 1},
+    };
   }
 };

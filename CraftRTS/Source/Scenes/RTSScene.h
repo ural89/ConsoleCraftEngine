@@ -9,4 +9,6 @@ public:
 private:
     void OnInput(int input);
 
+    class SelectCursor *m_SelectCursor;
+
 };
