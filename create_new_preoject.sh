@@ -1,10 +1,17 @@
 
 #!/usr/bin/env bash
 
+read -p "Enter project name: " PROJECT_NAME
+if [[ "$PROJECT_NAME" =~ \  ]]; then
+    echo "Error: Project name cannot contain spaces."
+    exit 1
+fi
+PROJECT_NAME=${PROJECT_NAME:-YourFirstGame}  # fallback if empty
+
 # === Config ===
-PROJECT_NAME="YourFirstGame2"
+# PROJECT_NAME="YourFirstGame"
 ENGINE_PATH=".."  # Adjust if needed
-FIRST_SCENE="FirstScene"
+ENTRY_SCENE="EntryScene"
 
 # === Create project folder ===
 mkdir -p "$PROJECT_NAME/Source/Scenes"
@@ -15,6 +22,7 @@ mkdir -p "$PROJECT_NAME/build"
 cat > "$PROJECT_NAME/CMakeLists.txt" <<EOF
 cmake_minimum_required(VERSION 3.12)
 project(${PROJECT_NAME})
+#set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # Source files
 file(GLOB_RECURSE ENGINE_SOURCES
@@ -46,9 +54,9 @@ target_include_directories(${PROJECT_NAME} PUBLIC
 target_link_libraries(${PROJECT_NAME} PUBLIC ConsoleCraftEngine ncurses)
 EOF
 
-# === Write YourFirstGameEntry.cpp ===
+# === Write YourGameEntry.cpp ===
 cat > "$PROJECT_NAME/Source/${PROJECT_NAME}Entry.cpp" <<EOF
-#include "Scenes/${FIRST_SCENE}.h"
+#include "Scenes/${ENTRY_SCENE}.h"
 #include "Core/EntryPoint.h"
 #include <vector>
 
@@ -63,7 +71,7 @@ public:
 
     void StartGame()
     {
-        engine.scenes.push_back(new $FIRST_SCENE());
+        engine.scenes.push_back(new $ENTRY_SCENE());
         engine.StartGame();
     }
 
@@ -85,11 +93,11 @@ int main()
 EOF
 
 # === Write YourScene.h ===
-cat > "$PROJECT_NAME/Source/Scenes/$FIRST_SCENE.h" <<EOF
+cat > "$PROJECT_NAME/Source/Scenes/$ENTRY_SCENE.h" <<EOF
 #pragma once
 #include "Core/Scene.h"
 
-class $FIRST_SCENE : public Scene
+class $ENTRY_SCENE : public Scene
 {
 public:
     void Init() override;
@@ -102,57 +110,58 @@ private:
 EOF
 
 # === Write YourScene.cpp ===
-cat > "$PROJECT_NAME/Source/Scenes/$FIRST_SCENE.cpp" <<EOF
-#include "${FIRST_SCENE}.h"
+cat > "$PROJECT_NAME/Source/Scenes/$ENTRY_SCENE.cpp" <<EOF
+#include "${ENTRY_SCENE}.h"
 
-#include "GameObjects/YourGameObject.h"
+#include "GameObjects/ExampleGameObject.h"
 
-void FirstScene::Init()
+void ${ENTRY_SCENE}::Init()
 {
-    AddGameObject(new YourGameObject(*this), Vector2(5,5));
+    AddGameObject(new ExampleGameObject(*this), Vector2(5,5));
     // TODO: Initialize your scene
 }
 
-void FirstScene::Update(float deltaTime)
+void ${ENTRY_SCENE}::Update(float deltaTime)
 {
+    Scene::Update(deltaTime);
     // TODO: Update logic for scene
 }
 
 EOF
 
 #create Source/GameObjects
-#YourGameObject.h and YourGameObject.cpp
-# === Write YourGameObject.h ===
-cat > "$PROJECT_NAME/Source/GameObjects/YourGameObject.h" <<EOF
+#ExampleGameObject.h and ExampleGameObject.cpp
+# === Write ExampleGameObject.h ===
+cat > "$PROJECT_NAME/Source/GameObjects/ExampleGameObject.h" <<EOF
 #pragma once
 #include "GameObject.h"
 
-class YourGameObject : public GameObject {
+class ExampleGameObject : public GameObject {
 public:
-  YourGameObject(class Scene &scene) : GameObject("YourGameObject", scene) {}
+  ExampleGameObject(class Scene &scene) : GameObject("ExampleGameObject", scene) {}
   void Init() override;
   void OnInput(int input);
   void Update(float deltaTime) override;
 };
 EOF
 
-# === Write YourGameObject.cpp ===
-cat > "$PROJECT_NAME/Source/GameObjects/YourGameObject.cpp" <<EOF
+# === Write ExampleGameObject.cpp ===
+cat > "$PROJECT_NAME/Source/GameObjects/ExampleGameObject.cpp" <<EOF
 
-#include "YourGameObject.h"
+#include "ExampleGameObject.h"
 #include "Input.h"
 
-void YourGameObject::Init() {
+void ExampleGameObject::Init() {
     symbol = '8';
     sprite = {
         {1, 1},
         {1, 1},
     };
-    auto inputEvent = BIND_EVENT_FN(YourGameObject::OnInput);
+    auto inputEvent = BIND_EVENT_FN(ExampleGameObject::OnInput);
     Input::AddListener(inputEvent);
 }
 
-void YourGameObject::OnInput(int input)
+void ExampleGameObject::OnInput(int input)
 {
 	if (std::tolower(input) == 'd')
 	{
@@ -172,7 +181,7 @@ void YourGameObject::OnInput(int input)
 	}
 }
 
-void YourGameObject::Update(float deltaTime) 
+void ExampleGameObject::Update(float deltaTime) 
 {
 
 }
@@ -180,5 +189,6 @@ EOF
 cat > "$PROJECT_NAME/build/build.sh" <<EOF
 cmake .. && make && ./${PROJECT_NAME}
 EOF
+chmod +x "$PROJECT_NAME/build/build.sh"
 
-echo "✅ Project ${PROJECT_NAME} structure created!"
+echo "Project ${PROJECT_NAME} structure created!"
