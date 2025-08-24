@@ -1,4 +1,5 @@
 # Console Craft Engine
+#### Console Craft Engine is a **terminal-based 2D game engine** written in C++.  
 #### Written in C++
 #### Will work in Linux and Windows
 #### Box2D physics engine implemented
