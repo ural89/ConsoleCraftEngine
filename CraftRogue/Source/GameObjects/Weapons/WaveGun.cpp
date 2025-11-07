@@ -4,7 +4,7 @@
 void WaveGun::Init()
 {
     isRenderable = false;
-    AddComponent(new ParticleSource(*this));
+    AddComponent<ParticleSource>();
 }
 
 void WaveGun::Update(float deltaTime)

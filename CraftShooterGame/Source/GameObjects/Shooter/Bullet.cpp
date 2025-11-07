@@ -6,12 +6,11 @@
 void Bullet::Init()
 {
 
-	sprite = { 
-		{1,0,1,0}, 
-		{1,1,1,1}, 
+	sprite = {
+		{1,0,1,0},
+		{1,1,1,1},
 		{1,0,1,0} };
-	particleSource = new ParticleSource(*this);
-	AddComponent(particleSource);
+	particleSource = AddComponent<ParticleSource>();
 }
 
 void Bullet::Update(float deltaTime)
@@ -35,7 +34,7 @@ void Bullet::OnCollidedBorder(int border)
 
 void Bullet::OnCollided(GameObject& other)
 {
-	
+
 	if (other.name == "Enemy")
 		Destroy();
 }

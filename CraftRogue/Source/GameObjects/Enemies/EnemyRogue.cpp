@@ -9,18 +9,17 @@
 #include "../../Components/Health.h"
 EnemyRogue::~EnemyRogue()
 {
-	
+
 }
 void EnemyRogue::Init()
 {
-	
+
 	sprite = {
 		{4, 4, 4, 4},
 		{4, 1, 1, 4},
 		{4, 0, 0, 4}};
-	particleSource = new ParticleSource(*this);
-	AddComponent(particleSource);
-	AddComponent(new Health(*this));
+	particleSource = AddComponent<ParticleSource>();
+	AddComponent<Health>();
 }
 void EnemyRogue::Update(float deltaTime)
 {
@@ -58,5 +57,5 @@ void EnemyRogue::MoveToPlayer(float deltaTime)
 }
 void EnemyRogue::OnMove()
 {
-	
+
 };

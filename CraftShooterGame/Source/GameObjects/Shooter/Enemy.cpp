@@ -12,8 +12,7 @@ void Enemy::Init()
 		};
 
 	}
-	particleSource = new ParticleSource(*this);
-	AddComponent(particleSource);
+	particleSource = AddComponent<ParticleSource>();
 }
 
 void Enemy::Update(float deltaTime)

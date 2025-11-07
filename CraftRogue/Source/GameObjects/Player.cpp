@@ -36,8 +36,8 @@ void Player::Init()
 
     PlayerController *playerController = new PlayerController(*this, 0);
     AddComponent(playerController);
-    playerUpgradeComponent = new PlayerUpgradeComponent(*this);
-    AddComponent(playerUpgradeComponent);
+    // playerUpgradeComponent = new PlayerUpgradeComponent(*this);
+    playerUpgradeComponent = AddComponent<PlayerUpgradeComponent>();
     symbol = 'O';
     sprite = {
         {4, 4, 4},

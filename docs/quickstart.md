@@ -16,7 +16,7 @@ Run the project creation script:
 ./create_new_project.sh
 ```
 
-When prompted, enter your project name.  
+When prompted, enter your project name.
 Project names must **not contain spaces**.
 
 Build and run your project:
@@ -26,7 +26,7 @@ cd YourProject/build`
 `./build.sh
 ```
 
-You will see an **example scene** with an example game object.  
+You will see an **example scene** with an example game object.
 Use **W A S D** keys to move the object around.
 
 ---
@@ -67,10 +67,9 @@ void ExampleGameObject::Init() {
     };
     auto inputEvent = BIND_EVENT_FN(ExampleGameObject::OnInput);
     Input::AddListener(inputEvent);
-	
+
 	//add particle source here
-    particleSource = new ParticleSource(*this);
-    AddComponent(particleSource);
+    particleSource = AddComponent<ParticleSource>();
 }
 
 ```
@@ -99,5 +98,4 @@ cd YourProject/build
 ```
 
 
-Now, when you press Spacebar, particles will spawn around your game object! 
-
+Now, when you press Spacebar, particles will spawn around your game object!

@@ -43,6 +43,11 @@ public:
 		components.push_back(component);
 		component->Init();
 	}
+	template <typename T> T *AddComponent() {
+    auto component = new T(*this);
+    AddComponent(component);
+    return component;
+  }
 	void SetRenderable(bool isRenderable)
 	{
 		this->isRenderable = isRenderable;
@@ -101,7 +106,7 @@ public:
 	}
 	bool operator!=(const GameObject &other) const
 	{
-		return this != &other; 
+		return this != &other;
 	}
 	protected:
 		std::vector<Component *> components;
