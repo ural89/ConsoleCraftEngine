@@ -28,10 +28,15 @@ public:
 	virtual ~Scene();
 	virtual void Init(){};
 	virtual void Start(){};
+    GameObject* CreateGameObject(std::string &&name, Vector2 position)
+    {
+        GameObject* newGameObject = new GameObject(std::move(name), *this);
+        AddGameObject(newGameObject, position);
+        return newGameObject;
+    }
 
 	void AddGameObject(GameObject *gameObject);
 	void AddGameObject(GameObject *gameObject, Vector2 position);
-	void RemoveGameObject(GameObject *gameObject);
 	void AddPolygon(Polygon *polygon);
 	void RemovePolygon(Polygon *polygon);
 	void UpdateCamera(float deltaTime);
@@ -65,6 +70,7 @@ public:
 
 
 private:
+	void RemoveGameObject(GameObject *gameObject);
 	void CreateBoxBorder();
 	void InitializeGameObject(GameObject *go);
 	void InitializePolygon(Polygon *p);
