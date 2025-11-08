@@ -13,6 +13,7 @@
 #### cmake ..
 #### make
 ## Documentation
+- [Wiki](https://github.com/ural89/ConsoleCraftEngine/wiki)
 - [Quick Start Guide](docs/quickstart.md)
 
 #### Cherno review: https://youtu.be/B6pM9KcIFE4?si=oq9N51VUhzaLH95U
