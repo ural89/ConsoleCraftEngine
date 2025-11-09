@@ -50,10 +50,6 @@ public:
 		return m_GameObjects;
 	}
 
-	GameObject *GetGameObject(std::string name)
-	{
-		return m_NameToGameObjectMap[name];
-	}
 
 public:
 	bool hasGameOver = false;
