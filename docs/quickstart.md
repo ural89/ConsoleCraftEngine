@@ -99,3 +99,6 @@ cd YourProject/build
 
 
 Now, when you press Spacebar, particles will spawn around your game object!
+
+## Check Wiki for more detailed info
+[Wiki](https://github.com/ural89/ConsoleCraftEngine/wiki)
