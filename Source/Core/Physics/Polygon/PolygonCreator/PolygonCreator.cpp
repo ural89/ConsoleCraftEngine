@@ -2,25 +2,31 @@
 #include "../Polygon.h"
 #include "../../../Scene.h"
 #include "../../../Input.h"
-PolygonCreator::PolygonCreator(Scene &scene) : scene(scene)
+PolygonCreator::PolygonCreator(Scene &scene) : m_Scene(scene)
 {
     auto inputEvent = BIND_EVENT_FN(PolygonCreator::OnInput);
     Input::AddListener(inputEvent);
-    cursor = new Cursor(scene);
-    scene.AddGameObject(cursor, Vector2(15, 15));
+    m_Cursor = new Cursor(scene);
+    m_Scene.AddGameObject(m_Cursor, Vector2(15, 15));
+    m_Cursor->isRenderable = false;
 }
 
 void PolygonCreator::StartCreating(Vector2 position, int color = 1)
 {
-    currentPolygon = new Polygon(scene, true, color);
-    currentPolygon->AddParticle(position);
+    m_CurrentPolygon = new Polygon(m_Scene, true, color);
+    m_CurrentPolygon->AddParticle(position);
     // std::cout << "Creating new poly" << '\n';
+}
+void PolygonCreator::SetEditingActive(bool isActive)
+{
+    m_Cursor->isRenderable = isActive;
+    m_IsEditingActive = isActive;
 }
 
 void PolygonCreator::SetPosition(Vector2 position)
 {
-    currentPolygon->AddParticle(position);
-    //currentPolygon->UpdateLines(0);
+    m_CurrentPolygon->AddParticle(position);
+    //m_CurrentPolygon->UpdateLines(0);
 }
 
 Polygon* PolygonCreator::CreateSquarePolygon(Vector2 position, int size, float rotationAngle, int color)
@@ -29,7 +35,7 @@ Polygon* PolygonCreator::CreateSquarePolygon(Vector2 position, int size, float r
 }
 Polygon* PolygonCreator::CreateRectanglePolygon(Transform transform, int color)
 {
-    Polygon *polygon = new Polygon(scene, true, color);
+    Polygon *polygon = new Polygon(m_Scene, true, color);
     float rotationAngle = transform.Rotation * (3.14159f / 180.0f);
 
     float cosTheta = std::cos(rotationAngle);
@@ -50,12 +56,12 @@ Polygon* PolygonCreator::CreateRectanglePolygon(Transform transform, int color)
         polygon->AddParticle(Vector2(rotatedX, rotatedY));
     }
 
-    scene.AddPolygon(polygon);
+    m_Scene.AddPolygon(polygon);
     return polygon;
 }
 Polygon* PolygonCreator::CreateCircle(Vector2 position, float radius, int numSegments, int color)
 {
-    Polygon *polygon = new Polygon(scene, true, color);
+    Polygon *polygon = new Polygon(m_Scene, true, color);
     float angleIncrement = (2 * M_PI) / numSegments;
 
     for (int i = 0; i < numSegments; ++i)
@@ -69,37 +75,41 @@ Polygon* PolygonCreator::CreateCircle(Vector2 position, float radius, int numSeg
 
     polygon->AddParticle(Vector2(position.X + radius, position.Y));
 
-    scene.AddPolygon(polygon);
+    m_Scene.AddPolygon(polygon);
     return polygon;
 }
 Polygon *PolygonCreator::ApplyAndGetPolygon()
 {
-    scene.AddPolygon(currentPolygon);
-    return currentPolygon;
+    m_Scene.AddPolygon(m_CurrentPolygon);
+    return m_CurrentPolygon;
 }
 
 void PolygonCreator::OnInput(int input)
 {
-    if (input == 'c')
+    if (!m_IsEditingActive)
     {
-        if (isCreating)
+        return;
+    }
+    if (input == 'e')
+    {
+        if (m_IsCreating)
         {
-            SetPosition(cursor->transform.Position);
+            SetPosition(m_Cursor->transform.Position);
         }
         else
         {
-            isCreating = true;
-            StartCreating(cursor->transform.Position);
+            m_IsCreating = true;
+            StartCreating(m_Cursor->transform.Position);
         }
     }
     if (input == SPACEBAR)
     {
-        if (currentPolygon)
+        if (m_CurrentPolygon)
         {
-            if (currentPolygon->particles.size() > 2) // TODO: block linear polygons
+            if (m_CurrentPolygon->particles.size() > 2) // TODO: block linear polygons
             {
-                isCreating = false;
-                scene.AddPolygon(currentPolygon);
+                m_IsCreating = false;
+                m_Scene.AddPolygon(m_CurrentPolygon);
             }
             else
                 std::cout << " Not enough particles created!" << '\n';
