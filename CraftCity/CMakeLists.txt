@@ -25,12 +25,10 @@ add_executable(CraftCity ${GAME_SOURCES} ${GAME_HEADERS})
 
 # Include directory
 target_include_directories(CraftCity PUBLIC
-    ${CMAKE_CURRENT_SOURCE_DIR}/Source #TODO this is not necessary
+    ${CMAKE_CURRENT_SOURCE_DIR}/Source 
     ../Source )
 
 # Link with ConsoleCraftEngine library
 target_link_libraries(CraftCity PUBLIC ConsoleCraftEngine ncurses)
 
-# Include directory
-#target_include_directories(CraftCity PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/Source)
 

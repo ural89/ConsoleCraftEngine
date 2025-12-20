@@ -27,11 +27,9 @@ add_executable(PhysicsTest ${GAME_SOURCES} ${GAME_HEADERS})
 
 # Include directory
 target_include_directories(PhysicsTest PUBLIC
-    ${CMAKE_CURRENT_SOURCE_DIR}/Source #TODO this is not necessary
+    ${CMAKE_CURRENT_SOURCE_DIR}/Source 
     ${CMAKE_CURRENT_SOURCE_DIR}/../../ConsoleCraftEngine/Source )
 
 # Link with ConsoleCraftEngine library
 target_link_libraries(PhysicsTest PUBLIC ConsoleCraftEngine ncurses)
-# Include directory
-#target_include_directories(PhysicsTest PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/Source)
 

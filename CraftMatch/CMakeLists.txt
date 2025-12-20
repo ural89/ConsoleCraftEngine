@@ -18,8 +18,6 @@ file(GLOB_RECURSE ENGINE_HEADERS
 add_library(ConsoleCraftEngine SHARED ${ENGINE_SOURCES} )
 
 
-
-
 file(GLOB_RECURSE GAME_SOURCES Source/*.cpp)
 file(GLOB_RECURSE GAME_HEADERS Source/*.h)
 # Executable
@@ -28,12 +26,10 @@ add_executable(CraftMatch ${GAME_SOURCES} ${GAME_HEADERS})
 
 # Include directory
 target_include_directories(CraftMatch PUBLIC
-    ${CMAKE_CURRENT_SOURCE_DIR}/Source #TODO this is not necessary
+    ${CMAKE_CURRENT_SOURCE_DIR}/Source 
     ${CMAKE_CURRENT_SOURCE_DIR}/../../ConsoleCraftEngine/Source )
 
 # Link with ConsoleCraftEngine library
 target_link_libraries(CraftMatch PUBLIC ConsoleCraftEngine ncurses)
 
-# Include directory
-#target_include_directories(CraftMatch PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/Source)
 

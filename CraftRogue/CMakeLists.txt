@@ -3,8 +3,6 @@
 cmake_minimum_required(VERSION 3.12)
 project(RogueGame)
 
-
-
 # Source files
 file(GLOB_RECURSE ENGINE_SOURCES
     ../Source/*.cpp
@@ -33,6 +31,4 @@ target_include_directories(CraftRogue PUBLIC
 # Link with ConsoleCraftEngine library
 target_link_libraries(CraftRogue PUBLIC ConsoleCraftEngine ncurses)
 
-# Include directory
-#target_include_directories(CraftRogue PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/Source)
 

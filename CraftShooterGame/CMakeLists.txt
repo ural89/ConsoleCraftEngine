@@ -3,8 +3,6 @@
 cmake_minimum_required(VERSION 3.12)
 project(CraftShooterGame)
 
-
-
 # Source files
 file(GLOB_RECURSE ENGINE_SOURCES
     ../Source/*.cpp
@@ -25,12 +23,9 @@ add_executable(CraftShooter ${GAME_SOURCES} ${GAME_HEADERS})
 
 # Include directory
 target_include_directories(CraftShooter PUBLIC
-    ${CMAKE_CURRENT_SOURCE_DIR}/Source #TODO this is not necessary
+    ${CMAKE_CURRENT_SOURCE_DIR}/Source 
     ${CMAKE_CURRENT_SOURCE_DIR}/../../ConsoleCraftEngine/Source )
 
 # Link with ConsoleCraftEngine library
 target_link_libraries(CraftShooter PUBLIC ConsoleCraftEngine ncurses)
-
-# Include directory
-#target_include_directories(CraftShooter PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/Source)
 
