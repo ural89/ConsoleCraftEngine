@@ -42,6 +42,26 @@ void Scene::CreateBoxBorder()
 	leftBox.SetAsBox(1, SCREENHEIGHT);
 	leftBody->CreateFixture(&leftBox, 0);
 }
+
+void Scene::AddJoint(JointParams jointParams)
+{
+        auto firstPolygon = jointParams.firstPolygon;
+        auto secondPolygon = jointParams.secondPolygon;
+
+        b2DistanceJointDef jointDef;
+        jointDef.bodyA = firstPolygon->GetBody();
+        jointDef.bodyB = secondPolygon->GetBody();
+        float jointOffset = 2; //TODO: get as param
+        jointDef.localAnchorA = firstPolygon->GetBody()->GetLocalCenter() + b2Vec2(jointOffset, 0);
+        jointDef.localAnchorB = secondPolygon->GetBody()->GetLocalCenter() - b2Vec2(jointOffset, 0);
+        jointDef.maxLength = jointParams.length;
+        jointDef.stiffness = jointParams.stiffness;
+        jointDef.length = jointParams.length;
+        jointDef.collideConnected = jointParams.collideConnected;
+
+        b2Joint *joint = world->CreateJoint(&jointDef);
+}
+
 Scene::~Scene()
 {
 	Input::Cleanup();

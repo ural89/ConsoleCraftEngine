@@ -38,6 +38,7 @@ public:
 	void AddGameObject(GameObject *gameObject);
 	void AddGameObject(GameObject *gameObject, Vector2 position);
 	void AddPolygon(Polygon *polygon);
+	void AddJoint(struct JointParams jointParams);
 	void RemovePolygon(Polygon *polygon);
 	void UpdateCamera(float deltaTime);
 	virtual void Update(float deltaTime); //!!ALWAYS UPDATE BASE HERE
@@ -77,4 +78,14 @@ private:
 
 	int32 velocityIterations = 6;
 	int32 positionIterations = 2;
+};
+
+struct JointParams
+{
+    Polygon* firstPolygon;
+    Polygon* secondPolygon;
+    float length = 15;
+    float stiffness = 100;
+    float maxLength = 20;
+    bool collideConnected = false;
 };
