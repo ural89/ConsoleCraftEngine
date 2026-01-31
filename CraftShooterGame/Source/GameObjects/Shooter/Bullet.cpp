@@ -10,6 +10,7 @@ void Bullet::Init()
 		{1,0,1,0},
 		{1,1,1,1},
 		{1,0,1,0} };
+    SetSprite(sprite);
 	particleSource = AddComponent<ParticleSource>();
 }
 

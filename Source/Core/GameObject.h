@@ -3,53 +3,42 @@
 #include "../CoreStructs/Transform.h"
 #include "Component/Component.h"
 #include <vector>
-
+#define MAX_SPRITE_DIM 8
+#define MAX_SPRITE_SIZE (MAX_SPRITE_DIM * MAX_SPRITE_DIM)
 class GE_API GameObject
 {
 
   public:
 	GameObject(std::string &&name, class Scene &scene) : name(name), scene(scene)
 	{
-		width = 2;
-		height = 2;
-		newSprite = new int[2 * 2]{1, 1, 1, 1};
+    
 	};
-	void SetSprite(std::vector<std::vector<int>> sprite)
+	void SetSprite(const std::vector<std::vector<int>> &spriteData)
 	{
-		int spriteWidth = sprite.size();
-		int spriteHeight = 0;
+		if (spriteData.empty())
+			return;
 
-		int maxHeight = 0;
-		for (int i = 0; i < spriteWidth; i++)
+		int inputHeight = spriteData.size();
+		int inputWidth = 0;
+		for (const auto &row : spriteData)
+			if (row.size() > inputWidth)
+				inputWidth = row.size();
+
+		if (inputWidth > MAX_SPRITE_DIM || inputHeight > MAX_SPRITE_DIM)
 		{
-			int currentLineSize = sprite[i].size();
-			if (maxHeight < currentLineSize)
-			{
-				maxHeight = currentLineSize;
-			}
+			std::cerr << "Error: Sprite is too big for the 8x8 buffer!" << std::endl;
+			return;
 		}
-		height = maxHeight;
-		width = spriteWidth;
 
-		if (newSprite != nullptr)
-		{
-			delete[] newSprite;
-		}
-		newSprite = new int[width * height];
+		this->width = inputWidth;
+		this->height = inputHeight;
 
-		for (int y = 0; y < height; y++)
+		for (int y = 0; y < inputHeight; y++)
 		{
-			for (int x = 0; x < width; x++)
+			for (int x = 0; x < spriteData[y].size(); x++)
 			{
-				int index = (y * width) + x;
-				if (x < sprite[y].size())
-				{
-					newSprite[index] = sprite[y][x];
-				}
-				else
-				{
-					newSprite[index] = 0;
-				}
+				int index = (y * this->width) + x;
+				newSprite[index] = spriteData[y][x];
 			}
 		}
 	}
@@ -61,22 +50,21 @@ class GE_API GameObject
 		}
 		components.clear();
 		sprite.clear();
-		delete newSprite;
 	}
 
 	Transform transform = Transform();
 
 	std::string name = "Gameobject";
 	std::vector<std::vector<int>> sprite = {{1, 1}, {1, 1}};
-	int *newSprite = nullptr;
+	int newSprite[8 * 8];
 
 	virtual int GetWidth() const
 	{
-		return sprite[0].size();
+		return width;
 	}
 	virtual int GetHeight() const
 	{
-		return sprite.size();
+		return height;
 	}
 	void Destroy()
 	{

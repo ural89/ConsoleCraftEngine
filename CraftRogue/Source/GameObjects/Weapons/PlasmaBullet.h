@@ -3,13 +3,13 @@
 #include "CoreStructs/Vector.h"
 class PlasmaBullet : public GameObject
 {
-public:
+  public:
 	PlasmaBullet(class Scene &scene, Vector2 fireDirection, float damage) : GameObject("Bullet", scene)
 	{
 		sprite = {
 			{3, 3},
-			{3, 3}
-		};
+			{3, 3}};
+		SetSprite(sprite);
 		symbol = '#';
 		this->fireDirection = fireDirection;
 		this->damage = damage;
@@ -19,7 +19,7 @@ public:
 	void OnCollidedBorder(int border) override;
 	virtual void OnCollided(GameObject &other) override;
 
-private:
+  private:
 	float bulletSpeed = 1.f;
 	float bulletAcceleration = 100.f;
 	float particleSpawnFreq = 0.2f;

@@ -44,6 +44,7 @@ void Player::Init()
         {1, 1, 1},
         {1, 2, 1},
     };
+    SetSprite(sprite);
     Vector2 startPosition = transform.Position;
 
     InitializeWeapon(startPosition);

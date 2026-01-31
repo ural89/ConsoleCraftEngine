@@ -19,6 +19,7 @@ ParticleObject::ParticleObject(Scene &scene, int particleType) : GameObject("Par
 		sprite = fireParticle;
 		break;
 	}
+	SetSprite(sprite);
 	symbol = '#';
 }
 

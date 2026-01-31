@@ -18,6 +18,7 @@ void EnemyRogue::Init()
 		{4, 4, 4, 4},
 		{4, 1, 1, 4},
 		{4, 0, 0, 4}};
+    SetSprite(sprite);
 	particleSource = AddComponent<ParticleSource>();
 	AddComponent<Health>();
 }

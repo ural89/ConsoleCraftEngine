@@ -53,7 +53,6 @@ void Renderer::ClearDestroyedObject(GameObject &go, Scene &scene)
 
 void Renderer::DrawObjects(GameObject &go, Scene &scene)
 {
-    if (go.newSprite == nullptr) return;
 
     int width = go.width;
     int height = go.height;
@@ -93,9 +92,9 @@ void Renderer::ClearMovedObjectsTrail(GameObject &go, Scene &scene)
     if (!go.transform.HasClearedFlag)
     {
         // Clear previous image of sprite
-        for (int i = 0; i < go.sprite.size(); i++)
+        for (int i = 0; i < go.height; i++)
         {
-            for (int j = 0; j < go.sprite[i].size(); j++)
+            for (int j = 0; j < go.width; j++)
             {
                 int clearX = static_cast<int>(go.transform.PreviousPosition.X + j) + scene.camera->offsetX;
                 int clearY = static_cast<int>(go.transform.PreviousPosition.Y + i) + scene.camera->offsetY;
@@ -138,9 +137,9 @@ void Renderer::ClearObjectTrailAfterCameraMove(GameObject &go, Scene &scene)
             clearXOffset = -1;
             break;
         }
-        for (int i = 0; i < go.sprite.size(); i++)
+        for (int i = 0; i < go.height; i++)
         {
-            for (int j = 0; j < go.sprite[i].size(); j++)
+            for (int j = 0; j < go.width; j++)
             {
                 int clearX = static_cast<int>(go.transform.Position.X + j) + scene.camera->offsetX + clearXOffset;
                 int clearY = static_cast<int>(go.transform.Position.Y + i) + scene.camera->offsetY + clearYOffset;

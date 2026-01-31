@@ -37,5 +37,6 @@ void EnemyAmeboid::OnMove()
    
 	symbol = symbols[animationIndex];
 	sprite = sprites[animationIndex];
+    SetSprite(sprite);
 
 }
