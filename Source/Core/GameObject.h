@@ -1,15 +1,58 @@
 #pragma once
 #include "../Core.h"
 #include "../CoreStructs/Transform.h"
-#include <vector>
 #include "Component/Component.h"
+#include <vector>
 
 class GE_API GameObject
 {
 
-public:
+  public:
+	GameObject(std::string &&name, class Scene &scene) : name(name), scene(scene)
+	{
+		width = 2;
+		height = 2;
+		newSprite = new int[2 * 2]{1, 1, 1, 1};
+	};
+	void SetSprite(std::vector<std::vector<int>> sprite)
+	{
+		int spriteWidth = sprite.size();
+		int spriteHeight = 0;
 
-	GameObject(std::string&& name, class Scene &scene) : name(name), scene(scene){};
+		int maxHeight = 0;
+		for (int i = 0; i < spriteWidth; i++)
+		{
+			int currentLineSize = sprite[i].size();
+			if (maxHeight < currentLineSize)
+			{
+				maxHeight = currentLineSize;
+			}
+		}
+		height = maxHeight;
+		width = spriteWidth;
+
+		if (newSprite != nullptr)
+		{
+			delete[] newSprite;
+		}
+		newSprite = new int[width * height];
+
+		for (int y = 0; y < height; y++)
+		{
+			for (int x = 0; x < width; x++)
+			{
+				int index = (y * width) + x;
+				if (x < sprite[y].size())
+				{
+					newSprite[index] = sprite[y][x];
+				}
+				else
+				{
+					newSprite[index] = 0;
+				}
+			}
+		}
+	}
 	virtual ~GameObject()
 	{
 		for (auto &component : components)
@@ -18,12 +61,14 @@ public:
 		}
 		components.clear();
 		sprite.clear();
+		delete newSprite;
 	}
 
 	Transform transform = Transform();
 
 	std::string name = "Gameobject";
 	std::vector<std::vector<int>> sprite = {{1, 1}, {1, 1}};
+	int *newSprite = nullptr;
 
 	virtual int GetWidth() const
 	{
@@ -43,15 +88,17 @@ public:
 		components.push_back(component);
 		component->Init();
 	}
-	template <typename T> T *AddComponent() {
-    auto component = new T(*this);
-    AddComponent(component);
-    return component;
-  }
+	template <typename T>
+	T *AddComponent()
+	{
+		auto component = new T(*this);
+		AddComponent(component);
+		return component;
+	}
 	void SetRenderable(bool isRenderable)
 	{
 		this->isRenderable = isRenderable;
-		if(!isRenderable)
+		if (!isRenderable)
 		{
 			forceClearFromScreen = true;
 		}
@@ -71,11 +118,12 @@ public:
 		return nullptr;
 	}
 
-	virtual void Init(){};
-	virtual void Update(float deltaTime){};
-	virtual void OnCollided(GameObject &other){};
-	virtual void OnCollisionExit(GameObject &other){};
-	virtual void OnCollidedBorder(int border){};
+  public:
+	virtual void Init() {};
+	virtual void Update(float deltaTime) {};
+	virtual void OnCollided(GameObject &other) {};
+	virtual void OnCollisionExit(GameObject &other) {};
+	virtual void OnCollidedBorder(int border) {};
 	void InitComponents()
 	{
 		for (auto &component : components)
@@ -90,8 +138,12 @@ public:
 			component->Update(deltaTime);
 		}
 	}
+
+  public:
 	std::string symbol = "*";
 	int overrideColor = -1;
+	int width;
+	int height;
 
 	bool isDestroyedFlag = false;
 	bool hasClearedFromScreen = false;
@@ -108,16 +160,17 @@ public:
 	{
 		return this != &other;
 	}
-	protected:
-		std::vector<Component *> components;
-		Scene & scene;
+
+  protected:
+	std::vector<Component *> components;
+	Scene &scene;
 #ifdef __GNUC__
-		int GREEN = 2;
-		int RED = 1;
-		int YELLOW = 3;
+	int GREEN = 2;
+	int RED = 1;
+	int YELLOW = 3;
 #else
-		int GREEN = 2;
-		int RED = 4;
-		int YELLOW = 1;
+	int GREEN = 2;
+	int RED = 4;
+	int YELLOW = 1;
 #endif
-	};
+};

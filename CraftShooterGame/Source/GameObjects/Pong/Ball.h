@@ -12,6 +12,7 @@ public:
 	
 	void Init() override
 	{
+		newSprite = new int[2 * 2]{1, 1, 1, 1};
 		sprite = { {1,1}, {1,1} };
 	}
 	void Update(float deltaTime) override;
