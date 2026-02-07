@@ -14,7 +14,7 @@ EnemyRogue::~EnemyRogue()
 void EnemyRogue::Init()
 {
 
-	sprite = {
+	Sprite sprite = {
 		{4, 4, 4, 4},
 		{4, 1, 1, 4},
 		{4, 0, 0, 4}};

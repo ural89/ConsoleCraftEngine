@@ -1,15 +1,16 @@
 #include "Enemy.h"
-#include "Core/ParticleSystem/ParticleSource.h"
 #include "Core/Component/AI/AIMovement.h"
+#include "Core/ParticleSystem/ParticleSource.h"
 #include "Core/Scene.h"
 void Enemy::Init()
 {
 	{
 
-		sprite = {
+		Sprite sprite = {
 			{4, 4, 4, 4},
 			{4, 4, 4, 4},
 			{4, 0, 0, 4}};
+        SetSprite(sprite);
 	}
 	particleSource = new ParticleSource(*this);
 	auto aiMovement = new AIMovement(*this);

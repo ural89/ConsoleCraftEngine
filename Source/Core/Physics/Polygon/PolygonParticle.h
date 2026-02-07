@@ -8,8 +8,9 @@ class GE_API PolygonParticle : public GameObject
 public:
     PolygonParticle(class Scene &scene) : GameObject("PolygonParticle", scene)
     {
-        sprite = {{1}};
+        Sprite sprite = {{1}};
         symbol = "X";
+        SetSprite(sprite);
     }
     virtual ~PolygonParticle() {}
     void Init() override;

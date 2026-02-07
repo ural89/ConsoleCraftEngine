@@ -6,7 +6,7 @@ class PlasmaBullet : public GameObject
   public:
 	PlasmaBullet(class Scene &scene, Vector2 fireDirection, float damage) : GameObject("Bullet", scene)
 	{
-		sprite = {
+		Sprite sprite = {
 			{3, 3},
 			{3, 3}};
 		SetSprite(sprite);

@@ -5,14 +5,14 @@
 #include <vector>
 #define MAX_SPRITE_DIM 8
 #define MAX_SPRITE_SIZE (MAX_SPRITE_DIM * MAX_SPRITE_DIM)
+typedef std::vector<std::vector<int>> Sprite;
 class GE_API GameObject
 {
 
   public:
-	GameObject(std::string &&name, class Scene &scene) : name(name), scene(scene)
-	{
-    
-	};
+	GameObject(std::string &&name, class Scene &scene) : name(name), scene(scene) {
+
+														 };
 	void SetSprite(const std::vector<std::vector<int>> &spriteData)
 	{
 		if (spriteData.empty())
@@ -49,13 +49,11 @@ class GE_API GameObject
 			delete component;
 		}
 		components.clear();
-		sprite.clear();
 	}
 
 	Transform transform = Transform();
 
 	std::string name = "Gameobject";
-	std::vector<std::vector<int>> sprite = {{1, 1}, {1, 1}};
 	int newSprite[8 * 8];
 
 	virtual int GetWidth() const

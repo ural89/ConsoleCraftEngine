@@ -3,7 +3,7 @@
 
 ParticleObject::ParticleObject(Scene &scene, int particleType) : GameObject("Particle", scene)
 {
-
+    Sprite sprite;
 	switch (particleType)
 	{
 	case 0:

@@ -1,16 +1,14 @@
 #include "PolygonCursor.h"
-#include "PolygonCreator.h"
-#include "../../../Input.h"
 #include "../../../Component/PlayerController.h"
+#include "../../../Input.h"
+#include "PolygonCreator.h"
 Cursor::Cursor(class Scene &scene) : GameObject("PolygonCursor", scene)
 {
-    sprite = {{1}};
+	Sprite sprite = {{1}};
+	SetSprite(sprite);
 }
 
 void Cursor::Init()
 {
-    AddComponent(new PlayerController(*this, 0));
-
+	AddComponent(new PlayerController(*this, 0));
 }
-
-

@@ -20,7 +20,7 @@ void BlastGun::Fire(GameObject &targetGameObject)
 		Vector2 randomDirection(randomDirectionX, randomDirectionY);
 		randomDirection.Normalize();
 		auto plasmaBullet = new PlasmaBullet(GetCurrentScene(), randomDirection, damage);
-		plasmaBullet->sprite = {
+		Sprite sprite = {
 			{3, 1},
 			{1, 3}};
 		plasmaBullet->SetSprite(sprite);

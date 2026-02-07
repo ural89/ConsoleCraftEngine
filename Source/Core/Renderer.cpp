@@ -207,7 +207,7 @@ void Renderer::SetConsoleColor(int color)
 #endif
 }
 
-std::vector<std::vector<int>> Renderer::RotateSprite(const std::vector<std::vector<int>> &sprite)
+std::vector<std::vector<int>> Renderer::RotateSprite(const Sprite &sprite)
 {
     int rows = sprite.size();
     int cols = sprite[0].size();

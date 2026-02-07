@@ -1,11 +1,12 @@
 #include "Brick.h"
 void Brick::Init()
 {
-    sprite = {{2,2,2,2},
+    Sprite sprite = {{2,2,2,2},
                 {2,2,2,2},
                 {2,2,2,2},
                 {2,2,2,2},
                 {2,2,2,2}};
     symbol = "#";
+    SetSprite(sprite);
     transform.Size = Vector2(4, 6);
 }
