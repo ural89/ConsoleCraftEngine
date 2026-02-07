@@ -1,5 +1,3 @@
-#include "Scenes/Pong/PongScene.h"
-
 #include "Scenes/Shooter/ShooterScene.h"
 #include "Core/EntryPoint.h"
 #include <vector>

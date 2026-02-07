@@ -2,11 +2,12 @@
 #include "Core/Scene.h"
 void GridUnit::Init()
 {
-	sprite = {  {1,1,1,1,1},
+	Sprite sprite = {  {1,1,1,1,1},
 				{1,0,0,0,1},
 				{1,0,0,0,1},
 				{1,1,1,1,1}
 	};
+    SetSprite(sprite);
 	overrideColor = 0;
 	symbol = '\xDB';
 	particleSource = new ParticleSource(*this);

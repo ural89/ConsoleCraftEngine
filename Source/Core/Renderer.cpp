@@ -64,7 +64,7 @@ void Renderer::DrawObjects(GameObject &go, Scene &scene)
             int posX = static_cast<int>(go.transform.Position.X + j) + scene.camera->offsetX;
             int posY = static_cast<int>(go.transform.Position.Y + i) + scene.camera->offsetY;
 
-            int color = go.newSprite[i * width + j];
+            int color = go.sprite[i * width + j];
 
             if (go.overrideColor >= 0 && color != 0)
                 SetConsoleColor(go.overrideColor);

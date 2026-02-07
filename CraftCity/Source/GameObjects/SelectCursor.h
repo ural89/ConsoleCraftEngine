@@ -13,13 +13,14 @@ public:
 	void Init() override
 	{
 		//AddComponent(new PlayerController(*this, 0));
-		sprite = {
+		Sprite sprite = {
 			{0, 0, 0, 0},
 			{0, 0, 0, 0},
 			{0, 0, 0, 0},
 			{0, 0, 0, 0},
 			{0, 0, 0, 0},
 		};
+        SetSprite(sprite);
 	}
 	void SetSize(Vector2 size, char&& symbol);
 	int GetWidth() const override

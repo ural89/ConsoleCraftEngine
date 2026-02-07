@@ -6,8 +6,9 @@ public:
 	Road(class Scene& scene) : Buildable(scene)
 	{
 		name = "Road";
-		sprite = { {1,1}, 
+		Sprite sprite = { {1,1}, 
 			{1,1} };
+        SetSprite(sprite);
 	
 	}
 	bool IsMainRoad = false;

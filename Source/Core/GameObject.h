@@ -11,9 +11,13 @@ class GE_API GameObject
 
   public:
 	GameObject(std::string &&name, class Scene &scene) : name(name), scene(scene) {
-
+															 Sprite sprite = {
+																 {1, 1},
+																 {1, 1},
+															 };
+        SetSprite(sprite);
 														 };
-	void SetSprite(const std::vector<std::vector<int>> &spriteData)
+	void SetSprite(const Sprite &spriteData)
 	{
 		if (spriteData.empty())
 			return;
@@ -38,7 +42,7 @@ class GE_API GameObject
 			for (int x = 0; x < spriteData[y].size(); x++)
 			{
 				int index = (y * this->width) + x;
-				newSprite[index] = spriteData[y][x];
+				sprite[index] = spriteData[y][x];
 			}
 		}
 	}
@@ -54,7 +58,7 @@ class GE_API GameObject
 	Transform transform = Transform();
 
 	std::string name = "Gameobject";
-	int newSprite[8 * 8];
+	int sprite[8 * 8];
 
 	virtual int GetWidth() const
 	{
