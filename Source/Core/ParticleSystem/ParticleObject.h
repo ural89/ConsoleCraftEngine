@@ -24,8 +24,8 @@ protected:
 	 std::array<Vector2, 5> trailPositions;
 	 int trailCount = 0;
 	 Vector2 lastPosition;
-	 std::vector<std::vector<int>> fireParticle = { {0,2}, {0,0} };
-	 std::vector<std::vector<int>> enemyParticle = { {0,6}, {4,0} };
-	 std::vector<std::vector<int>> brickParticle = { {2} };
+	 Sprite fireParticle = { {0,2}, {0,0} };
+	 Sprite enemyParticle = { {0,6}, {4,0} };
+	 Sprite brickParticle = { {2} };
 };
 
