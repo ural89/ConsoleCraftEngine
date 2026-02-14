@@ -3,7 +3,7 @@
 
 ParticleObject::ParticleObject(Scene &scene, int particleType) : GameObject("Particle", scene)
 {
-
+    Sprite sprite;
 	switch (particleType)
 	{
 	case 0:
@@ -19,6 +19,7 @@ ParticleObject::ParticleObject(Scene &scene, int particleType) : GameObject("Par
 		sprite = fireParticle;
 		break;
 	}
+	SetSprite(sprite);
 	symbol = '#';
 }
 

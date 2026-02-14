@@ -4,7 +4,8 @@ class BuildingTrigger : public GameObject
 {
 public:
 	BuildingTrigger(class Scene& scene, Vector2 size, GameObject& owner) : GameObject("Trigger", scene), size(size), owner(owner) {
-		sprite = { {0} };
+		Sprite sprite = { {0} };
+        SetSprite(sprite);
 	}
 	void OnCollided(GameObject& other) override;
 	void OnCollisionExit(GameObject& other) override;

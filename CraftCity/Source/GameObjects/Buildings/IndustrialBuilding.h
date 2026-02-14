@@ -2,17 +2,17 @@
 #include "Buildable.h"
 class IndustrialBuilding : public Buildable
 {
-public:
-	IndustrialBuilding(class Scene& scene) : Buildable(scene)
+  public:
+	IndustrialBuilding(class Scene &scene) : Buildable(scene)
 	{
 		name = "Industrial";
-		sprite = {
-		  {GREEN, GREEN, GREEN, GREEN},
-		  {GREEN, 0, 0, GREEN},
-		  {GREEN, 0, 0, GREEN},
-		  {GREEN, GREEN, GREEN, GREEN} };
+		Sprite sprite = {
+			{GREEN, GREEN, GREEN, GREEN},
+			{GREEN, 0, 0, GREEN},
+			{GREEN, 0, 0, GREEN},
+			{GREEN, GREEN, GREEN, GREEN}};
 		symbol = 'X';
-
+		SetSprite(sprite);
 		Price = 30;
 		Income = 0;
 	}
@@ -20,8 +20,7 @@ public:
 	void OnInfrastructureConnected(InfrastructureType) override;
 	void OnInfrastructureDisconnected(InfrastructureType) override;
 	void OnPeriodicTick(int tickPassed) override;
-private:
+
+  private:
 	void CalculateIncome();
-
 };
-

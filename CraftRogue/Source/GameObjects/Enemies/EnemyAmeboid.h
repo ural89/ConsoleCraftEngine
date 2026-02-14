@@ -12,7 +12,7 @@ public:
     void Update(float deltaTime) override;
     void OnMove() override;
 private:
-    std::vector<std::vector<std::vector<int>>> sprites;
+    std::vector<Sprite> sprites;
     std::vector<std::string> symbols;
     int animationIndex = 0;
 };

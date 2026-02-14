@@ -2,7 +2,7 @@
 
 cmake_minimum_required(VERSION 3.12)
 project(RogueGame)
-
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 # Source files
 file(GLOB_RECURSE ENGINE_SOURCES
     ../Source/*.cpp

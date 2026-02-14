@@ -53,28 +53,37 @@ void Renderer::ClearDestroyedObject(GameObject &go, Scene &scene)
 
 void Renderer::DrawObjects(GameObject &go, Scene &scene)
 {
-    for (int i = 0; i < go.sprite.size(); i++)
+
+    int width = go.width;
+    int height = go.height;
+
+    for (int i = 0; i < height; i++)
     {
-        for (int j = 0; j < go.sprite[i].size(); j++)
+        for (int j = 0; j < width; j++)
         {
             int posX = static_cast<int>(go.transform.Position.X + j) + scene.camera->offsetX;
             int posY = static_cast<int>(go.transform.Position.Y + i) + scene.camera->offsetY;
 
-            int color = go.sprite[i][j];
+            int color = go.sprite[i * width + j];
+
             if (go.overrideColor >= 0 && color != 0)
                 SetConsoleColor(go.overrideColor);
             else
             {
+                // Boundary and empty pixel checks
                 if (color == 0 || (posX > SCREENWIDTH) || (posY > SCREENHEIGHT) || (posY < 0) || (posX < 0))
                 {
                     continue;
                 }
                 SetConsoleColor(color);
             }
+
+            // Draw the pixel
             GoToXY(posX, posY);
             std::cout << go.symbol;
         }
     }
+    // Reset color to white (or default)
     SetConsoleColor(15);
 }
 
@@ -83,9 +92,9 @@ void Renderer::ClearMovedObjectsTrail(GameObject &go, Scene &scene)
     if (!go.transform.HasClearedFlag)
     {
         // Clear previous image of sprite
-        for (int i = 0; i < go.sprite.size(); i++)
+        for (int i = 0; i < go.height; i++)
         {
-            for (int j = 0; j < go.sprite[i].size(); j++)
+            for (int j = 0; j < go.width; j++)
             {
                 int clearX = static_cast<int>(go.transform.PreviousPosition.X + j) + scene.camera->offsetX;
                 int clearY = static_cast<int>(go.transform.PreviousPosition.Y + i) + scene.camera->offsetY;
@@ -128,9 +137,9 @@ void Renderer::ClearObjectTrailAfterCameraMove(GameObject &go, Scene &scene)
             clearXOffset = -1;
             break;
         }
-        for (int i = 0; i < go.sprite.size(); i++)
+        for (int i = 0; i < go.height; i++)
         {
-            for (int j = 0; j < go.sprite[i].size(); j++)
+            for (int j = 0; j < go.width; j++)
             {
                 int clearX = static_cast<int>(go.transform.Position.X + j) + scene.camera->offsetX + clearXOffset;
                 int clearY = static_cast<int>(go.transform.Position.Y + i) + scene.camera->offsetY + clearYOffset;
@@ -198,7 +207,7 @@ void Renderer::SetConsoleColor(int color)
 #endif
 }
 
-std::vector<std::vector<int>> Renderer::RotateSprite(const std::vector<std::vector<int>> &sprite)
+std::vector<std::vector<int>> Renderer::RotateSprite(const Sprite &sprite)
 {
     int rows = sprite.size();
     int cols = sprite[0].size();

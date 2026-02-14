@@ -14,6 +14,7 @@ Buildable::Buildable(Scene& scene) : GameObject("Building", scene)
 
 void Buildable::Init()
 {
+    sprite = {{1,1} ,{1,1}};
 	defaultSprite = sprite;
 	for (int it = electricity; it != road; it++)
 	{

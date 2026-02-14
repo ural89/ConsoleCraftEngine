@@ -1,11 +1,11 @@
 #include "PlayerShip.h"
 #include "Core/Component/PlayerController.h"
 #include "Bullet.h"
+#include "Core/GameObject.h"
 #include "Core/Input.h"
 #include "Core/Scene.h"
 #include "Core/EventDispatcher.h"
 #include "Core/ParticleSystem/ParticleSource.h"
-#include "Core/Renderer.h"
 #include <memory>
 
 PlayerShip::~PlayerShip()
@@ -22,13 +22,14 @@ void PlayerShip::Init()
 	scene.uiHandler->AddString(scoreUIDataPtr);
 
 	AddComponent(new PlayerController(*this, 0));
-	sprite = 
+	Sprite sprite = 
 	{
 		{2,2,0,2},
 		{1,1,1,1},
 		{1,1,1,1},
 		{2,2,0,2}
 	};
+    SetSprite(sprite);
 	
 	auto inputEvent = std::bind(&PlayerShip::Fire, this, std::placeholders::_1);
 	Input::AddListener(inputEvent);

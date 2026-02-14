@@ -9,22 +9,25 @@ void StaticBlastParticle::Update(float deltaTime)
     }
     if (elapsedTime > stage03Time)
     {
-        sprite = {
+        Sprite sprite = {
             {1, 1},
             {1, 1}};
+        SetSprite(sprite);
     }
     else if (elapsedTime > stage02Time)
     {
-        sprite = {
+        Sprite sprite = {
             {1},
             {1}};
+        SetSprite(sprite);
     }
     else if (elapsedTime > stage01Time)
     {
-        sprite = {
+        Sprite sprite = {
             {1}
 
         };
+        SetSprite(sprite);
     }
 }
 

@@ -39,11 +39,12 @@ void Player::Init()
     // playerUpgradeComponent = new PlayerUpgradeComponent(*this);
     playerUpgradeComponent = AddComponent<PlayerUpgradeComponent>();
     symbol = 'O';
-    sprite = {
+    Sprite sprite = {
         {4, 4, 4},
         {1, 1, 1},
         {1, 2, 1},
     };
+    SetSprite(sprite);
     Vector2 startPosition = transform.Position;
 
     InitializeWeapon(startPosition);

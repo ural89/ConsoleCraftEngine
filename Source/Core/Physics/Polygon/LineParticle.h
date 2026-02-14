@@ -11,8 +11,9 @@ public:
     }
     void Init() override
     {
-        sprite = {{1}};
+        Sprite sprite = {{1}};
         symbol = "o";
+        SetSprite(sprite);
     }
     bool isFixed = false;
 };

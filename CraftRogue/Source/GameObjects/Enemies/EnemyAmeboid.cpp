@@ -9,13 +9,13 @@ void EnemyAmeboid::Init()
     std::string symbol01 = "|";
     symbols.push_back(symbol00);
     symbols.push_back(symbol01);
-    std::vector<std::vector<int>> sprite00 = {
+    Sprite sprite00 = {
         {1, 1, 1, 1, 1},
         {1, 2, 1, 2, 1},
         {1, 1, 1, 1, 1},
         {1, 5, 1, 5, 1},
        };
-    std::vector<std::vector<int>> sprite01 = {
+    Sprite sprite01 = {
            {1, 1, 1, 1, 1},
            {1, 2, 1, 2, 1},
            {1, 1, 1, 1, 1},
@@ -36,6 +36,7 @@ void EnemyAmeboid::OnMove()
     animationIndex = animationIndex % sprites.size();
    
 	symbol = symbols[animationIndex];
-	sprite = sprites[animationIndex];
+	Sprite sprite = sprites[animationIndex];
+    SetSprite(sprite);
 
 }

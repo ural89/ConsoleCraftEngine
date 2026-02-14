@@ -8,6 +8,12 @@ void SelectCursor::SetSize(Vector2 size, char &&symbol)
     transform.HasMovedThisFrame = true;
     // transform.MovePosition(-1,0);
     // transform.MovePosition(1,0);
+    Sprite sprite = {
+        {1,1,1,1},
+        {1,1,1,1},
+        {1,1,1,1},
+        {1,1,1,1},
+    };
     for (size_t i = 0; i < sprite.size(); i++)
     {
         for (size_t j = 0; j < sprite[i].size(); j++)
@@ -24,6 +30,7 @@ void SelectCursor::SetSize(Vector2 size, char &&symbol)
         }
     }
 
+    SetSprite(sprite);
     overrideColor = 2;
 }
 

@@ -21,13 +21,14 @@ void PlayerShip::Init()
 	//scene.uiHandler->AddString(scoreUIDataPtr);
 
 	AddComponent(new PlayerController(*this, 0));
-	sprite = 
+	Sprite sprite = 
 	{
 		{2,2,0,2},
 		{1,1,1,1},
 		{1,1,1,1},
 		{2,2,0,2}
 	};
+    SetSprite(sprite);
 	isNavIgnore = true;
 	transform.Size = Vector2(4, 4);
 	
