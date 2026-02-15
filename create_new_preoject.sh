@@ -153,10 +153,11 @@ cat > "$PROJECT_NAME/Source/GameObjects/ExampleGameObject.cpp" <<EOF
 
 void ExampleGameObject::Init() {
     symbol = '8';
-    sprite = {
+    Sprite sprite = {
         {1, 1},
         {1, 1},
     };
+    SetSprite(sprite);
     auto inputEvent = BIND_EVENT_FN(ExampleGameObject::OnInput);
     Input::AddListener(inputEvent);
 }
