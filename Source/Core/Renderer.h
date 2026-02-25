@@ -6,6 +6,8 @@
 #else
 #include <Windows.h>
 #endif
+#include <string_view>
+
 class GE_API Renderer
 {
 public:
@@ -48,6 +50,7 @@ private:
 #endif
     }
 
+    void print(std::string_view str);
     void ClearDestroyedObject(GameObject &go, Scene &scene);
     void DrawObjects(GameObject &go, Scene &scene);
     void ClearMovedObjectsTrail(GameObject &go, Scene &scene);
