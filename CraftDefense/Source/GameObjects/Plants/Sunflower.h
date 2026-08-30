@@ -12,5 +12,5 @@ public:
 private:
     SunManager &sunManager;
     float sunTimer = 0.f;
-    static constexpr float SUN_INTERVAL = 12.f;
+    static constexpr float SUN_INTERVAL = 10.f;
 };

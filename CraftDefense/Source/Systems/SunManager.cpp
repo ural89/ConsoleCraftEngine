@@ -28,7 +28,7 @@ void SunManager::Update(float deltaTime)
 void SunManager::SpawnAt(int col, int row)
 {
     SunToken *token = new SunToken(scene, col, row);
-    scene.AddGameObject(token, CellToWorld(col, row) + Vector2(2, 1));
+    scene.AddGameObject(token, CellToWorld(col, row) + Vector2(2, 0));
     tokens.push_back(token);
 }
 

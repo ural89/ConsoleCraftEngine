@@ -27,7 +27,7 @@ public:
 private:
     SunBank &bank;
     std::vector<SeedPacket> packets;
-    int selected = -1;
+    int selected = 0;
 
     void OnInput(int input);
 };

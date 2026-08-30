@@ -1,7 +1,7 @@
 #include "BasicZombie.h"
 
 BasicZombie::BasicZombie(Scene &s, LaneGrid &grid)
-    : Zombie("Zombie", s, grid, 8.f, 1.5f, 1.f, 0.5f)
+    : Zombie("Zombie", s, grid, MaxHealth, 1.5f, 1.f, 0.5f)
 {
 }
 

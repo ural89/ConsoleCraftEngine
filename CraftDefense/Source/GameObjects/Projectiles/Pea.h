@@ -14,4 +14,5 @@ public:
 private:
     int lane;
     float speed = 25.f;
+    float damage = 1.f;
 };

@@ -9,10 +9,10 @@ DefenseHUD::DefenseHUD(UIHandler *uiHandler, SunBank &bank, SeedMenu &seedMenu, 
     : uiHandler(uiHandler), bank(bank), seedMenu(seedMenu), waveDirector(waveDirector)
 {
     sunPanel = std::make_shared<UIPanel>();
-    sunPanel->AddString(Vector2(0, 0), "SUN: " + std::to_string(bank.Get()));
+    sunPanel->AddString(Vector2(0, 1), "SUN: " + std::to_string(bank.Get()));
 
     seedPanel = std::make_shared<UIPanel>();
-    seedPanel->AddString(Vector2(0, 1), BuildSeedBarText());
+    seedPanel->AddString(Vector2(0, 2), BuildSeedBarText());
 
     statusPanel = std::make_shared<UIPanel>();
     statusPanel->AddString(Vector2(0, 19), "");

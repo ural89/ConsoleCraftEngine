@@ -29,7 +29,7 @@ void Pea::OnCollided(GameObject &other)
     Zombie *zombie = dynamic_cast<Zombie *>(&other);
     if (zombie && zombie->Lane() == lane)
     {
-        zombie->TakeDamage(1.f);
+        zombie->TakeDamage(damage);
         Destroy();
     }
 }
