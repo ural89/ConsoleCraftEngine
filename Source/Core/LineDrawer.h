@@ -24,6 +24,7 @@ public:
     }
     void DrawLine(Vector2 startPosition, Vector2 endPosition);
     void CreateLineParticles(int amount, int color);
+    void SetColor(int color); // recolors every already-created line particle
     void ClearLines()
     {
         for (auto lineParticles : lines)

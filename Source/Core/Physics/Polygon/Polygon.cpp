@@ -38,6 +38,27 @@ void Polygon::Init()
     isReady = true;
 }
 
+void Polygon::DestroyPhysics()
+{
+    if (polygonBody)
+    {
+        scene.world->DestroyBody(polygonBody); // also destroys every joint attached to it
+        polygonBody = nullptr;
+    }
+    ClearParticles();
+    isReady = false;
+}
+
+void Polygon::SetColor(int newColor)
+{
+    color = newColor;
+    lineDrawer->SetColor(newColor);
+    for (auto &particle : particles)
+    {
+        particle->overrideColor = newColor;
+    }
+}
+
 void Polygon::UpdateLines(float deltaTime)
 {
     lineDrawer->ResetDrawingParticleIndex();

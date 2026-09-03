@@ -3,7 +3,7 @@
 # Exit immediately if a command exits with a non-zero status
 set -e
 
-projects=("AIGame" "CraftCity" "CraftDefense" "CraftMatch" "CraftPhysicsTest" "CraftRogue" "CraftShooterGame")
+projects=("AIGame" "CraftBridge" "CraftCity" "CraftDefense" "CraftMatch" "CraftPhysicsTest" "CraftRogue" "CraftShooterGame")
 
 for project in "${projects[@]}"; do
     echo "Building $project..."

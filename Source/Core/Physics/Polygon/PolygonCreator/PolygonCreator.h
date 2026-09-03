@@ -12,12 +12,15 @@ public:
     }
     class Polygon* ApplyAndGetPolygon();
 
-    void StartCreating(Vector2 position, int color);
+    void StartCreating(Vector2 position, int color = 1, int maxParticlesToDraw = 50);
     void SetPosition(Vector2 position);
     void SetEditingActive(bool isActive);
-    Polygon* CreateSquarePolygon(Vector2 position, int size, float rotationAngle, int color = 1);
-    Polygon* CreateRectanglePolygon(Transform transform, int color = 1);
-    Polygon* CreateCircle(Vector2 position, float radius, int numSegments, int color = 1);
+    // maxParticlesToDraw is the created polygon's outline glyph budget; raise
+    // it for shapes whose perimeter is longer than the 50 cell default.
+    Polygon* CreateSquarePolygon(Vector2 position, int size, float rotationAngle, int color = 1, int maxParticlesToDraw = 50);
+    Polygon* CreateRectanglePolygon(Transform transform, int color = 1, int maxParticlesToDraw = 50);
+    Polygon* CreateCircle(Vector2 position, float radius, int numSegments, int color = 1, int maxParticlesToDraw = 50);
+    class Cursor* GetCursor() const { return m_Cursor; }
 private:
     Polygon* m_CurrentPolygon;
     Scene& m_Scene;

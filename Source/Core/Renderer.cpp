@@ -43,6 +43,10 @@ void Renderer::ClearDestroyedObject(GameObject &go, Scene &scene)
         {
             int posX = static_cast<int>(go.transform.Position.X + j - 1) + scene.camera->offsetX;
             int posY = static_cast<int>(go.transform.Position.Y + i - 1) + scene.camera->offsetY;
+            if ((posX > SCREENWIDTH) || (posY > SCREENHEIGHT) || (posX < 0) || (posY < 0))
+            {
+                continue; // an off-screen "\033[-1;-1H" is not a cursor move, it is garbage on the screen
+            }
 
             GoToXY(posX, posY);
             std::cout << ' ';

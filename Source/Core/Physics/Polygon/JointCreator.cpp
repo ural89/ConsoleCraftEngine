@@ -1,6 +1,7 @@
 #include "JointCreator.h"
 #include "../../Scene.h"
 #include "../../../box2d/include/box2d/b2_joint.h"
+#include "../../../box2d/include/box2d/b2_revolute_joint.h"
 #include "../../../box2d/include/box2d/b2_body.h"
 #include "../../Input.h"
 JointCreator::JointCreator(Scene &scene) : scene(scene), firstBody(nullptr), secondBody(nullptr)
@@ -24,8 +25,17 @@ void JointCreator::SetBody(b2Body *body)
     }
 }
 
+void JointCreator::SetEditingActive(bool isActive)
+{
+    isEditingActive = isActive;
+    cursor->SetRenderable(isActive);
+}
+
 void JointCreator::OnInput(int input)
 {
+    if (!isEditingActive)
+        return;
+
     if ('j' == std::tolower(input))
     {
         Vector2 cursorPosition = cursor->transform.Position;
@@ -89,12 +99,29 @@ void JointCreator::CreateDistanceJoint()
     secondBody = nullptr;
 }
 
-void JointCreator::CreateRevoluteJoint()
+b2Joint *JointCreator::CreateRevoluteJoint(b2Body *bodyA, b2Body *bodyB, Vector2 worldAnchor, bool collideConnected)
 {
-    b2RevoluteJointDef revoluteJointDef;
-    revoluteJointDef.bodyA = firstBody;
-    revoluteJointDef.bodyB = secondBody;
-    revoluteJointDef.collideConnected = false;
+    if (bodyA == nullptr || bodyB == nullptr || bodyA == bodyB)
+        return nullptr;
 
-    // revoluteJointDef.localAnchorA
+    b2RevoluteJointDef revoluteJointDef;
+    revoluteJointDef.Initialize(bodyA, bodyB, b2Vec2(worldAnchor.X, worldAnchor.Y));
+    revoluteJointDef.collideConnected = collideConnected;
+
+    return scene.world->CreateJoint(&revoluteJointDef);
+}
+
+b2Joint *JointCreator::CreateMotorJoint(b2Body *bodyA, b2Body *bodyB, Vector2 worldAnchor, float maxMotorTorque, float motorSpeed)
+{
+    if (bodyA == nullptr || bodyB == nullptr || bodyA == bodyB)
+        return nullptr;
+
+    b2RevoluteJointDef revoluteJointDef;
+    revoluteJointDef.Initialize(bodyA, bodyB, b2Vec2(worldAnchor.X, worldAnchor.Y));
+    revoluteJointDef.collideConnected = false;
+    revoluteJointDef.enableMotor = true;
+    revoluteJointDef.maxMotorTorque = maxMotorTorque;
+    revoluteJointDef.motorSpeed = motorSpeed;
+
+    return scene.world->CreateJoint(&revoluteJointDef);
 }

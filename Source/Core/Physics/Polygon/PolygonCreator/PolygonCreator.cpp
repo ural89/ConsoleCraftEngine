@@ -11,9 +11,9 @@ PolygonCreator::PolygonCreator(Scene &scene) : m_Scene(scene)
     m_Cursor->isRenderable = false;
 }
 
-void PolygonCreator::StartCreating(Vector2 position, int color = 1)
+void PolygonCreator::StartCreating(Vector2 position, int color, int maxParticlesToDraw)
 {
-    m_CurrentPolygon = new Polygon(m_Scene, true, color);
+    m_CurrentPolygon = new Polygon(m_Scene, true, color, maxParticlesToDraw);
     m_CurrentPolygon->AddParticle(position);
     // std::cout << "Creating new poly" << '\n';
 }
@@ -29,13 +29,13 @@ void PolygonCreator::SetPosition(Vector2 position)
     //m_CurrentPolygon->UpdateLines(0);
 }
 
-Polygon* PolygonCreator::CreateSquarePolygon(Vector2 position, int size, float rotationAngle, int color)
+Polygon* PolygonCreator::CreateSquarePolygon(Vector2 position, int size, float rotationAngle, int color, int maxParticlesToDraw)
 {
-    return CreateRectanglePolygon({position, Vector2(size, size), rotationAngle}, color);
+    return CreateRectanglePolygon({position, Vector2(size, size), rotationAngle}, color, maxParticlesToDraw);
 }
-Polygon* PolygonCreator::CreateRectanglePolygon(Transform transform, int color)
+Polygon* PolygonCreator::CreateRectanglePolygon(Transform transform, int color, int maxParticlesToDraw)
 {
-    Polygon *polygon = new Polygon(m_Scene, true, color);
+    Polygon *polygon = new Polygon(m_Scene, true, color, maxParticlesToDraw);
     float rotationAngle = transform.Rotation * (3.14159f / 180.0f);
 
     float cosTheta = std::cos(rotationAngle);
@@ -59,9 +59,9 @@ Polygon* PolygonCreator::CreateRectanglePolygon(Transform transform, int color)
     m_Scene.AddPolygon(polygon);
     return polygon;
 }
-Polygon* PolygonCreator::CreateCircle(Vector2 position, float radius, int numSegments, int color)
+Polygon* PolygonCreator::CreateCircle(Vector2 position, float radius, int numSegments, int color, int maxParticlesToDraw)
 {
-    Polygon *polygon = new Polygon(m_Scene, true, color);
+    Polygon *polygon = new Polygon(m_Scene, true, color, maxParticlesToDraw);
     float angleIncrement = (2 * M_PI) / numSegments;
 
     for (int i = 0; i < numSegments; ++i)

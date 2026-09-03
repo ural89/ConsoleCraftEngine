@@ -11,10 +11,14 @@
 #include <memory>
 class GE_API Polygon // This is not registered in scene. So use this with shared ptr to clear yourself.
 {
-    const int maxParticlesToDraw = 50;
+    // Glyph budget for the whole outline. A shape whose perimeter is longer
+    // than this gets its last edges silently dropped by LineDrawer, so wide
+    // shapes (terrain slabs) need to ask for more.
+    int maxParticlesToDraw = 50;
 
 public:
-    Polygon(class Scene &scene, bool isClosed = false, int color = 1) : scene(scene), isClosed(isClosed), color(color)
+    Polygon(class Scene &scene, bool isClosed = false, int color = 1, int maxParticlesToDraw = 50)
+        : maxParticlesToDraw(maxParticlesToDraw), isClosed(isClosed), scene(scene), color(color)
     {
         lineDrawer = new LineDrawer(scene);
         CreateLineParticles(maxParticlesToDraw, color);
@@ -33,6 +37,11 @@ public:
 public:
     void AddParticle(Vector2 position, bool isFixed = false);
     void Init();
+    // Destroys the b2Body and the corner particles this polygon owns. Called
+    // by Scene::RemovePolygon; the destructor alone cannot do it, since the
+    // scene destructor deletes every GameObject before its polygons.
+    void DestroyPhysics();
+    void SetColor(int newColor);
     void UpdateLines(float deltaTime);
     void OnCollided(Vector2 overlap, int particleIndex);
     void AddTorque(float torque);

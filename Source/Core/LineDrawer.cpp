@@ -23,6 +23,14 @@ void LineDrawer::DrawLine(Vector2 startPosition, Vector2 endPosition)
     }
 }
 
+void LineDrawer::SetColor(int color)
+{
+    for (auto &line : lines)
+    {
+        line->overrideColor = color;
+    }
+}
+
 void LineDrawer::CreateLineParticles(int amount, int color)
 {
     for (size_t i = 0; i < amount; i++)

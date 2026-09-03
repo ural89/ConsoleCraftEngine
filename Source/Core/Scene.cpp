@@ -118,13 +118,27 @@ void Scene::AddPolygon(Polygon *polygon)
 
 void Scene::RemovePolygon(Polygon *polygon)
 {
+	polygonCollision.RemovePolygon(polygon);
+
+	// It may still be queued (created and removed within the same frame);
+	// leaving it there would spawn a dangling pointer next frame.
+	std::queue<Polygon *> stillToSpawn;
+	while (!m_PolygonsToSpawn.empty())
+	{
+		Polygon *queued = m_PolygonsToSpawn.front();
+		m_PolygonsToSpawn.pop();
+		if (queued != polygon)
+			stillToSpawn.push(queued);
+	}
+	m_PolygonsToSpawn = stillToSpawn;
+
 	auto it = std::find(m_Polygons.begin(), m_Polygons.end(), polygon);
 	if (it != m_Polygons.end())
 	{
-		delete *it;
 		m_Polygons.erase(it);
 	}
-	polygonCollision.RemovePolygon(polygon);
+	polygon->DestroyPhysics(); // the b2Body and corner particles outlive ~Polygon otherwise
+	delete polygon;
 }
 
 void Scene::UpdateCamera(float deltaTime)
