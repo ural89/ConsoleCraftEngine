@@ -18,7 +18,8 @@ namespace PolygonFactory
     Polygon *CreateBox(PolygonCreator &creator, Vector2 center, Vector2 size, float rotationDegrees, int color, int maxParticlesToDraw);
 
     // Rewrites the single fixture Polygon::Init() created.
-    void SetPhysics(Polygon *polygon, float density, float friction, short groupIndex);
+    void SetPhysics(Polygon *polygon, float density, float friction, short groupIndex,
+                    unsigned short categoryBits, unsigned short maskBits);
     void SetStatic(Polygon *polygon, bool isStatic);
 
     // Call once on every created polygon. Corner markers are the only visible

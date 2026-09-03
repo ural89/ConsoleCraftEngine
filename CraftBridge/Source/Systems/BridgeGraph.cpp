@@ -144,7 +144,7 @@ void BridgeGraph::InstantiateNode(int idx, Terrain &terrain, Deck &deck)
 
     node.polygon = PolygonFactory::CreateBox(polygonCreator, node.position, Vector2(NODE_SIZE, NODE_SIZE), 0.f,
                                              NODE_COLOR, NODE_GLYPHS);
-    PolygonFactory::SetPhysics(node.polygon, BEAM_DENSITY, BEAM_FRICTION, BRIDGE_GROUP);
+    PolygonFactory::SetPhysics(node.polygon, BEAM_DENSITY, BEAM_FRICTION, BRIDGE_GROUP, CATEGORY_BRIDGE, MASK_BRIDGE);
     PolygonFactory::SetStatic(node.polygon, frozen);
     // A node box is under a console cell across, so its corner markers are the
     // only thing that renders it at all.
@@ -166,7 +166,7 @@ void BridgeGraph::InstantiateBeam(int idx)
 
     beam.polygon = PolygonFactory::CreateBox(polygonCreator, center, Vector2(length, BEAM_THICKNESS), angleDegrees,
                                              BEAM_OK_COLOR, BEAM_GLYPHS);
-    PolygonFactory::SetPhysics(beam.polygon, BEAM_DENSITY, BEAM_FRICTION, BRIDGE_GROUP);
+    PolygonFactory::SetPhysics(beam.polygon, BEAM_DENSITY, BEAM_FRICTION, BRIDGE_GROUP, CATEGORY_BRIDGE, MASK_BRIDGE);
     PolygonFactory::SetStatic(beam.polygon, frozen);
     PolygonFactory::PrepareCorners(beam.polygon, false);
 

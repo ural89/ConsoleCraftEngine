@@ -19,7 +19,7 @@ Terrain::~Terrain()
 Polygon *Terrain::MakeBox(Vector2 center, Vector2 size)
 {
     Polygon *polygon = PolygonFactory::CreateBox(polygonCreator, center, size, 0.f, TERRAIN_COLOR, TERRAIN_GLYPHS);
-    PolygonFactory::SetPhysics(polygon, 0.f, 0.8f, 0);
+    PolygonFactory::SetPhysics(polygon, 0.f, 0.8f, 0, CATEGORY_TERRAIN, MASK_ALL);
     PolygonFactory::SetStatic(polygon, true);
     PolygonFactory::PrepareCorners(polygon, false);
     return polygon;

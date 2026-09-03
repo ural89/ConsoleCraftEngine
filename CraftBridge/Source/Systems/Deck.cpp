@@ -34,7 +34,7 @@ void Deck::Build(const LevelData &level, Terrain &terrain)
         Polygon *plank = PolygonFactory::CreateBox(polygonCreator, Vector2(centerX, level.groundY),
                                                    Vector2(segmentWidth, DECK_THICKNESS), 0.f,
                                                    DECK_COLOR, DECK_GLYPHS);
-        PolygonFactory::SetPhysics(plank, DECK_DENSITY, 0.9f, DECK_GROUP);
+        PolygonFactory::SetPhysics(plank, DECK_DENSITY, 0.9f, DECK_GROUP, CATEGORY_DECK, MASK_ALL);
         PolygonFactory::PrepareCorners(plank, false);
         segments.push_back(plank);
 

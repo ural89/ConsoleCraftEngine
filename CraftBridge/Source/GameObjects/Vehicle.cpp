@@ -21,7 +21,7 @@ Vehicle::~Vehicle()
 Polygon *Vehicle::MakeWheel(Vector2 center)
 {
     Polygon *wheel = polygonCreator.CreateCircle(center, VEHICLE_WHEEL_RADIUS, WHEEL_SEGMENTS, VEHICLE_COLOR, WHEEL_GLYPHS);
-    PolygonFactory::SetPhysics(wheel, VEHICLE_DENSITY, 1.7f, VEHICLE_GROUP);
+    PolygonFactory::SetPhysics(wheel, VEHICLE_DENSITY, 1.7f, VEHICLE_GROUP, CATEGORY_VEHICLE, MASK_VEHICLE);
     // A wheel is barely wider than a console cell, so the rim never draws a
     // full run of line glyphs; its corner markers are what you actually see
     // turning over.
@@ -48,7 +48,7 @@ void Vehicle::Spawn(float x, float surfaceY)
     polygonCreator.SetPosition(Vector2(x - VEHICLE_CHASSIS_HALF_W, chassisCenterY + VEHICLE_CHASSIS_HALF_H));
     chassis = polygonCreator.ApplyAndGetPolygon();
 
-    PolygonFactory::SetPhysics(chassis, VEHICLE_DENSITY, 0.3f, VEHICLE_GROUP);
+    PolygonFactory::SetPhysics(chassis, VEHICLE_DENSITY, 0.3f, VEHICLE_GROUP, CATEGORY_VEHICLE, MASK_VEHICLE);
     PolygonFactory::PrepareCorners(chassis, false);
 
     wheelLeft = MakeWheel(Vector2(x - wheelOffsetX, wheelCenterY));

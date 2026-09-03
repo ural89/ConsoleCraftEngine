@@ -21,7 +21,8 @@ namespace PolygonFactory
         return creator.CreateRectanglePolygon({center - centreOffset, size, rotationDegrees}, color, maxParticlesToDraw);
     }
 
-    void SetPhysics(Polygon *polygon, float density, float friction, short groupIndex)
+    void SetPhysics(Polygon *polygon, float density, float friction, short groupIndex,
+                    unsigned short categoryBits, unsigned short maskBits)
     {
         if (!polygon || !polygon->GetBody())
             return;
@@ -34,8 +35,10 @@ namespace PolygonFactory
         fixture->SetFriction(friction);
         fixture->SetRestitution(0.f);
 
-        b2Filter filter = fixture->GetFilterData();
+        b2Filter filter;
         filter.groupIndex = groupIndex;
+        filter.categoryBits = categoryBits;
+        filter.maskBits = maskBits;
         fixture->SetFilterData(filter);
 
         polygon->GetBody()->ResetMassData();

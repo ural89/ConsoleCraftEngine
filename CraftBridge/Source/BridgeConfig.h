@@ -21,9 +21,24 @@ const float BEAM_THICKNESS = 0.6f;
 const float BEAM_DENSITY = 3.0f;
 const float BEAM_FRICTION = 0.6f;
 const float NODE_SIZE = 0.8f;
+// ---- Collision filtering ----
+// A negative group stops a system colliding with itself.
 const short BRIDGE_GROUP = -1;  // beams/nodes never collide with each other
 const short DECK_GROUP = -2;    // deck planks never collide with each other
 const short VEHICLE_GROUP = -3; // chassis/wheels never collide with each other
+
+// Different groups fall back to category/mask, so the pairs that must not
+// touch each other need to be spelled out there. The car rides on the deck
+// and the terrain only: the player's supports are structure, not scenery it
+// has to drive around, and a beam anchored on a cliff lip sits half above the
+// road surface.
+const unsigned short CATEGORY_TERRAIN = 0x0001;
+const unsigned short CATEGORY_DECK = 0x0002;
+const unsigned short CATEGORY_BRIDGE = 0x0004;
+const unsigned short CATEGORY_VEHICLE = 0x0008;
+const unsigned short MASK_ALL = 0xFFFF;
+const unsigned short MASK_BRIDGE = MASK_ALL & ~CATEGORY_VEHICLE;
+const unsigned short MASK_VEHICLE = MASK_ALL & ~CATEGORY_BRIDGE;
 
 // ---- Drawing ----
 // Every shape is an engine Polygon, which draws its own outline through a
